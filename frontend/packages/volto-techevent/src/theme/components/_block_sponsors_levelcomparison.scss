@@ -1,0 +1,77 @@
+.block.levelComparison {
+  @include default-container-width;
+  .levelComparison.title {
+    @include block-title;
+    @include default-container-width;
+  }
+  .levelComparison.tableContainer {
+    @include layout-container-width;
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      text-align: left;
+      .cell {
+        vertical-align: middle;
+        &.level {
+          border-left-width: 2px;
+          border-left-style: solid;
+          border-left-color: var(--theme-foreground-color);
+        }
+      }
+      td:first-child,
+      th:first-child {
+        width: 35%;
+      }
+      .tableHeader {
+        .benefitHead {
+          .benefitCol {
+            padding: $spacing-small 0;
+            .header {
+              @include add(weight, bold);
+            }
+          }
+          .benefitPlanCol {
+            color: var(--theme-foreground-color);
+            .wrapper {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              align-items: center; // horizontal centering
+              justify-content: center; // vertical centering of wrapper content
+
+              .header {
+                position: absolute;
+                z-index: 1; // ensures it's above the image
+                width: 100%;
+                padding: 1rem;
+                background-color: rgba(0, 0, 0, 0.75); // dark transparent bg
+                color: white;
+                line-height: 1.5rem;
+                text-transform: uppercase;
+                span {
+                  margin-right: auto;
+                  margin-left: auto;
+                }
+              }
+
+              img {
+                z-index: -10;
+                display: block;
+                width: 100%;
+                filter: blur(1px);
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+      .benefitRow .cell {
+        padding: 5px 0;
+        &.benefitValue {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

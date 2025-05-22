@@ -1,0 +1,38 @@
+:root {
+  // SponsorTile
+  --techevent-sponsortile-background-main: transparent;
+  --techevent-sponsortile-min-width: 200px;
+  --techevent-sponsortile-max-width: 400px;
+  --techevent-sponsortile-align-items: center;
+  --techevent-sponsortile-justify-content: center;
+  --techevent-sponsortile-border-width: 1px;
+  --techevent-sponsortile-border-style: solid;
+  //--techevent-sponsortile-border-color: ;
+  --techevent-sponsortile-border-radius: #{$spacing-small};
+  --techevent-sponsortile-margin: #{$spacing-small};
+  //--techevent-sponsortile-box-shadow: 0px 3px 16px 0px #000;
+  /// hover
+  --techevent-sponsortile-hover-border-width: 1px;
+  --techevent-sponsortile-hover-border-style: solid;
+  //--techevent-sponsortile-hover-border-color: ;
+  --techevent-sponsortile-hover-border-radius: #{$spacing-small};
+  --techevent-sponsortile-hover-margin: #{$spacing-small};
+  //--techevent-sponsortile-hover-box-shadow: 0px 3px 16px 0px #000;
+
+  // SponsorLevel
+  /// Title
+  //--techevent-sponsorlevel-title-color: ;
+  //--techevent-sponsorlevel-title-border-color: ;
+  //--techevent-sponsorlevel-title-before-background: ;
+  --techevent-sponsorlevel-title-padding: 0 0 1rem 0;
+  --techevent-sponsorlevel-title-margin: 1.2rem 0;
+  --techevent-sponsorlevel-title-border-bottom-style: solid;
+  --techevent-sponsorlevel-title-border-bottom-width: 1px;
+  --techevent-sponsorlevel-title-before-height: 3px;
+  --techevent-sponsorlevel-title-before-width: 400px;
+
+  // Presenter
+  /// PresenterCategory
+  --techevent-presenter-category-background-color: #ccc;
+  --techevent-presenter-category-color: #000;
+}

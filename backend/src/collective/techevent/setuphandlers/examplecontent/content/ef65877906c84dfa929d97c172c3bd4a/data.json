@@ -1,0 +1,40 @@
+{
+  "@id": "/images/silver.png",
+  "@type": "Image",
+  "UID": "ef65877906c84dfa929d97c172c3bd4a",
+  "allow_discussion": null,
+  "contributors": [],
+  "created": "2025-05-20T17:33:13+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "silver.png",
+  "image": {
+    "blob_path": "ef65877906c84dfa929d97c172c3bd4a/image/silver.png",
+    "content-type": "image/png",
+    "filename": "silver.png",
+    "height": 900,
+    "size": 512770,
+    "width": 1600
+  },
+  "is_folderish": false,
+  "language": "##DEFAULT##",
+  "layout": "image_view",
+  "lock": {},
+  "modified": "2025-05-20T17:33:13+00:00",
+  "review_state": null,
+  "rights": "",
+  "subjects": [],
+  "title": "silver.png",
+  "type_title": "Image",
+  "version": "current",
+  "workflow_history": {},
+  "working_copy": null,
+  "working_copy_of": null
+}

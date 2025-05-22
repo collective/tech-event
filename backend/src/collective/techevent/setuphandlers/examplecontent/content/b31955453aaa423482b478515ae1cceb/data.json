@@ -1,0 +1,80 @@
+{
+  "@id": "/sponsor-us/gold/simples-consultoria",
+  "@type": "Sponsor",
+  "UID": "b31955453aaa423482b478515ae1cceb",
+  "allow_discussion": null,
+  "created": "2025-05-20T17:43:43+00:00",
+  "description": "The Plone experts in Brazil",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "simples-consultoria",
+  "image": {
+    "blob_path": "b31955453aaa423482b478515ae1cceb/image/simples.png",
+    "content-type": "image/png",
+    "filename": "simples.png",
+    "height": 768,
+    "size": 50184,
+    "width": 1024
+  },
+  "image_caption": null,
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-05-20T17:43:48+00:00",
+  "review_state": "published",
+  "social_links": [
+    {
+      "@id": "f290701b-3fa4-463f-b587-03b88e637c8b",
+      "href": [
+        {
+          "@id": "https://www.simplesconsultoria.com.br",
+          "title": "www.simplesconsultoria.com.br"
+        }
+      ],
+      "id": "website",
+      "title": "Website"
+    },
+    {
+      "@id": "2994c176-3cdb-4207-b50e-64278528ee0f",
+      "href": [
+        {
+          "@id": "https://github.com/simplesconsultoria/",
+          "title": "github.com/simplesconsultoria/"
+        }
+      ],
+      "id": "github",
+      "title": "GitHub"
+    }
+  ],
+  "subjects": [],
+  "text": {
+    "content-type": "text/html",
+    "data": "<p>Simples Consultoria is the leading Plone consultancy company in Brazil.</p>",
+    "encoding": "utf8"
+  },
+  "title": "Simples Consultoria",
+  "type_title": "Sponsor",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-20T17:43:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-20T17:43:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

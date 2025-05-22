@@ -1,0 +1,17 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- TechEvent SponsorsDB Subscribers -->
+  <subscriber
+      for="collective.techevent.content.sponsors.sponsors_db.ISponsorsDB
+           zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".sponsors_db.impose_limit"
+      />
+
+  <!-- TechEvent Session Subscribers -->
+  <subscriber
+      for="collective.techevent.behaviors.session.IEventSession
+           zope.lifecycleevent.IObjectModifiedEvent"
+      handler=".session.modification_handler"
+      />
+
+</configure>

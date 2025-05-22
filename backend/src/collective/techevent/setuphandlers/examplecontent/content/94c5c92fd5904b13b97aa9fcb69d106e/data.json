@@ -1,0 +1,78 @@
+{
+  "@id": "/sponsor-us/support",
+  "@type": "SponsorLevel",
+  "UID": "94c5c92fd5904b13b97aa9fcb69d106e",
+  "allow_discussion": null,
+  "benefits": [],
+  "blocks": {
+    "142d9eaa-a923-4a22-b764-b04bae00f2c8": {
+      "@type": "sponsorLevelBlock",
+      "styles": {
+        "align:noprefix": "left"
+      },
+      "title": "Our Sponsors"
+    },
+    "19f6b2f4-c276-4ed0-9c44-87e157a7209f": {
+      "@type": "slate"
+    },
+    "4f349347-7420-4ba8-b192-b17341cc7b8d": {
+      "@type": "title"
+    },
+    "7ec05d4d-39d0-403d-8714-0153f644a0c3": {
+      "@type": "description"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "4f349347-7420-4ba8-b192-b17341cc7b8d",
+      "7ec05d4d-39d0-403d-8714-0153f644a0c3",
+      "142d9eaa-a923-4a22-b764-b04bae00f2c8",
+      "19f6b2f4-c276-4ed0-9c44-87e157a7209f"
+    ]
+  },
+  "contributors": [],
+  "created": "2025-05-16T18:29:16+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Supporting",
+  "effective": "2025-05-16T18:34:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "support",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-05-20T17:47:57+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Support",
+  "type_title": "Sponsorship Level",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-16T18:29:27+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-16T18:34:49+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

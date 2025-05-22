@@ -1,0 +1,24 @@
+.presenterCategoryWrapper {
+  margin-right: $spacing-xsmall;
+  .presenterCategory {
+    align-self: center;
+    padding: $spacing-xsmall;
+    border-radius: 100%;
+    &.pf-member {
+      background-color: var(--techevent-presenter-category-background-color);
+      color: var(--techevent-presenter-category-color);
+    }
+    &.keynote-speaker {
+      background-color: var(--techevent-presenter-category-background-color);
+      color: var(--techevent-presenter-category-color);
+    }
+    &.speaker {
+      background-color: var(--techevent-presenter-category-background-color);
+      color: var(--techevent-presenter-category-color);
+    }
+    &.instructor {
+      background-color: var(--techevent-presenter-category-background-color);
+      color: var(--techevent-presenter-category-color);
+    }
+  }
+}

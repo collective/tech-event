@@ -1,0 +1,59 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- Sponsorship -->
+  <utility
+      name="collective.techevent.vocabularies.sponsorship_levels"
+      component=".sponsorship.sponsorship_levels"
+      />
+  <utility
+      name="collective.techevent.vocabularies.sponsorship_benefits"
+      component=".sponsorship.sponsorship_benefits"
+      />
+
+  <!-- Slot / Sessions -->
+  <utility
+      name="collective.techevent.vocabularies.slot_categories"
+      component=".slot.slot_categories"
+      />
+  <utility
+      name="collective.techevent.vocabularies.slot_rooms"
+      component=".slot.slot_rooms"
+      />
+  <utility
+      name="collective.techevent.vocabularies.slot_tracks"
+      component=".slot.slot_tracks"
+      />
+  <utility
+      name="collective.techevent.vocabularies.slot_levels"
+      component=".slot.slot_levels"
+      />
+  <utility
+      name="collective.techevent.vocabularies.slot_audiences"
+      component=".slot.slot_audiences"
+      />
+  <utility
+      name="collective.techevent.vocabularies.keynote_duration"
+      component=".slot.duration_keynote"
+      />
+  <utility
+      name="collective.techevent.vocabularies.talk_duration"
+      component=".slot.duration_talk"
+      />
+  <utility
+      name="collective.techevent.vocabularies.training_duration"
+      component=".slot.duration_training"
+      />
+
+  <!-- Presenters -->
+  <utility
+      name="collective.techevent.vocabularies.presenters"
+      component=".presenter.PresentersVocabularyFactory"
+      />
+  <utility
+      name="collective.techevent.vocabularies.presenter_labels"
+      component=".presenter.presenter_labels"
+      />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+</configure>

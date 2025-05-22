@@ -1,0 +1,113 @@
+{
+  "@id": "/sponsor-us/support/plone-foundation",
+  "@type": "Sponsor",
+  "UID": "31c554e34bc2422a9941b0904ae9e581",
+  "allow_discussion": null,
+  "created": "2025-05-20T17:47:57+00:00",
+  "description": "",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "plone-foundation",
+  "image": {
+    "blob_path": "31c554e34bc2422a9941b0904ae9e581/image/foundation.png",
+    "content-type": "image/png",
+    "filename": "foundation.png",
+    "height": 768,
+    "size": 48492,
+    "width": 1024
+  },
+  "image_caption": null,
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-05-20T17:48:09+00:00",
+  "review_state": "published",
+  "social_links": [
+    {
+      "@id": "daa3ff4c-5b55-4f6c-8a89-adbfc262561c",
+      "href": [
+        {
+          "@id": "https://github.com/plone",
+          "title": "github.com/plone"
+        }
+      ],
+      "id": "github",
+      "title": "GitHub"
+    },
+    {
+      "@id": "c6b73aca-c61f-4352-aaa0-950574900474",
+      "href": [
+        {
+          "@id": "https://www.instagram.com/plonecms/",
+          "title": "www.instagram.com/plonecms/"
+        }
+      ],
+      "id": "instagram",
+      "title": "Instagram"
+    },
+    {
+      "@id": "4c9ffec1-cd8f-48d9-9ec4-35e55a807ab5",
+      "href": [
+        {
+          "@id": "https://youtube.com/@PloneCMS",
+          "title": "youtube.com/@PloneCMS"
+        }
+      ],
+      "id": "youtube",
+      "title": "YouTube"
+    },
+    {
+      "@id": "4094f8cd-d2fa-4cd2-970c-e6ebfe898e4f",
+      "href": [
+        {
+          "@id": "https://plone.social/@plone",
+          "title": "plone.social/@plone"
+        }
+      ],
+      "id": "mastodon",
+      "title": "Mastodon"
+    },
+    {
+      "@id": "bb851254-c754-4938-bc06-ff5ea6b26aa1",
+      "href": [
+        {
+          "@id": "https://plone.org/foundation",
+          "title": "plone.org/foundation"
+        }
+      ],
+      "id": "website",
+      "title": "Website"
+    }
+  ],
+  "subjects": [],
+  "text": {
+    "content-type": "text/html",
+    "data": "<p>The Plone Foundation is a non-profit organization dedicated to supporting and advancing the open-source content management system, Plone. Established in 2004, the foundation plays a crucial role in the Plone community by providing governance, legal, and financial support for the development and promotion of the Plone platform. With a global reach, the Plone Foundation fosters collaboration among a diverse group of developers, users, and organizations who contribute to the growth and sustainability of Plone. Its mission is to protect and promote Plone as a powerful and secure open-source CMS solution for organizations and communities worldwide.</p>",
+    "encoding": "utf8"
+  },
+  "title": "Plone Foundation",
+  "type_title": "Sponsor",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-20T17:47:57+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-20T17:48:09+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,30 @@
+[repository]
+name = "tech-event"
+changelog = "CHANGELOG.md"
+version = "version.txt"
+compose = "docker-compose.yml"
+
+[repository.towncrier]
+section = "Project"
+settings = "towncrier.toml"
+
+[backend.package]
+name = "collective.techevent"
+path = "backend"
+changelog = "backend/CHANGELOG.md"
+towncrier_settings = "backend/pyproject.toml"
+base_package = "Products.CMFPlone"
+publish = true
+
+[frontend.package]
+name = "@plone-collective/volto-techevent"
+path = "frontend/packages/volto-techevent"
+changelog = "frontend/packages/volto-techevent/CHANGELOG.md"
+towncrier_settings = "frontend/packages/volto-techevent/towncrier.toml"
+base_package = "@plone/volto"
+publish = true
+
+[cookieplone]
+template = "project"
+template_version = "27a6b7bd7b0ba9a77b04109d73c4ee975ab95cc3"
+generated_date = "2025-05-14 00:29:21"

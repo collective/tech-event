@@ -1,0 +1,40 @@
+{
+  "@id": "/images/gold.png",
+  "@type": "Image",
+  "UID": "5f3664436f464aae9e3a8a31cb6cf649",
+  "allow_discussion": null,
+  "contributors": [],
+  "created": "2025-05-20T17:33:13+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "gold.png",
+  "image": {
+    "blob_path": "5f3664436f464aae9e3a8a31cb6cf649/image/gold.png",
+    "content-type": "image/png",
+    "filename": "gold.png",
+    "height": 900,
+    "size": 564202,
+    "width": 1600
+  },
+  "is_folderish": false,
+  "language": "##DEFAULT##",
+  "layout": "image_view",
+  "lock": {},
+  "modified": "2025-05-20T17:33:13+00:00",
+  "review_state": null,
+  "rights": "",
+  "subjects": [],
+  "title": "gold.png",
+  "type_title": "Image",
+  "version": "current",
+  "workflow_history": {},
+  "working_copy": null,
+  "working_copy_of": null
+}

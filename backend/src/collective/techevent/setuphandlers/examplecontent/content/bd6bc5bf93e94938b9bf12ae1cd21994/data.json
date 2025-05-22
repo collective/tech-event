@@ -1,0 +1,125 @@
+{
+  "@id": "/sponsor-us",
+  "@type": "SponsorsDB",
+  "UID": "bd6bc5bf93e94938b9bf12ae1cd21994",
+  "allow_discussion": null,
+  "benefits": [
+    {
+      "description": "Number of complementary tickets",
+      "id": "327e1e26-77fc-4b3b-8748-32a4c1dae4ce",
+      "title": "Complementary tickets"
+    },
+    {
+      "description": "Your brand displayed on our site",
+      "id": "1b0c0980-8f16-4444-8fbb-ec8126cedbc7",
+      "title": "Logo on the site"
+    },
+    {
+      "description": "Your brand on the registration desk",
+      "id": "6f9cd442-a7c7-41ea-9af2-4e6c2e9ef1e6",
+      "title": "Logo in the registration"
+    },
+    {
+      "description": "Minimum number of mentions on our social media",
+      "id": "9997992b-343a-4484-a3ab-a6f9eef89194",
+      "title": "Social Media"
+    }
+  ],
+  "blocks": {
+    "1dc92a35-827c-4994-9842-3b5c25426fee": {
+      "@type": "levelComparisonBlock",
+      "tableTitle": "Compare",
+      "title": "Our Packages"
+    },
+    "2bbabec1-2307-4ee8-8f9d-1cdac797fb6d": {
+      "@type": "description"
+    },
+    "4dc2e210-5313-4510-982f-3d682b617c1d": {
+      "@type": "title"
+    },
+    "a1bec7f8-5cc6-4a87-9157-4865cf122ffb": {
+      "@type": "sponsorsShowcaseBlock",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-center)"
+        }
+      },
+      "title": "Our Sponsors"
+    },
+    "ae0044a0-af54-419a-946b-a5f03e137f62": {
+      "@type": "listing",
+      "headline": "Our Packages",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "SponsorLevel"
+            ]
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "4dc2e210-5313-4510-982f-3d682b617c1d",
+      "2bbabec1-2307-4ee8-8f9d-1cdac797fb6d",
+      "ae0044a0-af54-419a-946b-a5f03e137f62",
+      "1dc92a35-827c-4994-9842-3b5c25426fee",
+      "a1bec7f8-5cc6-4a87-9157-4865cf122ffb"
+    ]
+  },
+  "contributors": [],
+  "created": "2025-05-16T18:28:47+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Support our event",
+  "effective": "2025-05-16T18:30:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "sponsor-us",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-05-21T19:57:20+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Sponsor Us",
+  "type_title": "Sponsors Database",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-16T18:28:47+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-16T18:30:14+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

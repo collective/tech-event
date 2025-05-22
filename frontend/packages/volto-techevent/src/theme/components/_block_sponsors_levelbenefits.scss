@@ -1,0 +1,25 @@
+.block.benefits {
+  @include default-container-width;
+  .benefits.title {
+    @include block-title;
+    @include default-container-width;
+  }
+  .benefits.wrapper {
+    @include default-container-width;
+    .list {
+      padding-left: 0;
+      list-style-type: none;
+      .benefit.item {
+        padding: $spacing-small 0;
+        .title {
+          margin-right: $spacing-small;
+          @include add(size, m);
+        }
+        .value {
+          @include add(size, m);
+          @include add(weight, bold);
+        }
+      }
+    }
+  }
+}

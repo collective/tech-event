@@ -1,0 +1,117 @@
+{
+  "@id": "/sponsor-us/gold",
+  "@type": "SponsorLevel",
+  "UID": "1bbc55a8af384c26815d8120cfbd8879",
+  "allow_discussion": null,
+  "benefits": [
+    {
+      "@id": "21b586ea-8ac5-4ee8-b2d0-f990e930ef5a",
+      "code": {
+        "title": "Complementary tickets",
+        "token": "327e1e26-77fc-4b3b-8748-32a4c1dae4ce"
+      },
+      "id": "21b586ea-8ac5-4ee8-b2d0-f990e930ef5a",
+      "title": "Complementary tickets",
+      "value": "20"
+    },
+    {
+      "@id": "33120cc8-3f12-460f-92b7-139493c91376",
+      "code": {
+        "title": "Logo on the site",
+        "token": "1b0c0980-8f16-4444-8fbb-ec8126cedbc7"
+      },
+      "id": "33120cc8-3f12-460f-92b7-139493c91376",
+      "title": "Logo on the site",
+      "value": null
+    },
+    {
+      "@id": "fc54f394-c8fa-47c5-b8df-1fca0976a060",
+      "code": {
+        "title": "Logo in the registration",
+        "token": "6f9cd442-a7c7-41ea-9af2-4e6c2e9ef1e6"
+      },
+      "id": "fc54f394-c8fa-47c5-b8df-1fca0976a060",
+      "title": "Logo in the registration",
+      "value": null
+    },
+    {
+      "@id": "911a6e1e-6340-4f01-acd7-df661f31d44a",
+      "code": {
+        "title": "Social Media",
+        "token": "9997992b-343a-4484-a3ab-a6f9eef89194"
+      },
+      "id": "911a6e1e-6340-4f01-acd7-df661f31d44a",
+      "title": "Social Media",
+      "value": "43"
+    }
+  ],
+  "blocks": {
+    "4f349347-7420-4ba8-b192-b17341cc7b8d": {
+      "@type": "title"
+    },
+    "7ec05d4d-39d0-403d-8714-0153f644a0c3": {
+      "@type": "description"
+    },
+    "fd8ac74c-ceaf-4367-aab9-afce9d068b1e": {
+      "@type": "sponsorLevelBlock",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        }
+      },
+      "title": "Gold Sponsors"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "4f349347-7420-4ba8-b192-b17341cc7b8d",
+      "7ec05d4d-39d0-403d-8714-0153f644a0c3",
+      "fd8ac74c-ceaf-4367-aab9-afce9d068b1e"
+    ]
+  },
+  "contributors": [],
+  "created": "2025-05-16T18:29:16+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Gold Package",
+  "effective": "2025-05-16T18:34:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "gold",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-05-22T17:09:04+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Gold",
+  "type_title": "Sponsorship Level",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-16T18:29:16+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-16T18:34:49+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

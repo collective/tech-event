@@ -1,0 +1,78 @@
+{
+  "@id": "/sponsor-us/organizer",
+  "@type": "SponsorLevel",
+  "UID": "40b00569d17d4b71b018419a9d8bcea1",
+  "allow_discussion": null,
+  "benefits": [],
+  "blocks": {
+    "54422f55-5eb7-49c9-92b8-f7738e5c87a2": {
+      "@type": "slate"
+    },
+    "7b653a9f-5739-4907-96b1-d0bf51bccb59": {
+      "@type": "title"
+    },
+    "b8b46c91-61ad-4b2c-8a21-c6646854cd55": {
+      "@type": "sponsorLevelBlock",
+      "styles": {
+        "align:noprefix": "left"
+      },
+      "title": "Organized by"
+    },
+    "c9de8fc3-4aa1-4922-b82c-320cc50cec43": {
+      "@type": "description"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "7b653a9f-5739-4907-96b1-d0bf51bccb59",
+      "c9de8fc3-4aa1-4922-b82c-320cc50cec43",
+      "b8b46c91-61ad-4b2c-8a21-c6646854cd55",
+      "54422f55-5eb7-49c9-92b8-f7738e5c87a2"
+    ]
+  },
+  "contributors": [],
+  "created": "2025-05-20T17:32:30+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Organizers of this event",
+  "effective": "2025-05-20T17:36:00+00:00",
+  "exclude_from_nav": true,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "organizer",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-05-20T17:39:05+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Organized by",
+  "type_title": "Sponsorship Level",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-20T17:32:30+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-20T17:36:15+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <plone:behavior
+      name="collective.techevent.event_settings"
+      title="Tech Event: Settings"
+      description="Configure an instance of a tech event"
+      factory=".tech_event.Settings"
+      provides=".tech_event.ISettings"
+      marker="collective.techevent.interfaces.IEventRoot"
+      />
+
+  <plone:behavior
+      name="collective.techevent.schedule"
+      title="Tech Event: Scheduling"
+      description="Implements support to schedule a content"
+      provides=".schedule.IScheduleSlot"
+      />
+
+  <plone:behavior
+      name="collective.techevent.session"
+      title="Tech Event: Session"
+      description=""
+      provides=".session.IEventSession"
+      />
+
+</configure>

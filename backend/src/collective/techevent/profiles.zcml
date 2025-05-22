@@ -1,0 +1,42 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.techevent"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Tech Event for Plone: Install"
+      description="Package to configure a new Tech Event for Plone site"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      post_handler=".setuphandlers.base.setup_techevent_settings"
+      />
+
+  <genericsetup:registerProfile
+      name="demo"
+      title="Tech Event for Plone: Demo content"
+      description="Create example content to showcase this add-on"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/demo"
+      post_handler=".setuphandlers.demo.create_example_content"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Tech Event for Plone: Uninstall"
+      description="Uninstall Tech Event for Plone setup."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      />
+
+  <!-- Hide Uninstall Profile-->
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="collective.techevent"
+      />
+
+
+  <include package=".upgrades" />
+
+</configure>

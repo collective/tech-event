@@ -1,0 +1,65 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.techevent"
+    >
+
+  <!-- Tech Event -->
+  <permission
+      id="collective.techevent.AddTechEvent"
+      title="collective.techevent: Add Tech Event"
+      />
+
+  <!-- Venue -->
+  <permission
+      id="collective.techevent.AddVenue"
+      title="collective.techevent: Add Venue"
+      />
+  <permission
+      id="collective.techevent.AddRoom"
+      title="collective.techevent: Add Room"
+      />
+
+  <!-- Sponsors -->
+  <permission
+      id="collective.techevent.AddSponsorsDB"
+      title="collective.techevent: Add SponsorsDB"
+      />
+  <permission
+      id="collective.techevent.AddSponsorLevel"
+      title="collective.techevent: Add SponsorLevel"
+      />
+  <permission
+      id="collective.techevent.AddSponsor"
+      title="collective.techevent: Add Sponsor"
+      />
+
+  <!-- Presenter -->
+  <permission
+      id="collective.techevent.AddPresenter"
+      title="collective.techevent: Add Presenter"
+      />
+
+  <!-- Slots -->
+  <permission
+      id="collective.techevent.AddSlot"
+      title="collective.techevent: Add Slot"
+      />
+
+  <!-- Activities -->
+  <permission
+      id="collective.techevent.AddTraining"
+      title="collective.techevent: Add Training"
+      />
+  <permission
+      id="collective.techevent.AddTalk"
+      title="collective.techevent: Add Talk"
+      />
+  <permission
+      id="collective.techevent.AddKeynote"
+      title="collective.techevent: Add Keynote"
+      />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+</configure>

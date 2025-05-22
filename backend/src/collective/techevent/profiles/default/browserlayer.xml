@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layers>
+  <layer interface="collective.techevent.interfaces.IBrowserLayer"
+         name="collective.techevent"
+  />
+</layers>

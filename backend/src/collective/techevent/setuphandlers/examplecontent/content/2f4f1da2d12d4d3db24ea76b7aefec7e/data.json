@@ -1,0 +1,124 @@
+{
+  "@id": "/sponsor-us/organizer/plonegov-br",
+  "@type": "Sponsor",
+  "UID": "2f4f1da2d12d4d3db24ea76b7aefec7e",
+  "allow_discussion": null,
+  "created": "2025-05-16T18:41:25+00:00",
+  "description": "The Brazilian Plone users community",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "plonegov-br",
+  "image": {
+    "blob_path": "2f4f1da2d12d4d3db24ea76b7aefec7e/image/plonegov-br.png",
+    "content-type": "image/png",
+    "filename": "plonegov-br.png",
+    "height": 768,
+    "size": 47818,
+    "width": 1024
+  },
+  "image_caption": null,
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-05-20T17:39:05+00:00",
+  "review_state": "published",
+  "social_links": [
+    {
+      "@id": "fb755355-9439-4061-b76d-3ef1c7d4ac82",
+      "href": [
+        {
+          "@id": "https://github.com/plonegovbr",
+          "title": "github.com/plonegovbr"
+        }
+      ],
+      "id": "github",
+      "title": "GitHub"
+    },
+    {
+      "@id": "0e2df5de-189e-486d-8440-c5929785b1a2",
+      "href": [
+        {
+          "@id": "https://instagram.com/plonebr",
+          "title": "instagram.com/plonebr"
+        }
+      ],
+      "id": "instagram",
+      "title": "Instagram"
+    },
+    {
+      "@id": "fae7b9fa-4879-4c0a-a9a1-41efb582ce9b",
+      "href": [
+        {
+          "@id": "https://plone.org.br/gov",
+          "title": "plone.org.br/gov"
+        }
+      ],
+      "id": "website",
+      "title": "Website"
+    },
+    {
+      "@id": "038a078c-c9be-4464-b6a3-755fe3678a6a",
+      "href": [
+        {
+          "@id": "https://bsky.app/profile/plone.org.br",
+          "title": "bsky.app/profile/plone.org.br"
+        }
+      ],
+      "id": "bluesky",
+      "title": "BlueSky"
+    },
+    {
+      "@id": "bcf25955-1a80-461d-8f39-80351a9510d8",
+      "href": [
+        {
+          "@id": "https://plone.social/ploneorgbr",
+          "title": "plone.social/ploneorgbr"
+        }
+      ],
+      "id": "mastodon",
+      "title": "Mastodon"
+    },
+    {
+      "@id": "ffced205-c16e-4caf-8153-ec607371c7f1",
+      "href": [
+        {
+          "@id": "https://twitter.com/ploneorgbr",
+          "title": "twitter.com/ploneorgbr"
+        }
+      ],
+      "id": "x",
+      "title": "X"
+    }
+  ],
+  "subjects": [],
+  "text": {
+    "content-type": "text/html",
+    "data": "<p>Our community, PloneGov-BR, comprises over 200 members, including public sector employees, independent professionals, and enterprises that cater to government needs. Established in Brazil in July 2009, PloneGov-BR serves as a regional arm of the global PloneGov initiative. Our primary mission is to enhance and solidify the adoption of Plone within the Brazilian Government.</p>",
+    "encoding": "utf8"
+  },
+  "title": "PloneGov-BR",
+  "type_title": "Sponsor",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-16T18:41:26+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-16T18:57:45+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

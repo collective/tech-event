@@ -1,0 +1,123 @@
+// Spacing
+$spacing-xsmall: 10px !default;
+$spacing-small: 20px !default;
+$spacing-medium: 40px !default;
+$spacing-large: 60px !default;
+$spacing-xlarge: 80px !default;
+
+@mixin group-divider() {
+  .title {
+    position: relative;
+    padding: var(--techevent-sponsorlevel-title-padding);
+    border-bottom-width: var(
+      --techevent-sponsorlevel-title-border-bottom-width
+    );
+    border-bottom-style: var(
+      --techevent-sponsorlevel-title-border-bottom-style
+    );
+    border-bottom-color: var(
+      --techevent-sponsorlevel-border-color,
+      var(--theme-foreground-color)
+    );
+    margin: var(--techevent-sponsorlevel-title-margin);
+    color: var(
+      --techevent-sponsorlevel-title-color,
+      var(--theme-foreground-color)
+    );
+    text-align: var(--block-alignment);
+    @include add(size, m);
+
+    &::before {
+      position: absolute;
+      bottom: -1px;
+      width: var(--techevent-sponsorlevel-title-before-width);
+      height: var(--techevent-sponsorlevel-title-before-height);
+      margin: 0 auto;
+      background: var(
+        --techevent-sponsorlevel-before-background,
+        var(--theme-foreground-color)
+      );
+      content: '';
+    }
+    &.left::before {
+      left: 0;
+    }
+    &.center::before {
+      right: 0;
+      left: 0;
+    }
+    &.right::before {
+      right: 0;
+    }
+  }
+}
+
+@mixin sponsor-size-01() {
+  max-width: 600px;
+  max-height: 450px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@mixin sponsor-size-02() {
+  max-width: 480px;
+  max-height: 360px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@mixin sponsor-size-03() {
+  max-width: 400px;
+  max-height: 300px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@mixin sponsor-size-04() {
+  max-width: 320px;
+  max-height: 240px;
+
+  img {
+    max-width: 100%;
+  }
+}
+@mixin sponsor-size-05() {
+  max-width: 260px;
+  max-height: 195px;
+
+  img {
+    max-width: 100%;
+  }
+}
+@mixin sponsor-size-06() {
+  max-width: 180px;
+  max-height: 135px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+@mixin ctaButton() {
+  padding: $spacing-xsmall $spacing-medium;
+  border: 1px solid var(--theme-foreground-color);
+  border-radius: $spacing-xsmall;
+  margin-left: $spacing-small;
+  background-color: var(--theme-foreground-color);
+  color: var(--theme-color) !important;
+  text-decoration: none !important;
+  @include add(size, m);
+  @include add(weight, bold);
+  &.active {
+    color: var(--theme-color) !important;
+  }
+  &:hover {
+    color: var(--theme-color) !important;
+  }
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry>
+
+  <records interface="collective.techevent.controlpanel.tech_event.ITechEventSettings"
+           prefix="collective.techevent.settings"
+  />
+
+</registry>

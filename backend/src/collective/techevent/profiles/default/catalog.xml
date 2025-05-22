@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="portal_catalog">
+
+  <!-- Indexes -->
+  <index meta_type="FieldIndex"
+         name="level"
+  >
+    <indexed_attr value="level" />
+  </index>
+
+
+
+  <!-- Metadata -->
+  <column value="level" />
+  <column value="social_links" />
+
+</object>

@@ -1,0 +1,99 @@
+{
+  "@id": "/about",
+  "@type": "Document",
+  "UID": "6b6c3388dfc347aaaba4f24d0160d3e2",
+  "allow_discussion": null,
+  "blocks": {
+    "a8f3e2cb-8fd6-41bb-b57e-fb36e3a063b8": {
+      "@type": "teaser",
+      "description": "We are located at the heart of the city!",
+      "head_title": null,
+      "href": [
+        {
+          "@id": "../resolveuid/a5b298726b3d489bbeb2fb2877c91687",
+          "@type": "Venue",
+          "Description": "We are located at the heart of the city!",
+          "Title": "Venue",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "",
+          "title": "Venue"
+        }
+      ],
+      "overwrite": false,
+      "styles": {
+        "align": "left"
+      },
+      "theme": "default",
+      "title": "Venue"
+    },
+    "ca8dedfa-e23a-42be-90de-89ecd1d5552f": {
+      "@type": "title"
+    },
+    "e67d5516-2910-4d94-b14d-d45ae37f5c3c": {
+      "@type": "description"
+    },
+    "f17a7abf-fbac-4659-8198-befdceec98b0": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "ca8dedfa-e23a-42be-90de-89ecd1d5552f",
+      "e67d5516-2910-4d94-b14d-d45ae37f5c3c",
+      "a8f3e2cb-8fd6-41bb-b57e-fb36e3a063b8",
+      "f17a7abf-fbac-4659-8198-befdceec98b0"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-05-22T17:10:55+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "About our event!",
+  "effective": "2025-05-22T17:13:42+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "about",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-05-22T17:13:42+00:00",
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "About",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-22T17:10:55+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-22T17:13:42+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

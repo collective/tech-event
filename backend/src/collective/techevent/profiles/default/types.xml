@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object meta_type="Plone Types Tool"
+        name="portal_types"
+>
+  <!-- Tech Event -->
+  <object meta_type="Dexterity FTI"
+          name="Tech Event"
+  />
+
+  <!-- Venue -->
+  <object meta_type="Dexterity FTI"
+          name="Venue"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Room"
+  />
+
+  <!-- Sponsors -->
+  <object meta_type="Dexterity FTI"
+          name="SponsorsDB"
+  />
+  <object meta_type="Dexterity FTI"
+          name="SponsorLevel"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Sponsor"
+  />
+
+  <!-- Presenter -->
+  <object meta_type="Dexterity FTI"
+          name="Presenter"
+  />
+
+</object>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        meta_type="Dexterity FTI"
+        name="Tech Event"
+        i18n:domain="collective.techevent"
+>
+
+  <!-- Basic properties -->
+  <property name="title"
+            i18n:translate=""
+  >Tech Event</property>
+  <property name="description"
+            i18n:translate=""
+  >An edition of an event.</property>
+
+  <property name="allow_discussion">False</property>
+  <property name="factory">Tech Event</property>
+  <property name="icon_expr" />
+  <property name="link_target" />
+
+  <!-- Hierarchy control -->
+  <property name="global_allow">False</property>
+  <property name="filter_content_types">False</property>
+
+  <!-- Schema, class and security -->
+  <property name="add_permission">collective.techevent.AddTechEvent</property>
+  <property name="klass">collective.techevent.content.tech_event.TechEvent</property>
+  <property name="model_file" />
+  <property name="model_source" />
+  <property name="schema">collective.techevent.content.tech_event.ITechEvent</property>
+
+  <!-- Enabled behaviors -->
+  <property name="behaviors"
+            purge="false"
+  >
+    <element value="collective.techevent.event_settings" />
+    <element value="plone.dublincore" />
+    <element value="plone.namefromtitle" />
+    <element value="plone.excludefromnavigation" />
+    <element value="volto.preview_image_link" />
+    <element value="plone.shortname" />
+    <element value="volto.blocks" />
+  </property>
+</object>

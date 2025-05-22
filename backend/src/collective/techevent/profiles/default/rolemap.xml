@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rolemap>
+  <permissions>
+    <!-- Tech Event -->
+    <permission acquire="True"
+                name="collective.techevent: Add Tech Event"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+
+    <!-- Venue -->
+    <permission acquire="True"
+                name="collective.techevent: Add Venue"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+    <permission acquire="True"
+                name="collective.techevent: Add Room"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+
+    <!-- Sponsor -->
+    <permission acquire="True"
+                name="collective.techevent: Add SponsorsDB"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+    <permission acquire="True"
+                name="collective.techevent: Add SponsorLevel"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+    <permission acquire="True"
+                name="collective.techevent: Add Sponsor"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+
+    <!-- Presenter -->
+    <permission acquire="True"
+                name="collective.techevent: Add Presenter"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+
+    <!-- Slots -->
+    <permission acquire="True"
+                name="collective.techevent: Add Slot"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+
+    <!-- Activities -->
+    <permission acquire="True"
+                name="collective.techevent: Add Training"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+    <permission acquire="True"
+                name="collective.techevent: Add Talk"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+    <permission acquire="True"
+                name="collective.techevent: Add Keynote"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+    <!-- -*- extra stuff goes here -*- -->
+  </permissions>
+</rolemap>

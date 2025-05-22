@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        meta_type="Dexterity FTI"
+        name="Keynote"
+        i18n:domain="collective.techevent"
+>
+
+  <!-- Basic properties -->
+  <property name="title"
+            i18n:translate=""
+  >Keynote</property>
+  <property name="description"
+            i18n:translate=""
+  >A Keynote in the Event.</property>
+
+  <property name="allow_discussion">False</property>
+  <property name="factory">Keynote</property>
+  <property name="icon_expr" />
+  <property name="link_target" />
+
+  <!-- Hierarchy control -->
+  <property name="global_allow">True</property>
+  <property name="filter_content_types">True</property>
+  <property name="allowed_content_types" />
+  <!-- Schema, class and security -->
+  <property name="add_permission">collective.techevent.AddKeynote</property>
+  <property name="klass">collective.techevent.content.keynote.Keynote</property>
+  <property name="model_file" />
+  <property name="model_source" />
+  <property name="schema">collective.techevent.content.keynote.IKeynote</property>
+
+  <!-- Enabled behaviors -->
+  <property name="behaviors"
+            purge="false"
+  >
+    <element value="plone.namefromtitle" />
+    <element value="plone.categorization" />
+    <element value="plone.excludefromnavigation" />
+    <element value="collective.techevent.session" />
+    <element value="collective.techevent.schedule" />
+    <element value="volto.preview_image_link" />
+    <element value="plone.shortname" />
+  </property>
+</object>

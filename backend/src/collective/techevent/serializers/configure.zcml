@@ -1,0 +1,20 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- Serializers -->
+
+  <utility
+      factory=".summary.JSONSummarySerializerMetadata"
+      name="collective.techevent.summary_serializer_metadata"
+      />
+
+
+  <adapter factory=".brain.JSONSummarySerializer" />
+  <adapter factory=".datagrid.DataGridRowJsonSchemaProvider" />
+  <adapter factory=".datagrid.DataGridSerializer" />
+
+  <adapter
+      factory=".brain.BrainSponsorSerializer"
+      name="Sponsor"
+      />
+
+</configure>

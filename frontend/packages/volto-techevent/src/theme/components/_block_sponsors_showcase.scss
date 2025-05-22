@@ -1,0 +1,27 @@
+.block.sponsors {
+  @include default-container-width;
+  .sponsors.title {
+    @include block-title;
+    @include default-container-width;
+  }
+  .sponsorList {
+    > .sponsorTile {
+      @include sponsor-size-06;
+    }
+    > .diamond.sponsorTile {
+      @include sponsor-size-02;
+    }
+    > .platinum.sponsorTile {
+      @include sponsor-size-03;
+    }
+    > .gold.sponsorTile {
+      @include sponsor-size-04;
+    }
+    > .silver.sponsorTile {
+      @include sponsor-size-05;
+    }
+    > .organizer.sponsorTile {
+      @include sponsor-size-03;
+    }
+  }
+}

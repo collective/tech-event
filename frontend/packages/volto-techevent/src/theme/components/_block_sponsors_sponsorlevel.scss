@@ -1,0 +1,21 @@
+.block.sponsorLevelBlock {
+  @include default-container-width;
+  --techevent-sponsortile-max-width: 200px;
+  .wrapper {
+    @include default-container-width;
+    .title {
+      @include block-title;
+    }
+    .sponsorTile {
+      @include sponsor-size-05();
+    }
+  }
+  .sponsorCTA {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: var(--block-alignment);
+    .cta {
+      @include ctaButton();
+    }
+  }
+}

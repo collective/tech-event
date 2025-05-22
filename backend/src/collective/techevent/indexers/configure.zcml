@@ -1,0 +1,14 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- Indexers/Metadata -->
+
+  <!-- -*- extra stuff goes here -*- -->
+  <adapter
+      factory=".social_links.links_indexer"
+      name="links"
+      />
+  <adapter
+      factory=".sponsor.level_indexer"
+      name="level"
+      />
+</configure>
