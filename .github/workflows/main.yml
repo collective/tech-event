@@ -1,4 +1,4 @@
-name: Social Media support for Plone CI
+name: Tech Event support for Plone CI
 
 on:
   push:
