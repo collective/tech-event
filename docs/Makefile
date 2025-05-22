@@ -46,8 +46,10 @@ clean-python: clean
 	rm -rf *.egg-info
 # /environment management
 
-
 # documentation builders
+.PHONY: build
+build: html
+
 .PHONY: html
 html: .venv/bin/python  ## Build html
 	@uv run sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
