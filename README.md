@@ -1,7 +1,7 @@
 # Tech Conference for Plone 🚀
 
 [![Built with Cookieplone](https://img.shields.io/badge/built%20with-Cookieplone-0083be.svg?logo=cookiecutter)](https://github.com/plone/cookieplone-templates/)
-[![CI](https://github.com/collective/tech-event/actions/workflows/frontend.yml/badge.svg)](https://github.com/collective/tech-event/actions/workflows/main.yml)
+[![CI](https://github.com/collective/tech-event/actions/workflows/main.yml/badge.svg)](https://github.com/collective/tech-event/actions/workflows/main.yml)
 
 Support for implementing tech conference in a Plone site.
 

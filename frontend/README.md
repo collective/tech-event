@@ -1,6 +1,6 @@
 # Tech Conference for Plone (@plone-collective/volto-techevent)
 
-Support for implementing tech conference in a Plone site.
+Content types to represent a tech event (Conference / Symposium / Seminars) in a Plone site.
 
 [![npm](https://img.shields.io/npm/v/volto-techevent)](https://www.npmjs.com/package/@plone-collective/volto-techevent)
 [![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://collective.github.io/tech-event/)
@@ -15,8 +15,6 @@ Support for implementing tech conference in a Plone site.
 
 To install your project, you must choose the method appropriate to your version of Volto.
 
-
-### Volto 18 and later
 
 Add `@plone-collective/volto-techevent` to your `package.json`.
 
