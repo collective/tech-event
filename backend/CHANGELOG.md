@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a2 (2025-05-23)
+
+
+### Tests
+
+- Increase test coverage. @ericof 
+
 ## 1.0.0a1 (2025-05-23)
 
 

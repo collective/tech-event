@@ -1,6 +1,6 @@
 {
   "name": "volto-techevent-dev",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Support for implementing tech conference in a Plone site.",
   "author": "PloneGov-BR",
   "homepage": "https://github.com/collective/tech-event",
