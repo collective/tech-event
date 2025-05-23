@@ -24,10 +24,10 @@
   <property name="allowed_content_types" />
   <!-- Schema, class and security -->
   <property name="add_permission">collective.techevent.AddSlot</property>
-  <property name="klass">collective.techevent.content.slot.Slot</property>
+  <property name="klass">collective.techevent.content.schedule.slot.Slot</property>
   <property name="model_file" />
   <property name="model_source" />
-  <property name="schema">collective.techevent.content.slot.ISlot</property>
+  <property name="schema">collective.techevent.content.schedule.slot.ISlot</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors"

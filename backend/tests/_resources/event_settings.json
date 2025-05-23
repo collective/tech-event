@@ -1,0 +1,71 @@
+{
+  "audience": [
+    {
+      "@id": "developers",
+      "id": "developers",
+      "title": "Developers"
+    },
+    {
+      "@id": "devops",
+      "id": "devops",
+      "title": "DevOps"
+    }
+  ],
+  "durations_keynote": [
+    {
+      "@id": "short",
+      "duration": 30,
+      "id": "short",
+      "title": "Short Talk"
+    },
+    {
+      "@id": "long",
+      "duration": 45,
+      "id": "long",
+      "title": "Long Talk"
+    }
+  ],
+  "durations_talk": [
+    {
+      "@id": "short",
+      "duration": 30,
+      "id": "short",
+      "title": "Short Talk"
+    },
+    {
+      "@id": "long",
+      "duration": 45,
+      "id": "long",
+      "title": "Long Talk"
+    }
+  ],
+  "durations_training": [
+    {
+      "@id": "half-day",
+      "duration": 240,
+      "id": "half-day",
+      "title": "Half Day"
+    },
+    {
+      "@id": "full-day",
+      "duration": 480,
+      "id": "full-day",
+      "title": "Full Day"
+    }
+  ],
+  "end": "2025-08-02T21:00:00",
+  "levels": [
+    {
+      "@id": "general",
+      "id": "general",
+      "title": "General"
+    }
+  ],
+  "tracks": [
+    {
+      "@id": "main",
+      "id": "main",
+      "title": "Main Track"
+    }
+  ]
+}

@@ -40,6 +40,12 @@
       title="collective.techevent: Add Presenter"
       />
 
+  <!-- Schedule -->
+  <permission
+      id="collective.techevent.AddSchedule"
+      title="collective.techevent: Add Schedule"
+      />
+
   <!-- Slots -->
   <permission
       id="collective.techevent.AddSlot"

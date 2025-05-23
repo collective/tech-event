@@ -77,15 +77,9 @@
       "a1bec7f8-5cc6-4a87-9157-4865cf122ffb"
     ]
   },
-  "contributors": [],
   "created": "2025-05-16T18:28:47+00:00",
-  "creators": [
-    "admin"
-  ],
   "description": "Support our event",
-  "effective": "2025-05-16T18:30:00+00:00",
   "exclude_from_nav": false,
-  "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "id": "sponsor-us",
@@ -97,8 +91,6 @@
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",
-  "rights": "",
-  "subjects": [],
   "title": "Sponsor Us",
   "type_title": "Sponsors Database",
   "version": "current",

@@ -1,0 +1,89 @@
+{
+  "@id": "/presenters",
+  "@type": "Document",
+  "UID": "c13aae0e699f4186b184e033badf8e66",
+  "allow_discussion": null,
+  "blocks": {
+    "4d6efe05-4a17-4b8e-b00d-7d0ffac14a06": {
+      "@type": "title"
+    },
+    "5c190e59-d92a-45b1-839e-02ac5d68bbf1": {
+      "@type": "slate"
+    },
+    "f12b73bb-2f15-4ece-9b23-dff20eda0545": {
+      "@type": "listing",
+      "headline": "Our Presenters",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Presenter"
+            ]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending",
+        "sort_order_boolean": false
+      },
+      "styles": {},
+      "variation": "grid"
+    },
+    "f90dcda2-4c38-457f-aeab-765f62f6139f": {
+      "@type": "description"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "4d6efe05-4a17-4b8e-b00d-7d0ffac14a06",
+      "f90dcda2-4c38-457f-aeab-765f62f6139f",
+      "f12b73bb-2f15-4ece-9b23-dff20eda0545",
+      "5c190e59-d92a-45b1-839e-02ac5d68bbf1"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-05-22T19:05:58+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Presenters of the conference",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "presenters",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-05-22T19:16:24+00:00",
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "private",
+  "rights": "",
+  "subjects": [],
+  "title": "Presenters",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-22T19:05:58+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

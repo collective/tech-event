@@ -19,16 +19,16 @@
   <property name="link_target" />
 
   <!-- Hierarchy control -->
-  <property name="global_allow">True</property>
+  <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types" />
 
   <!-- Schema, class and security -->
   <property name="add_permission">collective.techevent.AddSlot</property>
-  <property name="klass">collective.techevent.content.slots.schedule_break.Break</property>
+  <property name="klass">collective.techevent.content.schedule.slots.schedule_break.Break</property>
   <property name="model_file" />
   <property name="model_source" />
-  <property name="schema">collective.techevent.content.slots.schedule_break.IBreak</property>
+  <property name="schema">collective.techevent.content.schedule.slots.schedule_break.IBreak</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors"

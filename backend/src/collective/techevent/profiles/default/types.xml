@@ -31,4 +31,33 @@
           name="Presenter"
   />
 
+  <!-- Schedule -->
+  <object meta_type="Dexterity FTI"
+          name="Schedule"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Break"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Keynote"
+  />
+  <object meta_type="Dexterity FTI"
+          name="LightningTalks"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Meeting"
+  />
+  <object meta_type="Dexterity FTI"
+          name="OpenSpace"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Slot"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Talk"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Training"
+  />
+
 </object>

@@ -1,6 +1,6 @@
 from collective.techevent import _
-from collective.techevent.content.slot import ISlot
-from collective.techevent.content.slot import Slot
+from collective.techevent.content.schedule.slot import ISlot
+from collective.techevent.content.schedule.slot import Slot
 from zope import schema
 from zope.interface import implementer
 

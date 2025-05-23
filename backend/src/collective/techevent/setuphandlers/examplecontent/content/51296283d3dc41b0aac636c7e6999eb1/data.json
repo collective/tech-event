@@ -1,0 +1,80 @@
+{
+  "@id": "/presenters/erico-andrei",
+  "@type": "Presenter",
+  "UID": "51296283d3dc41b0aac636c7e6999eb1",
+  "allow_discussion": null,
+  "categories": [
+    "speaker"
+  ],
+  "created": "2025-05-22T19:09:38+00:00",
+  "description": "Just a geek from Brazil",
+  "email": "ericof@plone.org",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "erico-andrei",
+  "image": {
+    "blob_path": "51296283d3dc41b0aac636c7e6999eb1/image/github.jpg",
+    "content-type": "image/jpeg",
+    "filename": "github.jpg",
+    "height": 800,
+    "size": 414156,
+    "width": 800
+  },
+  "image_caption": null,
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-05-22T19:15:07+00:00",
+  "review_state": "published",
+  "social_links": [
+    {
+      "@id": "ee320a12-4f2b-4450-8214-61facb451000",
+      "href": [
+        {
+          "@id": "https://github.com/ericof",
+          "title": "github.com/ericof"
+        }
+      ],
+      "id": "github",
+      "title": "GitHub"
+    },
+    {
+      "@id": "73e5bda6-caf4-45ea-829b-7fec1b7de6cc",
+      "href": [
+        {
+          "@id": "https://bsky.app/profile/ericof.com",
+          "title": "bsky.app/profile/ericof.com"
+        }
+      ],
+      "id": "bluesky",
+      "title": "BlueSky"
+    }
+  ],
+  "subjects": [],
+  "text": null,
+  "title": "\u00c9rico Andrei",
+  "type_title": "Presenter",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-22T19:09:38+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-22T19:15:07+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -21,15 +21,9 @@
       "b481c895-6660-4318-a956-b77eec8ea3ff"
     ]
   },
-  "contributors": [],
   "created": "2025-05-22T17:12:15+00:00",
-  "creators": [
-    "admin"
-  ],
   "description": "Main conference room",
-  "effective": "2025-05-22T17:13:42+00:00",
   "exclude_from_nav": false,
-  "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "id": "main-room",
@@ -40,8 +34,6 @@
   "modified": "2025-05-22T17:13:42+00:00",
   "preview_caption_link": null,
   "review_state": "published",
-  "rights": "",
-  "subjects": [],
   "title": "Main Room",
   "type_title": "Room",
   "version": "current",

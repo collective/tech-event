@@ -53,7 +53,7 @@
     "admin"
   ],
   "description": "About our event!",
-  "effective": "2025-05-22T17:13:42+00:00",
+  "effective": "2025-05-22T17:13:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},

@@ -1,0 +1,98 @@
+[
+  {
+      "_container": "/",
+      "type": "Image",
+      "id": "an-image",
+      "title": "A Random Image",
+      "description": "With some details",
+      "_image": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjCDO+/R8ABKsCZD++CcMAAAAASUVORK5CYII="
+  },
+  {
+      "_container": "/",
+      "type": "Presenter",
+      "id": "ericof",
+      "title": "Érico Andrei",
+      "description": "Awesome location for our event",
+      "social_links": [
+          {
+              "@id": "ee320a12-4f2b-4450-8214-61facb451000",
+              "href": [
+                  {
+                      "@id": "https://github.com/ericof",
+                      "title": "github.com/ericof"
+                  }
+              ],
+              "id": "github",
+              "title": "GitHub"
+          },
+          {
+              "@id": "73e5bda6-caf4-45ea-829b-7fec1b7de6cc",
+              "href": [
+                  {
+                      "@id": "https://bsky.app/profile/ericof.com",
+                      "title": "bsky.app/profile/ericof.com"
+                  }
+              ],
+              "id": "bluesky",
+              "title": "BlueSky"
+          }
+      ]
+  },
+  {
+      "_container": "/",
+      "type": "Venue",
+      "id": "venue",
+      "title": "Event Venue",
+      "description": "Awesome location for our event"
+  },
+  {
+      "_container": "/venue",
+      "type": "Room",
+      "id": "room-1",
+      "title": "Room 1",
+      "description": "Main conference room"
+  },
+  {
+      "_container": "/venue",
+      "type": "Room",
+      "id": "room-2",
+      "title": "Room 2",
+      "description": "Secondary conference room"
+  },
+  {
+      "_container": "/",
+      "type": "Schedule",
+      "id": "schedule",
+      "title": "Schedule",
+      "description": "Schedule for the event"
+  },
+  {
+      "_container": "/schedule",
+      "type": "Break",
+      "id": "break-01",
+      "title": "Lunch",
+      "description": "Lunch time",
+      "start": "2025-08-01T15:00:00",
+      "end": "2025-08-01T16:00:00"
+  },
+  {
+      "_container": "/schedule",
+      "type": "Break",
+      "id": "break-02",
+      "title": "Lunch",
+      "description": "Lunch time",
+      "slot_category": "lunch",
+      "start": "2025-08-02T15:00:00",
+      "end": "2025-08-02T16:00:00"
+  },
+  {
+      "_container": "/schedule",
+      "type": "Slot",
+      "id": "slot-01",
+      "title": "Photo",
+      "description": "Group Photo",
+      "slot_category": "photo",
+      "start": "2025-08-01T16:00:00",
+      "end": "2025-08-01T16:15:00"
+  }
+]

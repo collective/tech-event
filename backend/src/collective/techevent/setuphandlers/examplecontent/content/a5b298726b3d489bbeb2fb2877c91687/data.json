@@ -21,15 +21,9 @@
       "5f03570c-456b-46d2-8494-0808ad8f8e69"
     ]
   },
-  "contributors": [],
   "created": "2025-05-22T17:11:47+00:00",
-  "creators": [
-    "admin"
-  ],
   "description": "We are located at the heart of the city!",
-  "effective": "2025-05-22T17:13:42+00:00",
   "exclude_from_nav": false,
-  "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "id": "venue",
@@ -40,8 +34,6 @@
   "modified": "2025-05-22T17:13:42+00:00",
   "preview_caption_link": null,
   "review_state": "published",
-  "rights": "",
-  "subjects": [],
   "title": "Venue",
   "type_title": "Venue",
   "version": "current",

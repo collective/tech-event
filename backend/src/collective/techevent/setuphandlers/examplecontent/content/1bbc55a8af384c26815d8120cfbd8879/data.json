@@ -49,35 +49,53 @@
     "4f349347-7420-4ba8-b192-b17341cc7b8d": {
       "@type": "title"
     },
+    "78094b05-5be6-400d-89c8-c7f861be6719": {
+      "@type": "slate"
+    },
     "7ec05d4d-39d0-403d-8714-0153f644a0c3": {
       "@type": "description"
     },
+    "9b5557a9-951a-4254-b602-952966df6e80": {
+      "@type": "levelBenefitsBlock",
+      "tableTitle": "Compare",
+      "title": "Benefits"
+    },
     "fd8ac74c-ceaf-4367-aab9-afce9d068b1e": {
       "@type": "sponsorLevelBlock",
+      "displayCTA": true,
+      "href": [
+        {
+          "@id": "../../resolveuid/bd6bc5bf93e94938b9bf12ae1cd21994",
+          "@type": "SponsorsDB",
+          "Description": "Support our event",
+          "Title": "Sponsor Us",
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "",
+          "title": "Sponsor Us"
+        }
+      ],
+      "label": "Foo ",
       "styles": {
         "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
+          "--block-alignment": "var(--align-center)"
         }
       },
-      "title": "Gold Sponsors"
+      "title": "Our sponsors"
     }
   },
   "blocks_layout": {
     "items": [
       "4f349347-7420-4ba8-b192-b17341cc7b8d",
       "7ec05d4d-39d0-403d-8714-0153f644a0c3",
+      "9b5557a9-951a-4254-b602-952966df6e80",
+      "78094b05-5be6-400d-89c8-c7f861be6719",
       "fd8ac74c-ceaf-4367-aab9-afce9d068b1e"
     ]
   },
-  "contributors": [],
   "created": "2025-05-16T18:29:16+00:00",
-  "creators": [
-    "admin"
-  ],
   "description": "Gold Package",
-  "effective": "2025-05-16T18:34:00+00:00",
   "exclude_from_nav": false,
-  "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "id": "gold",
@@ -85,12 +103,11 @@
   "language": "##DEFAULT##",
   "layout": "view",
   "lock": {},
-  "modified": "2025-05-22T17:09:04+00:00",
+  "modified": "2025-05-22T19:00:44+00:00",
   "nav_title": null,
   "preview_caption_link": null,
+  "price": "USD 500",
   "review_state": "published",
-  "rights": "",
-  "subjects": [],
   "title": "Gold",
   "type_title": "Sponsorship Level",
   "version": "current",

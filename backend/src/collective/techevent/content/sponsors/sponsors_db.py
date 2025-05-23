@@ -1,5 +1,4 @@
 from collective.techevent import _
-from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.row import DictRow
 from plone.autoform import directives
 from plone.dexterity.content import Container
@@ -55,7 +54,6 @@ class ISponsorsDB(Interface):
     )
     directives.widget(
         "benefits",
-        DataGridFieldFactory,
         frontendOptions={
             "widget": "dataGridList",
             "widgetProps": {

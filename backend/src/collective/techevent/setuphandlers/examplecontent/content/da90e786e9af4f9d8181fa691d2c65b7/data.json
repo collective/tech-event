@@ -3,7 +3,38 @@
   "@type": "SponsorLevel",
   "UID": "da90e786e9af4f9d8181fa691d2c65b7",
   "allow_discussion": null,
-  "benefits": [],
+  "benefits": [
+    {
+      "@id": "9d4fbc03-5584-4615-ba76-052d3a777fcb",
+      "code": {
+        "title": "Complementary tickets",
+        "token": "327e1e26-77fc-4b3b-8748-32a4c1dae4ce"
+      },
+      "id": "9d4fbc03-5584-4615-ba76-052d3a777fcb",
+      "title": "Complementary tickets",
+      "value": "10"
+    },
+    {
+      "@id": "9d1e2b48-cd0a-414f-8b48-1de0ed4efb89",
+      "code": {
+        "title": "Logo on the site",
+        "token": "1b0c0980-8f16-4444-8fbb-ec8126cedbc7"
+      },
+      "id": "9d1e2b48-cd0a-414f-8b48-1de0ed4efb89",
+      "title": "Logo on the site",
+      "value": null
+    },
+    {
+      "@id": "4df62b10-30bb-41e4-ad9b-a09c346511bd",
+      "code": {
+        "title": "Logo in the registration",
+        "token": "6f9cd442-a7c7-41ea-9af2-4e6c2e9ef1e6"
+      },
+      "id": "4df62b10-30bb-41e4-ad9b-a09c346511bd",
+      "title": "Logo in the registration",
+      "value": null
+    }
+  ],
   "blocks": {
     "142d9eaa-a923-4a22-b764-b04bae00f2c8": {
       "@type": "sponsorLevelBlock",
@@ -13,32 +44,32 @@
       "title": "Our Sponsors"
     },
     "19f6b2f4-c276-4ed0-9c44-87e157a7209f": {
-      "@type": "slate"
+      "@type": "levelBenefitsBlock",
+      "tableTitle": "Compare",
+      "title": "Our Packages"
     },
     "4f349347-7420-4ba8-b192-b17341cc7b8d": {
       "@type": "title"
     },
     "7ec05d4d-39d0-403d-8714-0153f644a0c3": {
       "@type": "description"
+    },
+    "810d07ec-595d-4a99-ab87-87de6847f4ca": {
+      "@type": "slate"
     }
   },
   "blocks_layout": {
     "items": [
       "4f349347-7420-4ba8-b192-b17341cc7b8d",
       "7ec05d4d-39d0-403d-8714-0153f644a0c3",
+      "19f6b2f4-c276-4ed0-9c44-87e157a7209f",
       "142d9eaa-a923-4a22-b764-b04bae00f2c8",
-      "19f6b2f4-c276-4ed0-9c44-87e157a7209f"
+      "810d07ec-595d-4a99-ab87-87de6847f4ca"
     ]
   },
-  "contributors": [],
   "created": "2025-05-16T18:29:16+00:00",
-  "creators": [
-    "admin"
-  ],
   "description": "Silver Package",
-  "effective": "2025-05-16T18:34:00+00:00",
   "exclude_from_nav": false,
-  "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "id": "silver",
@@ -46,12 +77,11 @@
   "language": "##DEFAULT##",
   "layout": "view",
   "lock": {},
-  "modified": "2025-05-20T17:34:53+00:00",
+  "modified": "2025-05-22T19:19:14+00:00",
   "nav_title": null,
   "preview_caption_link": null,
+  "price": "",
   "review_state": "published",
-  "rights": "",
-  "subjects": [],
   "title": "Silver",
   "type_title": "Sponsorship Level",
   "version": "current",

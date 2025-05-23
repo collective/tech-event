@@ -65,7 +65,17 @@
       <role name="Contributor" />
     </permission>
 
-    <!-- Slots -->
+    <!-- Schedule -->
+    <permission acquire="True"
+                name="collective.techevent: Add Schedule"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Owner" />
+      <role name="Contributor" />
+    </permission>
+
+    <!-- Slot -->
     <permission acquire="True"
                 name="collective.techevent: Add Slot"
     >
