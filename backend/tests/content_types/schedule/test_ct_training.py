@@ -1,11 +1,11 @@
-from collective.techevent.content.schedule.slot import Slot
+from collective.techevent.content.schedule.training import Training
 
 import pytest
 
 
 @pytest.fixture
 def portal_type() -> str:
-    return "Slot"
+    return "Training"
 
 
 class TestContentType:
@@ -16,7 +16,7 @@ class TestContentType:
     def test_create(self, content_factory, payload, portal_type):
         content = content_factory(self.container, payload)
         assert content.portal_type == portal_type
-        assert isinstance(content, Slot)
+        assert isinstance(content, Training)
 
     @pytest.mark.parametrize(
         "role,expected",

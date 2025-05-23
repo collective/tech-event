@@ -13,16 +13,10 @@
   ],
   "durations_keynote": [
     {
-      "@id": "short",
-      "duration": 30,
-      "id": "short",
-      "title": "Short Talk"
-    },
-    {
       "@id": "long",
-      "duration": 45,
+      "duration": 60,
       "id": "long",
-      "title": "Long Talk"
+      "title": "Keynote"
     }
   ],
   "durations_talk": [

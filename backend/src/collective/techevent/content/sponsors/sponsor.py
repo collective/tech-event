@@ -1,4 +1,3 @@
-from Acquisition import aq_parent
 from collective.techevent import _
 from plone.app.dexterity.textindexer import searchable
 from plone.app.textfield import RichText as RichTextField
@@ -39,9 +38,3 @@ class ISponsor(Interface):
 @implementer(ISponsor)
 class Sponsor(Container):
     """Convenience subclass for ``Sponsor`` portal type."""
-
-    @property
-    def level(self) -> str:
-        """Return the id of the parent object."""
-        parent = aq_parent(self)
-        return parent.id if parent else ""

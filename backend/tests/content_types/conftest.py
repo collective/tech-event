@@ -47,13 +47,24 @@ def event_dates(portal):
 
 
 @pytest.fixture
-def brain_for_content():
+def catalog(portal):
+    """Return the catalog brain for a query."""
+
+    def func(**kw) -> list[str]:
+        with api.env.adopt_roles(["Manager"]):
+            brains = api.content.find(**kw)
+        return brains
+
+    return func
+
+
+@pytest.fixture
+def brain_for_content(catalog):
     """Return the catalog brain for a content."""
 
     def func(content: DexterityContent, **kw) -> list[str]:
         uuid = api.content.get_uuid(content)
-        with api.env.adopt_roles(["Manager"]):
-            brains = api.content.find(UID=uuid, **kw)
+        brains = catalog(UID=uuid, **kw)
         return brains[0] if brains else None
 
     return func

@@ -1,11 +1,16 @@
-from collective.techevent.content.schedule.slot import Slot
+from collective.techevent.content.schedule.lightning_talks import LightningTalks
 
 import pytest
 
 
 @pytest.fixture
 def portal_type() -> str:
-    return "Slot"
+    return "LightningTalks"
+
+
+@pytest.fixture
+def permission() -> str:
+    return "collective.techevent: Add Slot"
 
 
 class TestContentType:
@@ -16,7 +21,7 @@ class TestContentType:
     def test_create(self, content_factory, payload, portal_type):
         content = content_factory(self.container, payload)
         assert content.portal_type == portal_type
-        assert isinstance(content, Slot)
+        assert isinstance(content, LightningTalks)
 
     @pytest.mark.parametrize(
         "role,expected",

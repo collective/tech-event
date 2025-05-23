@@ -94,5 +94,169 @@
       "slot_category": "photo",
       "start": "2025-08-01T16:00:00",
       "end": "2025-08-01T16:15:00"
+  },
+  {
+      "_container": "/schedule",
+      "type": "Keynote",
+      "id": "keynote-01",
+      "title": "Keynote by John Doe",
+      "description": "Awesome keynote",
+      "start": "2025-08-01T16:15:00",
+      "end": "2025-08-01T17:00:00",
+      "duration": "long"
+  },
+  {
+      "_container": "/schedule",
+      "type": "Talk",
+      "id": "talk-01",
+      "title": "Plone API",
+      "description": "Plone API talk",
+      "start": "2025-08-01T17:05:00",
+      "end": "2025-08-01T17:50:00",
+      "duration": "long"
+  },
+  {
+      "_container": "/schedule",
+      "type": "LightningTalks",
+      "id": "lightningtalks-01",
+      "title": "Day 01 Talks",
+      "description": "Awesome slection of talks",
+      "start": "2025-08-01T17:50:00",
+      "end": "2025-08-01T18:00:00"
+  },
+  {
+      "_container": "/schedule",
+      "type": "Training",
+      "id": "training-01",
+      "title": "Plone Training",
+      "description": "Plone training",
+      "start": "2025-08-01T12:00:00",
+      "end": "2025-08-01T16:00:00",
+      "total_seats": 10,
+      "duration": "half-day"
+  },
+  {
+    "_container": "/",
+    "type": "SponsorsDB",
+    "id": "sponsor-us",
+    "title": "Sponsor Us",
+    "description": "Sponsor our event",
+    "benefits": [
+      {
+        "description": "Number of complementary tickets",
+        "id": "327e1e26-77fc-4b3b-8748-32a4c1dae4ce",
+        "title": "Complementary tickets"
+      },
+      {
+        "description": "Your brand displayed on our site",
+        "id": "1b0c0980-8f16-4444-8fbb-ec8126cedbc7",
+        "title": "Logo on the site"
+      },
+      {
+        "description": "Your brand on the registration desk",
+        "id": "6f9cd442-a7c7-41ea-9af2-4e6c2e9ef1e6",
+        "title": "Logo in the registration"
+      },
+      {
+        "description": "Minimum number of mentions on our social media",
+        "id": "9997992b-343a-4484-a3ab-a6f9eef89194",
+        "title": "Social Media"
+      }
+    ]
+  },
+  {
+      "_container": "/sponsor-us",
+      "type": "SponsorLevel",
+      "id": "gold",
+      "title": "Gold",
+      "description": "Gold package",
+      "benefits": [
+        {
+          "id": "327e1e26-77fc-4b3b-8748-32a4c1dae4ce",
+          "code": "327e1e26-77fc-4b3b-8748-32a4c1dae4ce",
+          "value": "20"
+        },
+        {
+          "code": "1b0c0980-8f16-4444-8fbb-ec8126cedbc7",
+          "id": "33120cc8-3f12-460f-92b7-139493c91376",
+          "value": null
+        }
+      ]
+  },
+  {
+      "_container": "/sponsor-us/gold",
+      "type": "Sponsor",
+      "id": "plonegovbr",
+      "title": "PloneGov-BR",
+      "description": "Plone Brasil",
+      "social_links": [
+        {
+          "@id": "fb755355-9439-4061-b76d-3ef1c7d4ac82",
+          "href": [
+            {
+              "@id": "https://github.com/plonegovbr",
+              "title": "github.com/plonegovbr"
+            }
+          ],
+          "id": "github",
+          "title": "GitHub"
+        },
+        {
+          "@id": "0e2df5de-189e-486d-8440-c5929785b1a2",
+          "href": [
+            {
+              "@id": "https://instagram.com/plonebr",
+              "title": "instagram.com/plonebr"
+            }
+          ],
+          "id": "instagram",
+          "title": "Instagram"
+        },
+        {
+          "@id": "fae7b9fa-4879-4c0a-a9a1-41efb582ce9b",
+          "href": [
+            {
+              "@id": "https://plone.org.br/gov",
+              "title": "plone.org.br/gov"
+            }
+          ],
+          "id": "website",
+          "title": "Website"
+        },
+        {
+          "@id": "038a078c-c9be-4464-b6a3-755fe3678a6a",
+          "href": [
+            {
+              "@id": "https://bsky.app/profile/plone.org.br",
+              "title": "bsky.app/profile/plone.org.br"
+            }
+          ],
+          "id": "bluesky",
+          "title": "BlueSky"
+        },
+        {
+          "@id": "bcf25955-1a80-461d-8f39-80351a9510d8",
+          "href": [
+            {
+              "@id": "https://plone.social/ploneorgbr",
+              "title": "plone.social/ploneorgbr"
+            }
+          ],
+          "id": "mastodon",
+          "title": "Mastodon"
+        },
+        {
+          "@id": "ffced205-c16e-4caf-8153-ec607371c7f1",
+          "href": [
+            {
+              "@id": "https://twitter.com/ploneorgbr",
+              "title": "twitter.com/ploneorgbr"
+            }
+          ],
+          "id": "x",
+          "title": "X"
+        }
+      ]
   }
+
 ]

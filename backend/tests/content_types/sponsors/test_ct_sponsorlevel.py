@@ -1,11 +1,11 @@
-from collective.techevent.content.schedule.slot import Slot
+from collective.techevent.content.sponsors.sponsor_level import SponsorLevel
 
 import pytest
 
 
 @pytest.fixture
 def portal_type() -> str:
-    return "Slot"
+    return "SponsorLevel"
 
 
 class TestContentType:
@@ -16,7 +16,7 @@ class TestContentType:
     def test_create(self, content_factory, payload, portal_type):
         content = content_factory(self.container, payload)
         assert content.portal_type == portal_type
-        assert isinstance(content, Slot)
+        assert isinstance(content, SponsorLevel)
 
     @pytest.mark.parametrize(
         "role,expected",
@@ -34,9 +34,3 @@ class TestContentType:
     ):
         roles = roles_permission_on(permission, self.container)
         assert (role in roles) is expected
-
-    def test_slot_indexed(self, search_slot_event_dates, portal_type, content_instance):
-        results = search_slot_event_dates(portal_type)
-        assert len(results) > 0
-        uids = [brain.UID for brain in results]
-        assert content_instance.UID() in uids
