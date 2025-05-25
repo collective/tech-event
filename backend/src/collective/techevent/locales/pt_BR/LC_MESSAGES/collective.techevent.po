@@ -1,10 +1,7 @@
-#--- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-#SOME DESCRIPTIVE TITLE.
-#FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-05-25 13:41+0000\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,517 +12,512 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: collective.techevent\n"
-
-#: collective/techevent/behaviors/session.py:29
-#: collective/techevent/content/sponsors/sponsor_level.py:30
-msgid ""
-msgstr ""
+"Domain: DOMAIN\n"
 
 #: collective/techevent/profiles/default/types/Keynote.xml
 msgid "A Keynote in the Event."
-msgstr ""
+msgstr "Palestrante principal do evento."
 
 #: collective/techevent/profiles/default/types/Presenter.xml
 msgid "A Presenter in the Event."
-msgstr ""
+msgstr "Palestrante do evento."
 
 #: collective/techevent/profiles/default/types/Room.xml
 msgid "A Room in the venue."
-msgstr ""
+msgstr "Uma sala no local do evento."
 
 #: collective/techevent/profiles/default/types/Slot.xml
 msgid "A Slot in the Event."
-msgstr ""
+msgstr "Um espaço na grade do evento."
 
 #: collective/techevent/profiles/default/types/Talk.xml
 msgid "A Talk in the Event."
-msgstr ""
+msgstr "Uma apresentação no evento."
 
 #: collective/techevent/profiles/default/types/Training.xml
 msgid "A Training in the Event."
-msgstr ""
+msgstr "Um tutorial no evento."
 
 #: collective/techevent/profiles/default/types/Venue.xml
 msgid "A Venue in the Event."
-msgstr ""
+msgstr "Um local de realização do evento."
 
 #: collective/techevent/profiles/default/types/Meeting.xml
 msgid "A meeting in the Event."
-msgstr ""
+msgstr "Uma reunião / encontro no evento."
 
 #: collective/techevent/profiles/default/types/Break.xml
 msgid "A schedule break in the Event."
-msgstr ""
+msgstr "Uma pausa na grade do evento"
 
 #: collective/techevent/behaviors/session.py:18
 msgid "Abstract"
-msgstr ""
+msgstr "Detalhamento"
 
 #: collective/techevent/behaviors/tech_event.py:78
 msgid "Activity duration"
-msgstr ""
+msgstr "Duração da atividade"
 
 #: collective/techevent/content/sponsors/sponsor_level.py:36
 msgid "Additional Information"
-msgstr ""
+msgstr "Informação adicional"
 
 #: collective/techevent/content/sponsors/sponsors_db.py:50
 msgid "All benefits for sponsoring this event."
-msgstr ""
+msgstr "Todoos os benefícios para patrocinadores do evento."
 
 #: collective/techevent/behaviors/tech_event.py:124
 msgid "All tracks available at this event."
-msgstr ""
+msgstr "Todas as trilhas disponíveis nesse evento."
 
 #: collective/techevent/profiles/default/types/Tech_Event.xml
 msgid "An edition of an event."
-msgstr ""
+msgstr "Uma edição do evento."
 
 #: collective/techevent/behaviors/session.py:47
 #: collective/techevent/behaviors/tech_event.py:58
 msgid "Audience"
-msgstr ""
+msgstr "Público-alvo"
 
 #: collective/techevent/content/sponsors/sponsor_level.py:29
 #: collective/techevent/content/sponsors/sponsors_db.py:26
 msgid "Benefit"
-msgstr ""
+msgstr "Benefício"
 
 #: collective/techevent/content/sponsors/sponsors_db.py:33
 msgid "Benefit description"
-msgstr ""
+msgstr "Descrição"
 
 #: collective/techevent/content/sponsors/sponsors_db.py:27
 msgid "Benefit title"
-msgstr ""
+msgstr "Benefício"
 
 #: collective/techevent/content/sponsors/sponsor_level.py:61
 #: collective/techevent/content/sponsors/sponsors_db.py:49
 msgid "Benefits"
-msgstr ""
+msgstr "Benefícios"
 
 #: collective/techevent/content/sponsors/sponsor_level.py:68
 msgid "Benefits of this level."
-msgstr ""
+msgstr "Benefícios dessa cota."
 
 #: collective/techevent/profiles/default/types/Break.xml
 msgid "Break"
-msgstr ""
+msgstr "Pausa"
 
 #: collective/techevent/content/presenter.py:43
 msgid "Categories"
-msgstr ""
+msgstr "Categorias"
 
 #: collective/techevent/behaviors/schedule.py:51
 #: collective/techevent/content/schedule/slots/schedule_break.py:12
 msgid "Category"
-msgstr ""
+msgstr "Categoria"
 
 #: collective/techevent/content/schedule/slots/schedule_break.py:13
 msgid "Category of the slot"
-msgstr ""
+msgstr "Categoria do espaço"
 
 #: collective/techevent/behaviors/schedule.py:52
 msgid "Category of this slot"
-msgstr ""
+msgstr "Categoria desse espaço"
 
 #: collective/techevent/behaviors/tech_event.py:23
 msgid "Code"
-msgstr ""
+msgstr "Código"
 
 #: collective/techevent/behaviors/tech_event.py:54
 msgid "Code of this audience"
-msgstr ""
+msgstr "Código desse público-alvo"
 
 #: collective/techevent/behaviors/tech_event.py:69
 msgid "Code of this duration"
-msgstr ""
+msgstr "Código dessa duração"
 
 #: collective/techevent/behaviors/tech_event.py:39
 msgid "Code of this level"
-msgstr ""
+msgstr "Código desse nível"
 
 #: collective/techevent/behaviors/tech_event.py:24
 msgid "Code of this track"
-msgstr ""
+msgstr "Código dessa trilha"
 
 #: collective/techevent/vocabularies/slot.py:13
 msgid "Coffee-Break"
-msgstr ""
+msgstr "Coffee-Break"
 
 #: collective/techevent/vocabularies/slot.py:16
 msgid "Conference Photo"
-msgstr ""
+msgstr "Foto dos participantes"
 
 #: collective/techevent/profiles.zcml:23
 msgid "Create example content to showcase this add-on"
-msgstr ""
+msgstr "Cria conteúdo de exemplo para esse complemento."
 
 #: collective/techevent/content/sponsors/sponsors_db.py:32
 msgid "Description"
-msgstr ""
+msgstr "Sumário"
 
 #: collective/techevent/behaviors/session.py:21
 msgid "Details"
-msgstr ""
+msgstr "Detalhes"
 
 #: collective/techevent/content/schedule/talk.py:12
 #: collective/techevent/content/schedule/training.py:13
 msgid "Duration"
-msgstr ""
+msgstr "Duração"
 
 #: collective/techevent/content/schedule/talk.py:13
 msgid "Duration of the talk"
-msgstr ""
+msgstr "Duração da apresentação"
 
 #: collective/techevent/content/schedule/training.py:14
 msgid "Duration of the training"
-msgstr ""
+msgstr "Duração do tutorial"
 
 #: collective/techevent/profiles/default/types/Slot.xml
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: collective/techevent/content/presenter.py:38
 msgid "Email address"
-msgstr ""
+msgstr "Endereço de e-mail"
 
 #: collective/techevent/behaviors/schedule.py:31
 #: collective/techevent/behaviors/tech_event.py:112
 msgid "End time"
-msgstr ""
+msgstr "Término"
 
 #: collective/techevent/behaviors/schedule.py:39
 #: collective/techevent/behaviors/tech_event.py:120
 msgid "End time must be after start time."
-msgstr ""
+msgstr "O horário de término deve ser posterior ao horário de início."
 
 #: collective/techevent/profiles/default/types/Schedule.xml
 msgid "Event Schedule information."
-msgstr ""
+msgstr "Grade de atividades do evento."
 
 #: collective/techevent/behaviors/tech_event.py:91
 msgid "Event Settings"
-msgstr ""
+msgstr "Configurações do evento"
 
 #: collective/techevent/profiles/default/types/Sponsor.xml
 msgid "Event Sponsor."
-msgstr ""
+msgstr "Patrocinador do evento."
 
 #: collective/techevent/profiles/default/types/SponsorsDB.xml
 msgid "Event Sponsoring information."
-msgstr ""
+msgstr "Informações para patrocínio no evento/"
 
 #: collective/techevent/behaviors/tech_event.py:79
 msgid "How long, in minutes, this activity will use."
-msgstr ""
+msgstr "Quão longa, em minutos, essa atividade será."
 
 #: collective/techevent/content/sponsors/sponsor_level.py:22
 #: collective/techevent/content/sponsors/sponsors_db.py:20
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: collective/techevent/content/sponsors/sponsor_level.py:23
 #: collective/techevent/content/sponsors/sponsors_db.py:21
 msgid "ID of this benefit"
-msgstr ""
+msgstr "ID desse benefício"
 
 #: collective/techevent/vocabularies/presenter.py:16
 msgid "Instructor"
-msgstr ""
+msgstr "Intrutor"
 
 #: collective/techevent/content/sponsors/sponsor_level.py:53
 msgid "Investment"
-msgstr ""
+msgstr "Investimento"
 
 #: collective/techevent/content/sponsors/sponsor_level.py:54
 msgid "Investment for this level"
-msgstr ""
+msgstr "Investimento para essa cota"
 
 #: collective/techevent/profiles/default/types/Keynote.xml
 msgid "Keynote"
-msgstr ""
+msgstr "Palestrante Principal"
 
 #: collective/techevent/vocabularies/presenter.py:14
 msgid "Keynote Speaker"
-msgstr ""
+msgstr "Palestrante Principal"
 
 #: collective/techevent/behaviors/tech_event.py:174
 msgid "Keynote: Slot duration"
-msgstr ""
+msgstr "Keynote: Duração do slot"
 
 #: collective/techevent/behaviors/session.py:38
 #: collective/techevent/behaviors/tech_event.py:43
 msgid "Level"
-msgstr ""
+msgstr "Nível"
 
 #: collective/techevent/behaviors/tech_event.py:141
 msgid "Levels for a session."
-msgstr ""
+msgstr "Níveis para uma sessão"
 
 #: collective/techevent/profiles/default/types/LightningTalks.xml
 msgid "Lightning Talks"
-msgstr ""
+msgstr "Palestras relâmpago"
 
 #: collective/techevent/profiles/default/types/LightningTalks.xml
 msgid "Lightning Talks slot in the Event."
-msgstr ""
+msgstr "Espaço para palestras relâmpago no evento."
 
 #: collective/techevent/vocabularies/slot.py:14
 msgid "Lunch"
-msgstr ""
+msgstr "Almoço"
 
 #: collective/techevent/profiles/default/types/Meeting.xml
 #: collective/techevent/vocabularies/slot.py:15
 msgid "Meeting"
-msgstr ""
+msgstr "Reunião"
 
 #: collective/techevent/profiles/default/types/OpenSpace.xml
 msgid "Open Space"
-msgstr ""
+msgstr "Open Space"
 
 #: collective/techevent/profiles/default/types/OpenSpace.xml
 msgid "Open space slot in the Event."
-msgstr ""
+msgstr "Espaço para open space durante o evento."
 
 #: collective/techevent/profiles/default/types/SponsorLevel.xml
 msgid "Package of sponsorship for the event."
-msgstr ""
+msgstr "Cota de patrocínio no evento"
 
 #: collective/techevent/profiles.zcml:14
 msgid "Package to configure a new Tech Event for Plone site"
-msgstr ""
+msgstr "Complemento para configurar o suporte a eventos de tecnologia para o Plone"
 
 #: collective/techevent/vocabularies/presenter.py:17
 msgid "Plone Foundation Member"
-msgstr ""
+msgstr "Membro da Plone Foundation"
 
 #: collective/techevent/behaviors/tech_event.py:175
 msgid "Possible slot duration for a keynote"
-msgstr ""
+msgstr "Possíveis durações para um keynote"
 
 #: collective/techevent/behaviors/tech_event.py:192
 msgid "Possible slot duration for a talk"
-msgstr ""
+msgstr "Possíveis durações para uma apresentação"
 
 #: collective/techevent/behaviors/tech_event.py:209
 msgid "Possible slot duration for a training"
-msgstr ""
+msgstr "Possíveis durações para um treinamento"
 
 #: collective/techevent/profiles/default/types/Presenter.xml
 msgid "Presenter"
-msgstr ""
+msgstr "Palestrante"
 
 #: collective/techevent/content/presenter.py:39
 msgid "Presenteral e-mail address"
-msgstr ""
+msgstr "E-mail do palestrante"
 
 #: collective/techevent/behaviors/session.py:28
 msgid "Presenters"
-msgstr ""
+msgstr "Palestrantes"
 
 #: collective/techevent/vocabularies/slot.py:12
 msgid "Registration"
-msgstr ""
+msgstr "Credenciamento"
 
 #: collective/techevent/content/schedule/training.py:20
 msgid "Requirements"
-msgstr ""
+msgstr "Pré-requisitos"
 
 #: collective/techevent/content/schedule/training.py:21
 msgid "Requirements of this training"
-msgstr ""
+msgstr "Pré-requisitos desse tutorial"
 
 #: collective/techevent/behaviors/schedule.py:42
 #: collective/techevent/profiles/default/types/Room.xml
 msgid "Room"
-msgstr ""
+msgstr "Sala"
 
 #: collective/techevent/behaviors/schedule.py:43
 msgid "Room the activity will take place"
-msgstr ""
+msgstr "Sala que a atividade ocorrerá"
 
 #: collective/techevent/behaviors/schedule.py:19
 #: collective/techevent/profiles/default/types/Schedule.xml
 msgid "Schedule"
-msgstr ""
+msgstr "Grade"
 
 #: collective/techevent/content/schedule/training.py:27
 msgid "Seats"
-msgstr ""
+msgstr "Vagas"
 
 #: collective/techevent/behaviors/tech_event.py:157
 msgid "Session Audience"
-msgstr ""
+msgstr "Público alvo das sessões"
 
 #: collective/techevent/behaviors/tech_event.py:140
 msgid "Session Levels"
-msgstr ""
+msgstr "Nível das sessões"
 
 #: collective/techevent/controlpanel/tech_event.py:14
 msgid "Should we support multiple events"
-msgstr ""
+msgstr "Devemos suportar múltiplos eventos?"
 
 #: collective/techevent/profiles/default/types/Slot.xml
 msgid "Slot"
-msgstr ""
+msgstr "Slot"
 
 #: collective/techevent/vocabularies/presenter.py:15
 msgid "Speaker"
-msgstr ""
+msgstr "Palestrante"
 
 #: collective/techevent/profiles/default/types/Sponsor.xml
 msgid "Sponsor"
-msgstr ""
+msgstr "Patrocinador"
 
 #: collective/techevent/profiles/default/types/SponsorsDB.xml
 msgid "Sponsors Database"
-msgstr ""
+msgstr "Patrocínios"
 
 #: collective/techevent/profiles/default/types/SponsorLevel.xml
 msgid "Sponsorship Level"
-msgstr ""
+msgstr "Cota de Patrocínio"
 
 #: collective/techevent/behaviors/schedule.py:23
 #: collective/techevent/behaviors/tech_event.py:104
 msgid "Start time"
-msgstr ""
+msgstr "Início"
 
 #: collective/techevent/profiles/default/types/Talk.xml
 msgid "Talk"
-msgstr ""
+msgstr "Apresentação"
 
 #: collective/techevent/behaviors/tech_event.py:191
 msgid "Talk: Slot duration"
-msgstr ""
+msgstr "Apresentação: Duração do slot"
 
 #: collective/techevent/behaviors/session.py:39
 msgid "Target Level"
-msgstr ""
+msgstr "Nível"
 
 #: collective/techevent/behaviors/session.py:48
 msgid "Target audience"
-msgstr ""
+msgstr "Público alvo"
 
 #: collective/techevent/behaviors/tech_event.py:158
 msgid "Target group for this audience."
-msgstr ""
+msgstr "Público alvo"
 
 #: collective/techevent/profiles/default/types/Tech_Event.xml
 msgid "Tech Event"
-msgstr ""
+msgstr "Evento Técnico"
 
 #: collective/techevent/profiles.zcml:23
 msgid "Tech Event for Plone: Demo content"
-msgstr ""
+msgstr "Evento Técnico: Conteúdo de exemplo"
 
 #: collective/techevent/profiles.zcml:14
 msgid "Tech Event for Plone: Install"
-msgstr ""
+msgstr "Evento Técnico: Suporte a eventos de tecnologia para Plone"
 
 #: collective/techevent/profiles.zcml:31
 msgid "Tech Event for Plone: Uninstall"
-msgstr ""
+msgstr "Evento Técnico: Remover"
 
 #: collective/techevent/controlpanel/tech_event.py:23
 msgid "TechEvent Settings"
-msgstr ""
+msgstr "Evento Técnico: Configurações"
 
 #: collective/techevent/behaviors/session.py:17
 #: collective/techevent/behaviors/tech_event.py:73
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #: collective/techevent/behaviors/tech_event.py:59
 msgid "Title of this audience"
-msgstr ""
+msgstr "Título do público-alvo"
 
 #: collective/techevent/behaviors/tech_event.py:74
 msgid "Title of this duration"
-msgstr ""
+msgstr "Título da duração"
 
 #: collective/techevent/behaviors/tech_event.py:44
 msgid "Title of this level"
-msgstr ""
+msgstr "Título do nível"
 
 #: collective/techevent/behaviors/tech_event.py:29
 msgid "Title of this track"
-msgstr ""
+msgstr "Título da trilha"
 
 #: collective/techevent/content/schedule/training.py:28
 msgid "Total number of seats"
-msgstr ""
+msgstr "Número de vagas"
 
 #: collective/techevent/behaviors/session.py:63
 #: collective/techevent/behaviors/tech_event.py:28
 msgid "Track"
-msgstr ""
+msgstr "Trilha"
 
 #: collective/techevent/behaviors/session.py:64
 msgid "Track this sessionctivity will be listed"
-msgstr ""
+msgstr "Trilha que essa sessão será listada"
 
 #: collective/techevent/behaviors/tech_event.py:123
 msgid "Tracks"
-msgstr ""
+msgstr "Trilhas"
 
 #: collective/techevent/profiles/default/types/Training.xml
 msgid "Training"
-msgstr ""
+msgstr "Tutorial"
 
 #: collective/techevent/behaviors/tech_event.py:208
 msgid "Training: Slot duration"
-msgstr ""
+msgstr "Tutorial: Duração do slot"
 
 #: collective/techevent/profiles.zcml:31
 msgid "Uninstall Tech Event for Plone setup."
-msgstr ""
+msgstr "Remove o suporte a Eventos Técnicos."
 
 #: collective/techevent/profiles/default/types/Venue.xml
 msgid "Venue"
-msgstr ""
+msgstr "Local"
 
 #: collective/techevent/profiles/default/types/Slot.xml
 msgid "View"
-msgstr ""
+msgstr "Visão"
 
 #: collective/techevent/controlpanel/tech_event.py:15
 msgid "When selected, we will add a content type TechEvent."
-msgstr ""
+msgstr "Quando selectionado, permitirá a criação de conteúdos do tipo Evento Técnico"
 
 #. Default: "Used in item listings and search results."
 #: collective/techevent/content/presenter.py:28
 #: collective/techevent/content/sponsors/sponsor.py:20
 msgid "help_description"
-msgstr ""
+msgstr "Utilizado em listagens e resultados de busca"
 
 #. Default: "Short Biography"
 #: collective/techevent/content/presenter.py:27
 msgid "label_biography"
-msgstr ""
+msgstr "Biografia"
 
 #. Default: "Summary"
 #: collective/techevent/content/sponsors/sponsor.py:19
 msgid "label_description"
-msgstr ""
+msgstr "Sumário"
 
 #. Default: "Language"
 #: collective/techevent/behaviors/session.py:55
 msgid "label_language"
-msgstr ""
+msgstr "Idioma"
 
 #. Default: "Name"
 #: collective/techevent/content/presenter.py:24
 msgid "label_name"
-msgstr ""
+msgstr "Nome"
 
 #. Default: "Text"
 #: collective/techevent/content/sponsors/sponsor.py:29
 msgid "label_text"
-msgstr ""
+msgstr "Texto"
 
 #. Default: "Title"
 #: collective/techevent/content/sponsors/sponsor.py:16
 msgid "label_title"
-msgstr ""
+msgstr "Título"

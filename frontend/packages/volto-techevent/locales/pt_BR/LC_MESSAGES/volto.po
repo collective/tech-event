@@ -15,3 +15,118 @@ msgstr ""
 "Language-Name: Português do Brasil\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
+
+#. Default: "Add"
+#: components/Widgets/DataGridList
+msgid "Add (object list)"
+msgstr "Adicionar"
+
+#. Default: "Align"
+#: messages
+msgid "Align"
+msgstr "Alinhamento"
+
+#. Default: "Be the first!"
+#: messages
+msgid "Be the first!"
+msgstr "Seja o primeiro!"
+
+#. Default: "Benefit"
+#: messages
+msgid "Benefit"
+msgstr "Benefício"
+
+#. Default: "CTA Label"
+#: messages
+msgid "CTA Label"
+msgstr "Texto CTA"
+
+#. Default: "Collapse item"
+#: components/Widgets/DataGridList
+msgid "Collapse item"
+msgstr "Colapsar item"
+
+#. Default: "Display CTA?"
+#: messages
+msgid "Display CTA?"
+msgstr "Exibir botão de ação"
+
+#. Default: "Empty object list"
+#: components/Widgets/DataGridList
+msgid "Empty object list"
+msgstr "Lista vazia"
+
+#. Default: "Heading"
+#: messages
+msgid "Heading"
+msgstr "Cabeçalho"
+
+#. Default: "Package Benefits"
+#: messages
+msgid "Package Benefits"
+msgstr "Benefícios da Cota"
+
+#. Default: "Package Comparison"
+#: messages
+msgid "Package Comparison"
+msgstr "Comparação de cotas"
+
+#. Default: "Packages & Sponsors"
+#: messages
+msgid "Packages & Sponsors"
+msgstr "Cotas e Apoiadores"
+
+#. Default: "Remove item"
+#: components/Widgets/DataGridList
+msgid "Remove item"
+msgstr "Excluir item"
+
+#. Default: "Show item"
+#: components/Widgets/DataGridList
+msgid "Show item"
+msgstr "Exibir Item"
+
+#. Default: "Sponsor Level"
+#: messages
+msgid "Sponsor Level"
+msgstr "Cota"
+
+#. Default: "Sponsor Us"
+#: messages
+msgid "Sponsor Us"
+msgstr "Apoie"
+
+#. Default: "Sponsors"
+#: messages
+msgid "Sponsors"
+msgstr "Apoiadores"
+
+#. Default: "Sponsorship Form"
+#: messages
+msgid "Sponsorship Form"
+msgstr "Formulário de patrocínio"
+
+#. Default: "Title"
+#: messages
+msgid "Title"
+msgstr "Título"
+
+#. Default: "Instructor"
+#: components/Presenter/PresenterCategory
+msgid "instructor"
+msgstr "instrutor/a"
+
+#. Default: "Keynote Speaker"
+#: components/Presenter/PresenterCategory
+msgid "keynote-speaker"
+msgstr "Keynote"
+
+#. Default: "Plone Foundation Member"
+#: components/Presenter/PresenterCategory
+msgid "pf-member"
+msgstr "Membro Plone Foundation"
+
+#. Default: "Speaker"
+#: components/Presenter/PresenterCategory
+msgid "speaker"
+msgstr "Palestrante"

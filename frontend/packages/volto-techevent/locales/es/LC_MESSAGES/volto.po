@@ -17,3 +17,118 @@ msgstr ""
 "Domain: volto\n"
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: Poedit 2.2.1\n"
+
+#. Default: "Add"
+#: components/Widgets/DataGridList
+msgid "Add (object list)"
+msgstr ""
+
+#. Default: "Align"
+#: messages
+msgid "Align"
+msgstr ""
+
+#. Default: "Be the first!"
+#: messages
+msgid "Be the first!"
+msgstr ""
+
+#. Default: "Benefit"
+#: messages
+msgid "Benefit"
+msgstr ""
+
+#. Default: "CTA Label"
+#: messages
+msgid "CTA Label"
+msgstr ""
+
+#. Default: "Collapse item"
+#: components/Widgets/DataGridList
+msgid "Collapse item"
+msgstr ""
+
+#. Default: "Display CTA?"
+#: messages
+msgid "Display CTA?"
+msgstr ""
+
+#. Default: "Empty object list"
+#: components/Widgets/DataGridList
+msgid "Empty object list"
+msgstr ""
+
+#. Default: "Heading"
+#: messages
+msgid "Heading"
+msgstr ""
+
+#. Default: "Package Benefits"
+#: messages
+msgid "Package Benefits"
+msgstr ""
+
+#. Default: "Package Comparison"
+#: messages
+msgid "Package Comparison"
+msgstr ""
+
+#. Default: "Packages & Sponsors"
+#: messages
+msgid "Packages & Sponsors"
+msgstr ""
+
+#. Default: "Remove item"
+#: components/Widgets/DataGridList
+msgid "Remove item"
+msgstr ""
+
+#. Default: "Show item"
+#: components/Widgets/DataGridList
+msgid "Show item"
+msgstr ""
+
+#. Default: "Sponsor Level"
+#: messages
+msgid "Sponsor Level"
+msgstr ""
+
+#. Default: "Sponsor Us"
+#: messages
+msgid "Sponsor Us"
+msgstr ""
+
+#. Default: "Sponsors"
+#: messages
+msgid "Sponsors"
+msgstr ""
+
+#. Default: "Sponsorship Form"
+#: messages
+msgid "Sponsorship Form"
+msgstr ""
+
+#. Default: "Title"
+#: messages
+msgid "Title"
+msgstr ""
+
+#. Default: "Instructor"
+#: components/Presenter/PresenterCategory
+msgid "instructor"
+msgstr ""
+
+#. Default: "Keynote Speaker"
+#: components/Presenter/PresenterCategory
+msgid "keynote-speaker"
+msgstr ""
+
+#. Default: "Plone Foundation Member"
+#: components/Presenter/PresenterCategory
+msgid "pf-member"
+msgstr ""
+
+#. Default: "Speaker"
+#: components/Presenter/PresenterCategory
+msgid "speaker"
+msgstr ""
