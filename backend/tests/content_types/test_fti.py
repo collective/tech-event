@@ -1,9 +1,194 @@
-from collective.techevent.content.location.room import Room
-from collective.techevent.content.location.venue import Venue
 from plone.dexterity.fti import DexterityFTI
+from plone.dexterity.utils import resolveDottedName
 from zope.component import createObject
 
 import pytest
+
+
+_BEHAVIORS_BY_CT = (
+    (
+        "Venue",
+        [
+            "plone.basic",
+            "plone.namefromtitle",
+            "plone.excludefromnavigation",
+            "volto.preview_image_link",
+            "plone.shortname",
+            "volto.navtitle",
+            "volto.blocks",
+        ],
+    ),
+    (
+        "Room",
+        [
+            "plone.basic",
+            "plone.namefromtitle",
+            "plone.excludefromnavigation",
+            "volto.preview_image_link",
+            "plone.shortname",
+            "volto.navtitle",
+            "volto.blocks",
+        ],
+    ),
+    (
+        "Presenter",
+        [
+            "plonegovbr.socialmedia.links",
+            "plone.namefromtitle",
+            "plone.categorization",
+            "plone.excludefromnavigation",
+            "plone.leadimage",
+            "plone.shortname",
+            "plone.richtext",
+        ],
+    ),
+    (
+        "Schedule",
+        [
+            "plone.basic",
+            "volto.preview_image_link",
+            "volto.navtitle",
+            "volto.blocks",
+            "plone.namefromtitle",
+            "plone.excludefromnavigation",
+            "plone.shortname",
+        ],
+    ),
+    (
+        "Break",
+        [
+            "plone.namefromtitle",
+            "plone.categorization",
+            "plone.excludefromnavigation",
+            "collective.techevent.schedule",
+            "plone.shortname",
+            "volto.preview_image_link",
+            "plone.basic",
+        ],
+    ),
+    (
+        "Keynote",
+        [
+            "plone.namefromtitle",
+            "plone.categorization",
+            "plone.excludefromnavigation",
+            "collective.techevent.session",
+            "collective.techevent.schedule",
+            "volto.preview_image_link",
+            "plone.shortname",
+        ],
+    ),
+    (
+        "Talk",
+        [
+            "plone.namefromtitle",
+            "plone.categorization",
+            "plone.excludefromnavigation",
+            "collective.techevent.session",
+            "collective.techevent.schedule",
+            "volto.preview_image_link",
+            "plone.shortname",
+        ],
+    ),
+    (
+        "Training",
+        [
+            "plone.namefromtitle",
+            "plone.categorization",
+            "plone.excludefromnavigation",
+            "collective.techevent.session",
+            "collective.techevent.schedule",
+            "volto.preview_image_link",
+            "plone.shortname",
+        ],
+    ),
+    (
+        "Slot",
+        [
+            "plone.namefromtitle",
+            "plone.categorization",
+            "plone.excludefromnavigation",
+            "collective.techevent.schedule",
+            "volto.preview_image_link",
+            "plone.shortname",
+        ],
+    ),
+    (
+        "LightningTalks",
+        [
+            "plone.namefromtitle",
+            "plone.categorization",
+            "plone.excludefromnavigation",
+            "collective.techevent.schedule",
+            "volto.preview_image_link",
+            "plone.shortname",
+        ],
+    ),
+    (
+        "OpenSpace",
+        [
+            "plone.namefromtitle",
+            "plone.categorization",
+            "plone.excludefromnavigation",
+            "collective.techevent.schedule",
+            "volto.preview_image_link",
+            "plone.shortname",
+        ],
+    ),
+    (
+        "Meeting",
+        [
+            "plone.namefromtitle",
+            "plone.categorization",
+            "plone.excludefromnavigation",
+            "collective.techevent.schedule",
+            "volto.preview_image_link",
+            "plone.shortname",
+        ],
+    ),
+    (
+        "SponsorsDB",
+        [
+            "plone.basic",
+            "volto.preview_image_link",
+            "volto.navtitle",
+            "volto.blocks",
+            "plone.namefromtitle",
+            "plone.excludefromnavigation",
+            "plone.shortname",
+        ],
+    ),
+    (
+        "SponsorLevel",
+        [
+            "plone.basic",
+            "volto.preview_image_link",
+            "volto.navtitle",
+            "volto.blocks",
+            "plone.namefromtitle",
+            "plone.excludefromnavigation",
+            "plone.shortname",
+        ],
+    ),
+    (
+        "Sponsor",
+        [
+            "plonegovbr.socialmedia.links",
+            "plone.leadimage",
+            "plone.namefromtitle",
+            "plone.excludefromnavigation",
+            "plone.shortname",
+        ],
+    ),
+)
+
+
+def behaviors_parameters() -> tuple[tuple[str, str], ...]:
+    parameters = []
+    for ct, behaviors in _BEHAVIORS_BY_CT:
+        for behavior in behaviors:
+            parameters.append((ct, behavior))
+    return tuple(parameters)
 
 
 @pytest.fixture(scope="class")
@@ -109,15 +294,39 @@ class TestContentTypeFTI:
         assert getattr(fti, attr) == expected
 
     @pytest.mark.parametrize(
-        "portal_type,klass",
+        "portal_type",
         [
-            ("Venue", Venue),
-            ("Room", Room),
+            "Break",
+            "Keynote",
+            "LightningTalks",
+            "Meeting",
+            "OpenSpace",
+            "Presenter",
+            "Room",
+            "Schedule",
+            "Slot",
+            "Sponsor",
+            "SponsorLevel",
+            "SponsorsDB",
+            "Talk",
+            "Tech Event",
+            "Training",
+            "Venue",
         ],
     )
-    def test_factory(self, get_fti, portal_type: str, klass):
-        factory = get_fti(portal_type).factory
+    def test_factory(self, get_fti, portal_type: str):
+        fti = get_fti(portal_type)
+        factory = fti.factory
+        klass = resolveDottedName(fti.klass)
         obj = createObject(factory)
         assert obj is not None
         assert isinstance(obj, klass)
         assert obj.portal_type == portal_type
+
+    @pytest.mark.parametrize(
+        "portal_type,behavior",
+        behaviors_parameters(),
+    )
+    def test_behavior_present(self, get_fti, portal_type: str, behavior: str):
+        behaviors = get_fti(portal_type).behaviors
+        assert behavior in behaviors

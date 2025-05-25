@@ -1,20 +1,6 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    >
+<configure xmlns="http://namespaces.zope.org/zope">
 
-  <!-- Example upgrade step
-  <genericsetup:upgradeSteps
-      profile="collective.techevent:default"
-      source="1000"
-      destination="1001"
-      >
-    <genericsetup:upgradeDepends
-        title="Update registry value"
-        import_steps="plone.app.registry"
-        />
-  </genericsetup:upgradeSteps>
-  -->
+  <include package=".v1001" />
 
   <!-- -*- extra stuff goes here -*- -->
 

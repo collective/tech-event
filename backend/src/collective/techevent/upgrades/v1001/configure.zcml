@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="pythonbrasil.site:default"
+      source="1000"
+      destination="1001"
+      >
+    <genericsetup:upgradeDepends
+        title="Update behavior list for a Venue"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>

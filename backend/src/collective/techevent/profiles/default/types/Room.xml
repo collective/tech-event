@@ -42,6 +42,7 @@
     <element value="plone.excludefromnavigation" />
     <element value="volto.preview_image_link" />
     <element value="plone.shortname" />
+    <element value="volto.navtitle" />
     <element value="volto.blocks" />
   </property>
 </object>
