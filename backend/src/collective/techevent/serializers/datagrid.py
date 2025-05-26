@@ -83,7 +83,7 @@ class DataGridSerializer(CollectionFieldSerializer):
         item = deepcopy(row_item)
         fields = self.schema_fields
         for field_name, field_type in fields:
-            value = item[field_name]
+            value = item.get(field_name)
             if (
                 value is not None
                 and not isinstance(value, dict)
