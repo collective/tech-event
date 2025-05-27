@@ -9,6 +9,20 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a4 (2025-05-27)
+
+
+### New features:
+
+- Adds Schedule and Venue to portal types displayed in navigation. @ericof 
+- Fixes to vocabulary registration. @ericof 
+- Improvements to serialization of types Presenter, Talk, Tutorial, Keynote. @ericof 
+
+
+### Bug fixes:
+
+- Fix issue with DataGrid serialization when an item does not have one of the values. @ericof 
+
 ## 1.0.0a3 (2025-05-25)
 
 

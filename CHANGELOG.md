@@ -7,6 +7,44 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a4 (2025-05-27)
+
+### Backend
+
+
+#### New features:
+
+- Adds Schedule and Venue to portal types displayed in navigation. @ericof 
+- Fixes to vocabulary registration. @ericof 
+- Improvements to serialization of types Presenter, Talk, Tutorial, Keynote. @ericof 
+
+
+#### Bug fixes:
+
+- Fix issue with DataGrid serialization when an item does not have one of the values. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Implements PresenterGridItem to be used with listing blocks when displaying Presenter information. @ericof 
+- Implements SessionGridItem to be used with listing blocks when displaying Session (Keynote, Talk, Tutorial) content types. @ericof 
+- Implements SessionTile component, used in listings of Session content types. @ericof 
+- Implements view component (SessionView) used for Keynote, Talk and Training content types. @ericof 
+- Improvements to PresenterView. @ericof 
+- Support color labels for Audience, Level, Track information. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a3 (2025-05-25)
 
 ### Backend

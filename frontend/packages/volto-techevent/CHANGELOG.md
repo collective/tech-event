@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.4 (2025-05-27)
+
+### Feature
+
+- Implements PresenterGridItem to be used with listing blocks when displaying Presenter information. @ericof 
+- Implements SessionGridItem to be used with listing blocks when displaying Session (Keynote, Talk, Tutorial) content types. @ericof 
+- Implements SessionTile component, used in listings of Session content types. @ericof 
+- Implements view component (SessionView) used for Keynote, Talk and Training content types. @ericof 
+- Improvements to PresenterView. @ericof 
+- Support color labels for Audience, Level, Track information. @ericof 
+
 ## 1.0.0-alpha.3 (2025-05-25)
 
 ### Feature

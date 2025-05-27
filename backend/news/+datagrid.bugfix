@@ -1,1 +1,0 @@
-Fix issue with DataGrid serialization when an item does not have one of the values. @ericof
