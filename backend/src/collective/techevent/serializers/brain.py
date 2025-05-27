@@ -108,12 +108,10 @@ class BrainSessionSerializer(DefaultJSONSummarySerializer):
             response = []
             for item in value:
                 term = vocabulary.getTerm(item)
-                response.append(
-                    {
-                        "title": term.title,
-                        "token": term.token,
-                    }
-                )
+                response.append({
+                    "title": term.title,
+                    "token": term.token,
+                })
             result[field_id] = response
 
         return result
