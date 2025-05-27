@@ -1,19 +1,19 @@
 from collective.techevent import _
-from collective.techevent.content.schedule.slot import ISlot
-from collective.techevent.content.schedule.slot import Slot
+from collective.techevent.content.schedule.session import ISession
+from collective.techevent.content.schedule.session import Session
 from plone.app.textfield import RichText
 from zope import schema
 from zope.interface import implementer
 
 
-class ITraining(ISlot):
+class ITraining(ISession):
     """A Training Session in the event."""
 
     duration = schema.Choice(
         title=_("Duration"),
         description=_("Duration of the training"),
         required=False,
-        vocabulary="collective.techevent.vocabularies.training_duration",
+        vocabulary="collective.techevent.vocabularies.durations_training",
     )
 
     requirements = RichText(
@@ -32,5 +32,5 @@ class ITraining(ISlot):
 
 
 @implementer(ITraining)
-class Training(Slot):
+class Training(Session):
     """Convenience subclass for ``Training`` portal type."""

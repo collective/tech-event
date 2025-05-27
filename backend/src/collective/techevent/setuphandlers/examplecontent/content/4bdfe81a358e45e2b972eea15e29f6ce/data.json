@@ -32,6 +32,7 @@
       "19f6b2f4-c276-4ed0-9c44-87e157a7209f"
     ]
   },
+  "color": "#000000",
   "created": "2025-05-16T18:29:16+00:00",
   "description": "Bronze Package",
   "exclude_from_nav": false,
@@ -45,7 +46,7 @@
   "modified": "2025-05-20T17:35:30+00:00",
   "nav_title": null,
   "preview_caption_link": null,
-  "price": "",
+  "price": null,
   "review_state": "published",
   "title": "Bronze",
   "type_title": "Sponsorship Level",

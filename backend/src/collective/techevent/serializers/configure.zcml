@@ -7,14 +7,39 @@
       name="collective.techevent.summary_serializer_metadata"
       />
 
+  <!-- Presenter -->
+  <adapter factory=".presenter.PresenterJSONSerializer" />
+  <adapter factory=".presenter.PresenterJSONSummarySerializer" />
 
-  <adapter factory=".brain.JSONSummarySerializer" />
+  <!-- Session -->
+  <adapter factory=".schedule.SessionJSONSummarySerializer" />
+
+  <!-- DataGrid -->
   <adapter factory=".datagrid.DataGridRowJsonSchemaProvider" />
   <adapter factory=".datagrid.DataGridSerializer" />
 
+
+  <!-- Brain -->
+  <adapter factory=".brain.JSONSummarySerializer" />
+  <adapter
+      factory=".brain.BrainPresenterSerializer"
+      name="Presenter"
+      />
   <adapter
       factory=".brain.BrainSponsorSerializer"
       name="Sponsor"
+      />
+  <adapter
+      factory=".brain.BrainSessionSerializer"
+      name="Keynote"
+      />
+  <adapter
+      factory=".brain.BrainSessionSerializer"
+      name="Talk"
+      />
+  <adapter
+      factory=".brain.BrainSessionSerializer"
+      name="Training"
       />
 
 </configure>

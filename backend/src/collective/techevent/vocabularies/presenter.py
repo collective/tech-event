@@ -62,7 +62,9 @@ class PresentersVocabulary:
         """Return a friendly value to be used in the vocabulary."""
         return result.Title
 
-    def __call__(self, context: DexterityContent, query: dict | None) -> Vocabulary:
+    def __call__(
+        self, context: DexterityContent, query: dict | None = None
+    ) -> Vocabulary:
         query = self.query(context)
         results = api.content.find(**query)
         terms = []

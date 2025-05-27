@@ -4,13 +4,15 @@
 >
 
   <record field="displayed_types"
-          interface="Products.CMFPlone.interfaces.controlpanel.INavigationSchema"
+          interface="plone.base.interfaces.controlpanel.INavigationSchema"
           name="plone.displayed_types"
   >
     <value purge="false">
-      <element>Tech Event</element>
-      <element>SponsorsDB</element>
+      <element>Schedule</element>
       <element>SponsorLevel</element>
+      <element>SponsorsDB</element>
+      <element>Tech Event</element>
+      <element>Venue</element>
     </value>
   </record>
 

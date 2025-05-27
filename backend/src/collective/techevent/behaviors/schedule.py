@@ -46,12 +46,3 @@ class IScheduleSlot(model.Schema):
         ),
         required=False,
     )
-
-    slot_category = schema.Choice(
-        title=_("Category"),
-        description=_("Category of this slot"),
-        required=True,
-        default="slot",
-        vocabulary="collective.techevent.vocabularies.slot_categories",
-    )
-    directives.omitted("slot_category")

@@ -6,11 +6,13 @@
   "audience": [
     {
       "@id": "developers",
+      "color": "#0b3819",
       "id": "developers",
       "title": "Developers"
     },
     {
       "@id": "devops",
+      "color": "#000000",
       "id": "devops",
       "title": "DevOps"
     }
@@ -255,28 +257,40 @@
   "description": "",
   "durations_keynote": [
     {
+      "@id": "keynote",
+      "color": "#000000",
+      "duration": 60,
+      "id": "keynote",
+      "title": "Keynote"
+    }
+  ],
+  "durations_talk": [
+    {
       "@id": "short",
+      "color": "#000000",
       "duration": 30,
       "id": "short",
       "title": "Short Talk"
     },
     {
       "@id": "long",
+      "color": "#000000",
       "duration": 45,
       "id": "long",
       "title": "Long Talk"
     }
   ],
-  "durations_talk": [],
   "durations_training": [
     {
       "@id": "half-day",
+      "color": "#000000",
       "duration": 240,
       "id": "half-day",
       "title": "Half Day"
     },
     {
       "@id": "full-day",
+      "color": "#000000",
       "duration": 480,
       "id": "full-day",
       "title": "Full Day"
@@ -290,11 +304,12 @@
   "exportimport.conversation": [],
   "id": "Plone",
   "is_folderish": true,
-  "items_total": 3,
+  "items_total": 5,
   "language": "##DEFAULT##",
   "levels": [
     {
       "@id": "general",
+      "color": "#000000",
       "id": "general",
       "title": "General"
     }
@@ -312,6 +327,7 @@
   "tracks": [
     {
       "@id": "main",
+      "color": "#be28bb",
       "id": "main",
       "title": "Main Track"
     }

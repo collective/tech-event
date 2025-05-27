@@ -29,6 +29,18 @@ class ITrack(Schema):
         description=_("Title of this track"),
         required=True,
     )
+    color = schema.TextLine(
+        title=_("Color"),
+        description=_("Color used for this item"),
+        default="#000000",
+        required=True,
+    )
+    directives.widget(
+        "color",
+        frontendOptions={
+            "widget": "colorPicker",
+        },
+    )
 
 
 class ILevel(Schema):
@@ -44,6 +56,18 @@ class ILevel(Schema):
         description=_("Title of this level"),
         required=True,
     )
+    color = schema.TextLine(
+        title=_("Color"),
+        description=_("Color used for this item"),
+        default="#000000",
+        required=True,
+    )
+    directives.widget(
+        "color",
+        frontendOptions={
+            "widget": "colorPicker",
+        },
+    )
 
 
 class IAudienceGroup(Schema):
@@ -58,6 +82,18 @@ class IAudienceGroup(Schema):
         title=_("Audience"),
         description=_("Title of this audience"),
         required=True,
+    )
+    color = schema.TextLine(
+        title=_("Color"),
+        description=_("Color used for this item"),
+        default="#000000",
+        required=True,
+    )
+    directives.widget(
+        "color",
+        frontendOptions={
+            "widget": "colorPicker",
+        },
     )
 
 
@@ -79,6 +115,18 @@ class IActivityDuration(Schema):
         description=_("How long, in minutes, this activity will use."),
         default=60,
         required=True,
+    )
+    color = schema.TextLine(
+        title=_("Color"),
+        description=_("Color used for this item"),
+        default="#000000",
+        required=True,
+    )
+    directives.widget(
+        "color",
+        frontendOptions={
+            "widget": "colorPicker",
+        },
     )
 
 
@@ -285,7 +333,7 @@ class Settings:
         return self.context.durations_keynote
 
     @durations_keynote.setter
-    def durations_keynote(self, value: list[IAudienceGroup]):
+    def durations_keynote(self, value: list[IActivityDuration]):
         """Setter, called by the form, set on context."""
         self.context.durations_keynote = value
 
@@ -297,7 +345,7 @@ class Settings:
     @durations_talk.setter
     def durations_talk(self, value: list[IAudienceGroup]):
         """Setter, called by the form, set on context."""
-        self.context.durations_keynote = value
+        self.context.durations_talk = value
 
     @property
     def durations_training(self) -> list[IActivityDuration]:

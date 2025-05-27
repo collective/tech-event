@@ -1,0 +1,84 @@
+{
+  "@id": "/schedule",
+  "@type": "Schedule",
+  "UID": "ba42235ec33c4ecbb48a1e7be484cd71",
+  "allow_discussion": null,
+  "blocks": {
+    "02b56318-11f1-464e-883f-b179d9aed874": {
+      "@type": "slate"
+    },
+    "03e1538e-846e-4b6f-bf2a-b1d348270e92": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Talk",
+              "Training",
+              "Keynote"
+            ]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "063f9c58-f896-4ebe-9cf3-fa23578d55be": {
+      "@type": "description"
+    },
+    "078e45c7-178a-4b4b-9f7c-dbfd4fbd19c9": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "078e45c7-178a-4b4b-9f7c-dbfd4fbd19c9",
+      "063f9c58-f896-4ebe-9cf3-fa23578d55be",
+      "03e1538e-846e-4b6f-bf2a-b1d348270e92",
+      "02b56318-11f1-464e-883f-b179d9aed874"
+    ]
+  },
+  "created": "2025-05-26T14:16:52+00:00",
+  "description": "Conference Schedule",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "schedule",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-05-27T11:38:15+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "title": "Schedule",
+  "type_title": "Schedule",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-26T14:16:52+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-26T14:16:55+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,65 @@
+{
+  "@id": "/schedule/plone-distributions",
+  "@type": "Talk",
+  "UID": "f0d13e7454594b2a8f3360db16769a47",
+  "allow_discussion": null,
+  "created": "2025-05-26T14:40:34+00:00",
+  "description": "Unleash the power of Plone Distributions",
+  "duration": null,
+  "end": "2025-07-02T15:40:00",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "plone-distributions",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-05-27T11:38:15+00:00",
+  "preview_caption_link": null,
+  "review_state": "published",
+  "room": [
+    "3bc34856166b45199360f6699bb102f4"
+  ],
+  "session_audience": [
+    "developers"
+  ],
+  "session_language": "en",
+  "session_level": [
+    "general"
+  ],
+  "session_track": [
+    "main"
+  ],
+  "slot_category": "activity",
+  "start": "2025-07-02T15:00:00",
+  "subjects": [],
+  "text": {
+    "content-type": "text/html",
+    "data": "<p>The power of Plone Distributions</p>",
+    "encoding": "utf8"
+  },
+  "title": "Plone Distributions",
+  "type_title": "Talk",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-05-27T06:48:53+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-05-27T06:50:14+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

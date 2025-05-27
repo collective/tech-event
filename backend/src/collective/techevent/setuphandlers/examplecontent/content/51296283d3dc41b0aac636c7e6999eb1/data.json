@@ -2,6 +2,135 @@
   "@id": "/presenters/erico-andrei",
   "@type": "Presenter",
   "UID": "51296283d3dc41b0aac636c7e6999eb1",
+  "activities": [
+    {
+      "@id": "Talk",
+      "@type": "Talk",
+      "items": [
+        {
+          "@id": "/schedule/plone-distributions",
+          "@type": "Talk",
+          "Subject": [],
+          "description": "Unleash the power of Plone Distributions",
+          "effective": "2025-05-26T14:41:13+00:00",
+          "end": "2025-07-02T15:40:00",
+          "getObjSize": null,
+          "head_title": null,
+          "image_field": null,
+          "image_scales": {},
+          "mime_type": null,
+          "nav_title": null,
+          "portal_type": [
+            {
+              "title": "Talk",
+              "token": "Talk"
+            }
+          ],
+          "presenters": [
+            {
+              "@id": "/presenters/erico-andrei",
+              "title": "\u00c9rico Andrei"
+            }
+          ],
+          "review_state": "published",
+          "room": [
+            {
+              "title": "Main Room",
+              "token": "3bc34856166b45199360f6699bb102f4"
+            }
+          ],
+          "session_audience": [
+            {
+              "title": "Developers",
+              "token": "developers"
+            }
+          ],
+          "session_language": [
+            {
+              "title": "English",
+              "token": "en"
+            }
+          ],
+          "session_level": [
+            {
+              "title": "General",
+              "token": "general"
+            }
+          ],
+          "session_track": [
+            {
+              "title": "Main Track",
+              "token": "main"
+            }
+          ],
+          "start": "2025-07-02T15:00:00",
+          "title": "Plone Distributions",
+          "type_title": "Talk"
+        },
+        {
+          "@id": "/schedule/pytest-plone",
+          "@type": "Talk",
+          "Subject": [],
+          "description": "Pytest + Plone Pytest + Plone Pytest + Plone",
+          "effective": "2025-05-26T14:41:13+00:00",
+          "end": "2025-07-01T15:40:00",
+          "getObjSize": null,
+          "head_title": null,
+          "image_field": null,
+          "image_scales": {},
+          "mime_type": null,
+          "nav_title": null,
+          "portal_type": [
+            {
+              "title": "Talk",
+              "token": "Talk"
+            }
+          ],
+          "presenters": [
+            {
+              "@id": "/presenters/erico-andrei",
+              "title": "\u00c9rico Andrei"
+            }
+          ],
+          "review_state": "published",
+          "room": [
+            {
+              "title": "Main Room",
+              "token": "3bc34856166b45199360f6699bb102f4"
+            }
+          ],
+          "session_audience": [
+            {
+              "title": "Developers",
+              "token": "developers"
+            }
+          ],
+          "session_language": [
+            {
+              "title": "English",
+              "token": "en"
+            }
+          ],
+          "session_level": [
+            {
+              "title": "General",
+              "token": "general"
+            }
+          ],
+          "session_track": [
+            {
+              "title": "Main Track",
+              "token": "main"
+            }
+          ],
+          "start": "2025-07-01T15:00:00",
+          "title": "Pytest + Plone",
+          "type_title": "Talk"
+        }
+      ],
+      "title": "Talk"
+    }
+  ],
   "allow_discussion": null,
   "categories": [
     "speaker"
@@ -22,7 +151,13 @@
     "width": 800
   },
   "image_caption": null,
-  "is_folderish": true,
+  "is_folderish": false,
+  "labels": [
+    {
+      "title": "Speaker",
+      "token": "speaker"
+    }
+  ],
   "language": "##DEFAULT##",
   "layout": "view",
   "lock": {},

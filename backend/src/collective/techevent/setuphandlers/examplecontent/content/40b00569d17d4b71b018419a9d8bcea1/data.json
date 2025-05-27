@@ -30,6 +30,7 @@
       "54422f55-5eb7-49c9-92b8-f7738e5c87a2"
     ]
   },
+  "color": "#000000",
   "created": "2025-05-20T17:32:30+00:00",
   "description": "Organizers of this event",
   "exclude_from_nav": true,
@@ -43,7 +44,7 @@
   "modified": "2025-05-20T17:39:05+00:00",
   "nav_title": null,
   "preview_caption_link": null,
-  "price": "",
+  "price": null,
   "review_state": "published",
   "title": "Organized by",
   "type_title": "Sponsorship Level",

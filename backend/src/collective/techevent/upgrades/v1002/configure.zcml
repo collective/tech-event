@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="pythonbrasil.site:default"
+      source="1001"
+      destination="1002"
+      >
+    <genericsetup:upgradeStep
+        title="Update plone.displayed_types entries"
+        handler=".update_displayed_types"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>

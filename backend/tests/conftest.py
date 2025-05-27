@@ -17,11 +17,13 @@ pytest_plugins = ["pytest_plone"]
 
 
 globals().update(
-    fixtures_factory((
-        (ACCEPTANCE_TESTING, "acceptance"),
-        (FUNCTIONAL_TESTING, "functional"),
-        (INTEGRATION_TESTING, "integration"),
-    ))
+    fixtures_factory(
+        (
+            (ACCEPTANCE_TESTING, "acceptance"),
+            (FUNCTIONAL_TESTING, "functional"),
+            (INTEGRATION_TESTING, "integration"),
+        )
+    )
 )
 
 
@@ -98,5 +100,29 @@ def apply_event_settings(event_settings):
         for key, value in event_settings.items():
             setattr(container, key, value)
         return container
+
+    return func
+
+
+@pytest.fixture
+def catalog(portal):
+    """Return the catalog brain for a query."""
+
+    def func(**kw) -> list[str]:
+        with api.env.adopt_roles(["Manager"]):
+            brains = api.content.find(**kw)
+        return brains
+
+    return func
+
+
+@pytest.fixture
+def brain_for_content(catalog):
+    """Return the catalog brain for a content."""
+
+    def func(content: DexterityContent, **kw) -> list[str]:
+        uuid = api.content.get_uuid(content)
+        brains = catalog(UID=uuid, **kw)
+        return brains[0] if brains else None
 
     return func

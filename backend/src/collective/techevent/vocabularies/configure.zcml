@@ -10,7 +10,7 @@
       component=".sponsorship.sponsorship_benefits"
       />
 
-  <!-- Slot / Sessions -->
+  <!-- Slots -->
   <utility
       name="collective.techevent.vocabularies.slot_categories"
       component=".slot.slot_categories"
@@ -19,29 +19,31 @@
       name="collective.techevent.vocabularies.slot_rooms"
       component=".slot.slot_rooms"
       />
+
+  <!-- Sessions -->
   <utility
-      name="collective.techevent.vocabularies.slot_tracks"
-      component=".slot.slot_tracks"
+      name="collective.techevent.vocabularies.session_tracks"
+      component=".session.session_tracks"
       />
   <utility
-      name="collective.techevent.vocabularies.slot_levels"
-      component=".slot.slot_levels"
+      name="collective.techevent.vocabularies.session_levels"
+      component=".session.session_levels"
       />
   <utility
-      name="collective.techevent.vocabularies.slot_audiences"
-      component=".slot.slot_audiences"
+      name="collective.techevent.vocabularies.session_audiences"
+      component=".session.session_audiences"
       />
   <utility
-      name="collective.techevent.vocabularies.keynote_duration"
-      component=".slot.duration_keynote"
+      name="collective.techevent.vocabularies.durations_keynote"
+      component=".session.durations_keynote"
       />
   <utility
-      name="collective.techevent.vocabularies.talk_duration"
-      component=".slot.duration_talk"
+      name="collective.techevent.vocabularies.durations_talk"
+      component=".session.durations_talk"
       />
   <utility
-      name="collective.techevent.vocabularies.training_duration"
-      component=".slot.duration_training"
+      name="collective.techevent.vocabularies.durations_training"
+      component=".session.durations_training"
       />
 
   <!-- Presenters -->

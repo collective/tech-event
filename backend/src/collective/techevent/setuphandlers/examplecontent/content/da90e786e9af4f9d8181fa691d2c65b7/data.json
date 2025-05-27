@@ -67,6 +67,7 @@
       "810d07ec-595d-4a99-ab87-87de6847f4ca"
     ]
   },
+  "color": "#000000",
   "created": "2025-05-16T18:29:16+00:00",
   "description": "Silver Package",
   "exclude_from_nav": false,
@@ -80,7 +81,7 @@
   "modified": "2025-05-22T19:19:14+00:00",
   "nav_title": null,
   "preview_caption_link": null,
-  "price": "",
+  "price": null,
   "review_state": "published",
   "title": "Silver",
   "type_title": "Sponsorship Level",

@@ -13,9 +13,9 @@
   ],
   "durations_keynote": [
     {
-      "@id": "long",
+      "@id": "keynote",
       "duration": 60,
-      "id": "long",
+      "id": "keynote",
       "title": "Keynote"
     }
   ],

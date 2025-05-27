@@ -49,13 +49,24 @@ class IBenefit(Schema):
 class ISponsorLevel(Interface):
     """Sponsorship Level."""
 
+    color = schema.TextLine(
+        title=_("Color"),
+        description=_("Color used for this item"),
+        default="#000000",
+        required=True,
+    )
+    directives.widget(
+        "color",
+        frontendOptions={
+            "widget": "colorPicker",
+        },
+    )
     price = schema.TextLine(
         title=_("Investment"),
         description=_("Investment for this level"),
         default="",
         required=False,
     )
-
     model.fieldset(
         "benefits",
         label=_("Benefits"),
