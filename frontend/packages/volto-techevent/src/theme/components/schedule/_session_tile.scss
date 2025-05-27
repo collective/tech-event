@@ -1,0 +1,32 @@
+.sessionTile {
+  padding: $spacing-small;
+  background-color: var(--techevent-sessionTile-background-color, #ecebeb);
+  color: var(--techevent-sessionTile-color, #000);
+  .sessionData {
+    padding: 0 $spacing-small;
+    .sessionHeader {
+      .sessionTitle {
+        .title {
+          padding: $spacing-small 0;
+          margin-bottom: $spacing-small;
+          @include add(size, m);
+          @include add(weight, bold);
+          text-decoration: none;
+        }
+      }
+      .sessionDescription {
+        padding: $spacing-xsmall 0;
+        margin-bottom: $spacing-xsmall;
+        @include add(size, s);
+        @include add(weight, light);
+      }
+    }
+    .sessionBody {
+      padding-top: $spacing-xsmall;
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-top-color: var(--techevent-sessionTile-color, #000);
+      margin-top: $spacing-xsmall;
+    }
+  }
+}

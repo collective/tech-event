@@ -1,4 +1,5 @@
 // Spacing
+$spacing-2xsmall: 5px !default;
 $spacing-xsmall: 10px !default;
 $spacing-small: 20px !default;
 $spacing-medium: 40px !default;
@@ -119,5 +120,39 @@ $spacing-xlarge: 80px !default;
   }
   &:hover {
     color: var(--theme-color) !important;
+  }
+}
+
+// Pill
+@mixin pillText() {
+  display: inline;
+  @include add(size, xs);
+  @include add(weight, light);
+  @include add(height, s);
+}
+
+@mixin pill() {
+  @include pillText();
+  padding: $spacing-2xsmall $spacing-xsmall;
+  border-radius: $spacing-2xsmall;
+  margin-left: $spacing-xsmall;
+  background-color: var(--vocabulary-background-color);
+  color: var(--techevent-vocabulary-foreground-color);
+}
+
+@mixin description() {
+  @include add(size, m);
+  @include add(height, m);
+  margin-top: $spacing-xsmall;
+  margin-bottom: $spacing-xsmall;
+  color: $grey;
+}
+
+@mixin vertical-space-text() {
+  margin-top: $spacing-small;
+  margin-bottom: $spacing-small;
+  @media only screen and (max-width: $largest-mobile-screen) {
+    margin-top: $spacing-xsmall;
+    margin-bottom: $spacing-xsmall;
   }
 }

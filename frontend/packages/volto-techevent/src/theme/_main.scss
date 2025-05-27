@@ -1,12 +1,25 @@
 // This extends the volto-light-theme
 @import 'root';
+@import 'components/card';
+@import 'components/schedule/session_date';
+@import 'components/schedule/session_track';
+@import 'components/schedule/session_language';
+@import 'components/schedule/session_audience';
+@import 'components/schedule/session_level';
+@import 'components/schedule/session_room';
+@import 'components/schedule/session_info';
+@import 'components/schedule/session_tile';
+@import 'components/schedule/session_view';
 @import 'components/sponsorlevel';
 @import 'components/sponsorlist';
 @import 'components/sponsortile';
-@import 'components/presenter_category';
-@import 'components/presenter_view';
+@import 'components/presenter/presenter_activities';
+@import 'components/presenter/presenter_category';
+@import 'components/presenter/presenter_tile';
+@import 'components/presenter/presenter_view';
 @import 'components/block_sponsors_levelbenefits';
 @import 'components/block_sponsors_levelcomparison';
 @import 'components/block_sponsors_showcase';
 @import 'components/block_sponsors_sponsorlevel';
+@import 'components/block_listing';
 @import 'components/widget_datagrid';

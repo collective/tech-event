@@ -13,6 +13,9 @@ import LevelBenefitsBlockInfo from '@plone-collective/volto-techevent/components
 // LevelComparison
 import LevelComparisonBlockInfo from '@plone-collective/volto-techevent/components/Blocks/Sponsors/LevelComparison';
 
+import SessionGridItem from '@plone-collective/volto-techevent/components/Blocks/Listing/SessionGridItem';
+import PresenterGridItem from '@plone-collective/volto-techevent/components/Blocks/Listing/PresenterGridItem';
+
 declare module '@plone/types' {
   export interface BlocksConfigData {
     levelBenefitsBlock: BlockConfigBase;
@@ -35,6 +38,28 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.sponsorLevelBlock = SponsorLevelBlockInfo;
   config.blocks.blocksConfig.levelBenefitsBlock = LevelBenefitsBlockInfo;
   config.blocks.blocksConfig.levelComparisonBlock = LevelComparisonBlockInfo;
+
+  // Variations
+  config.registerComponent({
+    name: 'GridListingItemTemplate',
+    component: PresenterGridItem,
+    dependencies: 'Presenter',
+  });
+  config.registerComponent({
+    name: 'GridListingItemTemplate',
+    component: SessionGridItem,
+    dependencies: 'Keynote',
+  });
+  config.registerComponent({
+    name: 'GridListingItemTemplate',
+    component: SessionGridItem,
+    dependencies: 'Talk',
+  });
+  config.registerComponent({
+    name: 'GridListingItemTemplate',
+    component: SessionGridItem,
+    dependencies: 'Training',
+  });
 
   return config;
 }

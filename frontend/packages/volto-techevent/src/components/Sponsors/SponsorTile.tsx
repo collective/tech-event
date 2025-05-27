@@ -3,7 +3,7 @@ import Image from '@plone/volto/components/theme/Image/Image';
 import { Container } from '@plone/components';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import { SponsorInfo } from '@plone-collective/volto-techevent/types/sponsors';
+import type { SponsorInfo } from '@plone-collective/volto-techevent/types/sponsors';
 
 interface SponsorTileProps {
   item: SponsorInfo;

@@ -1,0 +1,15 @@
+.sessionLevels {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: $spacing-2xsmall 0;
+  margin-top: $spacing-2xsmall;
+  .categoryIcon {
+    height: 20px !important;
+  }
+  .sessionLevel {
+    @include pill;
+  }
+}

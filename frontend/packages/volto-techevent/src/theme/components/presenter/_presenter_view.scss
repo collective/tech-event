@@ -7,25 +7,10 @@ body.contenttype-presenter {
         margin: $spacing-xsmall 0;
       }
       .presenter-name {
-        @include add(size, 3xl);
-        @include add(weight, bold);
-        @include add(height, 3xl);
+        @include text-heading-h2;
       }
       .presenter-description {
-        @include add(size, m);
-        @include add(height, m);
-        color: $grey;
-      }
-      .presenter-preview-image {
-        max-width: 200px;
-        img {
-          width: 100%;
-          height: 100%;
-          border-radius: 10%;
-          aspect-ratio: 1;
-          -o-object-fit: cover;
-          object-fit: cover;
-        }
+        @include description;
       }
     }
   }

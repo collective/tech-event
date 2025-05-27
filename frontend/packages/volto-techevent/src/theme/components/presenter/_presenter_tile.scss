@@ -1,0 +1,24 @@
+.presenterTile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  .imgWrapper {
+    .presenterImage {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1/1 !important;
+      object-fit: cover;
+    }
+  }
+  .presenterLinks {
+    ul.social-networks {
+      .item {
+        margin-right: $spacing-2xsmall;
+        svg {
+          height: 32px !important;
+        }
+      }
+    }
+  }
+}

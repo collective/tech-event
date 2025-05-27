@@ -1,23 +1,11 @@
 import React from 'react';
-import Image from '@plone/volto/components/theme/Image/Image';
 import SocialNetworks from '@plonegovbr/volto-social-media/components/SocialNetworks/SocialNetworks';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { Container } from '@plone/components';
+import type { Presenter as PresenterContent } from '@plone-collective/volto-techevent/types/presenter';
 import PresenterCategory from './PresenterCategory';
-
-/**
- * Type definitions for PresenterView content
- */
-interface PresenterContent {
-  title?: string;
-  description?: string;
-  text?: {
-    data: string;
-  };
-  image?: any; // Adjust if you have specific typing for image
-  image_caption?: string;
-  links?: Record<string, string>; // Adjust to match SocialNetworks prop shape
-}
+import PresenterActivities from './PresenterActivities';
+import Card from '../primitives/Card/Card';
 
 interface PresenterViewProps {
   content: PresenterContent;
@@ -31,56 +19,55 @@ interface PresenterViewProps {
  */
 const PresenterView: React.FC<PresenterViewProps> = ({ content }) => {
   const hasImage = Boolean(content?.image);
-  const caption = content?.image_caption;
-  const { title, description, text, social_links } = content;
+  const imgProps = hasImage
+    ? { item: { ...content, image_field: 'image' } }
+    : { src: DefaultImageSVG };
+  const { title, description, text, social_links, activities } = content;
   const descriptionLines = description ? description.split('\n') : [];
 
   return (
     <Container id="page-document" className="view-wrapper presenter-view">
-      <Container className={'wrapper'}>
-        <h1 className="presenter-name">{title}</h1>
-        <Container className="presenter-labels">
-          {content.categories &&
-            content.categories.map((category, idx) => {
-              return <PresenterCategory label={category} key={idx} />;
-            })}
-        </Container>
-        <div className="presenter-preview-image no-filter">
-          {hasImage ? (
-            <Image
-              item={content}
-              imageField="image"
-              alt={caption}
-              title={caption}
-              responsive={true}
-            />
-          ) : (
-            <img src={DefaultImageSVG} alt="" />
-          )}
-        </div>
-        {descriptionLines.length > 0 && (
-          <Container narrow className="presenterDescription">
-            <p className="documentDescription">
-              {descriptionLines.map((line, idx) => (
-                <React.Fragment key={idx}>
-                  <span>{line}</span>
-                  <br />
-                </React.Fragment>
-              ))}
-            </p>
-          </Container>
-        )}
+      <Container className={'wrapper has--align--left'}>
+        <Card className="profile">
+          <Card.Image {...imgProps} />
+          <Card.Summary>
+            <Container className="presenter-labels">
+              {content.categories &&
+                content.categories.map((category, idx) => {
+                  return <PresenterCategory label={category} key={idx} />;
+                })}
+            </Container>
+            <h2 className="presenter-name">{title}</h2>
 
-        {text?.data && (
-          <Container
-            narrow
-            className="presenterText"
-            dangerouslySetInnerHTML={{ __html: text.data }}
-          />
-        )}
-        {social_links && (
-          <Container narrow className="presenterLinks">
-            <SocialNetworks networks={social_links} />
+            {descriptionLines.length > 0 && (
+              <Container className="presenterDescription">
+                <p className="documentDescription">
+                  {descriptionLines.map((line, idx) => (
+                    <React.Fragment key={idx}>
+                      <span>{line}</span>
+                      <br />
+                    </React.Fragment>
+                  ))}
+                </p>
+              </Container>
+            )}
+
+            {text?.data && (
+              <Container
+                className="presenterText"
+                dangerouslySetInnerHTML={{ __html: text.data }}
+              />
+            )}
+            {social_links && (
+              <Container className="presenterLinks">
+                <SocialNetworks networks={social_links} />
+              </Container>
+            )}
+          </Card.Summary>
+        </Card>
+        {activities && activities?.length > 0 && (
+          <Container className="presenterActivities">
+            <PresenterActivities activities={activities} />
           </Container>
         )}
       </Container>

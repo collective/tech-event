@@ -1,0 +1,51 @@
+.listing-item {
+  .card-container {
+    &.presenter {
+      background-color: unset !important;
+    }
+    &.presenter,
+    &.session {
+      .item {
+        margin-top: unset !important;
+        .sessionTile {
+          padding: $spacing-2xsmall 0 $spacing-small 0;
+
+          .sessionTitle .title {
+            justify-content: left;
+            padding: $spacing-2xsmall 0;
+            margin-bottom: $spacing-small;
+            @include add(size, m);
+            @include add(weight, bold);
+            text-decoration: none;
+          }
+        }
+        .presenterTile {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: start;
+          padding: 0 $spacing-small;
+          > .container {
+            width: 100%;
+          }
+          .presenterTitle {
+            .title {
+              justify-content: center;
+              padding: $spacing-2xsmall 0;
+              margin-bottom: $spacing-2xsmall;
+              @include add(size, m);
+              @include add(weight, bold);
+              text-decoration: none;
+            }
+          }
+          ul.social-networks {
+            justify-content: var(--block-alignment, center);
+          }
+          .imgWrapper {
+            max-width: 200px;
+          }
+        }
+      }
+    }
+  }
+}

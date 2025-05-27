@@ -1,0 +1,12 @@
+.sessionLanguage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--techevent-slotInfo-color, #666);
+  .token {
+    display: inline;
+    @include add(size, xs);
+    @include add(weight, light);
+    @include add(height, s);
+  }
+}

@@ -1,0 +1,15 @@
+.slotRoom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--techevent-slotInfo-color, #666);
+  .title {
+    display: inline;
+    @include add(size, xs);
+    @include add(weight, light);
+    @include add(height, s);
+  }
+  .categoryIcon {
+    height: 20px !important;
+  }
+}

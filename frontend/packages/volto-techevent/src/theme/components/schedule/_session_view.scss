@@ -1,0 +1,33 @@
+body.contenttype-keynote,
+body.contenttype-talk,
+body.contenttype-training {
+  .session-view {
+    margin-top: $spacing-medium;
+    .wrapper {
+      @include default-container-width;
+      .sessionWrapper {
+        display: flex;
+        .sessionData {
+          display: block;
+          flex: 1 1 70%;
+          padding: 0 $spacing-medium;
+          .sessionTitle {
+            @include text-heading-h2;
+          }
+          .sessionDescription {
+            @include description;
+          }
+          .sessionBody {
+            @include body-text;
+            @include vertical-space-text;
+          }
+        }
+        .sessionPresenters {
+          display: block;
+          flex: 1 1 30%;
+          padding: 0 $spacing-medium;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.sessionTrack {
+  background-color: var(
+    --techevent-session-track-background-color,
+    var(--vocabulary-background-color)
+  );
+  color: var(--techevent-session-track-foreground-color);
+  .track {
+    padding: $spacing-xsmall $spacing-small;
+  }
+}

@@ -1,0 +1,13 @@
+.sessionInfo {
+  display: flex;
+  width: 100%;
+  min-height: 25px !important;
+  justify-content: space-between;
+  padding: $spacing-xsmall $spacing-small;
+  span {
+    @include add(size, xs);
+    @include add(weight, light);
+    @include add(height, s);
+    color: var(--techevent-slotInfo-color, #666);
+  }
+}

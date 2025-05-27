@@ -57,6 +57,10 @@ const messages = defineMessages({
     id: 'Benefit',
     defaultMessage: 'Benefit',
   },
+  requirements: {
+    id: 'Requirements',
+    defaultMessage: 'Requirements',
+  },
 });
 
 export default messages;

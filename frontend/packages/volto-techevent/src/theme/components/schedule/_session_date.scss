@@ -1,0 +1,12 @@
+.slotDate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .wrapper {
+    display: inline;
+    @include add(size, xs);
+    @include add(weight, light);
+    @include add(height, s);
+    color: var(--techevent-slotInfo-color, #666);
+  }
+}
