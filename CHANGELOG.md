@@ -7,6 +7,29 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a5 (2025-05-27)
+
+### Backend
+
+
+#### Bug fixes:
+
+- Fix an issue with upgrade steps registration that prevented this package. @ericof 
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a4 (2025-05-27)
 
 ### Backend
