@@ -81,6 +81,11 @@ msgstr "Cotas e Apoiadores"
 msgid "Remove item"
 msgstr "Excluir item"
 
+#. Default: "Requirements"
+#: messages
+msgid "Requirements"
+msgstr "Requisitos"
+
 #. Default: "Show item"
 #: components/Widgets/DataGridList
 msgid "Show item"

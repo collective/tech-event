@@ -54,7 +54,7 @@ msgstr ""
 msgid "Abstract"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:78
+#: collective/techevent/behaviors/tech_event.py:114
 msgid "Activity duration"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "All benefits for sponsoring this event."
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:124
+#: collective/techevent/behaviors/tech_event.py:172
 msgid "All tracks available at this event."
 msgstr ""
 
@@ -75,7 +75,7 @@ msgid "An edition of an event."
 msgstr ""
 
 #: collective/techevent/behaviors/session.py:47
-#: collective/techevent/behaviors/tech_event.py:58
+#: collective/techevent/behaviors/tech_event.py:82
 msgid "Audience"
 msgstr ""
 
@@ -92,12 +92,12 @@ msgstr ""
 msgid "Benefit title"
 msgstr ""
 
-#: collective/techevent/content/sponsors/sponsor_level.py:61
+#: collective/techevent/content/sponsors/sponsor_level.py:72
 #: collective/techevent/content/sponsors/sponsors_db.py:49
 msgid "Benefits"
 msgstr ""
 
-#: collective/techevent/content/sponsors/sponsor_level.py:68
+#: collective/techevent/content/sponsors/sponsor_level.py:79
 msgid "Benefits of this level."
 msgstr ""
 
@@ -109,7 +109,8 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: collective/techevent/behaviors/schedule.py:51
+#: collective/techevent/content/schedule/session.py:13
+#: collective/techevent/content/schedule/slot.py:13
 #: collective/techevent/content/schedule/slots/schedule_break.py:12
 msgid "Category"
 msgstr ""
@@ -118,7 +119,8 @@ msgstr ""
 msgid "Category of the slot"
 msgstr ""
 
-#: collective/techevent/behaviors/schedule.py:52
+#: collective/techevent/content/schedule/session.py:14
+#: collective/techevent/content/schedule/slot.py:14
 msgid "Category of this slot"
 msgstr ""
 
@@ -126,15 +128,15 @@ msgstr ""
 msgid "Code"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:54
+#: collective/techevent/behaviors/tech_event.py:78
 msgid "Code of this audience"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:69
+#: collective/techevent/behaviors/tech_event.py:105
 msgid "Code of this duration"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:39
+#: collective/techevent/behaviors/tech_event.py:51
 msgid "Code of this level"
 msgstr ""
 
@@ -142,11 +144,21 @@ msgstr ""
 msgid "Code of this track"
 msgstr ""
 
-#: collective/techevent/vocabularies/slot.py:13
+#: collective/techevent/vocabularies/slot.py:14
 msgid "Coffee-Break"
 msgstr ""
 
-#: collective/techevent/vocabularies/slot.py:16
+#: collective/techevent/behaviors/tech_event.py:33
+#: collective/techevent/content/sponsors/sponsor_level.py:53
+msgid "Color"
+msgstr ""
+
+#: collective/techevent/behaviors/tech_event.py:34
+#: collective/techevent/content/sponsors/sponsor_level.py:54
+msgid "Color used for this item"
+msgstr ""
+
+#: collective/techevent/vocabularies/slot.py:17
 msgid "Conference Photo"
 msgstr ""
 
@@ -162,9 +174,14 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
+#: collective/techevent/content/schedule/keynote.py:17
 #: collective/techevent/content/schedule/talk.py:12
 #: collective/techevent/content/schedule/training.py:13
 msgid "Duration"
+msgstr ""
+
+#: collective/techevent/content/schedule/keynote.py:18
+msgid "Duration of the keynote"
 msgstr ""
 
 #: collective/techevent/content/schedule/talk.py:13
@@ -184,12 +201,12 @@ msgid "Email address"
 msgstr ""
 
 #: collective/techevent/behaviors/schedule.py:31
-#: collective/techevent/behaviors/tech_event.py:112
+#: collective/techevent/behaviors/tech_event.py:160
 msgid "End time"
 msgstr ""
 
 #: collective/techevent/behaviors/schedule.py:39
-#: collective/techevent/behaviors/tech_event.py:120
+#: collective/techevent/behaviors/tech_event.py:168
 msgid "End time must be after start time."
 msgstr ""
 
@@ -197,7 +214,7 @@ msgstr ""
 msgid "Event Schedule information."
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:91
+#: collective/techevent/behaviors/tech_event.py:139
 msgid "Event Settings"
 msgstr ""
 
@@ -209,7 +226,7 @@ msgstr ""
 msgid "Event Sponsoring information."
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:79
+#: collective/techevent/behaviors/tech_event.py:115
 msgid "How long, in minutes, this activity will use."
 msgstr ""
 
@@ -227,11 +244,11 @@ msgstr ""
 msgid "Instructor"
 msgstr ""
 
-#: collective/techevent/content/sponsors/sponsor_level.py:53
+#: collective/techevent/content/sponsors/sponsor_level.py:65
 msgid "Investment"
 msgstr ""
 
-#: collective/techevent/content/sponsors/sponsor_level.py:54
+#: collective/techevent/content/sponsors/sponsor_level.py:66
 msgid "Investment for this level"
 msgstr ""
 
@@ -243,16 +260,16 @@ msgstr ""
 msgid "Keynote Speaker"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:174
+#: collective/techevent/behaviors/tech_event.py:222
 msgid "Keynote: Slot duration"
 msgstr ""
 
 #: collective/techevent/behaviors/session.py:38
-#: collective/techevent/behaviors/tech_event.py:43
+#: collective/techevent/behaviors/tech_event.py:55
 msgid "Level"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:141
+#: collective/techevent/behaviors/tech_event.py:189
 msgid "Levels for a session."
 msgstr ""
 
@@ -264,12 +281,12 @@ msgstr ""
 msgid "Lightning Talks slot in the Event."
 msgstr ""
 
-#: collective/techevent/vocabularies/slot.py:14
+#: collective/techevent/vocabularies/slot.py:15
 msgid "Lunch"
 msgstr ""
 
 #: collective/techevent/profiles/default/types/Meeting.xml
-#: collective/techevent/vocabularies/slot.py:15
+#: collective/techevent/vocabularies/slot.py:16
 msgid "Meeting"
 msgstr ""
 
@@ -293,15 +310,15 @@ msgstr ""
 msgid "Plone Foundation Member"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:175
+#: collective/techevent/behaviors/tech_event.py:223
 msgid "Possible slot duration for a keynote"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:192
+#: collective/techevent/behaviors/tech_event.py:240
 msgid "Possible slot duration for a talk"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:209
+#: collective/techevent/behaviors/tech_event.py:257
 msgid "Possible slot duration for a training"
 msgstr ""
 
@@ -317,7 +334,7 @@ msgstr ""
 msgid "Presenters"
 msgstr ""
 
-#: collective/techevent/vocabularies/slot.py:12
+#: collective/techevent/vocabularies/slot.py:13
 msgid "Registration"
 msgstr ""
 
@@ -347,11 +364,11 @@ msgstr ""
 msgid "Seats"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:157
+#: collective/techevent/behaviors/tech_event.py:205
 msgid "Session Audience"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:140
+#: collective/techevent/behaviors/tech_event.py:188
 msgid "Session Levels"
 msgstr ""
 
@@ -360,6 +377,7 @@ msgid "Should we support multiple events"
 msgstr ""
 
 #: collective/techevent/profiles/default/types/Slot.xml
+#: collective/techevent/vocabularies/slot.py:12
 msgid "Slot"
 msgstr ""
 
@@ -380,7 +398,7 @@ msgid "Sponsorship Level"
 msgstr ""
 
 #: collective/techevent/behaviors/schedule.py:23
-#: collective/techevent/behaviors/tech_event.py:104
+#: collective/techevent/behaviors/tech_event.py:152
 msgid "Start time"
 msgstr ""
 
@@ -388,7 +406,7 @@ msgstr ""
 msgid "Talk"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:191
+#: collective/techevent/behaviors/tech_event.py:239
 msgid "Talk: Slot duration"
 msgstr ""
 
@@ -400,7 +418,7 @@ msgstr ""
 msgid "Target audience"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:158
+#: collective/techevent/behaviors/tech_event.py:206
 msgid "Target group for this audience."
 msgstr ""
 
@@ -425,19 +443,19 @@ msgid "TechEvent Settings"
 msgstr ""
 
 #: collective/techevent/behaviors/session.py:17
-#: collective/techevent/behaviors/tech_event.py:73
+#: collective/techevent/behaviors/tech_event.py:109
 msgid "Title"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:59
+#: collective/techevent/behaviors/tech_event.py:83
 msgid "Title of this audience"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:74
+#: collective/techevent/behaviors/tech_event.py:110
 msgid "Title of this duration"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:44
+#: collective/techevent/behaviors/tech_event.py:56
 msgid "Title of this level"
 msgstr ""
 
@@ -458,7 +476,7 @@ msgstr ""
 msgid "Track this sessionctivity will be listed"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:123
+#: collective/techevent/behaviors/tech_event.py:171
 msgid "Tracks"
 msgstr ""
 
@@ -466,7 +484,7 @@ msgstr ""
 msgid "Training"
 msgstr ""
 
-#: collective/techevent/behaviors/tech_event.py:208
+#: collective/techevent/behaviors/tech_event.py:256
 msgid "Training: Slot duration"
 msgstr ""
 

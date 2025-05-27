@@ -83,6 +83,11 @@ msgstr ""
 msgid "Remove item"
 msgstr ""
 
+#. Default: "Requirements"
+#: messages
+msgid "Requirements"
+msgstr ""
+
 #. Default: "Show item"
 #: components/Widgets/DataGridList
 msgid "Show item"
