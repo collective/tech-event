@@ -14,4 +14,11 @@
       handler=".session.modification_handler"
       />
 
+  <!-- TechEvent Schedule Subscribers -->
+  <subscriber
+      for="collective.techevent.content.schedule.schedule.ISchedule
+           zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".schedule.schedule_added_handler"
+      />
+
 </configure>

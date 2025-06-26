@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="collective.techevent:default"
+      source="1002"
+      destination="1003"
+      >
+    <genericsetup:upgradeDepends
+        title="Update global_allow settings for Session and Slot content types"
+        import_steps="typeinfo rolemap"
+        />
+    <genericsetup:upgradeStep
+        title="Update permissions on Schedule content objects"
+        handler=".update_schedule_permissions"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>

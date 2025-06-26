@@ -69,7 +69,7 @@ def payloads(all_content) -> dict[str, list[dict]]:
     return payloads
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def content_factory():
     """Factory to create a content type in a container."""
 
