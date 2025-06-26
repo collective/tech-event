@@ -16,7 +16,7 @@ msgstr ""
 
 #: collective/techevent/profiles/default/types/Keynote.xml
 msgid "A Keynote in the Event."
-msgstr "Palestrante principal do evento."
+msgstr "Apresentação principal do evento."
 
 #: collective/techevent/profiles/default/types/Presenter.xml
 msgid "A Presenter in the Event."
@@ -182,7 +182,7 @@ msgstr "Duração"
 
 #: collective/techevent/content/schedule/keynote.py:18
 msgid "Duration of the keynote"
-msgstr "Duração do Keynote"
+msgstr "Duração da Palestra Principal"
 
 #: collective/techevent/content/schedule/talk.py:13
 msgid "Duration of the talk"
@@ -254,7 +254,7 @@ msgstr "Investimento para essa cota"
 
 #: collective/techevent/profiles/default/types/Keynote.xml
 msgid "Keynote"
-msgstr "Palestrante Principal"
+msgstr "Palestra Principal"
 
 #: collective/techevent/vocabularies/presenter.py:14
 msgid "Keynote Speaker"
@@ -262,7 +262,7 @@ msgstr "Palestrante Principal"
 
 #: collective/techevent/behaviors/tech_event.py:222
 msgid "Keynote: Slot duration"
-msgstr "Keynote: Duração do slot"
+msgstr "Palestra Principal: Duração do slot"
 
 #: collective/techevent/behaviors/session.py:38
 #: collective/techevent/behaviors/tech_event.py:55
