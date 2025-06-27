@@ -9,11 +9,12 @@ from zope.interface import implementer
 class ISession(ISlot):
     """A Sessuin in the event."""
 
-    slot_category = schema.TextLine(
+    slot_category = schema.Choice(
         title=_("Category"),
         description=_("Category of this slot"),
         required=False,
-        readonly=True,
+        default="activity",
+        vocabulary="collective.techevent.vocabularies.session_categories",
     )
     directives.omitted("slot_category")
 
@@ -21,7 +22,3 @@ class ISession(ISlot):
 @implementer(ISession)
 class Session(Container):
     """Convenience subclass for ``Session`` portal type."""
-
-    @property
-    def slot_category(self) -> str:
-        return "activity"

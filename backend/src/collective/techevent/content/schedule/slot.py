@@ -1,5 +1,4 @@
 from collective.techevent import _
-from plone.autoform import directives
 from plone.dexterity.content import Container
 from zope import schema
 from zope.interface import implementer
@@ -16,7 +15,6 @@ class ISlot(Interface):
         default="slot",
         vocabulary="collective.techevent.vocabularies.slot_categories",
     )
-    directives.no_omit("slot_category")
 
 
 @implementer(ISlot)

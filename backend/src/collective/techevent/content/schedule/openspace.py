@@ -1,24 +1,12 @@
-from collective.techevent import _
-from collective.techevent.content.schedule.slot import ISlot
-from collective.techevent.content.schedule.slot import Slot
-from plone.autoform import directives
-from zope import schema
+from collective.techevent.content.schedule.session import ISession
+from collective.techevent.content.schedule.session import Session
 from zope.interface import implementer
 
 
-class IOpenSpace(ISlot):
+class IOpenSpace(ISession):
     """A OpenSpace in the event."""
-
-    slot_category = schema.Choice(
-        title=_("Category"),
-        description=_("Category of this slot"),
-        required=True,
-        default="slot",
-        vocabulary="collective.techevent.vocabularies.slot_categories",
-    )
-    directives.omitted("slot_category")
 
 
 @implementer(IOpenSpace)
-class OpenSpace(Slot):
+class OpenSpace(Session):
     """Convenience subclass for ``OpenSpace`` portal type."""

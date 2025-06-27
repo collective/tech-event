@@ -16,6 +16,14 @@
       component=".slot.slot_categories"
       />
   <utility
+      name="collective.techevent.vocabularies.break_categories"
+      component=".slot.break_categories"
+      />
+  <utility
+      name="collective.techevent.vocabularies.session_categories"
+      component=".slot.session_categories"
+      />
+  <utility
       name="collective.techevent.vocabularies.slot_rooms"
       component=".slot.slot_rooms"
       />

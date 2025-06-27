@@ -272,7 +272,7 @@ class TestContentTypeFTI:
             ("OpenSpace", "filter_content_types", True),
             ("OpenSpace", "allowed_content_types", ("File", "Image")),
             ("Slot", "title", "Slot"),
-            ("Slot", "global_allow", False),
+            ("Slot", "global_allow", True),
             ("Slot", "filter_content_types", True),
             ("Slot", "allowed_content_types", ()),
             ("Talk", "title", "Talk"),
