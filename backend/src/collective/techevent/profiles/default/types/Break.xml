@@ -41,6 +41,7 @@
     <element value="plone.shortname" />
     <element value="volto.preview_image_link" />
     <element value="plone.basic" />
+    <element value="plone.versioning" />
   </property>
 
 

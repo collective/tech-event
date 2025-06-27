@@ -43,6 +43,7 @@
     <element value="collective.techevent.schedule" />
     <element value="volto.preview_image_link" />
     <element value="plone.shortname" />
+    <element value="plone.versioning" />
   </property>
 
 </object>

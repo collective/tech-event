@@ -16,6 +16,7 @@ _BEHAVIORS_BY_CT = (
             "plone.shortname",
             "volto.navtitle",
             "volto.blocks",
+            "plone.versioning",
         ],
     ),
     (
@@ -28,6 +29,7 @@ _BEHAVIORS_BY_CT = (
             "plone.shortname",
             "volto.navtitle",
             "volto.blocks",
+            "plone.versioning",
         ],
     ),
     (
@@ -40,6 +42,7 @@ _BEHAVIORS_BY_CT = (
             "plone.leadimage",
             "plone.shortname",
             "plone.richtext",
+            "plone.versioning",
         ],
     ),
     (
@@ -52,6 +55,7 @@ _BEHAVIORS_BY_CT = (
             "plone.namefromtitle",
             "plone.excludefromnavigation",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
     (
@@ -64,6 +68,7 @@ _BEHAVIORS_BY_CT = (
             "plone.shortname",
             "volto.preview_image_link",
             "plone.basic",
+            "plone.versioning",
         ],
     ),
     (
@@ -76,6 +81,7 @@ _BEHAVIORS_BY_CT = (
             "collective.techevent.schedule",
             "volto.preview_image_link",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
     (
@@ -88,6 +94,7 @@ _BEHAVIORS_BY_CT = (
             "collective.techevent.schedule",
             "volto.preview_image_link",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
     (
@@ -100,6 +107,7 @@ _BEHAVIORS_BY_CT = (
             "collective.techevent.schedule",
             "volto.preview_image_link",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
     (
@@ -111,6 +119,7 @@ _BEHAVIORS_BY_CT = (
             "collective.techevent.schedule",
             "volto.preview_image_link",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
     (
@@ -122,6 +131,7 @@ _BEHAVIORS_BY_CT = (
             "collective.techevent.schedule",
             "volto.preview_image_link",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
     (
@@ -133,6 +143,7 @@ _BEHAVIORS_BY_CT = (
             "collective.techevent.schedule",
             "volto.preview_image_link",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
     (
@@ -144,6 +155,7 @@ _BEHAVIORS_BY_CT = (
             "collective.techevent.schedule",
             "volto.preview_image_link",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
     (
@@ -156,6 +168,7 @@ _BEHAVIORS_BY_CT = (
             "plone.namefromtitle",
             "plone.excludefromnavigation",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
     (
@@ -168,6 +181,7 @@ _BEHAVIORS_BY_CT = (
             "plone.namefromtitle",
             "plone.excludefromnavigation",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
     (
@@ -178,6 +192,7 @@ _BEHAVIORS_BY_CT = (
             "plone.namefromtitle",
             "plone.excludefromnavigation",
             "plone.shortname",
+            "plone.versioning",
         ],
     ),
 )

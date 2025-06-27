@@ -1,5 +1,8 @@
 from AccessControl.PermissionRole import rolesForPermissionOn
+from plone import api
 from plone.dexterity.content import DexterityContent
+from zope.event import notify
+from zope.lifecycleevent import ObjectModifiedEvent
 
 import pytest
 
@@ -43,3 +46,39 @@ def permission(portal_type) -> str:
 def event_dates(portal):
     """Return event dates."""
     return portal.start, portal.end
+
+
+@pytest.fixture
+def last_version(portal):
+    def func(content: DexterityContent):
+        """Return version data for the given content."""
+        repo_tool = api.portal.get_tool("portal_repository")
+        return repo_tool.retrieve(content)
+
+    return func
+
+
+@pytest.fixture
+def history(portal):
+    def func(content: DexterityContent):
+        """Return history for the given content."""
+        repo_tool = api.portal.get_tool("portal_repository")
+        return repo_tool.getHistory(content)
+
+    return func
+
+
+@pytest.fixture
+def versionable_content_types(portal):
+    """Return version data for the given content."""
+    repo_tool = api.portal.get_tool("portal_repository")
+    return repo_tool.getVersionableContentTypes()
+
+
+@pytest.fixture
+def notify_mofified(portal):
+    def func(content: DexterityContent):
+        """Notify the content was modified."""
+        notify(ObjectModifiedEvent(content))
+
+    return func

@@ -12,6 +12,10 @@
         title="Update global_allow settings for Session and Slot content types"
         import_steps="typeinfo rolemap"
         />
+    <genericsetup:upgradeDepends
+        title="Add versioning to content types provided by collective.techevent"
+        import_steps="repositorytool"
+        />
     <genericsetup:upgradeStep
         title="Update permissions on Schedule content objects"
         handler=".update_schedule_permissions"

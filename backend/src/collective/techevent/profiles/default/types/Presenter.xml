@@ -43,5 +43,6 @@
     <element value="plone.leadimage" />
     <element value="plone.shortname" />
     <element value="plone.richtext" />
+    <element value="plone.versioning" />
   </property>
 </object>

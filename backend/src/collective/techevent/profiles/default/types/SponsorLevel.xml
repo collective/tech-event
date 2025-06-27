@@ -44,6 +44,7 @@
     <element value="plone.namefromtitle" />
     <element value="plone.excludefromnavigation" />
     <element value="plone.shortname" />
+    <element value="plone.versioning" />
   </property>
 
 </object>
