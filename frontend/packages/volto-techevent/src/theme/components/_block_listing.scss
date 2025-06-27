@@ -35,11 +35,16 @@
               margin-bottom: $spacing-2xsmall;
               @include add(size, m);
               @include add(weight, bold);
+              color: var(--theme-foreground-color, var(--color));
               text-decoration: none;
             }
           }
           ul.social-networks {
             justify-content: var(--block-alignment, center);
+            --social-network-icon-color-main: var(
+              --theme-foreground-color,
+              var(--color)
+            );
           }
           .imgWrapper {
             max-width: 200px;
