@@ -37,6 +37,8 @@ const BenefitRow = ({ benefit, displayLevels }) => {
     <tr className={'benefitRow'}>
       <td className={'benefitTitle cell'}>
         <span className={'title'}>{benefit.title}</span>
+        <br />
+        <span className={'description'}>{benefit.description}</span>
       </td>
       {displayLevels.map((level, idx) => {
         const value = benefit.levels[level.id];

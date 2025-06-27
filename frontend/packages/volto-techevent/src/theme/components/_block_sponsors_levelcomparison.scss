@@ -68,6 +68,14 @@
       }
       .benefitRow .cell {
         padding: 5px 0;
+        &.benefitTitle {
+          .title {
+            @include add(weight, bold);
+          }
+          .description {
+            @include add(weight, light);
+          }
+        }
         &.benefitValue {
           text-align: center;
         }
