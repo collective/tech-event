@@ -11,12 +11,21 @@
           padding: $spacing-2xsmall 0 $spacing-small 0;
 
           .sessionTitle .title {
+            display: flex;
+            min-height: 400px;
+            flex-direction: column;
             justify-content: left;
             padding: $spacing-2xsmall 0;
             margin-bottom: $spacing-small;
+            text-decoration: none;
             @include add(size, m);
             @include add(weight, bold);
-            text-decoration: none;
+            .sessionData {
+              display: flex;
+              flex-direction: column;
+              flex-grow: 1;
+              justify-content: space-between;
+            }
           }
         }
         .presenterTile {

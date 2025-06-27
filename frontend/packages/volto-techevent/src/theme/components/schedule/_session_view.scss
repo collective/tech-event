@@ -26,6 +26,14 @@ body.contenttype-training {
           display: block;
           flex: 1 1 30%;
           padding: 0 $spacing-medium;
+          .presenterTile {
+            --block-alignment: center;
+            .presenterTitle {
+              .title {
+                color: var(--secondary-color);
+              }
+            }
+          }
         }
       }
     }
