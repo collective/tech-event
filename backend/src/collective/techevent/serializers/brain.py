@@ -106,6 +106,8 @@ class BrainSessionSerializer(DefaultJSONSummarySerializer):
             value = getattr(context, field_id)
             value = {value} if isinstance(value, str) else value
             response = []
+            if not value:
+                continue
             for item in value:
                 term = vocabulary.getTerm(item)
                 response.append({
