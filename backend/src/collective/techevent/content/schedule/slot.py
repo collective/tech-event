@@ -16,7 +16,7 @@ class ISlot(Interface):
         default="slot",
         vocabulary="collective.techevent.vocabularies.slot_categories",
     )
-    directives.omitted("slot_category")
+    directives.no_omit("slot_category")
 
 
 @implementer(ISlot)

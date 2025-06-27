@@ -1,6 +1,7 @@
 from collective.techevent import _
 from collective.techevent.content.schedule.slot import ISlot
 from collective.techevent.content.schedule.slot import Slot
+from plone.autoform import directives
 from zope import schema
 from zope.interface import implementer
 
@@ -14,6 +15,7 @@ class IBreak(ISlot):
         required=True,
         vocabulary="collective.techevent.vocabularies.slot_categories",
     )
+    directives.no_omit("slot_category")
 
 
 @implementer(IBreak)
