@@ -7,6 +7,47 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a6 (2025-06-27)
+
+### Backend
+
+
+#### New features:
+
+- Add new vocabularies to handle Session, Slot and Break categories. @ericof 
+- Implement versioning support for collective.techevent content types. @ericof 
+- Modify permission rules to support activities being added inside subfolders of the Schedule content type. @ericof 
+- Update pt_BR translation. @ericof 
+
+
+#### Bug fixes:
+
+- Display slot category on Slot and Break. @ericof 
+
+
+#### Internal:
+
+- Do not enable barceloneta theme during installation. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Add styles to sponsor view. @ericof 
+- Fix color for presenter tile title and social network. @ericof 
+- Improve Sponsor blocks styles. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a5 (2025-05-27)
 
 ### Backend
