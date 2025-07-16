@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a9 (2025-07-16)
+
+
+### Bug fixes:
+
+- Fix typo in @sponsors service. @ericof 
+
 ## 1.0.0a8 (2025-07-16)
 
 

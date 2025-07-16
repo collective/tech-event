@@ -7,6 +7,32 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a9 (2025-07-16)
+
+### Backend
+
+
+#### Bug fixes:
+
+- Fix typo in @sponsors service. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Schedule block now supports multiple rooms. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a8 (2025-07-16)
 
 ### Backend

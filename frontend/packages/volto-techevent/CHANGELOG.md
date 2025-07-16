@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.9 (2025-07-16)
+
+### Feature
+
+- Schedule block now supports multiple rooms. @ericof 
+
 ## 1.0.0-alpha.8 (2025-07-16)
 
 ## 1.0.0-alpha.7 (2025-07-16)
