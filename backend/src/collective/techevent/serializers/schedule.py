@@ -1,4 +1,6 @@
+from Acquisition import aq_base
 from collective.techevent.content.schedule.session import ISession
+from collective.techevent.content.schedule.slot import ISlot
 from collective.techevent.utils.vocabularies import get_vocabulary_for_attr
 from plone.restapi.interfaces import ISerializeToJsonSummary
 from plone.restapi.serializer.summary import DefaultJSONSummarySerializer
@@ -12,6 +14,8 @@ from zope.interface import Interface
 class SessionJSONSummarySerializer(DefaultJSONSummarySerializer):
     """ISerializeToJsonSummary adapter for Session types."""
 
+    additional_methods: tuple[str, ...] = ("UID",)
+    additional_fields: tuple[str, ...] = ("slot_category",)
     relation_fields: tuple[str, ...] = ("presenters",)
     vocabulary_fields: tuple[str, ...] = (
         "portal_type",
@@ -36,7 +40,7 @@ class SessionJSONSummarySerializer(DefaultJSONSummarySerializer):
             })
         return response
 
-    def format_relations(self: str, value: set) -> list[dict]:
+    def format_relations(self, value: set) -> list[dict]:
         result = []
         context = self.context
         for rel_value in value:
@@ -51,15 +55,30 @@ class SessionJSONSummarySerializer(DefaultJSONSummarySerializer):
     def __call__(self):
         summary = super().__call__()
         context = self.context
+        for field_id in self.additional_methods:
+            value = getattr(aq_base(context), field_id, None)
+            summary[field_id] = value() if value else None
+        for field_id in self.additional_fields:
+            value = getattr(aq_base(context), field_id, None)
+            summary[field_id] = value
         for field_id in self.relation_fields:
-            if value := getattr(context, field_id):
+            if value := getattr(aq_base(context), field_id, None):
                 value = self.format_relations(value)
             else:
                 value = []
             summary[field_id] = value
 
         for field_id in self.vocabulary_fields:
-            if value := getattr(context, field_id):
+            if value := getattr(aq_base(context), field_id, None):
                 value = self.format_vocabulary_values(field_id, value)
             summary[field_id] = value
         return summary
+
+
+@implementer(ISerializeToJsonSummary)
+@adapter(ISlot, Interface)
+class SlotJSONSummarySerializer(SessionJSONSummarySerializer):
+    """ISerializeToJsonSummary adapter for Slot types."""
+
+    relation_fields: tuple[str, ...] = ()
+    vocabulary_fields: tuple[str, ...] = ()

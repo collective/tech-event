@@ -49,3 +49,8 @@ export interface BlockSchemaProps {
   props: BlockEditProps;
   intl: IntlShape;
 }
+export interface ScheduleBlockSchemaProps {
+  props: BlockEditProps;
+  intl: IntlShape;
+  days: string[];
+}

@@ -30,6 +30,7 @@ export interface EventSettings {
   durations_keynote: Duration[];
   durations_talk: Duration[];
   durations_training: Duration[];
+  days: string[]; // ISO 8601 date string
   end: string; // ISO 8601 datetime string
   start: string; // ISO 8601 datetime string
   levels: Level[];

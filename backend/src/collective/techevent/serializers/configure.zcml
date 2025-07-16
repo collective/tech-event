@@ -11,6 +11,9 @@
   <adapter factory=".presenter.PresenterJSONSerializer" />
   <adapter factory=".presenter.PresenterJSONSummarySerializer" />
 
+  <!-- Slot -->
+  <adapter factory=".schedule.SlotJSONSummarySerializer" />
+
   <!-- Session -->
   <adapter factory=".schedule.SessionJSONSummarySerializer" />
 
