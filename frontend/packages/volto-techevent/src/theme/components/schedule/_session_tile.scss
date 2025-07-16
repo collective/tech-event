@@ -1,8 +1,14 @@
 .sessionTile {
+  display: flex;
+  flex-direction: column;
   padding: $spacing-small;
   background-color: var(--techevent-sessionTile-background-color, #ecebeb);
   color: var(--techevent-sessionTile-color, #000);
   .sessionData {
+    display: flex;
+    height: 100%;
+    flex: 1;
+    flex-direction: column;
     padding: 0 $spacing-small;
     .sessionHeader {
       .sessionTitle {
@@ -10,6 +16,7 @@
           padding: $spacing-small 0;
           margin-bottom: $spacing-small;
           @include add(size, m);
+          @include add(height, l);
           @include add(weight, bold);
           text-decoration: none;
         }
@@ -23,10 +30,13 @@
     }
     .sessionBody {
       padding-top: $spacing-xsmall;
-      border-top-width: 1px;
-      border-top-style: solid;
-      border-top-color: var(--techevent-sessionTile-color, #000);
-      margin-top: $spacing-xsmall;
+      margin-top: auto;
+      .presenters {
+        padding-top: $spacing-xsmall;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: var(--techevent-sessionTile-color, #000);
+      }
     }
   }
 }
