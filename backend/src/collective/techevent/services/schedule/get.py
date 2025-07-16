@@ -6,6 +6,7 @@ from dateutil.parser import parse
 from plone import api
 from plone.dexterity.content import DexterityContent
 from plone.restapi.interfaces import ISerializeToJsonSummary
+from plone.restapi.serializer.converters import json_compatible
 from plone.restapi.services import Service
 from typing import Any
 from zope.component import getMultiAdapter
@@ -124,4 +125,4 @@ class ScheduleGet(Service):
         rooms = self.get_rooms()
         raw_slots = self.get_slots()
         slots = group_slots(raw_slots, rooms)
-        return {"items": slots}
+        return json_compatible({"items": slots})
