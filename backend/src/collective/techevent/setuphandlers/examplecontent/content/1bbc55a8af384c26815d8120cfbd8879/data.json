@@ -93,6 +93,7 @@
       "fd8ac74c-ceaf-4367-aab9-afce9d068b1e"
     ]
   },
+  "changeNote": "",
   "color": "#000000",
   "created": "2025-05-16T18:29:16+00:00",
   "description": "Gold Package",
@@ -112,6 +113,7 @@
   "title": "Gold",
   "type_title": "Sponsorship Level",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

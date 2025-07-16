@@ -30,6 +30,7 @@
       "54422f55-5eb7-49c9-92b8-f7738e5c87a2"
     ]
   },
+  "changeNote": "",
   "color": "#000000",
   "created": "2025-05-20T17:32:30+00:00",
   "description": "Organizers of this event",
@@ -49,6 +50,7 @@
   "title": "Organized by",
   "type_title": "Sponsorship Level",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

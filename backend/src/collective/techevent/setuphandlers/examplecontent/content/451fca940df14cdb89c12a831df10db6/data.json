@@ -1,0 +1,86 @@
+{
+  "@id": "/schedule/2025-08-01",
+  "@type": "Document",
+  "UID": "451fca940df14cdb89c12a831df10db6",
+  "allow_discussion": null,
+  "blocks": {
+    "673fb7d7-1849-4c1c-ae11-ef27b36ee0d5": {
+      "@type": "slate"
+    },
+    "bd74de26-2dec-4114-ab73-816bde580d8b": {
+      "@type": "title"
+    },
+    "d5c9e7a4-198c-4bff-bcf8-d3af8d294bbb": {
+      "@type": "scheduleBlock",
+      "displayDayIndex": true,
+      "filterByDay": [
+        "2025-08-01"
+      ],
+      "styles": {
+        "align:noprefix": "left"
+      },
+      "title": ""
+    },
+    "e1aa6022-b94d-4c3a-a53d-e329e6f20185": {
+      "@type": "description"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "bd74de26-2dec-4114-ab73-816bde580d8b",
+      "e1aa6022-b94d-4c3a-a53d-e329e6f20185",
+      "d5c9e7a4-198c-4bff-bcf8-d3af8d294bbb",
+      "673fb7d7-1849-4c1c-ae11-ef27b36ee0d5"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-07-16T16:25:33+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Activities for August 01",
+  "effective": "2025-07-16T16:25:53+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "2025-08-01",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-07-16T16:28:15+00:00",
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "August 01",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-07-16T16:25:33+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-07-16T16:25:53+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

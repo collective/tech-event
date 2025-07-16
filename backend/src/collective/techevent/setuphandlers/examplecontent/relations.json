@@ -30,6 +30,11 @@
     "to_uuid": "a5b298726b3d489bbeb2fb2877c91687"
   },
   {
+    "from_attribute": "presenters",
+    "from_uuid": "91b91271f1754a96ae24482be26836bb",
+    "to_uuid": "51296283d3dc41b0aac636c7e6999eb1"
+  },
+  {
     "from_attribute": "preview_image_link",
     "from_uuid": "94c5c92fd5904b13b97aa9fcb69d106e",
     "to_uuid": "af5b7bb838064a2384e3b5b8caae7d3b"

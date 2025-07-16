@@ -1,0 +1,73 @@
+{
+  "@id": "/schedule/2025-07-31/installing-and-deploying-plone",
+  "@type": "Training",
+  "UID": "91b91271f1754a96ae24482be26836bb",
+  "allow_discussion": null,
+  "changeNote": "",
+  "created": "2025-07-16T17:10:26+00:00",
+  "description": "\nLearn how to create a new Plone project, customize it, and then deploy on a live environment.\n",
+  "duration": "full-day",
+  "end": "2025-07-31T21:00:00",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "installing-and-deploying-plone",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-07-16T17:13:06+00:00",
+  "preview_caption_link": null,
+  "requirements": {
+    "content-type": "text/html",
+    "data": "<ul><li>A computer with the\u00a0<a href=\"https://training.plone.org/plone-deployment/setup.html#pre-requisites\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"external\">required software installed</a></li><li>A GitHub account</li></ul>",
+    "encoding": "utf8"
+  },
+  "review_state": "published",
+  "room": [
+    "a4ce8fd1773f4e61af1731db1012b4d5"
+  ],
+  "session_audience": [
+    "devops"
+  ],
+  "session_language": "en",
+  "session_level": [
+    "general"
+  ],
+  "session_track": [
+    "main"
+  ],
+  "slot_category": "activity",
+  "start": "2025-07-31T12:00:00",
+  "subjects": [],
+  "text": {
+    "content-type": "text/html",
+    "data": "<p>In this training you will learn to:<br/></p><ul><li>Create a new project for Volto and Plone</li><li>Develop and test it locally</li><li>Use a CI to create images for deploy</li><li>Setup a server for host the solution</li><li>Deploy the project</li></ul><p></p><p>This training session will showcase the entire lifecycle of a new Plone project, from creation to repeatable deployments.</p><p></p><p><strong>Training docs available at\u00a0<a href=\"https://training.plone.org/plone-deployment/index.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"external\">training.plone.org</a></strong></p>",
+    "encoding": "utf8"
+  },
+  "title": "Installing and deploying Plone",
+  "total_seats": 30,
+  "type_title": "Training",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-07-16T17:10:26+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-07-16T17:10:36+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

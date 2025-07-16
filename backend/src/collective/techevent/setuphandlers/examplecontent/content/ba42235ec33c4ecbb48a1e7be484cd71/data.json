@@ -5,7 +5,13 @@
   "allow_discussion": null,
   "blocks": {
     "02b56318-11f1-464e-883f-b179d9aed874": {
-      "@type": "slate"
+      "@type": "scheduleBlock",
+      "displayDayIndex": false,
+      "filterByDay": [],
+      "styles": {
+        "align:noprefix": "left"
+      },
+      "title": "Schedule"
     },
     "03e1538e-846e-4b6f-bf2a-b1d348270e92": {
       "@type": "listing",
@@ -34,6 +40,9 @@
     },
     "078e45c7-178a-4b4b-9f7c-dbfd4fbd19c9": {
       "@type": "title"
+    },
+    "29cb9777-c785-4aa8-a7c2-fffa9615e1e4": {
+      "@type": "slate"
     }
   },
   "blocks_layout": {
@@ -41,9 +50,11 @@
       "078e45c7-178a-4b4b-9f7c-dbfd4fbd19c9",
       "063f9c58-f896-4ebe-9cf3-fa23578d55be",
       "03e1538e-846e-4b6f-bf2a-b1d348270e92",
-      "02b56318-11f1-464e-883f-b179d9aed874"
+      "02b56318-11f1-464e-883f-b179d9aed874",
+      "29cb9777-c785-4aa8-a7c2-fffa9615e1e4"
     ]
   },
+  "changeNote": "",
   "created": "2025-05-26T14:16:52+00:00",
   "description": "Conference Schedule",
   "exclude_from_nav": false,
@@ -54,13 +65,14 @@
   "language": "##DEFAULT##",
   "layout": "view",
   "lock": {},
-  "modified": "2025-05-27T11:38:15+00:00",
+  "modified": "2025-07-16T17:06:57+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",
   "title": "Schedule",
   "type_title": "Schedule",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

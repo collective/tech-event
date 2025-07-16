@@ -50,7 +50,7 @@
     "admin"
   ],
   "description": "Presenters of the conference",
-  "effective": "2025-05-26T14:16:31+00:00",
+  "effective": "2025-05-26T14:16:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},

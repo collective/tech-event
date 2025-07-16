@@ -4,16 +4,86 @@
   "UID": "51296283d3dc41b0aac636c7e6999eb1",
   "activities": [
     {
+      "@id": "Training",
+      "@type": "Training",
+      "items": [
+        {
+          "@id": "/schedule/2025-07-31/installing-and-deploying-plone",
+          "@type": "Training",
+          "Subject": [],
+          "UID": "91b91271f1754a96ae24482be26836bb",
+          "description": " Learn how to create a new Plone project, customize it, and then deploy on a live environment. ",
+          "effective": "2025-07-16T17:10:36+00:00",
+          "end": "2025-07-31T21:00:00",
+          "getObjSize": null,
+          "head_title": null,
+          "image_field": null,
+          "image_scales": {},
+          "mime_type": null,
+          "nav_title": null,
+          "portal_type": [
+            {
+              "title": "Training",
+              "token": "Training"
+            }
+          ],
+          "presenters": [
+            {
+              "@id": "/presenters/erico-andrei",
+              "title": "\u00c9rico Andrei"
+            }
+          ],
+          "review_state": "published",
+          "room": [
+            {
+              "title": "Training room",
+              "token": "a4ce8fd1773f4e61af1731db1012b4d5"
+            }
+          ],
+          "session_audience": [
+            {
+              "title": "DevOps",
+              "token": "devops"
+            }
+          ],
+          "session_language": [
+            {
+              "title": "English",
+              "token": "en"
+            }
+          ],
+          "session_level": [
+            {
+              "title": "General",
+              "token": "general"
+            }
+          ],
+          "session_track": [
+            {
+              "title": "Main Track",
+              "token": "main"
+            }
+          ],
+          "slot_category": "activity",
+          "start": "2025-07-31T12:00:00",
+          "title": "Installing and deploying Plone",
+          "type_title": "Training"
+        }
+      ],
+      "title": "Training"
+    },
+    {
       "@id": "Talk",
       "@type": "Talk",
       "items": [
         {
-          "@id": "/schedule/plone-distributions",
+          "@id": "/schedule/2025-08-01/pytest-plone",
           "@type": "Talk",
           "Subject": [],
-          "description": "Unleash the power of Plone Distributions",
-          "effective": "2025-05-26T14:41:13+00:00",
-          "end": "2025-07-02T15:40:00",
+          "UID": "0f203c3794c4455592a59ae7fce50c71",
+          "description": "Pytest + Plone Pytest + Plone Pytest + Plone",
+          "effective": "1969-12-31T03:00:00+00:00",
+          "end": "2025-08-01T18:40:00",
           "getObjSize": null,
           "head_title": null,
           "image_field": null,
@@ -63,17 +133,19 @@
               "token": "main"
             }
           ],
-          "start": "2025-07-02T15:00:00",
-          "title": "Plone Distributions",
+          "slot_category": "activity",
+          "start": "2025-08-01T18:00:00",
+          "title": "Pytest + Plone",
           "type_title": "Talk"
         },
         {
-          "@id": "/schedule/pytest-plone",
+          "@id": "/schedule/2025-08-02/plone-distributions",
           "@type": "Talk",
           "Subject": [],
-          "description": "Pytest + Plone Pytest + Plone Pytest + Plone",
-          "effective": "2025-05-26T14:41:13+00:00",
-          "end": "2025-07-01T15:40:00",
+          "UID": "f0d13e7454594b2a8f3360db16769a47",
+          "description": "Unleash the power of Plone Distributions",
+          "effective": "1969-12-31T03:00:00+00:00",
+          "end": "2025-08-02T18:40:00",
           "getObjSize": null,
           "head_title": null,
           "image_field": null,
@@ -123,8 +195,9 @@
               "token": "main"
             }
           ],
-          "start": "2025-07-01T15:00:00",
-          "title": "Pytest + Plone",
+          "slot_category": "activity",
+          "start": "2025-08-02T18:00:00",
+          "title": "The power of Plone Distributions: Or how to build your own CMS",
           "type_title": "Talk"
         }
       ],
@@ -135,6 +208,7 @@
   "categories": [
     "speaker"
   ],
+  "changeNote": "",
   "created": "2025-05-22T19:09:38+00:00",
   "description": "Just a geek from Brazil",
   "email": "ericof@plone.org",
@@ -156,6 +230,10 @@
     {
       "title": "Speaker",
       "token": "speaker"
+    },
+    {
+      "title": "Instructor",
+      "token": "instructor"
     }
   ],
   "language": "##DEFAULT##",
@@ -192,6 +270,7 @@
   "title": "\u00c9rico Andrei",
   "type_title": "Presenter",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

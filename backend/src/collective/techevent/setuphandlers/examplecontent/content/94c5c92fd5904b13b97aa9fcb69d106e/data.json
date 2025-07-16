@@ -30,6 +30,7 @@
       "19f6b2f4-c276-4ed0-9c44-87e157a7209f"
     ]
   },
+  "changeNote": "",
   "color": "#000000",
   "created": "2025-05-16T18:29:16+00:00",
   "description": "Supporting",
@@ -49,6 +50,7 @@
   "title": "Support",
   "type_title": "Sponsorship Level",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

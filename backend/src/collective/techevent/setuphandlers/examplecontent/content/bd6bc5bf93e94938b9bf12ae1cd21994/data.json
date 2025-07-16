@@ -77,6 +77,7 @@
       "a1bec7f8-5cc6-4a87-9157-4865cf122ffb"
     ]
   },
+  "changeNote": "",
   "created": "2025-05-16T18:28:47+00:00",
   "description": "Support our event",
   "exclude_from_nav": false,
@@ -94,6 +95,7 @@
   "title": "Sponsor Us",
   "type_title": "Sponsors Database",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

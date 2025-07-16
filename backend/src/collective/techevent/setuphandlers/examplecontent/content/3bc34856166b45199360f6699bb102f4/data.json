@@ -21,6 +21,7 @@
       "b481c895-6660-4318-a956-b77eec8ea3ff"
     ]
   },
+  "changeNote": "",
   "created": "2025-05-22T17:12:15+00:00",
   "description": "Main conference room",
   "exclude_from_nav": false,
@@ -38,6 +39,7 @@
   "title": "Main Room",
   "type_title": "Room",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

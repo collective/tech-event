@@ -1,12 +1,13 @@
 {
-  "@id": "/schedule/pytest-plone",
+  "@id": "/schedule/2025-08-01/pytest-plone",
   "@type": "Talk",
   "UID": "0f203c3794c4455592a59ae7fce50c71",
   "allow_discussion": null,
+  "changeNote": "",
   "created": "2025-05-26T14:40:34+00:00",
   "description": "Pytest + Plone Pytest + Plone Pytest + Plone",
   "duration": null,
-  "end": "2025-07-01T15:40:00",
+  "end": "2025-08-01T18:40:00",
   "exclude_from_nav": false,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
@@ -15,7 +16,7 @@
   "language": "##DEFAULT##",
   "layout": "view",
   "lock": {},
-  "modified": "2025-05-26T22:02:21+00:00",
+  "modified": "2025-07-16T16:38:36+00:00",
   "preview_caption_link": null,
   "review_state": "published",
   "room": [
@@ -32,7 +33,7 @@
     "main"
   ],
   "slot_category": "activity",
-  "start": "2025-07-01T15:00:00",
+  "start": "2025-08-01T18:00:00",
   "subjects": [],
   "text": {
     "content-type": "text/html",
@@ -42,6 +43,7 @@
   "title": "Pytest + Plone",
   "type_title": "Talk",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

@@ -1,43 +1,43 @@
 {
-  "@id": "/about/venue",
-  "@type": "Venue",
-  "UID": "a5b298726b3d489bbeb2fb2877c91687",
+  "@id": "/about/venue/training-room",
+  "@type": "Room",
+  "UID": "a4ce8fd1773f4e61af1731db1012b4d5",
   "allow_discussion": null,
   "blocks": {
-    "4c8f9590-a84b-49a3-86d3-77ca8a0b2e3a": {
-      "@type": "title"
-    },
-    "5f03570c-456b-46d2-8494-0808ad8f8e69": {
+    "673e700d-35f9-46e8-b400-a864e5a04cd2": {
       "@type": "slate"
     },
-    "97986b38-cd2b-4751-b30d-168d19fdde1a": {
+    "b28b6cfc-90c3-46b8-8c1e-bbb54c7eab60": {
+      "@type": "title"
+    },
+    "d110394d-0a48-452a-8da5-685ff2dad253": {
       "@type": "description"
     }
   },
   "blocks_layout": {
     "items": [
-      "4c8f9590-a84b-49a3-86d3-77ca8a0b2e3a",
-      "97986b38-cd2b-4751-b30d-168d19fdde1a",
-      "5f03570c-456b-46d2-8494-0808ad8f8e69"
+      "b28b6cfc-90c3-46b8-8c1e-bbb54c7eab60",
+      "d110394d-0a48-452a-8da5-685ff2dad253",
+      "673e700d-35f9-46e8-b400-a864e5a04cd2"
     ]
   },
   "changeNote": "",
-  "created": "2025-05-22T17:11:47+00:00",
-  "description": "We are located at the heart of the city!",
+  "created": "2025-07-16T17:11:18+00:00",
+  "description": "Main training room for the conference",
   "exclude_from_nav": false,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "id": "venue",
+  "id": "training-room",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "view",
   "lock": {},
-  "modified": "2025-07-16T17:11:18+00:00",
+  "modified": "2025-07-16T17:11:21+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",
-  "title": "Venue",
-  "type_title": "Venue",
+  "title": "Training room",
+  "type_title": "Room",
   "version": "current",
   "versioning_enabled": true,
   "workflow_history": {
@@ -47,14 +47,14 @@
         "actor": "admin",
         "comments": "",
         "review_state": "private",
-        "time": "2025-05-22T17:11:47+00:00"
+        "time": "2025-07-16T17:11:18+00:00"
       },
       {
         "action": "publish",
         "actor": "admin",
         "comments": "",
         "review_state": "published",
-        "time": "2025-05-22T17:13:42+00:00"
+        "time": "2025-07-16T17:11:21+00:00"
       }
     ]
   },

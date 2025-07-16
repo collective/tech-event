@@ -3,6 +3,7 @@
   "@type": "Sponsor",
   "UID": "2f4f1da2d12d4d3db24ea76b7aefec7e",
   "allow_discussion": null,
+  "changeNote": "",
   "created": "2025-05-16T18:41:25+00:00",
   "description": "The Brazilian Plone users community",
   "exclude_from_nav": false,
@@ -100,6 +101,7 @@
   "title": "PloneGov-BR",
   "type_title": "Sponsor",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

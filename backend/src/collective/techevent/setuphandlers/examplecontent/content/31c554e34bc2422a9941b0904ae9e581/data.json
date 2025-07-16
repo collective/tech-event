@@ -3,6 +3,7 @@
   "@type": "Sponsor",
   "UID": "31c554e34bc2422a9941b0904ae9e581",
   "allow_discussion": null,
+  "changeNote": "",
   "created": "2025-05-20T17:47:57+00:00",
   "description": "",
   "exclude_from_nav": false,
@@ -89,6 +90,7 @@
   "title": "Plone Foundation",
   "type_title": "Sponsor",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

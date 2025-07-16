@@ -67,6 +67,7 @@
       "810d07ec-595d-4a99-ab87-87de6847f4ca"
     ]
   },
+  "changeNote": "",
   "color": "#000000",
   "created": "2025-05-16T18:29:16+00:00",
   "description": "Silver Package",
@@ -86,6 +87,7 @@
   "title": "Silver",
   "type_title": "Sponsorship Level",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

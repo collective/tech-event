@@ -3,6 +3,7 @@
   "@type": "Sponsor",
   "UID": "b31955453aaa423482b478515ae1cceb",
   "allow_discussion": null,
+  "changeNote": "",
   "created": "2025-05-20T17:43:43+00:00",
   "description": "The Plone experts in Brazil",
   "exclude_from_nav": false,
@@ -56,6 +57,7 @@
   "title": "Simples Consultoria",
   "type_title": "Sponsor",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

@@ -254,6 +254,11 @@
   "creators": [
     "admin"
   ],
+  "days": [
+    "2025-07-31",
+    "2025-08-01",
+    "2025-08-02"
+  ],
   "description": "",
   "durations_keynote": [
     {

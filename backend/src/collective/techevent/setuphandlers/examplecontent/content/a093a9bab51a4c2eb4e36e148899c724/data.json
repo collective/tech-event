@@ -1,0 +1,86 @@
+{
+  "@id": "/schedule/2025-07-31",
+  "@type": "Document",
+  "UID": "a093a9bab51a4c2eb4e36e148899c724",
+  "allow_discussion": null,
+  "blocks": {
+    "3213df6e-0412-4613-9407-ff27766a0d46": {
+      "@type": "scheduleBlock",
+      "displayDayIndex": false,
+      "filterByDay": [
+        "2025-07-31"
+      ],
+      "styles": {
+        "align:noprefix": "left"
+      },
+      "title": ""
+    },
+    "44bf17a4-ba4f-4f23-937f-3409ec71d865": {
+      "@type": "slate"
+    },
+    "6dd969e6-1473-4e32-92b6-cc2a91ff9614": {
+      "@type": "description"
+    },
+    "715a59d8-5ef4-4bda-8a6c-4e914c5e56c7": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "715a59d8-5ef4-4bda-8a6c-4e914c5e56c7",
+      "6dd969e6-1473-4e32-92b6-cc2a91ff9614",
+      "3213df6e-0412-4613-9407-ff27766a0d46",
+      "44bf17a4-ba4f-4f23-937f-3409ec71d865"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-07-16T17:06:49+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Activities on July 31",
+  "effective": "2025-07-16T17:08:04+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "2025-07-31",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-07-16T17:10:26+00:00",
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "July 31",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-07-16T17:06:49+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-07-16T17:08:04+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

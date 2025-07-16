@@ -1,0 +1,49 @@
+{
+  "@id": "/schedule/2025-08-02/registration",
+  "@type": "Slot",
+  "UID": "dc7237dea7084987a31d2f19423b114c",
+  "allow_discussion": null,
+  "changeNote": "",
+  "created": "2025-07-16T16:27:01+00:00",
+  "description": "Registration at the entrance",
+  "end": "2025-08-02T12:00:00",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "registration",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-07-16T16:31:02+00:00",
+  "preview_caption_link": null,
+  "review_state": "published",
+  "room": null,
+  "slot_category": "registration",
+  "start": "2025-08-02T11:30:00",
+  "subjects": [],
+  "title": "Registration",
+  "type_title": "Slot",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-07-16T16:30:42+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-07-16T16:31:25+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

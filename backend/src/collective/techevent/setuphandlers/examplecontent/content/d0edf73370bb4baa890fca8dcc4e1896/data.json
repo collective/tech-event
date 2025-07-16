@@ -1,0 +1,86 @@
+{
+  "@id": "/schedule/2025-08-02",
+  "@type": "Document",
+  "UID": "d0edf73370bb4baa890fca8dcc4e1896",
+  "allow_discussion": null,
+  "blocks": {
+    "45c6cdfd-4f25-45ae-aede-e5c8c96f7ff1": {
+      "@type": "description"
+    },
+    "6510f52a-d531-4757-a0ab-9a0c3e8bf18f": {
+      "@type": "slate"
+    },
+    "759aba38-1f01-4174-bad5-68493aca75ed": {
+      "@type": "scheduleBlock",
+      "displayDayIndex": false,
+      "filterByDay": [
+        "2025-08-02"
+      ],
+      "styles": {
+        "align:noprefix": "left"
+      },
+      "title": ""
+    },
+    "ce8ec71a-77a0-4bb3-8cbf-85626c188e6e": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "ce8ec71a-77a0-4bb3-8cbf-85626c188e6e",
+      "45c6cdfd-4f25-45ae-aede-e5c8c96f7ff1",
+      "759aba38-1f01-4174-bad5-68493aca75ed",
+      "6510f52a-d531-4757-a0ab-9a0c3e8bf18f"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-07-16T16:30:11+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Activities for August 02",
+  "effective": "2025-07-16T16:30:34+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "2025-08-02",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-07-16T16:32:12+00:00",
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "August 02",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-07-16T16:30:11+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-07-16T16:30:34+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
