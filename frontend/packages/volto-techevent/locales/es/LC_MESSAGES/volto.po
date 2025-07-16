@@ -53,6 +53,11 @@ msgstr ""
 msgid "Day"
 msgstr ""
 
+#. Default: "Details"
+#: messages
+msgid "Details"
+msgstr ""
+
 #. Default: "Display CTA?"
 #: messages
 msgid "Display CTA?"

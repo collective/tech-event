@@ -77,6 +77,10 @@ const messages = defineMessages({
     id: 'Requirements',
     defaultMessage: 'Requirements',
   },
+  details: {
+    id: 'Details',
+    defaultMessage: 'Details',
+  },
 });
 
 export default messages;

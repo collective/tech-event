@@ -43,22 +43,26 @@ const SessionView: React.FC<SessionViewProps> = ({ content }) => {
               <SessionLevel item={content} />
               <div className="sessionDescription">{description}</div>
             </Container>
-            {content.requirements && (
-              <Container className="sessionBody">
-                <h3>{intl.formatMessage(messages.requirements)}</h3>
-                <div
-                  className="sessionText"
-                  dangerouslySetInnerHTML={{ __html: text.data }}
-                />
-              </Container>
-            )}
 
             <Container className="sessionBody">
+              <h3>{intl.formatMessage(messages.details)}</h3>
               <div
                 className="sessionText"
                 dangerouslySetInnerHTML={{ __html: text.data }}
               />
             </Container>
+
+            {content.requirements && (
+              <Container className="sessionBody">
+                <h3>{intl.formatMessage(messages.requirements)}</h3>
+                <div
+                  className="sessionText"
+                  dangerouslySetInnerHTML={{
+                    __html: content.requirements.data,
+                  }}
+                />
+              </Container>
+            )}
           </Container>
           <Container className="sessionPresenters">
             {presenters &&

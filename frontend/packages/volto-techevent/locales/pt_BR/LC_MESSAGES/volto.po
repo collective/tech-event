@@ -51,6 +51,11 @@ msgstr "Colapsar item"
 msgid "Day"
 msgstr "Dia"
 
+#. Default: "Details"
+#: messages
+msgid "Details"
+msgstr "Detalhes"
+
 #. Default: "Display CTA?"
 #: messages
 msgid "Display CTA?"
