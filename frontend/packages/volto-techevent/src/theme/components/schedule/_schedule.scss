@@ -82,23 +82,6 @@
       }
       .room-all {
         width: 100%;
-        .slotTile {
-          min-height: 100px;
-          padding: $spacing-small;
-          background-color: var(--techevent-schedule-color);
-          color: var(--techevent-schedule-reverse-color);
-          .slotDate .wrapper {
-            color: var(--techevent-schedule-reverse-color);
-          }
-          .session-title {
-            @include add(weight, bold);
-          }
-          .session-body {
-            padding-top: 0.1rem;
-            border: unset;
-            margin-top: 0.1rem;
-          }
-        }
       }
     }
   }

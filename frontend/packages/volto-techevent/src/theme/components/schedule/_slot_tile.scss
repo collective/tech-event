@@ -1,0 +1,20 @@
+.slotTile {
+  min-height: 100px;
+  padding: $spacing-xsmall $spacing-small;
+  background-color: var(--techevent-schedule-color);
+  color: var(--techevent-schedule-reverse-color);
+  .slotDate .wrapper {
+    color: var(--techevent-schedule-reverse-color);
+  }
+  .slotTitle {
+    padding: $spacing-xsmall 0;
+    @include add(size, m);
+    @include add(height, l);
+    @include add(weight, bold);
+    text-decoration: none;
+  }
+  .slotDescription {
+    @include add(size, s);
+    @include add(height, m);
+  }
+}

@@ -13,7 +13,7 @@ interface SlotTileProps {
 
 const SlotTile: React.FC<SlotTileProps> = ({
   item,
-  showDescription,
+  showDescription = true,
   shortDate = true,
 }) => {
   const uid = item.UID;
