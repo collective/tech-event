@@ -47,8 +47,22 @@
         0 -8px 0 0 var(--techevent-schedule-reverse-color),
         0 -10px 0 0 var(--techevent-schedule-secondary-color);
       gap: var(--gap);
-      .room {
+      &.rooms-0,
+      &.rooms-1 {
+        .room {
+          width: 100%;
+        }
+      }
+      &.rooms-2 .room {
+        width: 50%;
+      }
+      &.rooms-3 .room {
+        width: 33%;
+      }
+      &.rooms-4 .room {
         width: 25%;
+      }
+      .room {
         @media screen and (max-width: $tablet-breakpoint) {
           width: 100%;
         }

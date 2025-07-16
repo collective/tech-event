@@ -38,7 +38,7 @@ const DaySchedule = (props) => {
   const dayRooms = hasAllRoom
     ? day.rooms.filter((room) => room[0] !== '_all_')
     : day.rooms;
-
+  const lenRooms = dayRooms.length;
   return (
     <div className={`tab-content ${keyDay}`}>
       <div className={`day-header`}>
@@ -47,7 +47,7 @@ const DaySchedule = (props) => {
             <Icon name={roomSVG} />
           </div>
         </div>
-        <div className="rooms">
+        <div className={`rooms rooms-${lenRooms}`}>
           {dayRooms.map((room, roomIndex) => {
             const roomId = room[0];
             const roomLabel = room[1] || roomId;

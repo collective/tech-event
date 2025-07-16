@@ -84,5 +84,5 @@ class GetSponsors(Service):
         return json_compatible({
             "@id": sponsors_db.absolute_url(),
             "items": levels,
-            "benefits": self.ge_t_benefits(sponsors_db, raw_levels),
+            "benefits": self.get_benefits(sponsors_db, raw_levels),
         })
