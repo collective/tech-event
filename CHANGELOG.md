@@ -7,6 +7,29 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a8 (2025-07-16)
+
+### Backend
+
+
+#### Bug fixes:
+
+- Always use json_compatible to avoid json encoder issues. @ericof 
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a7 (2025-07-16)
 
 ### Backend

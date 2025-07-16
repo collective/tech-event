@@ -8,6 +8,8 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.8 (2025-07-16)
+
 ## 1.0.0-alpha.7 (2025-07-16)
 
 ### Bugfix

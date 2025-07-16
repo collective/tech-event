@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a8 (2025-07-16)
+
+
+### Bug fixes:
+
+- Always use json_compatible to avoid json encoder issues. @ericof 
+
 ## 1.0.0a7 (2025-07-16)
 
 
