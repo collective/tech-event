@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.7 (2025-07-16)
+
+### Bugfix
+
+- Fix tutorial view. @ericof [#1](https://github.com/collective/tech-event/issue/1)
+- Small style fixes. @ericof 
+
+### Internal
+
+- Upgrade @plonegovbr/volto-social-media to version 2.0.0-alpha.6. @ericof 
+
 ## 1.0.0-alpha.6 (2025-06-27)
 
 ### Feature

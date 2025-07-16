@@ -1,1 +1,0 @@
-Handle an issue during serialization of a None value. @ericof

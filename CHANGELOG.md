@@ -7,6 +7,44 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a7 (2025-07-16)
+
+### Backend
+
+
+#### New features:
+
+- Add @schedule endpoint. @ericof 
+
+
+#### Bug fixes:
+
+- Handle an issue during serialization of a None value. @ericof 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix tutorial view. @ericof [#1](https://github.com/collective/tech-event/issue/1)
+- Small style fixes. @ericof 
+
+#### Internal
+
+- Upgrade @plonegovbr/volto-social-media to version 2.0.0-alpha.6. @ericof 
+
+
+
+### Project
+
+
+#### Internal
+
+- GHA: Fix changelog workflow. @ericof 
+
+
+
 ## 1.0.0a6 (2025-06-27)
 
 ### Backend

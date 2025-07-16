@@ -9,6 +9,18 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a7 (2025-07-16)
+
+
+### New features:
+
+- Add @schedule endpoint. @ericof 
+
+
+### Bug fixes:
+
+- Handle an issue during serialization of a None value. @ericof 
+
 ## 1.0.0a6 (2025-06-27)
 
 
