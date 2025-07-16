@@ -41,14 +41,29 @@ msgstr ""
 msgid "Collapse item"
 msgstr ""
 
+#. Default: "Day"
+#: components/Schedule/Schedule
+msgid "Day"
+msgstr ""
+
 #. Default: "Display CTA?"
 #: messages
 msgid "Display CTA?"
 msgstr ""
 
+#. Default: "Display Headline?"
+#: messages
+msgid "Display Headline?"
+msgstr ""
+
 #. Default: "Empty object list"
 #: components/Widgets/DataGridList
 msgid "Empty object list"
+msgstr ""
+
+#. Default: "Filter by Day"
+#: messages
+msgid "Filter by Day"
 msgstr ""
 
 #. Default: "Heading"
@@ -79,6 +94,11 @@ msgstr ""
 #. Default: "Requirements"
 #: messages
 msgid "Requirements"
+msgstr ""
+
+#. Default: "Schedule Block"
+#: messages
+msgid "Schedule Block"
 msgstr ""
 
 #. Default: "Show item"

@@ -1,6 +1,7 @@
 // This extends the volto-light-theme
 @import 'root';
 @import 'components/card';
+@import 'components/schedule/schedule';
 @import 'components/schedule/session_date';
 @import 'components/schedule/session_track';
 @import 'components/schedule/session_language';
@@ -10,6 +11,7 @@
 @import 'components/schedule/session_info';
 @import 'components/schedule/session_tile';
 @import 'components/schedule/session_view';
+@import 'components/schedule/slot_view';
 @import 'components/sponsorlevel';
 @import 'components/sponsorlist';
 @import 'components/sponsortile';

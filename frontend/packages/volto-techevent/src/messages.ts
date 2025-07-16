@@ -1,6 +1,22 @@
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
+  scheduleBlockTitle: {
+    id: 'Schedule Block',
+    defaultMessage: 'Schedule Block',
+  },
+  displayMenuHeadline: {
+    id: 'Display Headline?',
+    defaultMessage: 'Display Headline?',
+  },
+  scheduleFilterByDay: {
+    id: 'Filter by Day',
+    defaultMessage: 'Filter by Day',
+  },
+  filterByDay: {
+    id: 'Filter by Day',
+    defaultMessage: 'Filter by Day',
+  },
   sponsorLevelBlockTitle: {
     id: 'Sponsor Level',
     defaultMessage: 'Sponsor Level',

@@ -33,3 +33,17 @@ export interface SessionInfo extends ScheduleInfo {
 export interface TrainingInfo extends SessionInfo {
   requirements: RichText | null;
 }
+
+export interface SlotItem {
+  id: string;
+  items: Record<string, BrainSessionInfo[]>;
+  types: string[];
+}
+export interface DaySchedule {
+  id: string;
+  items: SlotItem[];
+  rooms: string[];
+}
+export interface ScheduleActionResult {
+  items: DaySchedule[];
+}

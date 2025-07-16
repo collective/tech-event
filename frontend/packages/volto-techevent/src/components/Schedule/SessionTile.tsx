@@ -22,7 +22,8 @@ const SessionTile: React.FC<SessionTileProps> = ({
   showDescription,
   showAudience,
   showLevel,
-  shortDate,
+  shortDate = false,
+  showRoom = true,
 }) => {
   const uid = item.UID;
   const type = item['@type'];
@@ -30,7 +31,7 @@ const SessionTile: React.FC<SessionTileProps> = ({
   return (
     <Container className={`sessionTile ${type} ${uid}`}>
       <SessionTrack item={item} />
-      <SessionMetadata item={item} shortDate={shortDate} />
+      <SessionMetadata item={item} shortDate={shortDate} showRoom={showRoom} />
       <Container className="sessionData">
         <Container className="sessionHeader">
           <div className="sessionTitle">

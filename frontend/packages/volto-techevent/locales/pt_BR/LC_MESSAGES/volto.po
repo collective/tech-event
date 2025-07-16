@@ -46,15 +46,30 @@ msgstr "Texto CTA"
 msgid "Collapse item"
 msgstr "Colapsar item"
 
+#. Default: "Day"
+#: components/Schedule/Schedule
+msgid "Day"
+msgstr "Dia"
+
 #. Default: "Display CTA?"
 #: messages
 msgid "Display CTA?"
 msgstr "Exibir botão de ação"
 
+#. Default: "Display Headline?"
+#: messages
+msgid "Display Headline?"
+msgstr "Exibir Cabeçalho"
+
 #. Default: "Empty object list"
 #: components/Widgets/DataGridList
 msgid "Empty object list"
 msgstr "Lista vazia"
+
+#. Default: "Filter by Day"
+#: messages
+msgid "Filter by Day"
+msgstr "Filtro por Dia"
 
 #. Default: "Heading"
 #: messages
@@ -85,6 +100,11 @@ msgstr "Excluir item"
 #: messages
 msgid "Requirements"
 msgstr "Requisitos"
+
+#. Default: "Schedule Block"
+#: messages
+msgid "Schedule Block"
+msgstr "Bloco de Grade"
 
 #. Default: "Show item"
 #: components/Widgets/DataGridList

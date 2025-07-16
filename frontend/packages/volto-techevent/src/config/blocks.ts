@@ -13,6 +13,9 @@ import LevelBenefitsBlockInfo from '@plone-collective/volto-techevent/components
 // LevelComparison
 import LevelComparisonBlockInfo from '@plone-collective/volto-techevent/components/Blocks/Sponsors/LevelComparison';
 
+// Schedule
+import ScheduleBlockInfo from '@plone-collective/volto-techevent/components/Blocks/Schedule';
+
 import SessionGridItem from '@plone-collective/volto-techevent/components/Blocks/Listing/SessionGridItem';
 import PresenterGridItem from '@plone-collective/volto-techevent/components/Blocks/Listing/PresenterGridItem';
 
@@ -20,6 +23,7 @@ declare module '@plone/types' {
   export interface BlocksConfigData {
     levelBenefitsBlock: BlockConfigBase;
     levelComparisonBlock: BlockConfigBase;
+    scheduleBlock: BlockConfigBase;
     sponsorLevelBlock: BlockConfigBase;
     sponsorsShowcaseBlock: BlockConfigBase;
   }
@@ -38,6 +42,7 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.sponsorLevelBlock = SponsorLevelBlockInfo;
   config.blocks.blocksConfig.levelBenefitsBlock = LevelBenefitsBlockInfo;
   config.blocks.blocksConfig.levelComparisonBlock = LevelComparisonBlockInfo;
+  config.blocks.blocksConfig.scheduleBlock = ScheduleBlockInfo;
 
   // Variations
   config.registerComponent({

@@ -1,5 +1,6 @@
 from collective.techevent import _
 from collective.techevent.fields.datagrid import DataGrid
+from collective.techevent.utils.dates import get_iso_dates_between
 from collective.z3cform.datagridfield.row import DictRow
 from datetime import datetime
 from plone.app.event.base import default_timezone
@@ -140,6 +141,7 @@ class ISettings(model.Schema):
         fields=[
             "start",
             "end",
+            "days",
             "tracks",
             "levels",
             "audience",
@@ -166,6 +168,8 @@ class ISettings(model.Schema):
     def validate_start_end(data):
         if data.start and data.end and data.start > data.end:
             raise StartBeforeEnd(_("End time must be after start time."))
+
+    days = schema.List(title=_("Event days"), required=False, readonly=True)
 
     tracks = DataGrid(
         title=_("Tracks"),
@@ -356,3 +360,18 @@ class Settings:
     def durations_training(self, value: list[IAudienceGroup]):
         """Setter, called by the form, set on context."""
         self.context.durations_training = value
+
+    @property
+    def days(self) -> list[str]:
+        """Getter, read from context and return back"""
+        start = self.context.start
+        end = self.context.end
+        days = []
+        if start and end and (start <= end):
+            return get_iso_dates_between(start, end)
+        return days
+
+    @days.setter
+    def days(self, value: list):
+        """Setter, called by the form, set on context."""
+        pass

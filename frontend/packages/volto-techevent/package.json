@@ -32,7 +32,7 @@
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
-    "@plonegovbr/volto-social-media": "2.0.0-alpha.5"
+    "@plonegovbr/volto-social-media": "2.0.0-alpha.6"
   },
   "peerDependencies": {
     "react-intl": "*",
