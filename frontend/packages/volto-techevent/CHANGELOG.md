@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.10 (2025-07-31)
+
+### Bugfix
+
+- Fix a bug in SessionPresenters component where links were not working. @ericof 
+
 ## 1.0.0-alpha.9 (2025-07-16)
 
 ### Feature
