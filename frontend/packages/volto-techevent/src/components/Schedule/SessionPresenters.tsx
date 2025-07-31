@@ -18,7 +18,7 @@ const SessionPresenters: React.FC<SessionPresentersProps> = ({ item }) => {
       {presenters.map((presenter, index) => {
         return (
           <span key={presenter['@id']}>
-            <UniversalLink href={presenter.path} className={'presenter'}>
+            <UniversalLink href={presenter['@id']} className={'presenter'}>
               {presenter.title}
             </UniversalLink>
             {presenters.length !== index + 1 && ', '}
