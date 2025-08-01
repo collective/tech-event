@@ -28,6 +28,7 @@ export interface SessionInfo extends ScheduleInfo {
   session_track: Level[];
   text: RichText | null;
   session_language: Term;
+  session_video: string | null;
 }
 
 export interface TrainingInfo extends SessionInfo {

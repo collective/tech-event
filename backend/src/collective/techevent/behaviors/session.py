@@ -68,7 +68,14 @@ class IEventSession(model.Schema):
         required=False,
     )
 
+    session_video = schema.URI(
+        title=_("Video"),
+        description=_("Video content for this session"),
+        required=False,
+    )
+
     directives.order_before(
+        session_video="*",
         session_audience="*",
         session_level="*",
         session_language="*",
