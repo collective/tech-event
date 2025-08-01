@@ -9,6 +9,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a11 (2025-08-01)
+
+
+### New features:
+
+- Add video field to IEventSession behavior. @ericof 
+- Allow adding a link object to Session objects. @ericof 
+
 ## 1.0.0a10 (2025-07-31)
 
 No significant changes.

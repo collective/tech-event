@@ -7,6 +7,35 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a11 (2025-08-01)
+
+### Backend
+
+
+#### New features:
+
+- Add video field to IEventSession behavior. @ericof 
+- Allow adding a link object to Session objects. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Display video in Session types if available. @ericof 
+- List Files, Images and Links inside a Session. @ericof 
+- Style fixes to Sponsor Tile. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a10 (2025-07-31)
 
 ### Backend

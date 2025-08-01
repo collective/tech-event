@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.11 (2025-08-01)
+
+### Feature
+
+- Display video in Session types if available. @ericof 
+- List Files, Images and Links inside a Session. @ericof 
+- Style fixes to Sponsor Tile. @ericof 
+
 ## 1.0.0-alpha.10 (2025-07-31)
 
 ### Bugfix
