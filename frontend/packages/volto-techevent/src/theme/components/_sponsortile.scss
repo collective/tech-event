@@ -1,9 +1,13 @@
 .sponsorTile {
   --box-shadow: 0px 3px 16px 0px var(--theme-low-contrast-foreground-color);
+  display: flex;
+  overflow: hidden;
   width: 100%;
   max-width: var(--techevent-sponsortile-max-width);
   align-items: var(--techevent-sponsortile-align-items);
   justify-content: var(--techevent-sponsortile-justify-content);
+
+  padding: var(--techevent-sponsortile-padding);
   border-width: var(--techevent-sponsortile-border-width);
   border-style: var(--techevent-sponsortile-border-style);
   border-color: var(
@@ -29,7 +33,13 @@
       var(--box-shadow)
     );
   }
-  img {
-    max-width: 100%;
+  .sponsorTile-link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    .sponsorTile-link {
+      max-width: 100%;
+    }
   }
 }
