@@ -143,6 +143,11 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
+#. Default: "Video"
+#: messages
+msgid "Video"
+msgstr ""
+
 #. Default: "Instructor"
 #: components/Presenter/PresenterCategory
 msgid "instructor"

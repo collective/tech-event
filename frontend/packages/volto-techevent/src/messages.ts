@@ -81,6 +81,14 @@ const messages = defineMessages({
     id: 'Details',
     defaultMessage: 'Details',
   },
+  video: {
+    id: 'Video',
+    defaultMessage: 'Video',
+  },
+  materials: {
+    id: 'Materials',
+    defaultMessage: 'Materials',
+  },
 });
 
 export default messages;

@@ -39,7 +39,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-aria-components": "*",
-    "@kitconcept/volto-light-theme": "*"
+    "@kitconcept/volto-light-theme": "*",
+    "semantic-ui-react": "*"
   },
   "devDependencies": {
     "@plone/types": "workspace:*",

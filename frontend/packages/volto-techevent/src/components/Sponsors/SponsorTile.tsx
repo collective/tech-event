@@ -14,13 +14,17 @@ const SponsorTile: React.FC<SponsorTileProps> = ({ item }) => {
   const level = item.level;
   return (
     <Container id={sponsorId} className={`sponsorTile ${level}`}>
-      <UniversalLink href={flattenToAppURL(item['@id'])}>
+      <UniversalLink
+        href={flattenToAppURL(item['@id'])}
+        className="sponsorTile-link"
+      >
         <Image
           item={item}
           imageField="image"
           alt={item.description}
           title={item.title}
           responsive={true}
+          className="sponsorTile-logo"
         />
       </UniversalLink>
     </Container>
