@@ -24,6 +24,7 @@
   <property name="allowed_content_types">
     <element value="File" />
     <element value="Image" />
+    <element value="Link" />
   </property>
   <!-- Schema, class and security -->
   <property name="add_permission">collective.techevent.AddPresenter</property>

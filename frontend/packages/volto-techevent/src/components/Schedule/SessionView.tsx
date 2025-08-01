@@ -8,6 +8,7 @@ import SessionMetadata from '@plone-collective/volto-techevent/components/Schedu
 import SessionTrack from '@plone-collective/volto-techevent/components/Schedule/SessionTrack';
 import SessionAudience from '@plone-collective/volto-techevent/components/Schedule/SessionAudience';
 import SessionLevel from '@plone-collective/volto-techevent/components/Schedule/SessionLevel';
+import SessionMaterials from '@plone-collective/volto-techevent/components/Schedule/SessionMaterials';
 import PresenterTile from '@plone-collective/volto-techevent/components/Presenter/PresenterTile';
 import Video from '@plone-collective/volto-techevent/components/Video/Video';
 import messages from '@plone-collective/volto-techevent/messages';
@@ -68,6 +69,12 @@ const SessionView: React.FC<SessionViewProps> = ({ content }) => {
               <Container className="sessionVideo">
                 <h3>{intl.formatMessage(messages.video)}</h3>
                 <Video url={content.session_video} />
+              </Container>
+            )}
+            {content.items && content.items.length > 0 && (
+              <Container className="sessionMaterials">
+                <h3>{intl.formatMessage(messages.materials)}</h3>
+                <SessionMaterials content={content} />
               </Container>
             )}
           </Container>
