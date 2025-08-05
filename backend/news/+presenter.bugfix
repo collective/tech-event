@@ -1,1 +1,0 @@
-Fix presenter serialization when an activity has no workflow state. @ericof

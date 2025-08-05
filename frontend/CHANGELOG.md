@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.12 (2025-08-05)
+
+### Bugfix
+
+- Check if `text` is set before trying to display it. @ericof 
+- Fix SponsorTile styles to always keep the 4:3 ratio and display the whole logo. @ericof 
+
 ## 1.0.0-alpha.11 (2025-08-01)
 
 ### Feature

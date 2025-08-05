@@ -7,6 +7,34 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a12 (2025-08-05)
+
+### Backend
+
+
+#### Bug fixes:
+
+- Fix order of Session fields: Description should be the second field in the default fieldset. @ericof 
+- Fix presenter serialization when an activity has no workflow state. @ericof 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Check if `text` is set before trying to display it. @ericof 
+- Fix SponsorTile styles to always keep the 4:3 ratio and display the whole logo. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a11 (2025-08-01)
 
 ### Backend

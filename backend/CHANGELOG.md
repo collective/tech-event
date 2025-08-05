@@ -9,6 +9,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a12 (2025-08-05)
+
+
+### Bug fixes:
+
+- Fix order of Session fields: Description should be the second field in the default fieldset. @ericof 
+- Fix presenter serialization when an activity has no workflow state. @ericof 
+
 ## 1.0.0a11 (2025-08-01)
 
 
