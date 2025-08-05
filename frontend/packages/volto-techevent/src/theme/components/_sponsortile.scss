@@ -16,6 +16,7 @@
   );
   border-radius: var(--techevent-sponsortile-border-radius);
   margin: var(--techevent-sponsortile-margin);
+  aspect-ratio: 4 / 3;
   background-color: var(--techevent-sponsortile-background-main);
   box-shadow: var(--techevent-sponsortile-box-shadow, var(--box-shadow));
   &:hover {
@@ -38,8 +39,11 @@
     width: 100%;
     height: 100%;
     text-decoration: none;
-    .sponsorTile-link {
+    img.sponsorTile-logo {
       max-width: 100%;
+      object-fit: contain;
+      -o-object-position: center;
+      object-position: center;
     }
   }
 }
