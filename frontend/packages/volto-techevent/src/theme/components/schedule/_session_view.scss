@@ -21,6 +21,9 @@ body.contenttype-training {
             @include body-text;
             @include vertical-space-text;
           }
+          .sessionSection {
+            margin-top: $spacing-medium;
+          }
         }
         .sessionPresenters {
           display: block;

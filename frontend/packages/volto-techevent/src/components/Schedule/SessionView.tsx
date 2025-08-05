@@ -46,16 +46,18 @@ const SessionView: React.FC<SessionViewProps> = ({ content }) => {
               <div className="sessionDescription">{description}</div>
             </Container>
 
-            <Container className="sessionBody">
-              <h3>{intl.formatMessage(messages.details)}</h3>
-              <div
-                className="sessionText"
-                dangerouslySetInnerHTML={{ __html: text.data }}
-              />
-            </Container>
+            {content?.text?.data && (
+              <Container className="sessionBody sessionSection">
+                <h3>{intl.formatMessage(messages.details)}</h3>
+                <div
+                  className="sessionText"
+                  dangerouslySetInnerHTML={{ __html: text.data }}
+                />
+              </Container>
+            )}
 
             {content.requirements && (
-              <Container className="sessionBody">
+              <Container className="sessionBody sessionSection">
                 <h3>{intl.formatMessage(messages.requirements)}</h3>
                 <div
                   className="sessionText"
@@ -66,13 +68,13 @@ const SessionView: React.FC<SessionViewProps> = ({ content }) => {
               </Container>
             )}
             {content.session_video && (
-              <Container className="sessionVideo">
+              <Container className="sessionVideo sessionSection">
                 <h3>{intl.formatMessage(messages.video)}</h3>
                 <Video url={content.session_video} />
               </Container>
             )}
             {content.items && content.items.length > 0 && (
-              <Container className="sessionMaterials">
+              <Container className="sessionMaterials sessionSection">
                 <h3>{intl.formatMessage(messages.materials)}</h3>
                 <SessionMaterials content={content} />
               </Container>
