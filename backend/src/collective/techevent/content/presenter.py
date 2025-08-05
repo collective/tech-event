@@ -62,7 +62,10 @@ class Presenter(Container):
         :returns: List of activities connected to this presenter.
         """
         activities = [
-            rel.from_object for rel in api.relation.get(target=self, unrestricted=True)
+            rel.from_object
+            for rel in api.relation.get(
+                target=self, unrestricted=True, relationship="presenters"
+            )
         ]
         # Only show approved activities
         return [
