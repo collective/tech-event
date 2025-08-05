@@ -3,4 +3,7 @@ node_modules
 /core
 /public
 *.mo
+.env
 .pytest_cache
+.devenv*
+devenv.local.nix

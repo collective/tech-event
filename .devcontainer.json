@@ -1,0 +1,28 @@
+{
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "ms-vscode.makefile-tools",
+        "bbenoist.Nix"
+      ]
+    }
+  },
+  "image": "ghcr.io/cachix/devenv:v1.3.1",
+  "overrideCommand": false,
+  "updateContentCommand": "make codespace-install",
+  "portsAttributes": {
+    "3000": {
+      "label": "frontend"
+    },
+    "3001": {
+      "label": "webpack"
+    },
+    "8000": {
+      "label": "proxy"
+    },
+    "8080": {
+      "label": "backend"
+    }
+  }
+}
