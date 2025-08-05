@@ -68,7 +68,7 @@ class Presenter(Container):
         return [
             activity
             for activity in activities
-            if api.content.get_state(activity) == "published"
+            if api.content.get_state(activity, default="_") == "published"
         ]
 
     @property
