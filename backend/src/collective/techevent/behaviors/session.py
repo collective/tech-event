@@ -82,5 +82,6 @@ class IEventSession(model.Schema):
         session_track="*",
         presenters="*",
         text="*",
+        description="*",
         title="*",
     )

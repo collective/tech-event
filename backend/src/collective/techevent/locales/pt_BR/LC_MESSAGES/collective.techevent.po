@@ -52,7 +52,7 @@ msgstr "Uma pausa na grade do evento"
 
 #: collective/techevent/behaviors/session.py:18
 msgid "Abstract"
-msgstr "Detalhamento"
+msgstr "Sumário"
 
 #: collective/techevent/vocabularies/slot.py:43
 msgid "Activity"
@@ -173,7 +173,7 @@ msgstr "Sumário"
 
 #: collective/techevent/behaviors/session.py:21
 msgid "Details"
-msgstr "Detalhes"
+msgstr "Detalhamento"
 
 #: collective/techevent/content/schedule/keynote.py:17
 #: collective/techevent/content/schedule/talk.py:12
