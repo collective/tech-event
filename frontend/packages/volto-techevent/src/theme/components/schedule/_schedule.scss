@@ -1,3 +1,21 @@
+@mixin rooms-width {
+  &.rooms-0,
+  &.rooms-1 {
+    .room {
+      width: 100%;
+    }
+  }
+  &.rooms-2 .room {
+    width: 50%;
+  }
+  &.rooms-3 .room {
+    width: 33%;
+  }
+  &.rooms-4 .room {
+    width: 25%;
+  }
+}
+
 #main .schedule {
   .day-header {
     display: flex;
@@ -13,8 +31,12 @@
       }
     }
     .rooms {
+      display: flex;
+      width: 100%;
+      @include rooms-width;
       .room {
         padding: $spacing-small;
+        text-align: center;
         .room-label {
           @include add(size, s);
           @include add(weight, bold);
@@ -34,7 +56,7 @@
       display: flex;
       width: 100%;
       flex-direction: row;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       padding: $spacing-xsmall $spacing-xsmall;
       background-color: var(--techevent-schedule-color);
       box-shadow:
@@ -46,22 +68,8 @@
         0 -6px 0 0 var(--techevent-schedule-color),
         0 -8px 0 0 var(--techevent-schedule-reverse-color),
         0 -10px 0 0 var(--techevent-schedule-secondary-color);
-      gap: var(--gap);
-      &.rooms-0,
-      &.rooms-1 {
-        .room {
-          width: 100%;
-        }
-      }
-      &.rooms-2 .room {
-        width: 50%;
-      }
-      &.rooms-3 .room {
-        width: 33%;
-      }
-      &.rooms-4 .room {
-        width: 25%;
-      }
+      gap: var(--techevent-schedule-gap);
+      @include rooms-width;
       .room {
         @media screen and (max-width: $tablet-breakpoint) {
           width: 100%;
@@ -73,6 +81,7 @@
         .sessionTile {
           min-height: 240px;
           padding: $spacing-2xsmall 0 $spacing-small 0;
+          margin: 0 var(--techevent-schedule-gap);
         }
         @media screen and (max-width: $tablet-breakpoint) {
           border-right: unset;

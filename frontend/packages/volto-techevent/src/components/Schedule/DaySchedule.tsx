@@ -75,7 +75,7 @@ const DaySchedule = (props) => {
               </div>
               <div className="time-indication">{formatHour(time)}</div>
             </div>
-            <div className="rooms">
+            <div className={`rooms rooms-${lenRooms}`}>
               {hasAllRoom && rooms['_all_'] ? (
                 <div className={'room-all'}>
                   <SlotTile item={rooms['_all_']} />
