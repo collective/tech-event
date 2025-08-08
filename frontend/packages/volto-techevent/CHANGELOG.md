@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.13 (2025-08-08)
+
+### Feature
+
+- Display list of presentations and video to the LightningTalks content type. @ericof 
+
+### Bugfix
+
+- Fix Schedule block when used with more than 1 room. @ericof 
+
 ## 1.0.0-alpha.12 (2025-08-05)
 
 ### Bugfix

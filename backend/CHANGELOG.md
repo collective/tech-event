@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a13 (2025-08-08)
+
+
+### New features:
+
+- Add list of presentations and video to the LightningTalks content type. @ericof 
+
 ## 1.0.0a12 (2025-08-05)
 
 

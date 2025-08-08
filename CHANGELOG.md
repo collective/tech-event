@@ -7,6 +7,36 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a13 (2025-08-08)
+
+### Backend
+
+
+#### New features:
+
+- Add list of presentations and video to the LightningTalks content type. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Display list of presentations and video to the LightningTalks content type. @ericof 
+
+#### Bugfix
+
+- Fix Schedule block when used with more than 1 room. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a12 (2025-08-05)
 
 ### Backend
