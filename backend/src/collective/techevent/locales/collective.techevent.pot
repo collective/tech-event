@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-07-16 14:51+0000\n"
+"POT-Creation-Date: 2025-08-08 15:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,6 +76,10 @@ msgstr ""
 
 #: collective/techevent/content/sponsors/sponsors_db.py:50
 msgid "All benefits for sponsoring this event."
+msgstr ""
+
+#: collective/techevent/content/schedule/lightning_talks.py:32
+msgid "All presentations at this session."
 msgstr ""
 
 #: collective/techevent/behaviors/tech_event.py:176
@@ -335,6 +339,10 @@ msgstr ""
 msgid "Possible slot duration for a training"
 msgstr ""
 
+#: collective/techevent/content/schedule/lightning_talks.py:31
+msgid "Presentations"
+msgstr ""
+
 #: collective/techevent/profiles/default/types/Presenter.xml
 msgid "Presenter"
 msgstr ""
@@ -344,7 +352,12 @@ msgid "Presenteral e-mail address"
 msgstr ""
 
 #: collective/techevent/behaviors/session.py:28
+#: collective/techevent/content/schedule/lightning_talks.py:21
 msgid "Presenters"
+msgstr ""
+
+#: collective/techevent/content/schedule/lightning_talks.py:22
+msgid "Presenters of this talk"
 msgstr ""
 
 #: collective/techevent/vocabularies/slot.py:13
@@ -457,6 +470,7 @@ msgstr ""
 
 #: collective/techevent/behaviors/session.py:17
 #: collective/techevent/behaviors/tech_event.py:110
+#: collective/techevent/content/schedule/lightning_talks.py:16
 msgid "Title"
 msgstr ""
 
@@ -470,6 +484,10 @@ msgstr ""
 
 #: collective/techevent/behaviors/tech_event.py:57
 msgid "Title of this level"
+msgstr ""
+
+#: collective/techevent/content/schedule/lightning_talks.py:17
+msgid "Title of this presentation"
 msgstr ""
 
 #: collective/techevent/behaviors/tech_event.py:30
@@ -507,6 +525,16 @@ msgstr ""
 
 #: collective/techevent/profiles/default/types/Venue.xml
 msgid "Venue"
+msgstr ""
+
+#: collective/techevent/behaviors/session.py:72
+#: collective/techevent/content/schedule/lightning_talks.py:48
+msgid "Video"
+msgstr ""
+
+#: collective/techevent/behaviors/session.py:73
+#: collective/techevent/content/schedule/lightning_talks.py:49
+msgid "Video content for this session"
 msgstr ""
 
 #: collective/techevent/profiles/default/types/Slot.xml

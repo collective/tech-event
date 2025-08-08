@@ -81,6 +81,11 @@ msgstr "Filtro por Dia"
 msgid "Heading"
 msgstr "Cabeçalho"
 
+#. Default: "Materials"
+#: messages
+msgid "Materials"
+msgstr ""
+
 #. Default: "Package Benefits"
 #: messages
 msgid "Package Benefits"
@@ -95,6 +100,11 @@ msgstr "Comparação de cotas"
 #: messages
 msgid "Packages & Sponsors"
 msgstr "Cotas e Apoiadores"
+
+#. Default: "Presentations"
+#: messages
+msgid "Presentations"
+msgstr ""
 
 #. Default: "Remove item"
 #: components/Widgets/DataGridList

@@ -3,19 +3,20 @@ import PresenterView from '@plone-collective/volto-techevent/components/Presente
 import SessionView from '@plone-collective/volto-techevent/components/Schedule/SessionView';
 import SlotView from '@plone-collective/volto-techevent/components/Schedule/SlotView';
 import SponsorView from '@plone-collective/volto-techevent/components/Sponsors/SponsorView';
+import LightningTalksView from '@plone-collective/volto-techevent/components/Schedule/LightningTalksView';
 
 export default function install(config: ConfigType) {
   config.views.contentTypesViews = {
     ...config.views.contentTypesViews,
-    Presenter: PresenterView,
+    Break: SlotView,
     Keynote: SessionView,
+    LightningTalks: LightningTalksView,
+    Meeting: SlotView,
+    Presenter: PresenterView,
+    Slot: SlotView,
+    Sponsor: SponsorView,
     Talk: SessionView,
     Training: SessionView,
-    Sponsor: SponsorView,
-    Slot: SlotView,
-    LightningTalks: SlotView,
-    Break: SlotView,
-    Meeting: SlotView,
   };
   return config;
 }

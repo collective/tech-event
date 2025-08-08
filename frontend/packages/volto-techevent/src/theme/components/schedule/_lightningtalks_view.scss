@@ -1,0 +1,60 @@
+body.contenttype-lightningtalks {
+  .session-view {
+    margin-top: $spacing-medium;
+    .wrapper {
+      @include default-container-width;
+      .sessionWrapper {
+        display: flex;
+        .sessionData {
+          display: block;
+          flex: 1 1 70%;
+          padding: 0 $spacing-medium;
+          .sessionTitle {
+            @include text-heading-h2;
+          }
+          .sessionDescription {
+            @include description;
+          }
+          .sessionBody {
+            @include body-text;
+            @include vertical-space-text;
+          }
+          .sessionSection {
+            margin-top: $spacing-medium;
+          }
+          .sessionTalks {
+            .talksList {
+              display: flex;
+              flex-direction: column;
+              gap: $spacing-medium;
+              .sessionTile {
+                .sessionData {
+                  padding: 0 0;
+                  .sessionTitle {
+                    padding: 0 0;
+                    @include add(size, m);
+                    @include add(height, l);
+                    @include add(weight, bold);
+                    text-decoration: none;
+                  }
+                  .sessionBody {
+                    margin: $spacing-small 0 0 0;
+                  }
+                }
+                box-shadow:
+                  0 2px 0 0 var(--techevent-schedule-color),
+                  0 6px 0 0 var(--techevent-schedule-color),
+                  0 8px 0 0 var(--techevent-schedule-reverse-color),
+                  0 10px 0 0 var(--techevent-schedule-secondary-color),
+                  0 -2px 0 0 var(--techevent-schedule-color),
+                  0 -6px 0 0 var(--techevent-schedule-color),
+                  0 -8px 0 0 var(--techevent-schedule-reverse-color),
+                  0 -10px 0 0 var(--techevent-schedule-secondary-color);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -70,6 +70,10 @@ msgstr "Informação adicional"
 msgid "All benefits for sponsoring this event."
 msgstr "Todoos os benefícios para patrocinadores do evento."
 
+#: collective/techevent/content/schedule/lightning_talks.py:32
+msgid "All presentations at this session."
+msgstr ""
+
 #: collective/techevent/behaviors/tech_event.py:176
 msgid "All tracks available at this event."
 msgstr "Todas as trilhas disponíveis nesse evento."
@@ -327,6 +331,10 @@ msgstr "Possíveis durações para uma apresentação"
 msgid "Possible slot duration for a training"
 msgstr "Possíveis durações para um treinamento"
 
+#: collective/techevent/content/schedule/lightning_talks.py:31
+msgid "Presentations"
+msgstr ""
+
 #: collective/techevent/profiles/default/types/Presenter.xml
 msgid "Presenter"
 msgstr "Palestrante"
@@ -336,8 +344,13 @@ msgid "Presenteral e-mail address"
 msgstr "E-mail do palestrante"
 
 #: collective/techevent/behaviors/session.py:28
+#: collective/techevent/content/schedule/lightning_talks.py:21
 msgid "Presenters"
 msgstr "Palestrantes"
+
+#: collective/techevent/content/schedule/lightning_talks.py:22
+msgid "Presenters of this talk"
+msgstr ""
 
 #: collective/techevent/vocabularies/slot.py:13
 msgid "Registration"
@@ -449,6 +462,7 @@ msgstr "Evento Técnico: Configurações"
 
 #: collective/techevent/behaviors/session.py:17
 #: collective/techevent/behaviors/tech_event.py:110
+#: collective/techevent/content/schedule/lightning_talks.py:16
 msgid "Title"
 msgstr "Título"
 
@@ -463,6 +477,10 @@ msgstr "Título da duração"
 #: collective/techevent/behaviors/tech_event.py:57
 msgid "Title of this level"
 msgstr "Título do nível"
+
+#: collective/techevent/content/schedule/lightning_talks.py:17
+msgid "Title of this presentation"
+msgstr ""
 
 #: collective/techevent/behaviors/tech_event.py:30
 msgid "Title of this track"
@@ -500,6 +518,16 @@ msgstr "Remove o suporte a Eventos Técnicos."
 #: collective/techevent/profiles/default/types/Venue.xml
 msgid "Venue"
 msgstr "Local"
+
+#: collective/techevent/behaviors/session.py:72
+#: collective/techevent/content/schedule/lightning_talks.py:48
+msgid "Video"
+msgstr ""
+
+#: collective/techevent/behaviors/session.py:73
+#: collective/techevent/content/schedule/lightning_talks.py:49
+msgid "Video content for this session"
+msgstr ""
 
 #: collective/techevent/profiles/default/types/Slot.xml
 msgid "View"

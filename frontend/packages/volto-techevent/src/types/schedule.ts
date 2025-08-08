@@ -35,6 +35,17 @@ export interface TrainingInfo extends SessionInfo {
   requirements: RichText | null;
 }
 
+export interface LightningTalk {
+  id: string;
+  title: string;
+  presenters: string;
+}
+
+export interface LightningTalksInfo extends ScheduleInfo {
+  talks: LightningTalk[];
+  session_video: string | null;
+}
+
 export interface SlotItem {
   id: string;
   items: Record<string, BrainSessionInfo[]>;

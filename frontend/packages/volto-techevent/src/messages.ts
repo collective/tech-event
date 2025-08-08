@@ -89,6 +89,10 @@ const messages = defineMessages({
     id: 'Materials',
     defaultMessage: 'Materials',
   },
+  presentations: {
+    id: 'Presentations',
+    defaultMessage: 'Presentations',
+  },
 });
 
 export default messages;

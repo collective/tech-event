@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-08-01T20:22:34.683Z\n"
+"POT-Creation-Date: 2025-08-08T15:07:00.152Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -78,6 +78,11 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
+#. Default: "Materials"
+#: messages
+msgid "Materials"
+msgstr ""
+
 #. Default: "Package Benefits"
 #: messages
 msgid "Package Benefits"
@@ -91,6 +96,11 @@ msgstr ""
 #. Default: "Packages & Sponsors"
 #: messages
 msgid "Packages & Sponsors"
+msgstr ""
+
+#. Default: "Presentations"
+#: messages
+msgid "Presentations"
 msgstr ""
 
 #. Default: "Remove item"

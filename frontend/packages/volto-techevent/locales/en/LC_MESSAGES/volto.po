@@ -76,6 +76,11 @@ msgstr ""
 msgid "Heading"
 msgstr ""
 
+#. Default: "Materials"
+#: messages
+msgid "Materials"
+msgstr ""
+
 #. Default: "Package Benefits"
 #: messages
 msgid "Package Benefits"
@@ -89,6 +94,11 @@ msgstr ""
 #. Default: "Packages & Sponsors"
 #: messages
 msgid "Packages & Sponsors"
+msgstr ""
+
+#. Default: "Presentations"
+#: messages
+msgid "Presentations"
 msgstr ""
 
 #. Default: "Remove item"
