@@ -85,14 +85,19 @@ const DaySchedule = (props) => {
                   const roomId = room[0];
                   const slot = rooms?.[roomId];
                   const isSession = slot?.['@type'] !== 'Slot';
-                  const Card = slot && isSession ? SessionTile : SlotTile;
+                  const Tile = slot && isSession ? SessionTile : SlotTile;
                   return (
                     <div
                       className={`room ${roomId} room-${roomIndex}`}
                       key={roomIndex}
                     >
                       {slot ? (
-                        <Card item={slot} shortDate showRoom={false} />
+                        <Tile
+                          item={slot}
+                          shortDate
+                          showRoom={false}
+                          showDescription={true}
+                        />
                       ) : (
                         <div className="slot-card empty">{''}</div>
                       )}
