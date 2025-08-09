@@ -112,10 +112,11 @@ class ScheduleGet(Service):
 
     def get_slots(self) -> list[dict[str, Any]]:
         portal = api.portal.get()
+        review_states = getattr(self.context, "schedule_review_states", None)
         results = api.content.find(
             context=portal,
             object_provides=IScheduleSlot,
-            review_state="published",
+            review_state=list(set(review_states or []).union({"published"})),
             sort_on="start",
             sort_order="ascending",
         )
