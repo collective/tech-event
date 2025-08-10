@@ -37,6 +37,7 @@ BIN_FOLDER=$(VENV_FOLDER)/bin
 # Environment variables to be exported
 export PYTHONWARNINGS := ignore
 export DOCKER_BUILDKIT := 1
+export ENABLE_PRINTING_MAILHOST := True
 
 all: build
 
@@ -54,7 +55,7 @@ requirements-mxdev.txt: pyproject.toml mx.ini ## Generate constraints file
 $(VENV_FOLDER): requirements-mxdev.txt ## Install dependencies
 	@echo "$(GREEN)==> Install environment$(RESET)"
 	@uv venv $(VENV_FOLDER)
-	@uv pip install -r requirements-mxdev.txt
+	@uv pip install -r requirements-mxdev.txt Products.membrane pyotp
 
 .PHONY: sync
 sync: $(VENV_FOLDER) ## Sync project dependencies

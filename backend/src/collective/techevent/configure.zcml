@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="collective.techevent"
     >
 
@@ -24,6 +25,10 @@
   <include package=".services" />
   <include package=".subscribers" />
   <include package=".vocabularies" />
+  <include
+      package=".users"
+      zcml:condition="installed Products.membrane"
+      />
 
   <!-- -*- extra stuff goes here -*- -->
 

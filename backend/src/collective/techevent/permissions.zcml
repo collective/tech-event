@@ -66,6 +66,17 @@
       title="collective.techevent: Add Keynote"
       />
 
+  <!-- Attendees -->
+  <permission
+      id="collective.techevent.AddAttendees"
+      title="collective.techevent: Add Attendees Database"
+      />
+
+  <permission
+      id="collective.techevent.AddAttendee"
+      title="collective.techevent: Add Attendee"
+      />
+
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>

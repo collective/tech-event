@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="project.title"
+    >
+
+  <include file="profiles.zcml" />
+
+  <adapter factory=".behaviors.MembraneUserAuthentication" />
+
+  <zcml:configure package="Products.CMFPlone.browser.login">
+    <browser:page
+        name="mail_password_template"
+        for="*"
+        class="collective.techevent.users.password_reset.PasswordResetToolView"
+        template="templates/mail_password_template.pt"
+        permission="zope.Public"
+        layer="collective.techevent.interfaces.IBrowserLayer"
+        />
+  </zcml:configure>
+
+  <include package=".content" />
+
+</configure>
