@@ -1,0 +1,24 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <adapter
+      factory=".adapters.MembraneRoleProvider"
+      name="collective.techevent.users.MembraneRoleProvider"
+      />
+
+  <adapter
+      factory=".adapters.MembraneUserProperties"
+      provides="Products.membrane.interfaces.IMembraneUserProperties"
+      />
+
+  <adapter
+      factory="plone.app.dexterity.behaviors.exclfromnav.default_exclude_true"
+      for=".adapters.IBaseUser"
+      />
+
+  <subscriber
+      for="collective.techevent.users.content.attendee.IAttendee
+           zope.lifecycleevent.interfaces.IObjectCreatedEvent"
+      handler="collective.techevent.users.content.subscribers.generate_pyotp_shared_secret"
+      />
+
+</configure>
