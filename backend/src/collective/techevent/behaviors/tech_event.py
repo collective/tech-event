@@ -148,6 +148,7 @@ class ISettings(model.Schema):
             "durations_keynote",
             "durations_talk",
             "durations_training",
+            "schedule_review_states",
         ],
     )
 
@@ -273,6 +274,26 @@ class ISettings(model.Schema):
         },
     )
 
+    schedule_review_states = schema.List(
+        title=_("Schedule: Additional states"),
+        description=_(
+            "Workflow states to include in the schedule in addition to 'published'."
+        ),
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="plone.app.vocabularies.WorkflowStates",
+        ),
+    )
+    directives.widget(
+        "schedule_review_states",
+        frontendOptions={
+            "widget": "multiSelect",
+            "widgetProps": {
+                "multiple": True,
+            },
+        },
+    )
+
 
 @implementer(ISettings)
 class Settings:
@@ -375,3 +396,13 @@ class Settings:
     def days(self, value: list):
         """Setter, called by the form, set on context."""
         pass
+
+    @property
+    def schedule_review_states(self) -> list[str]:
+        """Getter, read workflow states from context and return back"""
+        return getattr(self.context, "schedule_review_states", None) or []
+
+    @schedule_review_states.setter
+    def schedule_review_states(self, value: list[str]):
+        """Setter, called by the form, set workflow states on context."""
+        self.context.schedule_review_states = list(value or [])

@@ -29,7 +29,9 @@ const SessionTile: React.FC<SessionTileProps> = ({
   const type = item['@type'];
 
   return (
-    <Container className={`sessionTile ${type} ${uid}`}>
+    <Container
+      className={`sessionTile ${type} ${uid} state-${item.review_state}`}
+    >
       <SessionTrack item={item} />
       <SessionMetadata item={item} shortDate={shortDate} showRoom={showRoom} />
       <Container className="sessionData">
