@@ -15,7 +15,7 @@ def portal(functional):
     portal = functional["portal"]
     setSite(portal)
     tool: SetupTool = api.portal.get_tool("portal_setup")
-    with api.env.adopt_roles(["Manager", "Member"]):
+    with api.env.adopt_roles(["Manager"]):
         tool.runAllImportStepsFromProfile(f"{PACKAGE_NAME}:demo")
     transaction.commit()
     return portal
