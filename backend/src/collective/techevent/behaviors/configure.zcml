@@ -26,4 +26,16 @@
       provides=".session.IEventSession"
       />
 
+  <plone:behavior
+      name="collective.techevent.presenter_roles"
+      title="Tech Event: Apply presenter roles"
+      description=""
+      provides=".presenter.IPresenterLocalRoles"
+      />
+
+  <adapter
+      factory=".presenter.PresenterRoleProvider"
+      name="collective.techevent.presenter_roles"
+      />
+
 </configure>
