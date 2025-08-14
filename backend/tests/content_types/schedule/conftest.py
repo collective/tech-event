@@ -26,3 +26,18 @@ def search_slot_event_dates(event_dates):
         return brains
 
     return func
+
+
+@pytest.fixture
+def enable_presenter_roles():
+    def func(portal: DexterityContent, portal_type: str):
+        with api.env.adopt_roles(["Manager"]):
+            fti = portal.portal_types.get(portal_type)
+            if fti:
+                behaviors = list(fti.behaviors)
+                if "collective.techevent.presenter_roles" not in behaviors:
+                    behaviors.append("collective.techevent.presenter_roles")
+                    fti.behaviors = tuple(behaviors)
+        return fti
+
+    return func

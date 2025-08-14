@@ -1,4 +1,8 @@
 from collective.techevent.content.schedule.talk import Talk
+from plone.app.testing import TEST_USER_ID
+from z3c.relationfield import RelationValue
+from zope.component import getUtility
+from zope.intid.interfaces import IIntIds
 
 import pytest
 
@@ -6,6 +10,16 @@ import pytest
 @pytest.fixture
 def portal_type() -> str:
     return "Talk"
+
+
+@pytest.fixture
+def test_user(portal):
+    return portal.acl_users.getUserById(TEST_USER_ID)
+
+
+@pytest.fixture
+def intids():
+    return getUtility(IIntIds)
 
 
 class TestContentType:
@@ -65,3 +79,70 @@ class TestVersioning:
         version = last_version(content_instance)
         assert version.comment is None
         assert version.version_id == 1
+
+
+@pytest.fixture
+def setup_talk_and_presenter(
+    portal,
+    container,
+    intids,
+    content_factory,
+    payloads,
+    portal_type,
+):
+    def _setup(enable_roles=False, enable_presenter_roles=None):
+        if enable_roles and enable_presenter_roles:
+            enable_presenter_roles(portal, portal_type)
+
+        talk = content_factory(container, payloads[portal_type][0])
+        talk.__ac_local_roles__ = {}
+        talk.__ac_local_roles_block__ = True
+
+        presenter = content_factory(portal, payloads["Presenter"][0])
+        presenter.__ac_local_roles_block__ = True
+
+        talk.presenters = [RelationValue(intids.getId(presenter))]
+
+        return talk, presenter
+
+    return _setup
+
+
+class TestPresenterRolesDisabled:
+    @pytest.fixture(autouse=True)
+    def _setup(self, setup_talk_and_presenter):
+        self.talk, self.presenter = setup_talk_and_presenter()
+
+    def test_talk_without_presenter_roles(
+        self,
+        portal,
+        test_user,
+    ):
+        talk_roles = portal.acl_users._getAllLocalRoles(self.talk)
+        presenter_roles = portal.acl_users._getAllLocalRoles(self.presenter)
+
+        assert talk_roles == {}
+        assert presenter_roles != {}
+        assert talk_roles != presenter_roles
+        assert "Owner" not in test_user.getRolesInContext(self.talk)
+
+
+class TestPresenterRolesEnabled:
+    @pytest.fixture(autouse=True)
+    def _setup(self, setup_talk_and_presenter, enable_presenter_roles):
+        self.talk, self.presenter = setup_talk_and_presenter(
+            enable_roles=True, enable_presenter_roles=enable_presenter_roles
+        )
+
+    def test_talk_with_presenter_roles(
+        self,
+        portal,
+        test_user,
+    ):
+        talk_roles = portal.acl_users._getAllLocalRoles(self.talk)
+        presenter_roles = portal.acl_users._getAllLocalRoles(self.presenter)
+
+        assert talk_roles != {}
+        assert presenter_roles != {}
+        assert talk_roles == presenter_roles
+        assert "Owner" in test_user.getRolesInContext(self.talk)
