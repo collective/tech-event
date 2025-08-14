@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.14 (2025-08-14)
+
+### Feature
+
+- Add state-{review_state} class name into sessionTile. @datakurre [#4](https://github.com/collective/tech-event/issue/4)
+
 ## 1.0.0-alpha.13 (2025-08-08)
 
 ### Feature

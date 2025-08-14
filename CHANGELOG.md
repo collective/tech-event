@@ -7,6 +7,33 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a14 (2025-08-14)
+
+### Backend
+
+
+#### New features:
+
+- Add setting for including other than 'published' states in schedule. @datakurre [#4](https://github.com/collective/tech-event/issues/4)
+- Add optional presenter roles behavior to let sessions inherit local roles from their connected presenters @datakurre [#6](https://github.com/collective/tech-event/issues/6)
+
+
+
+### Frontend
+
+#### Feature
+
+- Add state-{review_state} class name into sessionTile. @datakurre [#4](https://github.com/collective/tech-event/issue/4)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a13 (2025-08-08)
 
 ### Backend
