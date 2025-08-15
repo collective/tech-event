@@ -4,6 +4,7 @@
   <include package=".v1002" />
   <include package=".v1003" />
   <include package=".v1004" />
+  <include package=".v1005" />
 
   <!-- -*- extra stuff goes here -*- -->
 

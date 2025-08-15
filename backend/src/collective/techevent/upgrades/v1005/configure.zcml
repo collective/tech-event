@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="collective.techevent:default"
+      source="1004"
+      destination="1005"
+      >
+    <genericsetup:upgradeDepends
+        title="Update rolemap settings"
+        import_steps="rolemap"
+        />
+    <genericsetup:upgradeStep
+        title="Update permissions on Schedule content objects"
+        handler=".update_schedule_permissions"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>
