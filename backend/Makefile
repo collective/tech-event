@@ -37,6 +37,7 @@ BIN_FOLDER=$(VENV_FOLDER)/bin
 # Environment variables to be exported
 export PYTHONWARNINGS := ignore
 export DOCKER_BUILDKIT := 1
+export ENABLE_PRINTING_MAILHOST := True
 
 all: build
 

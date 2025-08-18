@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.techevent"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Tech Event for Plone: Attendee support"
+      description="Package to configure Attendee support for a Tech Event Plone site"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      post_handler="..setuphandlers.base.setup_techevent_users"
+      />
+
+</configure>

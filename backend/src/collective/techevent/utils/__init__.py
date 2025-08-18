@@ -132,3 +132,32 @@ def setup_tech_event(portal: DexterityContent):
         _modify_tech_event_ct("Tech Event", False)
         # Add permissions on Plone Site
         _modify_permissions(portal, True)
+
+
+def setup_tech_event_users(portal: DexterityContent):
+    """Initialize the Attendees content type and container."""
+    # Create the Attendees container if it doesn't exist
+    if "attendees" not in portal:
+        # Get the FTI for Attendees
+        fti = _get_fti("Attendees")
+
+        # Enable global_allow for Attendees
+        if not fti.global_allow:
+            fti.global_allow = True
+            logger.info("Enabled global_allow for Attendees")
+
+        try:
+            attendees = api.content.create(
+                container=portal,
+                type="Attendees",
+                id="attendees",
+                title="Attendees",
+            )
+            logger.info(f"Created Attendees container at {attendees.absolute_url()}")
+        except Exception as e:
+            logger.error(f"Failed to create Attendees container: {e}")
+
+        # Disable global_allow for Attendees
+        if fti.global_allow:
+            fti.global_allow = False
+            logger.info("Disabled global_allow for Attendees")
