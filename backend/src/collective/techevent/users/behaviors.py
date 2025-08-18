@@ -19,7 +19,7 @@ class MembraneUserAuthentication:
     def __init__(self, context):
         self.user = context
 
-    def verifyCredentials(self, credentials):
+    def verifyCredentials(self, credentials: dict[str, str]) -> bool:
         """Returns True is password is authenticated, False if not."""
         user = self.user
 
@@ -42,11 +42,13 @@ class MembraneUserAuthentication:
 
         return True
 
-    def authenticateCredentials(self, credentials):
+    def authenticateCredentials(
+        self, credentials: dict[str, str]
+    ) -> tuple[str, str] | None:
         # Should not authenticate when the user is not enabled.
         user = self.user
         state = api.content.get_state(user)
         if state not in ALLOWED_STATES:
-            return
+            return None
         if self.verifyCredentials(credentials):
             return (user.getUserId(), user.getUserName())

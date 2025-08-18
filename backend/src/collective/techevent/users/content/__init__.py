@@ -6,6 +6,7 @@ from plone.dexterity.content import Container
 from plone.schema import Email
 from plone.supermodel import model
 from Products.membrane.interfaces import IMembraneUserObject
+from Products.PlonePAS.tools.memberdata import MemberData
 from z3c.form.interfaces import IEditForm
 from zope import schema
 from zope.interface import implementer
@@ -80,25 +81,26 @@ class BaseUser(Container):
     """A Membrane user."""
 
     @property
-    def title(self):
+    def title(self) -> str:
         return f"{self.first_name} {self.last_name}"
 
     @title.setter
-    def title(self, value):
+    def title(self, value: str):
         # title is not writable
         pass
 
-    def getUserId(self):
+    def getUserId(self) -> str:
         return self.id
 
-    def getUserName(self):
+    def getUserName(self) -> str:
         return self.email
 
-    def get_full_name(self):
+    def get_full_name(self) -> str:
         return self.title
 
     @property
-    def user(self):
+    def user(self) -> MemberData | None:
         user = api.user.get(userid=self.id)
         if user:
             return user
+        return None
