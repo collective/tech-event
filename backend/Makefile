@@ -55,7 +55,7 @@ requirements-mxdev.txt: pyproject.toml mx.ini ## Generate constraints file
 $(VENV_FOLDER): requirements-mxdev.txt ## Install dependencies
 	@echo "$(GREEN)==> Install environment$(RESET)"
 	@uv venv $(VENV_FOLDER)
-	@uv pip install -r requirements-mxdev.txt Products.membrane pyotp
+	@uv pip install -r requirements-mxdev.txt
 
 .PHONY: sync
 sync: $(VENV_FOLDER) ## Sync project dependencies
