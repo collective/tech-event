@@ -17,8 +17,8 @@ class PresenterRoleProvider:
         self.context = context
 
     def getRoles(self, user_id):
-        """
-        Return the roles assigned to the given user ID in the context of presenters for the current event session.
+        """Return the roles assigned to the given user ID in the context
+        of presenters for the current event session.
         """
         mtool = api.portal.get_tool("portal_membership")
         user = mtool.getMemberById(user_id)
@@ -36,10 +36,10 @@ class PresenterRoleProvider:
         return list(roles)
 
     def getAllRoles(self):
-        """
-        Retrieve all roles assigned to users in the context of presenters for the current event session.
-
-        This method merges roles from all presenters for each user. It does not consider additional role adapters.
+        """Retrieve all roles assigned to users in the context of presenters for
+        the current event session.
+        This method merges roles from all presenters for each user. It does not
+        consider additional role adapters.
         """
         roles = {}
         presenters = getattr(self.context, "presenters", [])
