@@ -325,6 +325,7 @@
   },
   "review_state": null,
   "rights": "",
+  "schedule_review_states": [],
   "start": "2025-07-31T12:00:00",
   "subjects": [],
   "table_of_contents": null,

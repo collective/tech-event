@@ -161,12 +161,7 @@
       },
       "collective.techevent: Add Keynote": {
         "acquire": false,
-        "roles": [
-          "Manager",
-          "Site Administrator",
-          "Owner",
-          "Contributor"
-        ]
+        "roles": []
       },
       "collective.techevent: Add Presenter": {
         "acquire": false,
@@ -177,7 +172,29 @@
           "Contributor"
         ]
       },
+      "collective.techevent: Add Room": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator",
+          "Owner",
+          "Contributor"
+        ]
+      },
+      "collective.techevent: Add Schedule": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator",
+          "Owner",
+          "Contributor"
+        ]
+      },
       "collective.techevent: Add Slot": {
+        "acquire": false,
+        "roles": []
+      },
+      "collective.techevent: Add Sponsor": {
         "acquire": false,
         "roles": [
           "Manager",
@@ -188,9 +205,18 @@
       },
       "collective.techevent: Add SponsorsDB": {
         "acquire": false,
-        "roles": []
+        "roles": [
+          "Manager",
+          "Site Administrator",
+          "Owner",
+          "Contributor"
+        ]
       },
       "collective.techevent: Add Talk": {
+        "acquire": false,
+        "roles": []
+      },
+      "collective.techevent: Add Tech Event": {
         "acquire": false,
         "roles": [
           "Manager",
@@ -201,12 +227,7 @@
       },
       "collective.techevent: Add Training": {
         "acquire": false,
-        "roles": [
-          "Manager",
-          "Site Administrator",
-          "Owner",
-          "Contributor"
-        ]
+        "roles": []
       },
       "collective.techevent: Add Venue": {
         "acquire": false,

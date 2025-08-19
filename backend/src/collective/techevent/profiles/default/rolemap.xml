@@ -2,7 +2,7 @@
 <rolemap>
   <permissions>
     <!-- Tech Event -->
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add Tech Event"
     >
       <role name="Manager" />
@@ -12,7 +12,7 @@
     </permission>
 
     <!-- Venue -->
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add Venue"
     >
       <role name="Manager" />
@@ -20,7 +20,7 @@
       <role name="Owner" />
       <role name="Contributor" />
     </permission>
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add Room"
     >
       <role name="Manager" />
@@ -30,7 +30,7 @@
     </permission>
 
     <!-- Sponsor -->
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add SponsorsDB"
     >
       <role name="Manager" />
@@ -46,7 +46,7 @@
       <role name="Owner" />
       <role name="Contributor" />
     </permission>
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add Sponsor"
     >
       <role name="Manager" />
@@ -56,7 +56,7 @@
     </permission>
 
     <!-- Presenter -->
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add Presenter"
     >
       <role name="Manager" />
@@ -66,7 +66,7 @@
     </permission>
 
     <!-- Schedule -->
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add Schedule"
     >
       <role name="Manager" />
@@ -76,20 +76,20 @@
     </permission>
 
     <!-- Slot -->
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add Slot"
     />
 
     <!-- Activities -->
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add Training"
     />
 
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add Talk"
     />
 
-    <permission acquire="True"
+    <permission acquire="False"
                 name="collective.techevent: Add Keynote"
     />
 

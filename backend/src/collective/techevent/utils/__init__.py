@@ -51,12 +51,8 @@ def get_sponsorship_benefits(context: DexterityContent) -> list[dict[str, str]]:
 
 
 PERMISSIONS = [
-    "collective.techevent: Add Keynote",
     "collective.techevent: Add Presenter",
     "collective.techevent: Add Venue",
-    "collective.techevent: Add Slot",
-    "collective.techevent: Add Talk",
-    "collective.techevent: Add Training",
 ]
 
 DEFAULT_ROLES = [

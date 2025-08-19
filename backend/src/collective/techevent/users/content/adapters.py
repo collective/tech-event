@@ -18,11 +18,14 @@ class MembraneUserProperties:
     """
 
     # Map from memberdata property to member field:
-    property_map = dict(
-        email="email",
-        description="text",
-        home_page="remoteUrl",
-    )
+    @property
+    def property_map(self) -> dict[str, str]:
+        """Map from memberdata property to member field."""
+        return {
+            "email": "email",
+            "description": "text",
+            "home_page": "remoteUrl",
+        }
 
     def __init__(self, context):
         self.user = context

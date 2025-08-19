@@ -61,10 +61,13 @@ class IBaseUser(Interface):
         his email the same actually works.
         """
         user = data.__context__
-        if user is not None:
-            if getattr(user, "email", None) and user.email == data.email:
-                # No change, fine.
-                return
+        if (
+            user is not None
+            and getattr(user, "email", None)
+            and user.email == data.email
+        ):
+            # No change, fine.
+            return
         error = validate_unique_email(data.email)
         if error:
             raise Invalid(error)

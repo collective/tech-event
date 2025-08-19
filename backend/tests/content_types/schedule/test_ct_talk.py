@@ -1,4 +1,5 @@
 from collective.techevent.content.schedule.talk import Talk
+from plone import api
 from plone.app.testing import TEST_USER_ID
 from z3c.relationfield import RelationValue
 from zope.component import getUtility
@@ -33,20 +34,27 @@ class TestContentType:
         assert isinstance(content, Talk)
 
     @pytest.mark.parametrize(
-        "role,expected",
+        "role,path,expected",
         [
-            ["Manager", True],
-            ["Site Administrator", True],
-            ["Owner", True],
-            ["Contributor", True],
-            ["Reader", False],
-            ["Anonymous", False],
+            ["Anonymous", "/", False],
+            ["Anonymous", "/schedule", False],
+            ["Contributor", "/", False],
+            ["Contributor", "/schedule", True],
+            ["Manager", "/", False],
+            ["Manager", "/schedule", True],
+            ["Owner", "/", False],
+            ["Owner", "/schedule", True],
+            ["Reader", "/", False],
+            ["Reader", "/schedule", False],
+            ["Site Administrator", "/", False],
+            ["Site Administrator", "/schedule", True],
         ],
     )
     def test_create_permission(
-        self, roles_permission_on, permission, role: str, expected: bool
+        self, roles_permission_on, path, permission, role: str, expected: bool
     ):
-        roles = roles_permission_on(permission, self.container)
+        container = api.content.get(path)
+        roles = roles_permission_on(permission, container)
         assert (role in roles) is expected
 
     def test_slot_indexed(self, search_slot_event_dates, portal_type, content_instance):
