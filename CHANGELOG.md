@@ -7,6 +7,43 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a16 (2025-08-19)
+
+### Backend
+
+
+#### New features:
+
+- Add initial Membrane based Attendee user support as additionally installable profile and TOTP based login. @datakurre [#7](https://github.com/collective/tech-event/issues/7)
+
+
+#### Bug fixes:
+
+- Restrict adding schedule content types to the subtree under a Schedule. @ericof [#5](https://github.com/collective/tech-event/issues/5)
+
+
+#### Internal:
+
+- Upgrade pytest to version 8.4.1. @ericof 
+- Upgrade pytest-plone to version 1.0.0a2. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Add /attendee-login to allow Attendees to request to mail them their current TOTP for login. @datakurre [#7](https://github.com/collective/tech-event/issue/7)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a15 (2025-08-15)
 
 ### Backend

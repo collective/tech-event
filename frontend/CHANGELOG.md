@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.16 (2025-08-19)
+
+### Feature
+
+- Add /attendee-login to allow Attendees to request to mail them their current TOTP for login. @datakurre [#7](https://github.com/collective/tech-event/issue/7)
+
 ## 1.0.0-alpha.15 (2025-08-15)
 
 ## 1.0.0-alpha.14 (2025-08-14)
