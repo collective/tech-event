@@ -13,6 +13,7 @@
       "id": "ericof",
       "title": "Érico Andrei",
       "description": "Awesome location for our event",
+      "categories": ["keynote-speaker", "instructor"],
       "social_links": [
           {
               "@id": "ee320a12-4f2b-4450-8214-61facb451000",
@@ -113,6 +114,10 @@
       "description": "Plone API talk",
       "start": "2025-08-01T17:05:00",
       "end": "2025-08-01T17:50:00",
+      "session_audience": ["developers"],
+      "session_language": "en",
+      "session_level": ["general"],
+      "session_track": ["main"],
       "duration": "long"
   },
   {

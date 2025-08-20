@@ -2,12 +2,48 @@
 <object name="portal_catalog">
 
   <!-- Indexes -->
+  <!-- Sponsors -->
   <index meta_type="FieldIndex"
          name="level"
   >
     <indexed_attr value="level" />
   </index>
 
+  <!-- Slot -->
+  <index meta_type="KeywordIndex"
+         name="slot_room"
+  >
+    <indexed_attr value="slot_room" />
+  </index>
+
+  <!-- Sessions -->
+  <index meta_type="KeywordIndex"
+         name="session_level"
+  >
+    <indexed_attr value="session_level" />
+  </index>
+  <index meta_type="KeywordIndex"
+         name="session_track"
+  >
+    <indexed_attr value="session_track" />
+  </index>
+  <index meta_type="KeywordIndex"
+         name="session_audience"
+  >
+    <indexed_attr value="session_audience" />
+  </index>
+  <index meta_type="FieldIndex"
+         name="session_language"
+  >
+    <indexed_attr value="session_language" />
+  </index>
+
+  <!-- Presenters -->
+  <index meta_type="KeywordIndex"
+         name="presenter_categories"
+  >
+    <indexed_attr value="presenter_categories" />
+  </index>
 
 
   <!-- Metadata -->
