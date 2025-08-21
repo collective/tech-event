@@ -1,14 +1,46 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
-  <!-- Indexers/Metadata -->
+  <!-- Indexers -->
+  <!-- Slot -->
+  <adapter
+      factory=".slot.slot_room_indexer"
+      name="slot_room"
+      />
+
+  <!-- Session -->
+  <adapter
+      factory=".session.session_track_indexer"
+      name="session_track"
+      />
+  <adapter
+      factory=".session.session_level_indexer"
+      name="session_level"
+      />
+  <adapter
+      factory=".session.session_audience_indexer"
+      name="session_audience"
+      />
+  <adapter
+      factory=".session.session_language_indexer"
+      name="session_language"
+      />
+
+  <!-- Presenter -->
+  <adapter
+      factory=".presenter.categories_indexer"
+      name="presenter_categories"
+      />
+
+  <!-- Sponsor -->
+  <adapter
+      factory=".sponsor.level_indexer"
+      name="level"
+      />
 
   <!-- -*- extra stuff goes here -*- -->
   <adapter
       factory=".social_links.links_indexer"
       name="links"
       />
-  <adapter
-      factory=".sponsor.level_indexer"
-      name="level"
-      />
+
 </configure>

@@ -51,6 +51,21 @@ class TestContentType:
         assert isinstance(links, list)
         assert len(links) == 2
 
+    @pytest.mark.parametrize(
+        "category,expected",
+        [
+            ["keynote-speaker", True],
+            ["instructor", True],
+            ["foobar", False],
+        ],
+    )
+    def test_indexer_categories(
+        self, catalog, content_instance, category: str, expected: bool
+    ):
+        query = {"UID": content_instance.UID(), "presenter_categories": category}
+        brains = catalog(**query)
+        assert (len(brains) == 1) is expected
+
 
 class TestVersioning:
     @pytest.fixture(autouse=True)

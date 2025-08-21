@@ -63,6 +63,22 @@ class TestContentType:
         uids = [brain.UID for brain in results]
         assert content_instance.UID() in uids
 
+    @pytest.mark.parametrize(
+        "key,value,expected",
+        [
+            ["session_audience", "developers", True],
+            ["session_track", "main", True],
+            ["session_level", "general", True],
+            ["session_language", "en", True],
+        ],
+    )
+    def test_indexer_session(
+        self, catalog, content_instance, key: str, value: str, expected: bool
+    ):
+        query = {"UID": content_instance.UID(), key: value}
+        brains = catalog(**query)
+        assert (len(brains) == 1) is expected
+
 
 class TestVersioning:
     @pytest.fixture(autouse=True)

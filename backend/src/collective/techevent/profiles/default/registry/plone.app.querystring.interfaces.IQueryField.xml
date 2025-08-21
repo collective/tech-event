@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="collective.techevent"
+>
+
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.slot_room"
+  >
+    <value key="title"
+           i18n:translate=""
+    >Room</value>
+    <value key="description"
+           i18n:translate=""
+    >Room for a slot.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.all</element>
+    </value>
+    <value key="vocabulary">collective.techevent.vocabularies.slot_rooms</value>
+    <value key="group"
+           i18n:translate=""
+    >Event Schedule</value>
+  </records>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.session_level"
+  >
+    <value key="title"
+           i18n:translate=""
+    >Level</value>
+    <value key="description"
+           i18n:translate=""
+    >Session Level.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.all</element>
+    </value>
+    <value key="vocabulary">collective.techevent.vocabularies.session_levels</value>
+    <value key="group"
+           i18n:translate=""
+    >Event Schedule</value>
+  </records>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.session_audience"
+  >
+    <value key="title"
+           i18n:translate=""
+    >Audience</value>
+    <value key="description"
+           i18n:translate=""
+    >Target Audience.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.all</element>
+    </value>
+    <value key="vocabulary">collective.techevent.vocabularies.session_audiences</value>
+    <value key="group"
+           i18n:translate=""
+    >Event Schedule</value>
+  </records>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.session_track"
+  >
+    <value key="title"
+           i18n:translate=""
+    >Track</value>
+    <value key="description"
+           i18n:translate=""
+    >Session Track.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.all</element>
+    </value>
+    <value key="vocabulary">collective.techevent.vocabularies.session_tracks</value>
+    <value key="group"
+           i18n:translate=""
+    >Event Schedule</value>
+  </records>
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.session_language"
+  >
+    <value key="title"
+           i18n:translate=""
+    >Language</value>
+    <value key="description"
+           i18n:translate=""
+    >Session Language.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.all</element>
+    </value>
+    <value key="vocabulary">plone.app.vocabularies.SupportedContentLanguages</value>
+    <value key="group"
+           i18n:translate=""
+    >Event Schedule</value>
+  </records>
+
+
+  <!-- Presenter -->
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.presenter_categories"
+  >
+    <value key="title"
+           i18n:translate=""
+    >Category</value>
+    <value key="description"
+           i18n:translate=""
+    >Presenter Category.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.all</element>
+    </value>
+    <value key="vocabulary">collective.techevent.vocabularies.presenter_labels</value>
+    <value key="group"
+           i18n:translate=""
+    >Event Presenters</value>
+  </records>
+
+</registry>
