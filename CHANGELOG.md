@@ -7,6 +7,35 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a17 (2025-08-21)
+
+### Backend
+
+
+#### New features:
+
+- Adds new indexes slot_room, session_level, session_track, session_audience, session_language, presenter_categories to the catalog. @ericof 
+- Adds new querystring filters. @ericof 
+
+
+#### Bug fixes:
+
+- Fix start and end datetime not being timezone aware in IScheduleSlot and IEventRoot. @ericof [#11](https://github.com/collective/tech-event/issues/11)
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a16 (2025-08-19)
 
 ### Backend
