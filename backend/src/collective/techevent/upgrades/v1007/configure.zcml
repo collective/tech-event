@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="collective.techevent:default"
+      source="1006"
+      destination="1007"
+      >
+    <genericsetup:upgradeDepends
+        title="Add catalog indexes, querystring entries"
+        import_steps="catalog plone.app.registry"
+        />
+    <genericsetup:upgradeStep
+        title="Reindex Session objects"
+        handler=".reindex_schedule_objects"
+        />
+    <genericsetup:upgradeStep
+        title="Reindex Presenter objects"
+        handler=".reindex_presenter_objects"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>
