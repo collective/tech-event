@@ -1,0 +1,1 @@
+Fix start and end datetime not being timezone aware in IScheduleSlot and IEventRoot. @ericof

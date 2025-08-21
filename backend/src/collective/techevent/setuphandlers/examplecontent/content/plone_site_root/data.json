@@ -302,7 +302,7 @@
     }
   ],
   "effective": null,
-  "end": "2025-08-02T21:00:00",
+  "end": "2025-08-02T21:00:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
@@ -326,7 +326,7 @@
   "review_state": null,
   "rights": "",
   "schedule_review_states": [],
-  "start": "2025-07-31T12:00:00",
+  "start": "2025-07-31T12:00:00+00:00",
   "subjects": [],
   "table_of_contents": null,
   "title": "Project Title",

@@ -1,5 +1,7 @@
 from collective.techevent import _
 from collective.techevent.fields.datagrid import DataGrid
+from collective.techevent.utils.dates import default_end
+from collective.techevent.utils.dates import default_start
 from collective.techevent.utils.dates import get_iso_dates_between
 from collective.z3cform.datagridfield.row import DictRow
 from datetime import datetime
@@ -152,7 +154,9 @@ class ISettings(model.Schema):
         ],
     )
 
-    start = schema.Datetime(title=_("Start time"), required=False)
+    start = schema.Datetime(
+        title=_("Start time"), required=False, defaultFactory=default_start
+    )
     directives.widget(
         "start",
         DatetimeFieldWidget,
@@ -160,14 +164,21 @@ class ISettings(model.Schema):
         klass="event_start",
     )
 
-    end = schema.Datetime(title=_("End time"), required=False)
+    end = schema.Datetime(
+        title=_("End time"), required=False, defaultFactory=default_end
+    )
     directives.widget(
-        "end", DatetimeFieldWidget, default_timezone=default_timezone, klass="event_end"
+        "end",
+        DatetimeFieldWidget,
+        default_timezone=default_timezone,
+        klass="event_end",
     )
 
     @invariant
     def validate_start_end(data):
-        if data.start and data.end and data.start > data.end:
+        start: datetime | None = data.start
+        end: datetime | None = data.end
+        if (start and end) and start > end:
             raise StartBeforeEnd(_("End time must be after start time."))
 
     days = schema.List(title=_("Event days"), required=False, readonly=True)

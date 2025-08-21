@@ -1,4 +1,7 @@
 from collective.techevent import _
+from collective.techevent.utils.dates import default_end
+from collective.techevent.utils.dates import default_start
+from datetime import datetime
 from plone.app.event.base import default_timezone
 from plone.app.event.dx.behaviors import StartBeforeEnd
 from plone.app.z3cform.widgets.datetime import DatetimeFieldWidget
@@ -20,7 +23,9 @@ class IScheduleSlot(model.Schema):
         fields=["start", "end", "room"],
     )
 
-    start = schema.Datetime(title=_("Start time"), required=False)
+    start = schema.Datetime(
+        title=_("Start time"), required=False, defaultFactory=default_start
+    )
     directives.widget(
         "start",
         DatetimeFieldWidget,
@@ -28,14 +33,21 @@ class IScheduleSlot(model.Schema):
         klass="event_start",
     )
 
-    end = schema.Datetime(title=_("End time"), required=False)
+    end = schema.Datetime(
+        title=_("End time"), required=False, defaultFactory=default_end
+    )
     directives.widget(
-        "end", DatetimeFieldWidget, default_timezone=default_timezone, klass="event_end"
+        "end",
+        DatetimeFieldWidget,
+        default_timezone=default_timezone,
+        klass="event_end",
     )
 
     @invariant
     def validate_start_end(data):
-        if data.start and data.end and data.start > data.end:
+        start: datetime | None = data.start
+        end: datetime | None = data.end
+        if (start and end) and start > end:
             raise StartBeforeEnd(_("End time must be after start time."))
 
     room = schema.Set(

@@ -7,7 +7,7 @@
   "created": "2025-05-26T14:40:34+00:00",
   "description": "Pytest + Plone Pytest + Plone Pytest + Plone",
   "duration": null,
-  "end": "2025-08-01T18:40:00",
+  "end": "2025-08-01T18:40:00+00:00",
   "exclude_from_nav": false,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
@@ -34,7 +34,7 @@
   ],
   "session_video": null,
   "slot_category": "activity",
-  "start": "2025-08-01T18:00:00",
+  "start": "2025-08-01T18:00:00+00:00",
   "subjects": [],
   "text": {
     "content-type": "text/html",

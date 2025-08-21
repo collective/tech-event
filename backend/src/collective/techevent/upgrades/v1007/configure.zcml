@@ -20,6 +20,10 @@
         title="Reindex Presenter objects"
         handler=".reindex_presenter_objects"
         />
+    <genericsetup:upgradeStep
+        title="Update and reindex Start / End for existing objects"
+        handler=".reindex_start_end_dates"
+        />
   </genericsetup:upgradeSteps>
 
 </configure>
