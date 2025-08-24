@@ -57,6 +57,8 @@ def slot_rooms(context: DexterityContent) -> SimpleVocabulary:
     """Available Slot Rooms."""
     terms = []
     event_root = find_event_root(context)
-    for brain in api.content.find(event_root, portal_type="Room"):
+    for brain in api.content.find(
+        event_root, portal_type="Room", sort_on=["getObjPositionInParent"]
+    ):
         terms.append(SimpleTerm(brain.UID, brain.UID, brain.Title))
     return SimpleVocabulary(terms)

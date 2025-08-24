@@ -1,0 +1,65 @@
+{
+  "@id": "/about/venue/unused-room",
+  "@type": "Room",
+  "UID": "463b1e1579924db6bad3f14d3bb7c104",
+  "allow_discussion": null,
+  "blocks": {
+    "499fa0be-b22d-47b0-b554-c37cf9ef214c": {
+      "@type": "title"
+    },
+    "ee4ea7f3-bb3c-432d-8e76-b9f9404ef6fc": {
+      "@type": "slate",
+      "plaintext": "This room is not used, but exists to demonstrate how it appers first in rooms vocabulary.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "This room is not used, but exists to demonstrate how it appers first in rooms vocabulary."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "499fa0be-b22d-47b0-b554-c37cf9ef214c",
+      "ee4ea7f3-bb3c-432d-8e76-b9f9404ef6fc"
+    ]
+  },
+  "changeNote": "",
+  "created": "2025-08-24T20:02:00+00:00",
+  "description": "",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "unused-room",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-08-24T20:03:06+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "private",
+  "title": "Unused room",
+  "type_title": "Room",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-08-24T20:02:00+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

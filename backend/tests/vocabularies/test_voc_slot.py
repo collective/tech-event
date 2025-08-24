@@ -59,3 +59,25 @@ class TestBreakVocab(BaseVocab):
     def test_vocab_terms(self, token: str, title: str):
         term = self.vocab.getTermByToken(token)
         assert term.title == title
+
+
+class TestRoomVocab(BaseVocab):
+    name: str = "collective.techevent.vocabularies.slot_rooms"
+
+    @pytest.mark.parametrize(
+        "token,title",
+        [
+            ("463b1e1579924db6bad3f14d3bb7c104", "Unused room"),
+            ("3bc34856166b45199360f6699bb102f4", "Main Room"),
+            ("a4ce8fd1773f4e61af1731db1012b4d5", "Training room"),
+        ],
+    )
+    def test_vocab_terms(self, token: str, title: str):
+        term = self.vocab.getTermByToken(token)
+        assert term.title == title
+
+    def test_vocab_order(self):
+        content_titles = [x.title for x in self.portal.about.venue.objectValues()]
+        vocab_titles = [x.title for x in self.vocab]
+        assert content_titles != reversed(vocab_titles)
+        assert content_titles == vocab_titles
