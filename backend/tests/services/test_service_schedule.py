@@ -78,3 +78,22 @@ class TestScheduleGet:
         assert anon_event_count > 0
         assert manager_event_count > 0
         assert anon_event_count < manager_event_count
+
+    def test_schedule_room_order(self, api_manager_request):
+        response = api_manager_request.get("@schedule")
+        assert response.status_code == 200
+        days = response.json().get("items", [])
+        assert len(days) > 1
+        rooms = [x[-1] for x in days[1]["rooms"]]
+        assert rooms == ["_all_", "Main Room", "Beta Room"]
+
+        # Move Beta Room at the top and see that it is reflected
+        self.portal.about.venue.moveObjectsUp(["beta-room"])
+        transaction.commit()
+
+        response = api_manager_request.get("@schedule")
+        assert response.status_code == 200
+        days = response.json().get("items", [])
+        assert len(days) > 1
+        rooms = [x[-1] for x in days[1]["rooms"]]
+        assert rooms == ["_all_", "Beta Room", "Main Room"]

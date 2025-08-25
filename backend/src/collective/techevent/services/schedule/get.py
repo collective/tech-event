@@ -90,7 +90,11 @@ def group_slots(slots: list[dict], rooms_vocab: dict[str, str]) -> list[dict]:
                         slot_category = slot.get("@type")
                     types.add(slot_category)
             hour["types"] = list(types)
-        day["rooms"] = [[room, rooms_vocab.get(room, room)] for room in rooms]
+        # Separate rooms into those not in rooms_vocab and those in rooms_vocab
+        other_rooms = [room for room in rooms if room not in rooms_vocab]
+        vocab_rooms = [room for room in rooms_vocab if room in rooms]  # in vocab order
+        ordered_rooms = other_rooms + vocab_rooms
+        day["rooms"] = [[room, rooms_vocab.get(room, room)] for room in ordered_rooms]
     return response
 
 

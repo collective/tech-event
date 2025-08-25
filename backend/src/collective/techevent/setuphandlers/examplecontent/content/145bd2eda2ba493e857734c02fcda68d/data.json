@@ -1,0 +1,70 @@
+{
+  "@id": "/about/venue/beta-room",
+  "@type": "Room",
+  "UID": "145bd2eda2ba493e857734c02fcda68d",
+  "allow_discussion": null,
+  "blocks": {
+    "6b2fdd7f-9fb1-4ec1-b1aa-60f0a39fbcd5": {
+      "@type": "slate",
+      "plaintext": "",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c435ef68-679d-4eec-8f13-5f1fe3abf2ef": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "c435ef68-679d-4eec-8f13-5f1fe3abf2ef",
+      "6b2fdd7f-9fb1-4ec1-b1aa-60f0a39fbcd5"
+    ]
+  },
+  "changeNote": "",
+  "created": "2025-08-25T03:57:04+00:00",
+  "description": "",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "beta-room",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {},
+  "modified": "2025-08-25T04:15:58+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "title": "Beta Room",
+  "type_title": "Room",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-08-25T03:57:04+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-08-25T03:58:09+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

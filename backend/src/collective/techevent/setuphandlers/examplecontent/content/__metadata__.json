@@ -15,6 +15,7 @@
     "plone_site_root/data.json",
     "6b6c3388dfc347aaaba4f24d0160d3e2/data.json",
     "a5b298726b3d489bbeb2fb2877c91687/data.json",
+    "145bd2eda2ba493e857734c02fcda68d/data.json",
     "3bc34856166b45199360f6699bb102f4/data.json",
     "a4ce8fd1773f4e61af1731db1012b4d5/data.json",
     "a720393b3c0240e5bd27c43fcd2cfd1e/data.json",
@@ -34,6 +35,7 @@
     "88b84861e89245919794faac45384a6f/data.json",
     "0f203c3794c4455592a59ae7fce50c71/data.json",
     "52588c54077343dfaed01762740c13df/data.json",
+    "f507dea8d63b432cb371f89bb37a7de2/data.json",
     "d0edf73370bb4baa890fca8dcc4e1896/data.json",
     "e1ffa50c88224bdc9f187b4c5a7ac8b2/data.json",
     "f0d13e7454594b2a8f3360db16769a47/data.json",
@@ -51,6 +53,7 @@
   "default_page": {},
   "local_permissions": {
     "0f203c3794c4455592a59ae7fce50c71": {},
+    "145bd2eda2ba493e857734c02fcda68d": {},
     "1bbc55a8af384c26815d8120cfbd8879": {},
     "2f4f1da2d12d4d3db24ea76b7aefec7e": {},
     "31c554e34bc2422a9941b0904ae9e581": {},
@@ -121,6 +124,7 @@
     "e1ffa50c88224bdc9f187b4c5a7ac8b2": {},
     "ef65877906c84dfa929d97c172c3bd4a": {},
     "f0d13e7454594b2a8f3360db16769a47": {},
+    "f507dea8d63b432cb371f89bb37a7de2": {},
     "plone_site_root": {
       "Add portal member": {
         "acquire": false,
@@ -255,6 +259,13 @@
   },
   "local_roles": {
     "0f203c3794c4455592a59ae7fce50c71": {
+      "local_roles": {
+        "admin": [
+          "Owner"
+        ]
+      }
+    },
+    "145bd2eda2ba493e857734c02fcda68d": {
       "local_roles": {
         "admin": [
           "Owner"
@@ -492,6 +503,13 @@
         ]
       }
     },
+    "f507dea8d63b432cb371f89bb37a7de2": {
+      "local_roles": {
+        "admin": [
+          "Owner"
+        ]
+      }
+    },
     "plone_site_root": {
       "local_roles": {
         "admin": [
@@ -502,6 +520,7 @@
   },
   "ordering": {
     "0f203c3794c4455592a59ae7fce50c71": 0,
+    "145bd2eda2ba493e857734c02fcda68d": 1,
     "1bbc55a8af384c26815d8120cfbd8879": 0,
     "2f4f1da2d12d4d3db24ea76b7aefec7e": 0,
     "31c554e34bc2422a9941b0904ae9e581": 0,
@@ -518,7 +537,7 @@
     "91b91271f1754a96ae24482be26836bb": 2,
     "94c5c92fd5904b13b97aa9fcb69d106e": 3,
     "a093a9bab51a4c2eb4e36e148899c724": 0,
-    "a4ce8fd1773f4e61af1731db1012b4d5": 1,
+    "a4ce8fd1773f4e61af1731db1012b4d5": 2,
     "a5b298726b3d489bbeb2fb2877c91687": 0,
     "a720393b3c0240e5bd27c43fcd2cfd1e": 41,
     "aefb5fae7acf45b89701a6b091e0eef3": 0,
@@ -534,7 +553,8 @@
     "dc7237dea7084987a31d2f19423b114c": 0,
     "e1ffa50c88224bdc9f187b4c5a7ac8b2": 1,
     "ef65877906c84dfa929d97c172c3bd4a": 2,
-    "f0d13e7454594b2a8f3360db16769a47": 2
+    "f0d13e7454594b2a8f3360db16769a47": 2,
+    "f507dea8d63b432cb371f89bb37a7de2": 3
   },
   "relations": []
 }
