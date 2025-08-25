@@ -1,51 +1,49 @@
 {
-  "@id": "/about/venue/unused-room",
+  "@id": "/about/venue/beta-room",
   "@type": "Room",
-  "UID": "463b1e1579924db6bad3f14d3bb7c104",
+  "UID": "145bd2eda2ba493e857734c02fcda68d",
   "allow_discussion": null,
   "blocks": {
-    "499fa0be-b22d-47b0-b554-c37cf9ef214c": {
-      "@type": "title"
-    },
-    "ee4ea7f3-bb3c-432d-8e76-b9f9404ef6fc": {
+    "6b2fdd7f-9fb1-4ec1-b1aa-60f0a39fbcd5": {
       "@type": "slate",
-      "plaintext": "This room is not used, but exists to demonstrate how it appers first in rooms vocabulary.",
-      "styles": {},
-      "theme": "default",
+      "plaintext": "",
       "value": [
         {
           "children": [
             {
-              "text": "This room is not used, but exists to demonstrate how it appers first in rooms vocabulary."
+              "text": ""
             }
           ],
           "type": "p"
         }
       ]
+    },
+    "c435ef68-679d-4eec-8f13-5f1fe3abf2ef": {
+      "@type": "title"
     }
   },
   "blocks_layout": {
     "items": [
-      "499fa0be-b22d-47b0-b554-c37cf9ef214c",
-      "ee4ea7f3-bb3c-432d-8e76-b9f9404ef6fc"
+      "c435ef68-679d-4eec-8f13-5f1fe3abf2ef",
+      "6b2fdd7f-9fb1-4ec1-b1aa-60f0a39fbcd5"
     ]
   },
   "changeNote": "",
-  "created": "2025-08-24T20:02:00+00:00",
+  "created": "2025-08-25T03:57:04+00:00",
   "description": "",
   "exclude_from_nav": false,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "id": "unused-room",
+  "id": "beta-room",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "view",
   "lock": {},
-  "modified": "2025-08-24T20:03:06+00:00",
+  "modified": "2025-08-25T04:15:58+00:00",
   "nav_title": null,
   "preview_caption_link": null,
-  "review_state": "private",
-  "title": "Unused room",
+  "review_state": "published",
+  "title": "Beta Room",
   "type_title": "Room",
   "version": "current",
   "versioning_enabled": true,
@@ -56,7 +54,14 @@
         "actor": "admin",
         "comments": "",
         "review_state": "private",
-        "time": "2025-08-24T20:02:00+00:00"
+        "time": "2025-08-25T03:57:04+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-08-25T03:58:09+00:00"
       }
     ]
   },

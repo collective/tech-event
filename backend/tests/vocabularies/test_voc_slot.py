@@ -67,8 +67,8 @@ class TestRoomVocab(BaseVocab):
     @pytest.mark.parametrize(
         "token,title",
         [
-            ("463b1e1579924db6bad3f14d3bb7c104", "Unused room"),
             ("3bc34856166b45199360f6699bb102f4", "Main Room"),
+            ("145bd2eda2ba493e857734c02fcda68d", "Beta Room"),
             ("a4ce8fd1773f4e61af1731db1012b4d5", "Training room"),
         ],
     )
@@ -81,3 +81,8 @@ class TestRoomVocab(BaseVocab):
         vocab_titles = [x.title for x in self.vocab]
         assert content_titles != reversed(vocab_titles)
         assert content_titles == vocab_titles
+        assert [x.token for x in self.vocab] == [
+            "3bc34856166b45199360f6699bb102f4",
+            "145bd2eda2ba493e857734c02fcda68d",
+            "a4ce8fd1773f4e61af1731db1012b4d5",
+        ]
