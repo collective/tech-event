@@ -29,7 +29,7 @@ classifiers = [
 dependencies = [
     "Products.CMFPlone",
     "plone.api",
-    "plone.restapi",
+    "plone.restapi>=9.15.2",
     "plone.volto",
     "plonegovbr.socialmedia",
     "collective.z3cform.datagridfield",

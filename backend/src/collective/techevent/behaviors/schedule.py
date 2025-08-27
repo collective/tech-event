@@ -1,6 +1,4 @@
 from collective.techevent import _
-from collective.techevent.utils.dates import default_end
-from collective.techevent.utils.dates import default_start
 from datetime import datetime
 from plone.app.event.base import default_timezone
 from plone.app.event.dx.behaviors import StartBeforeEnd
@@ -23,9 +21,7 @@ class IScheduleSlot(model.Schema):
         fields=["start", "end", "room"],
     )
 
-    start = schema.Datetime(
-        title=_("Start time"), required=False, defaultFactory=default_start
-    )
+    start = schema.Datetime(title=_("Start time"), required=False)
     directives.widget(
         "start",
         DatetimeFieldWidget,
@@ -33,9 +29,7 @@ class IScheduleSlot(model.Schema):
         klass="event_start",
     )
 
-    end = schema.Datetime(
-        title=_("End time"), required=False, defaultFactory=default_end
-    )
+    end = schema.Datetime(title=_("End time"), required=False)
     directives.widget(
         "end",
         DatetimeFieldWidget,
