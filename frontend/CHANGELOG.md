@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.18 (2025-08-27)
+
+### Feature
+
+- Style fixes for mobile. @ericof 
+
+### Bugfix
+
+- Do not display slot date if start or end date are null. @ericof 
+
 ## 1.0.0-alpha.17 (2025-08-21)
 
 ## 1.0.0-alpha.16 (2025-08-19)

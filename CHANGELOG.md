@@ -7,6 +7,42 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a18 (2025-08-27)
+
+### Backend
+
+
+#### New features:
+
+- Change rooms vocabulary to return rooms in their indexed parent container order and schedule API to return rooms in the order of the vocabulary @datakurre [#13](https://github.com/collective/tech-event/issues/13)
+
+
+#### Internal:
+
+- Require plone.restapi version 9.15.2 or superior. @ericof 
+- Start and End on Session items does not have a default value. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Style fixes for mobile. @ericof 
+
+#### Bugfix
+
+- Do not display slot date if start or end date are null. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a17 (2025-08-21)
 
 ### Backend
