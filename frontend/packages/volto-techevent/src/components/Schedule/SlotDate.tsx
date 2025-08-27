@@ -56,9 +56,9 @@ const SlotDate: React.FC<SlotDateProps> = ({
   className,
   locale,
 }) => {
-  const start = new Date(item.start);
-  const end = new Date(item.end);
-  const isValid = !isNaN(start.getTime()) && !isNaN(end.getTime());
+  const start = item.start !== null ? new Date(item.start) : null;
+  const end = item.end !== null ? new Date(item.end) : null;
+  const isValid = !isNaN(start?.getTime()) && !isNaN(end?.getTime());
 
   return (
     <div className={`slotDate ${className || ''}`.trim()}>

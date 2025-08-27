@@ -1,0 +1,1 @@
+Do not display slot date if start or end date are null. @ericof
