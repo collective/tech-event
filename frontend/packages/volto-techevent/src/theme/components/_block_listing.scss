@@ -5,6 +5,8 @@
     }
     &.presenter,
     &.session {
+      min-height: 300px;
+      max-height: 100% !important;
       .item {
         margin-top: unset !important;
         .sessionData {
@@ -44,6 +46,7 @@
           }
           .presenterTitle {
             .title {
+              align-items: center;
               justify-content: center;
               padding: $spacing-2xsmall 0;
               margin-bottom: $spacing-2xsmall;

@@ -33,8 +33,24 @@ body.contenttype-training {
             --block-alignment: center;
             .presenterTitle {
               .title {
-                color: var(--secondary-color);
+                color: var(--secondary-foreground-color);
               }
+            }
+          }
+        }
+      }
+      @media screen and (max-width: $tablet-breakpoint) {
+        padding: 0 $spacing-xsmall;
+        .sessionWrapper {
+          flex-wrap: wrap;
+          .sessionData,
+          .sessionPresenters {
+            flex: 1 1 100%;
+          }
+          .sessionData {
+            .sessionTitle {
+              @include add(size, l);
+              @include add(height, l);
             }
           }
         }
