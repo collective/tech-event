@@ -1,25 +1,11 @@
 @mixin rooms-width {
-  &.rooms-0,
-  &.rooms-1 {
-    .room {
-      width: 100%;
-    }
-  }
-  &.rooms-2 .room {
-    width: 50%;
-  }
-  &.rooms-3 .room {
-    width: 33%;
-  }
   &.rooms-4 .room {
-    width: 25%;
     .sessionTitle .title {
       @include add(size, s);
       @include add(weight, semi-bold);
     }
   }
   &.rooms-5 .room {
-    width: 20%;
     .sessionTitle .title {
       @include add(size, s);
       @include add(weight, semi-bold);
@@ -30,7 +16,6 @@
 #main .schedule {
   .day-header {
     display: flex;
-    gap: 2rem;
     @media screen and (max-width: $tablet-breakpoint) {
       display: none;
     }
@@ -42,6 +27,9 @@
       }
     }
     .rooms {
+      .track-slot {
+        display: none; /* hidden on small screens and browsers without grid support */
+      }
       display: flex;
       width: 100%;
       @include rooms-width;
@@ -187,13 +175,14 @@
     }
   }
 
+  @media screen and (min-width: 700px) {
+    .tab-content {
+      display: grid;
+      gap: 1rem;
+    }
+  }
+
   .tab-content {
-    position: relative !important;
-    display: flex;
-    flex-direction: column;
-    padding: 18px;
-    padding-top: 1rem;
-    gap: 2rem;
 
     &:before {
       position: absolute;
@@ -210,6 +199,7 @@
   }
 
   .aside-indication {
+    grid-column: times;
     transform: translateY(20px);
 
     .icon-type {
@@ -258,4 +248,135 @@
 .block.schedule .title {
   @include block-title;
   @include default-container-width;
+}
+
+@supports (display: grid) {
+  @media screen and (min-width: 700px) {
+    .track-slot {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      display: block;
+      padding: 10px 5px 5px;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}
+
+/* Small-screen & fallback styles */
+.session {
+  margin-bottom: 1em;
+}
+
+@supports (display: grid) {
+  @media screen and (min-width: 700px) {
+    .session {
+      margin: 0;
+    }
+  }
+}
+
+/* VISUAL STYLES */
+.session {
+  padding: 0.5em;
+  border-radius: 2px;
+  box-shadow:
+    rgba(255, 255, 255, 0.6) 1px 1px 0,
+    rgba(0, 0, 0, 0.3) 4px 4px 0;
+  font-size: 14px;
+}
+
+.session-title,
+.session-time,
+.session-track,
+.session-presenter {
+  display: block;
+}
+
+.session-title,
+.time-slot {
+  margin: 0;
+  font-size: 1em;
+}
+
+.session-title a {
+  color: #fff;
+  text-decoration-style: dotted;
+  &:hover {
+    font-style: italic;
+  }
+  &:focus {
+    outline: 2px dotted rgba(255, 255, 255, 0.8);
+  }
+}
+
+.track-slot,
+.time-slot {
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.track-1 {
+  background-color: #1259b2;
+  color: #fff;
+}
+.track-2 {
+  background-color: #687f00;
+  color: #fff;
+}
+.track-3 {
+  background-color: #544d69;
+  color: #fff;
+}
+.track-4 {
+  background-color: #c35500;
+  color: #fff;
+}
+.track-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ccc;
+  box-shadow: none;
+  color: #000;
+}
+.text {
+  max-width: 750px;
+  margin: 0 auto 50px;
+  font-size: 18px;
+}
+.meta {
+  color: #555;
+  font-style: italic;
+}
+.meta a {
+  color: #555;
+}
+
+.slotTile, .sessionTile {
+  .sessionDescription {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  height: 5rem;
+
+  &.rows-1 {
+    height: 5rem;
+  }
+  &.rows-2 {
+    height: 10rem;
+  }
+  &.rows-3 {
+    height: 15rem;
+  }
+  &.rows-4 {
+    height: 20rem;
+  }
+  &.rows-5 {
+    height: 25rem;
+  }
+  &.rows-6 {
+    height: 30rem;
+  }
 }

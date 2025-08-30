@@ -15,6 +15,8 @@ interface SessionTileProps {
   showAudience: boolean;
   showLevel: boolean;
   shortDate: boolean;
+  gridColumn: string;
+  gridRow: string;
 }
 
 const SessionTile: React.FC<SessionTileProps> = ({
@@ -27,10 +29,20 @@ const SessionTile: React.FC<SessionTileProps> = ({
 }) => {
   const uid = item.UID;
   const type = item['@type'];
+  const rooms = item.gridColumn.match('all-rooms')
+    ? 'all-rooms'
+    : item.gridColumn
+        .split('/')
+        .map((room: string) => room.trim())
+        .join(' ');
 
   return (
     <Container
-      className={`sessionTile ${type} ${uid} state-${item.review_state}`}
+      className={`sessionTile ${rooms} rows-${item.gridHeight} ${type} ${uid} state-${item.review_state}${rooms}`}
+      style={{
+        gridColumn: item.gridColumn,
+        gridRow: item.gridRow,
+      }}
     >
       <SessionTrack item={item} />
       <SessionMetadata item={item} shortDate={shortDate} showRoom={showRoom} />

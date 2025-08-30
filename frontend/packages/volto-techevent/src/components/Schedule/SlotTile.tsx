@@ -9,6 +9,8 @@ interface SlotTileProps {
   showAudience: boolean;
   showLevel: boolean;
   shortDate: boolean;
+  gridColumn: string;
+  gridRow: string;
 }
 
 const SlotTile: React.FC<SlotTileProps> = ({
@@ -18,9 +20,21 @@ const SlotTile: React.FC<SlotTileProps> = ({
 }) => {
   const uid = item.UID;
   const type = item['@type'];
+  const rooms = item.gridColumn.match('all-rooms')
+    ? 'all-rooms'
+    : item.gridColumn
+        .split('/')
+        .map((room: string) => room.trim())
+        .join(' ');
 
   return (
-    <Container className={`slotTile ${type} ${uid}`}>
+    <Container
+      className={`slotTile ${rooms} rows-${item.gridHeight} ${type} ${uid}`}
+      style={{
+        gridColumn: item.gridColumn,
+        gridRow: item.gridRow,
+      }}
+    >
       <SlotDate
         item={item}
         shortFormat={shortDate}
