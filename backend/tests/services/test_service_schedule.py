@@ -12,8 +12,7 @@ def total_event_count(response: dict) -> int:
     """Return total number of events in the schedule."""
     count = 0
     for day in response.get("items", []):
-        for hour in day.get("items", []):
-            count += len(hour.get("items", []))
+        count += len(day.get("items", []))
     return count
 
 
