@@ -1,25 +1,11 @@
 @mixin rooms-width {
-  &.rooms-0,
-  &.rooms-1 {
-    .room {
-      width: 100%;
-    }
-  }
-  &.rooms-2 .room {
-    width: 50%;
-  }
-  &.rooms-3 .room {
-    width: 33%;
-  }
-  &.rooms-4 .room {
-    width: 25%;
+  &.rooms-4 {
     .sessionTitle .title {
       @include add(size, s);
       @include add(weight, semi-bold);
     }
   }
-  &.rooms-5 .room {
-    width: 20%;
+  &.rooms-5 {
     .sessionTitle .title {
       @include add(size, s);
       @include add(weight, semi-bold);
@@ -41,92 +27,79 @@
         box-shadow: unset;
       }
     }
-    .rooms {
-      display: flex;
-      width: 100%;
-      @include rooms-width;
-      .room {
-        padding: $spacing-small;
-        text-align: center;
-        .room-label {
-          @include add(size, s);
-          @include add(weight, bold);
-          @include add(height, s);
-        }
-      }
+  }
+
+  .room-header {
+    @media screen and (max-width: $tablet-breakpoint) {
+      display: none;
+    }
+    padding: $spacing-small;
+    text-align: center;
+    .room-label {
+      @include add(size, s);
+      @include add(weight, bold);
+      @include add(height, s);
+    }
+  }
+
+  .row-header {
+    display: flex;
+    margin: 0 0 2 * $spacing-small 0;
+    @media screen and (max-width: $tablet-breakpoint) {
+      display: none;
     }
   }
 
   .timeslot {
     display: flex;
-    gap: 2rem;
-    @media screen and (max-width: $tablet-breakpoint) {
-      gap: 1rem;
-    }
-    .rooms {
-      display: flex;
-      width: 100%;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      padding: $spacing-xsmall $spacing-xsmall;
-      background-color: var(--techevent-schedule-color);
-      box-shadow:
-        0 2px 0 0 var(--techevent-schedule-color),
-        0 6px 0 0 var(--techevent-schedule-color),
-        0 8px 0 0 var(--techevent-schedule-reverse-color),
-        0 10px 0 0 var(--techevent-schedule-secondary-color),
-        0 -2px 0 0 var(--techevent-schedule-color),
-        0 -6px 0 0 var(--techevent-schedule-color),
-        0 -8px 0 0 var(--techevent-schedule-reverse-color),
-        0 -10px 0 0 var(--techevent-schedule-secondary-color);
-      gap: var(--techevent-schedule-gap);
-      @include rooms-width;
-      .room {
-        @media screen and (max-width: $tablet-breakpoint) {
-          width: 100%;
+    flex-direction: column;
+    padding: $spacing-xsmall $spacing-xsmall;
+    margin: 0 0 20px 0;
+    background-color: var(--techevent-schedule-color);
+    box-shadow:
+      0 3px 0 0 var(--techevent-schedule-secondary-color),
+      0 10px 0 0 var(--techevent-schedule-reverse-color),
+      0 -3px 0 0 var(--techevent-schedule-secondary-color),
+      0 -10px 0 0 var(--techevent-schedule-reverse-color);
+    .sessionTile {
+      flex-grow: 1;
+      padding: $spacing-2xsmall 0 $spacing-small 0;
+      margin: 0 var(--techevent-schedule-gap);
+      .sessionDescription {
+        display: None;
+      }
+      &.LightningTalks {
+        .sessionDescription {
+          display: block;
         }
-        border-right: 1px solid #e3e3e3;
-        &:last-child {
-          border-right: unset;
-        }
-        .sessionTile {
-          min-height: 240px;
-          padding: $spacing-2xsmall 0 $spacing-small 0;
-          margin: 0 var(--techevent-schedule-gap);
-          .sessionDescription {
-            display: None;
-          }
-          &.LightningTalks {
-            .sessionDescription {
-              display: block;
-            }
-            .sessionBody {
-              display: None;
-            }
-          }
-        }
-        @media screen and (max-width: $tablet-breakpoint) {
-          border-right: unset;
-          margin-bottom: $spacing-xsmall;
-          .sessionTile {
-            padding: $spacing-small 0;
-            border-bottom: 1px #ecebeb solid;
-            margin-bottom: $spacing-small;
-            &.empty {
-              display: none;
-            }
-          }
-        }
-        @media screen and (min-width: $tablet-breakpoint) {
-          .slot-info {
-            .session-room.slotInfoItem {
-              display: none;
-            }
-          }
+        .sessionBody {
+          display: None;
         }
       }
-      .room-all {
-        width: 100%;
+    }
+
+    @media screen and (max-width: $tablet-breakpoint) {
+      border-right: unset;
+      margin-bottom: $spacing-xsmall;
+      .sessionTile {
+        padding: $spacing-small 0;
+        border-bottom: 1px #ecebeb solid;
+        margin-bottom: $spacing-small;
+        &.empty {
+          display: none;
+        }
+      }
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+      .slot-info {
+        .session-room.slotInfoItem {
+          display: none;
+        }
+      }
+    }
+    &.room-all {
+      .sessionBody {
+        display: none;
       }
     }
   }
@@ -161,6 +134,7 @@
           }
         }
         .day.day-label {
+          width: 100%;
           .heading {
             @include add(size, l);
             @include add(height, l);
@@ -187,29 +161,30 @@
     }
   }
 
-  .tab-content {
-    position: relative !important;
-    display: flex;
-    flex-direction: column;
-    padding: 18px;
-    padding-top: 1rem;
-    gap: 2rem;
+  @media screen and (min-width: 700px) {
+    .tab-content {
+      display: grid;
+    }
+  }
 
+  .tab-content {
+    @include rooms-width;
     &:before {
       position: absolute;
       top: 0;
-      left: 41px;
+      left: 24px;
       height: 100%;
       border-left: 1px solid var(--techevent-schedule-color);
       content: '';
       opacity: 0.4;
       @media screen and (max-width: $tablet-breakpoint) {
-        left: 30px;
+        display: none;
       }
     }
   }
 
   .aside-indication {
+    grid-column: times;
     transform: translateY(20px);
 
     .icon-type {

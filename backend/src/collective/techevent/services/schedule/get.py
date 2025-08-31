@@ -1,6 +1,7 @@
 from collective.techevent.behaviors.schedule import IScheduleSlot
 from collective.techevent.utils.vocabularies import get_vocabulary_for_attr
 from copy import deepcopy
+from datetime import datetime
 from datetime import timedelta
 from dateutil.parser import parse
 from plone import api
@@ -59,42 +60,86 @@ def process_trainings(slots: list[dict]) -> list[dict]:
     return response
 
 
+def round_time(dt: datetime) -> datetime:
+    """Round datetime up to the next quarter (00, 15, 30, 45), ignoring seconds and microseconds."""
+    minute = ((dt.minute + 14) // 15) * 15
+    if minute == 60:
+        dt = dt.replace(hour=(dt.hour + 1) % 24, minute=0, second=0, microsecond=0)
+    else:
+        dt = dt.replace(minute=minute, second=0, microsecond=0)
+    return dt
+
+
+def time_slot(value: datetime) -> str:
+    return f"time-{round_time(value).strftime('%H%M')}"
+
+
 def group_slots(slots: list[dict], rooms_vocab: dict[str, str]) -> list[dict]:
     response = []
     days = {}
+
+    # Pre-process training slots to split long sessions
     slots = process_trainings(slots)
     for slot in slots:
         start = slot.get("start", "")
         if not start:
             continue
-        day = start[0:10]
-        hour = start
-        room = slot["room"][0]["token"] if slot.get("room") else "_all_"
-        if day not in days:
-            days[day] = {}
-        day_info = days[day]
-        if hour not in day_info:
-            day_info[hour] = {}
-        day_info[hour][room] = slot
+        day = start[0:10]  # Extract date part (YYYY-MM-DD)
+        days.setdefault(day, []).append(slot)
+
+    # Convert grouped days dict to a sorted list of dicts
     response = dict_as_sorted_list(days)
     for day in response:
         rooms = set()
-        day["items"] = dict_as_sorted_list(day["items"], enforceIso=True)
-        for hour in day["items"]:
-            types = set()
-            for room in hour["items"]:
-                rooms.add(room)
-                for slot in hour["items"].values():
-                    slot_category = slot.get("slot_category")
-                    if not slot_category or slot_category == "activity":
-                        slot_category = slot.get("@type")
-                    types.add(slot_category)
-            hour["types"] = list(types)
-        # Separate rooms into those not in rooms_vocab and those in rooms_vocab
+
+        # Collect all room tokens and slot types for the day
+        for slot in day["items"]:
+            room_tokens = (
+                [r.get("token") for r in slot.get("room", [])]
+                if slot.get("room")
+                else []
+            )
+            rooms.update(room_tokens or ["_all_"])
+
+        # Order rooms: first those not in vocab, then those in vocab order
         other_rooms = [room for room in rooms if room not in rooms_vocab]
         vocab_rooms = [room for room in rooms_vocab if room in rooms]  # in vocab order
         ordered_rooms = other_rooms + vocab_rooms
         day["rooms"] = [[room, rooms_vocab.get(room, room)] for room in ordered_rooms]
+
+        # Assign grid positioning for each slot (for UI layout)
+        for slot in day["items"]:
+            start_dt = parse(slot.get("start")) if slot.get("start") else None
+            end_dt = parse(slot.get("end")) if slot.get("end") else None
+            room_tokens = (
+                [r.get("token") for r in slot.get("room", [])]
+                if slot.get("room")
+                else []
+            )
+            # Assign gridColumn: which track/room the slot belongs to
+            if slot.get("@type") == "Keynote":
+                slot["gridColumn"] = "room-1 / room-all"
+            elif room_tokens:
+                # Use room-# with index+1 of the slot's room in vocab_rooms (not ordered_rooms)
+                token = room_tokens[0]
+                if token in vocab_rooms:
+                    track_index = vocab_rooms.index(token) + 1
+                    slot["gridColumn"] = f"room-{track_index}"
+                else:
+                    slot["gridColumn"] = "room-1"
+            else:
+                # If no room, span all tracks
+                slot["gridColumn"] = "room-1 / room-all"
+            # Assign gridRow: time slot range for the slot
+            if start_dt and end_dt:
+                slot["gridRow"] = f"{time_slot(start_dt)} / {time_slot(end_dt)}"
+            else:
+                slot["gridRow"] = ""
+            # Assign gridHeight: duration of the slot in grid units
+            slot["gridHeight"] = (
+                (end_dt - start_dt).seconds // 60 if start_dt and end_dt else 0
+            ) / 15
+
     return response
 
 
