@@ -136,9 +136,9 @@ def group_slots(slots: list[dict], rooms_vocab: dict[str, str]) -> list[dict]:
             else:
                 slot["gridRow"] = ""
             # Assign gridHeight: duration of the slot in grid units
-            slot["gridHeight"] = (
-                (end_dt - start_dt).seconds // 60 if start_dt and end_dt else 0
-            ) / 15
+            slot["gridHeight"] = round(
+                ((end_dt - start_dt).seconds // 60 if start_dt and end_dt else 0) / 15
+            )
 
     return response
 
