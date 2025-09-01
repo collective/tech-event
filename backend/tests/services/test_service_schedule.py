@@ -1,4 +1,7 @@
+from collective.techevent.services.schedule.get import round_time
+from collective.techevent.services.schedule.get import time_slot
 from collective.techevent.utils import find_event_root
+from datetime import datetime
 from plone import api
 
 import pytest
@@ -9,8 +12,7 @@ def total_event_count(response: dict) -> int:
     """Return total number of events in the schedule."""
     count = 0
     for day in response.get("items", []):
-        for hour in day.get("items", []):
-            count += len(hour.get("items", []))
+        count += len(day.get("items", []))
     return count
 
 
@@ -97,3 +99,38 @@ class TestScheduleGet:
         assert len(days) > 1
         rooms = [x[-1] for x in days[1]["rooms"]]
         assert rooms == ["_all_", "Beta Room", "Main Room"]
+
+
+@pytest.mark.parametrize(
+    "dt,expected",
+    [
+        (datetime(2025, 8, 29, 10, 1), datetime(2025, 8, 29, 10, 15)),
+        (datetime(2025, 8, 29, 10, 14), datetime(2025, 8, 29, 10, 15)),
+        (datetime(2025, 8, 29, 10, 15), datetime(2025, 8, 29, 10, 15)),
+        (datetime(2025, 8, 29, 10, 16), datetime(2025, 8, 29, 10, 30)),
+        (datetime(2025, 8, 29, 10, 29), datetime(2025, 8, 29, 10, 30)),
+        (datetime(2025, 8, 29, 10, 30), datetime(2025, 8, 29, 10, 30)),
+        (datetime(2025, 8, 29, 10, 31), datetime(2025, 8, 29, 10, 45)),
+        (datetime(2025, 8, 29, 10, 44), datetime(2025, 8, 29, 10, 45)),
+        (datetime(2025, 8, 29, 10, 45), datetime(2025, 8, 29, 10, 45)),
+        (datetime(2025, 8, 29, 10, 46), datetime(2025, 8, 29, 11, 00)),
+        (datetime(2025, 8, 29, 10, 59), datetime(2025, 8, 29, 11, 00)),
+        (datetime(2025, 8, 29, 11, 00), datetime(2025, 8, 29, 11, 00)),
+        (datetime(2025, 8, 29, 11, 00, 1), datetime(2025, 8, 29, 11, 00)),
+    ],
+)
+def test_round_time_quarters(dt, expected) -> None:
+    assert round_time(dt) == expected
+
+
+@pytest.mark.parametrize(
+    "dt,expected",
+    [
+        (datetime(2025, 8, 29, 9, 0), "time-0900"),
+        (datetime(2025, 8, 29, 15, 45), "time-1545"),
+        (datetime(2025, 8, 29, 15, 45, 1), "time-1545"),
+        (datetime(2025, 8, 29, 15, 50), "time-1600"),
+    ],
+)
+def test_time_slot(dt, expected) -> None:
+    assert time_slot(dt) == expected
