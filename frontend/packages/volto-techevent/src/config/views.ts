@@ -12,6 +12,7 @@ export default function install(config: ConfigType) {
     Keynote: SessionView,
     LightningTalks: LightningTalksView,
     Meeting: SlotView,
+    OpenSpace: SessionView,
     Presenter: PresenterView,
     Slot: SlotView,
     Sponsor: SponsorView,
