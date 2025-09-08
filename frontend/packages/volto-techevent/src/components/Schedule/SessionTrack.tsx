@@ -7,20 +7,31 @@ interface SessionTrackProps {
 }
 
 const SessionTrack: React.FC<SessionTrackProps> = ({ item }) => {
-  const track = item?.session_track?.length > 0 ? item.session_track[0] : null;
-  const token = track?.token;
-  const title = track?.title;
   const colors = useVocabularyColors('tracks');
-  const value = colors?.[token] || 'unset';
+  const tracks = item?.session_track || [];
   return (
-    token && (
-      <div
-        className="sessionTrack"
-        style={{ '--vocabulary-background-color': value }}
-      >
-        <div className={`track ${token}`}>{title}</div>
-      </div>
-    )
+    <>
+      {tracks.map((track) => {
+        const token = track?.token;
+        const title = track?.title;
+        const value = colors?.[token] || 'unset';
+        return (
+          token && (
+            <div
+              key={token}
+              className="sessionTrack"
+              style={
+                {
+                  ['--vocabulary-background-color' as any]: value,
+                } as React.CSSProperties
+              }
+            >
+              <div className={`track ${token}`}>{title}</div>
+            </div>
+          )
+        );
+      })}
+    </>
   );
 };
 
