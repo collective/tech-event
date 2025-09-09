@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a19 (2025-09-09)
+
+
+### New features:
+
+- Refactor schedule to use CSS grid layout @datakurre [#14](https://github.com/collective/tech-event/issues/14)
+
 ## 1.0.0a18 (2025-08-27)
 
 

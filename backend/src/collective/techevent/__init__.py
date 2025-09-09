@@ -5,7 +5,7 @@ from zope.i18nmessageid import MessageFactory
 import logging
 
 
-__version__ = "1.0.0a18"
+__version__ = "1.0.0a19"
 
 PACKAGE_NAME = "collective.techevent"
 

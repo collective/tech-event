@@ -7,6 +7,37 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a19 (2025-09-09)
+
+### Backend
+
+
+#### New features:
+
+- Refactor schedule to use CSS grid layout @datakurre [#14](https://github.com/collective/tech-event/issues/14)
+
+
+
+### Frontend
+
+#### Feature
+
+- Refactor schedule to use CSS grid layout @datakurre [#14](https://github.com/collective/tech-event/issue/14)
+- Register session view for open space content @datakurre [#16](https://github.com/collective/tech-event/issue/16)
+
+#### Bugfix
+
+- Fix SessionTrack component to display all selected tracks @datakurre [#15](https://github.com/collective/tech-event/issue/15)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a18 (2025-08-27)
 
 ### Backend
