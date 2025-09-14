@@ -33,7 +33,7 @@
     @media screen and (max-width: $tablet-breakpoint) {
       display: none;
     }
-    padding: $spacing-small;
+    padding: $spacing-small 0;
     text-align: center;
     .room-label {
       @include add(size, s);
@@ -62,7 +62,6 @@
       0 -3px 0 0 var(--techevent-schedule-secondary-color),
       0 -10px 0 0 var(--techevent-schedule-reverse-color);
     .sessionTile {
-      height: 10rem;
       flex-grow: 1;
       padding: $spacing-2xsmall 0 $spacing-small 0;
       margin: 0 var(--techevent-schedule-gap);
