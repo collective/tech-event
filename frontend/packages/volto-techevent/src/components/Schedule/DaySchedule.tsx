@@ -97,7 +97,7 @@ const DaySchedule = (props) => {
         ...allGridRows.map((row) => `[${row}] auto`),
       ].join('\n'),
       gridTemplateColumns:
-        '[times] 4em ' +
+        '[times] 5rem ' +
         gridColumns.map((column: string) => `[${column}] 1fr`).join(' ') +
         ' [room-all]',
     };
