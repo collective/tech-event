@@ -33,7 +33,7 @@
     @media screen and (max-width: $tablet-breakpoint) {
       display: none;
     }
-    padding: 1.5rem 0 0 0;
+    padding: $spacing-small 0;
     text-align: center;
     .room-label {
       @include add(size, s);
@@ -210,7 +210,7 @@
     &:before {
       position: absolute;
       top: 0;
-      left: 24px;
+      left: 2.4rem;
       height: 100%;
       border-left: 1px solid var(--techevent-schedule-color);
       content: '';
@@ -222,6 +222,7 @@
   }
 
   .aside-indication {
+    padding-left: 1rem;
     grid-column: times;
     transform: translateY(20px);
 
