@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.20 (2025-09-15)
+
+### Bugfix
+
+- Fix issue where search facet dropdown opens behind SessionTile @datakurre [#17](https://github.com/collective/tech-event/issue/17)
+- Fix issue where schedule row icons were rendered outside the viewport @datakurre [#18](https://github.com/collective/tech-event/issue/18)
+- Restore gaps between slots on Schedule after CSS grid refactoring @datakurre [#19](https://github.com/collective/tech-event/issue/19)
+
 ## 1.0.0-alpha.19 (2025-09-09)
 
 ### Feature
