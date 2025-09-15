@@ -193,14 +193,18 @@ const DaySchedule = (props) => {
                 }}
                 key={slotIndex}
               >
-                <Tile
-                  item={slot}
-                  shortDate
-                  showRoom={false}
-                  showDescription={true}
-                  gridColumn={slot.gridColumn}
-                  gridRow={slot.gridRow}
-                />
+                <div
+                  className={`timeslot-container timeslot-${isSession ? 'session' : 'slot'}`}
+                >
+                  <Tile
+                    item={slot}
+                    shortDate
+                    showRoom={false}
+                    showDescription={true}
+                    gridColumn={slot.gridColumn}
+                    gridRow={slot.gridRow}
+                  />
+                </div>
               </div>
             );
           }

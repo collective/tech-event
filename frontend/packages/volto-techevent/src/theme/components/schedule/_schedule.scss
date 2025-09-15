@@ -53,14 +53,22 @@
   .timeslot {
     display: flex;
     flex-direction: column;
-    padding: $spacing-xsmall $spacing-xsmall;
-    margin: 0 0 20px 0;
-    background-color: var(--techevent-schedule-color);
     box-shadow:
-      0 3px 0 0 var(--techevent-schedule-secondary-color),
-      0 10px 0 0 var(--techevent-schedule-reverse-color),
-      0 -3px 0 0 var(--techevent-schedule-secondary-color),
-      0 -10px 0 0 var(--techevent-schedule-reverse-color);
+      0 2px 0 0 var(--techevent-schedule-color),
+      0 6px 0 0 var(--techevent-schedule-color),
+      0 8px 0 0 var(--techevent-schedule-color),
+      0 10px 0 0 var(--techevent-schedule-secondary-color),
+      0 -2px 0 0 var(--techevent-schedule-color),
+      0 -6px 0 0 var(--techevent-schedule-color),
+      0 -8px 0 0 var(--techevent-schedule-color),
+      0 -10px 0 0 var(--techevent-schedule-secondary-color);
+    .timeslot-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: $spacing-xsmall $spacing-xsmall;
+      background-color: var(--techevent-schedule-color);
+    }
     .sessionTile {
       flex-grow: 1;
       padding: $spacing-2xsmall 0 $spacing-small 0;
@@ -193,6 +201,7 @@
   @media screen and (min-width: 700px) {
     .tab-content {
       display: grid;
+      grid-gap: 2rem 0;
     }
   }
 
