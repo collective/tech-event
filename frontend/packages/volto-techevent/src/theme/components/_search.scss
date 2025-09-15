@@ -1,0 +1,5 @@
+// Fix issue where search facet dropdown opens behind SessionTile, because
+// SessionTile uses Container with z-index: 10 in volto-light-theme.
+.search.block .facets .react-select-container {
+  z-index: 11;
+}
