@@ -199,7 +199,7 @@ const DaySchedule = (props) => {
                   <Tile
                     item={slot}
                     shortDate
-                    showRoom={false}
+                    showRoom={true}
                     showDescription={true}
                     gridColumn={slot.gridColumn}
                     gridRow={slot.gridRow}
