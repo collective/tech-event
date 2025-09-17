@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.21 (2025-09-16)
+
+### Feature
+
+- Change to show rooms on every schedule slot @datakurre [#21](https://github.com/collective/tech-event/issue/21)
+
+### Bugfix
+
+- Fix to not hide Keynote presenters on schedule. @datakurre [#20](https://github.com/collective/tech-event/issue/20)
+
 ## 1.0.0-alpha.20 (2025-09-15)
 
 ### Bugfix
