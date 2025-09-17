@@ -73,6 +73,14 @@
       flex-grow: 1;
       padding: $spacing-2xsmall 0 $spacing-small 0;
       margin: 0 var(--techevent-schedule-gap);
+      .slotRoom {
+        .title {
+          font-size: 14px;
+        }
+        .categoryIcon {
+          height: 14px !important;
+        }
+      }
       .sessionDescription {
         display: None;
       }
