@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.22 (2025-09-20)
+
+### Bugfix
+
+- Add time indication for all slots in a Schedule block. @ericof [#22](https://github.com/collective/tech-event/issue/22)
+
 ## 1.0.0-alpha.21 (2025-09-16)
 
 ### Feature
