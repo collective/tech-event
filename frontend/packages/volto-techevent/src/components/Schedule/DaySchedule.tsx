@@ -138,13 +138,15 @@ const DaySchedule = (props) => {
         );
       })}
       {(() => {
+        const timeSlots = {};
         const finalSlots = [];
         slots.forEach((slot, slotIndex) => {
-          if (slot.gridColumn?.startsWith('room-1')) {
+          if (timeSlots[slot.start] === undefined) {
             const slot_category =
               slot.slot_category && slot.slot_category !== 'activity'
                 ? slot.slot_category
                 : slot['@type'];
+            timeSlots[slot.start] = true;
             finalSlots.push({
               '@type': 'aside',
               start: slot.start,
