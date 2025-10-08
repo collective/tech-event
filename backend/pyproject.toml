@@ -19,7 +19,6 @@ classifiers = [
     "Framework :: Plone","Framework :: Plone :: 6.0",
     "Framework :: Plone","Framework :: Plone :: 6.1",
     "Framework :: Plone :: Addon",
-    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     "Operating System :: OS Independent",
     "Programming Language :: Python","Programming Language :: Python :: 3.10",
     "Programming Language :: Python","Programming Language :: Python :: 3.11",
