@@ -7,6 +7,32 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0a23 (2025-10-08)
+
+### Backend
+
+
+#### Internal:
+
+- Use Products.CMFPlone 6.1.3 by default. @ericof [#24](https://github.com/collective/tech-event/issues/24)
+- Remove duplicated license information from trove classifiers. @ericof 
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+
+#### Internal
+
+- GHA: Small fixes to when workflows run. @ericof 
+
+
+
 ## 1.0.0a22 (2025-09-20)
 
 ### Backend
