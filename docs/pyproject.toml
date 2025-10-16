@@ -2,7 +2,7 @@
 name = "Tech_Conference_for_Plone_Documentation"
 description = "Support for implementing tech conference in a Plone site."
 keywords = [
-    "Tech Conference for Plone",
+    "Tech Event Support for Plone",
     "documentation",
     "Plone",
     "Diátaxis",

@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Tech Conference for Plone concepts"
-    "property=og:description": "Tech Conference for Plone concepts"
-    "property=og:title": "Tech Conference for Plone concepts"
-    "keywords": "Plone, Tech Conference for Plone, concepts"
+    "description": "Tech Event Support for Plone concepts"
+    "property=og:description": "Tech Event Support for Plone concepts"
+    "property=og:title": "Tech Event Support for Plone concepts"
+    "keywords": "Plone, Tech Event Support for Plone, concepts"
 ---
 
 # Concepts

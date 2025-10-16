@@ -1,6 +1,6 @@
-# Tech Conference for Plone
+# Tech Event Support for Plone
 
-Documentation for Tech Conference for Plone.
+Documentation for Tech Event Support for Plone.
 Support for implementing tech conference in a Plone site.
 
 This project provides a Sphinx-based documentation environment for your Plone project, powered by the [Plone Sphinx Theme](https://github.com/plone/plone-sphinx-theme).
@@ -59,7 +59,7 @@ make help
 ```
 
 
-## Customize the Tech Conference for Plone documentation
+## Customize the Tech Event Support for Plone documentation
 
 This section provides how-to guidance to customize your documentation.
 

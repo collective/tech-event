@@ -7,7 +7,7 @@ myst:
     "keywords": "Plone, documentation, glossary, term, definition"
 ---
 
-This glossary provides example terms and definitions relevant to **Tech Conference for Plone**.
+This glossary provides example terms and definitions relevant to **Tech Event Support for Plone**.
 Support for implementing tech conference in a Plone site.
 
 ```{note}

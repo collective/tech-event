@@ -22,7 +22,7 @@ FROM plone/frontend-prod-config:${VOLTO_VERSION}
 
 LABEL maintainer="PloneGov-BR <gov@plone.org.br>" \
       org.label-schema.name="tech-event-frontend" \
-      org.label-schema.description="Tech Conference for Plone frontend image." \
+      org.label-schema.description="Tech Event Support for Plone frontend image." \
       org.label-schema.vendor="PloneGov-BR"
 
 COPY --from=builder /app/ /app/

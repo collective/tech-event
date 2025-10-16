@@ -1,5 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
-# Tech Conference for Plone build configuration file
+# Tech Event Support for Plone build configuration file
 
 
 # -- Path setup --------------------------------------------------------------
@@ -19,7 +19,7 @@ from plone_sphinx_theme import __version__
 
 # -- Project information -----------------------------------------------------
 
-project = "Tech Conference for Plone"
+project = "Tech Event Support for Plone"
 author = "PloneGov-BR"
 trademark_name = "collective"
 now = datetime.now()
@@ -177,7 +177,7 @@ html_theme_options = {
         # },
     ],
     "logo": {
-        "text": "Tech Conference for Plone",
+        "text": "Tech Event Support for Plone",
     },
     "navigation_with_keys": True,
     "path_to_docs": "docs/docs",
@@ -286,7 +286,7 @@ mermaid_version = "11.2.0"
 ogp_site_url = "https://MY_READTHEDOCS_PROJECT_SLUG.readthedocs.io/"
 ogp_description_length = 200
 ogp_image = "https://MY_READTHEDOCS_PROJECT_SLUG/_static/MY_LOGO.svg"
-ogp_site_name = "Tech Conference for Plone Documentation"
+ogp_site_name = "Tech Event Support for Plone Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
     '<meta property="og:locale" content="en_US" />',
@@ -321,7 +321,7 @@ tippy_props = {
 # -- Options for HTML help output -------------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "Tech Conference for PloneDocumentation"
+htmlhelp_basename = "Tech Event Support for PloneDocumentation"
 
 
 # -- Options for LaTeX output -------------------------------------------------
@@ -331,8 +331,8 @@ htmlhelp_basename = "Tech Conference for PloneDocumentation"
 latex_documents = [
     (
         "index",
-        "Tech Conference for PloneDocumentation.tex",
-        "Tech Conference for Plone Documentation",
+        "Tech Event Support for PloneDocumentation.tex",
+        "Tech Event Support for Plone Documentation",
         "collective community",
         "manual",
     ),
