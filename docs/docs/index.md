@@ -3,13 +3,13 @@ myst:
   html_meta:
     "description": "Support for implementing tech conference in a Plone site."
     "property=og:description": "Support for implementing tech conference in a Plone site."
-    "property=og:title": "Tech Conference for Plone"
-    "keywords": "Tech Conference for Plone, documentation, Support for implementing tech conference in a Plone site."
+    "property=og:title": "Tech Event Support for Plone"
+    "keywords": "Tech Event Support for Plone, documentation, Support for implementing tech conference in a Plone site."
 ---
 
-# Tech Conference for Plone
+# Tech Event Support for Plone
 
-Welcome to the documentation for Tech Conference for Plone!
+Welcome to the documentation for Tech Event Support for Plone!
 Support for implementing tech conference in a Plone site.
 
 This scaffold provides a ready-to-use environment for creating comprehensive documentation for {term}`Plone` projects, based on {term}`Plone Sphinx Theme`.
