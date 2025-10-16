@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.1 (2025-10-16)
+
+### Internal
+
+- Update package metadata. @ericof 
+
+### Documentation
+
+- Update README file. @ericof 
+
 ## 1.0.0-alpha.23 (2025-10-08)
 
 ## 1.0.0-alpha.22 (2025-09-20)
