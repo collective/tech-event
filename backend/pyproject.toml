@@ -12,6 +12,8 @@ keywords = [
     "CMS",
     "Plone",
     "Python",
+    "Conference",
+    "Event",
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",

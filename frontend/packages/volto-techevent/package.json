@@ -1,7 +1,7 @@
 {
   "name": "@plone-collective/volto-techevent",
   "version": "1.0.0-alpha.23",
-  "description": "Support for implementing tech conference in a Plone site.",
+  "description": "Volto components to implement a tech event (conference / symposium / seminar) frontend for the Plone CMS.",
   "main": "src/index.ts",
   "license": "MIT",
   "keywords": [
