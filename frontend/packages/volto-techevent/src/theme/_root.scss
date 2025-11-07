@@ -6,252 +6,252 @@ Typed custom properties (@property)
 
 /* Spacing primitives (replaces #{$spacing-small}) */
 @property --spacing-small {
-  syntax: '<length>';
   inherits: true;
   initial-value: 20px;
+  syntax: '<length>';
 }
 
 /* Generic theme hooks used as fallbacks */
 @property --theme-foreground-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #ffffff;
+  syntax: '<color>';
 }
 @property --theme-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #000000;
+  syntax: '<color>';
 }
 
 /* Buttons */
 @property --techevent-button-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #ffffff;
+  syntax: '<color>';
 }
 @property --techevent-button-background-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #000000;
+  syntax: '<color>';
 }
 @property --techevent-button-border-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #000000;
+  syntax: '<color>';
 }
 @property --techevent-button-border-radius {
-  syntax: '<length>';
   inherits: true;
   initial-value: 5px;
+  syntax: '<length>';
 }
 @property --techevent-button-border-width {
-  syntax: '<length>';
   inherits: true;
   initial-value: 1px;
+  syntax: '<length>';
 }
 @property --techevent-button-hover-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #ffffff;
+  syntax: '<color>';
 }
 @property --techevent-button-hover-background-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #000000;
+  syntax: '<color>';
 }
 @property --techevent-button-hover-border-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #000000;
+  syntax: '<color>';
 }
 @property --techevent-button-hover-border-radius {
-  syntax: '<length>';
   inherits: true;
   initial-value: 5px;
+  syntax: '<length>';
 }
 @property --techevent-button-hover-border-width {
-  syntax: '<length>';
   inherits: true;
   initial-value: 1px;
+  syntax: '<length>';
 }
 
 /* SponsorTile */
 @property --techevent-sponsortile-background-main {
-  syntax: '<color> | transparent';
   inherits: true;
   initial-value: transparent;
+  syntax: '<color> | transparent';
 }
 @property --techevent-sponsortile-min-width {
-  syntax: '<length>';
   inherits: true;
   initial-value: 200px;
+  syntax: '<length>';
 }
 @property --techevent-sponsortile-max-width {
-  syntax: '<length>';
   inherits: true;
   initial-value: 400px;
+  syntax: '<length>';
 }
 @property --techevent-sponsortile-border-width {
-  syntax: '<length>';
   inherits: true;
   initial-value: 1px;
+  syntax: '<length>';
 }
 @property --techevent-sponsortile-border-radius {
-  syntax: '<length>';
   inherits: true;
   initial-value: var(--spacing-small);
+  syntax: '<length>';
 }
 @property --techevent-sponsortile-margin {
-  syntax: '<length>';
   inherits: true;
   initial-value: var(--spacing-small);
+  syntax: '<length>';
 }
 @property --techevent-sponsortile-padding {
-  syntax: '<length>';
   inherits: true;
   initial-value: 7px;
+  syntax: '<length>';
 }
 @property --techevent-sponsortile-hover-border-width {
-  syntax: '<length>';
   inherits: true;
   initial-value: 1px;
+  syntax: '<length>';
 }
 @property --techevent-sponsortile-hover-border-radius {
-  syntax: '<length>';
   inherits: true;
   initial-value: var(--spacing-small);
+  syntax: '<length>';
 }
 @property --techevent-sponsortile-hover-margin {
-  syntax: '<length>';
   inherits: true;
   initial-value: var(--spacing-small);
+  syntax: '<length>';
 }
 
 /* SponsorLevel */
 @property --techevent-sponsorlevel-title-padding-y {
-  syntax: '<length>';
   inherits: true;
   initial-value: 1rem; /* from "0 0 1rem 0" keep the vertical part typed */
+  syntax: '<length>';
 }
 @property --techevent-sponsorlevel-title-margin-y {
-  syntax: '<length>';
   inherits: true;
   initial-value: 1.2rem; /* from "1.2rem 0" keep the vertical part typed */
+  syntax: '<length>';
 }
 @property --techevent-sponsorlevel-title-border-bottom-width {
-  syntax: '<length>';
   inherits: true;
   initial-value: 1px;
+  syntax: '<length>';
 }
 @property --techevent-sponsorlevel-title-before-height {
-  syntax: '<length>';
   inherits: true;
   initial-value: 3px;
+  syntax: '<length>';
 }
 @property --techevent-sponsorlevel-title-before-width {
-  syntax: '<length>';
   inherits: true;
   initial-value: 400px;
+  syntax: '<length>';
 }
 
 /* Presenter */
 @property --techevent-presenter-category-background-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #cccccc;
+  syntax: '<color>';
 }
 @property --techevent-presenter-category-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #000000;
+  syntax: '<color>';
 }
 
 /* Misc text tokens */
 @property --techevent-vocabulary-foreground-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #ffffff;
+  syntax: '<color>';
 }
 @property --techevent-session-track-foreground-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #ffffff;
+  syntax: '<color>';
 }
 
 /* Schedule */
 @property --techevent-schedule-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: rgb(1, 106, 173);
+  syntax: '<color>';
 }
 @property --techevent-schedule-border-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #cccccc;
+  syntax: '<color>';
 }
 @property --techevent-schedule-room-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #000000;
+  syntax: '<color>';
 }
 @property --techevent-schedule-secondary-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #cccccc;
+  syntax: '<color>';
 }
 @property --techevent-schedule-reverse-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #ffffff;
+  syntax: '<color>';
 }
 @property --techevent-schedule-gap {
-  syntax: '<length>';
   inherits: true;
   initial-value: 2px;
+  syntax: '<length>';
 }
 
 /* Parallax Block */
 @property --techevent-parallax-overlay-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: rgba(255, 255, 255, 0.66);
+  syntax: '<color>';
 }
 @property --techevent-parallax-foreground-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: rgb(0, 0, 0);
+  syntax: '<color>';
 }
 @property --techevent-parallax-content-max-width {
-  syntax: '<length>';
   inherits: true;
   initial-value: 940px;
+  syntax: '<length>';
 }
 @property --techevent-parallax-height-s {
-  syntax: '<length>';
   inherits: true;
   initial-value: 300px;
+  syntax: '<length>';
 }
 @property --techevent-parallax-height-m {
-  syntax: '<length>';
   inherits: true;
   initial-value: 600px;
+  syntax: '<length>';
 }
 @property --techevent-parallax-height-l {
-  syntax: '<length>';
   inherits: true;
   initial-value: 900px;
+  syntax: '<length>';
 }
 
 /* Parallax Button */
 @property --theme-parallax-button-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #000000;
+  syntax: '<color>';
 }
 @property --theme-parallax-button-border-color {
-  syntax: '<color>';
   inherits: true;
   initial-value: #000000;
+  syntax: '<color>';
 }
 
 /* ================================
