@@ -13,8 +13,8 @@ importers:
   .:
     dependencies:
       '@kitconcept/volto-light-theme':
-        specifier: 6.0.1
-        version: 6.0.1(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
+        specifier: 7.6.1
+        version: 7.6.1(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-logos-block@3.0.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
       '@plone-collective/volto-techevent':
         specifier: workspace:*
         version: link:packages/volto-techevent
@@ -1553,6 +1553,9 @@ importers:
 
   packages/volto-techevent:
     dependencies:
+      '@kitconcept/volto-bm3-compat':
+        specifier: '*'
+        version: 1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-light-theme':
         specifier: '*'
         version: 6.0.1(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.20.0(@babel/runtime@7.27.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
@@ -1562,6 +1565,12 @@ importers:
       '@plonegovbr/volto-social-media':
         specifier: 2.0.0-alpha.6
         version: 2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
+      '@storybook/react':
+        specifier: '*'
+        version: 8.6.14(@storybook/test@8.6.14(storybook@8.6.14(prettier@3.2.5)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))(typescript@5.8.3)
+      classnames:
+        specifier: '*'
+        version: 2.5.1
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -1574,9 +1583,15 @@ importers:
       react-intl:
         specifier: '*'
         version: 3.12.1(react@18.2.0)
+      react-redux:
+        specifier: '*'
+        version: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       semantic-ui-react:
         specifier: '*'
         version: 2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      uuid:
+        specifier: '*'
+        version: 9.0.1
     devDependencies:
       '@plone/scripts':
         specifier: workspace:*
@@ -3048,6 +3063,13 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0
 
+  '@kitconcept/volto-bm3-compat@1.0.0-alpha.1':
+    resolution: {integrity: sha512-eKEtR1WBvLh9gf9JzCB7THgcYxyJPiw7QVXZ2Bdo6NOYSh05PPMvpN+lUBYj3ottk7oAt9Mvln4FCyfza4abUw==}
+    peerDependencies:
+      classnames: ^2.2.6
+      react: 18.2.0
+      react-dom: 18.2.0
+
   '@kitconcept/volto-button-block@3.0.3':
     resolution: {integrity: sha512-H1N3OY1XRxyU9u8Cjkmf5QtdBYB6010nzke9DHU3lJLItGzP84Qg3dw6RFWV0oE/EcKhZHh0tr6kxnYIpIaiFg==}
     peerDependencies:
@@ -3055,6 +3077,12 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0
       react-intl: ^3.12.1
+
+  '@kitconcept/volto-carousel-block@2.0.0':
+    resolution: {integrity: sha512-J+2ArHeMRGEgfk5ZLwEDVHEQT5V1t+WBBv5M5hrQnav0yfRFtCw5l49aBR4qUSFZQOCcuUTTjj8Zlt2e2SA0fw==}
+    peerDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0
 
   '@kitconcept/volto-dsgvo-banner@2.3.2':
     resolution: {integrity: sha512-iguCyuy4a7dYi1glWorVY7/0co66Su3+acp2O24GEGyDHvrZJgNkKvIOc9nnmAvR6g9zluMWH5ilLaT1rZuT6w==}
@@ -3094,6 +3122,62 @@ packages:
       react-intl: ^3.12.1
       react-redux: ^8.1.2
       react-router-dom: ^5.2.0
+
+  '@kitconcept/volto-light-theme@7.6.0':
+    resolution: {integrity: sha512-z3Sayz8LTjuyH1t1rnFjj8NHlhiYgUH3tTLMpYJl90QoBychL3q9Ipnma0jESxZyxN+H3J584UJC1UVB2ccP0Q==}
+    peerDependencies:
+      '@eeacms/volto-accordion-block': ^10.4.6
+      '@kitconcept/volto-banner-block': ^1.1.0
+      '@kitconcept/volto-bm3-compat': ^1.0.0-alpha.1
+      '@kitconcept/volto-button-block': ^4.0.0
+      '@kitconcept/volto-carousel-block': ^2.0.0-alpha.3
+      '@kitconcept/volto-dsgvo-banner': ^2.5.1
+      '@kitconcept/volto-heading-block': ^2.5.0
+      '@kitconcept/volto-highlight-block': ^4.5.0
+      '@kitconcept/volto-introduction-block': ^1.1.0
+      '@kitconcept/volto-logos-block': ^3.0.0-alpha.2
+      '@kitconcept/volto-separator-block': ^4.2.1
+      '@kitconcept/volto-slider-block': ^6.4.1
+      '@plonegovbr/volto-social-media': ^2.0.0-alpha.10
+      classnames: ^2.2.6
+      lodash: 4.17.21
+      react: 18.2.0
+      react-dom: 18.2.0
+      react-intl: ^3.12.1
+      react-redux: ^8.1.2
+      react-router-dom: ^5.2.0
+
+  '@kitconcept/volto-light-theme@7.6.1':
+    resolution: {integrity: sha512-dhpuHmE+PgH+h2ZBy4D/Z9qYU85N3Per52XymimgGW0pJGF9su+uk2/If2B5ORHnWdSY5ZwOwzjM6wDF58vLSw==}
+    peerDependencies:
+      '@eeacms/volto-accordion-block': ^10.4.6
+      '@kitconcept/volto-banner-block': ^1.1.0
+      '@kitconcept/volto-bm3-compat': ^1.0.0-alpha.1
+      '@kitconcept/volto-button-block': ^4.0.0
+      '@kitconcept/volto-carousel-block': ^2.0.0-alpha.3
+      '@kitconcept/volto-dsgvo-banner': ^3.0.1
+      '@kitconcept/volto-heading-block': ^2.5.0
+      '@kitconcept/volto-highlight-block': ^4.5.0
+      '@kitconcept/volto-introduction-block': ^1.1.0
+      '@kitconcept/volto-logos-block': ^3.0.0
+      '@kitconcept/volto-separator-block': ^4.2.1
+      '@kitconcept/volto-slider-block': ^6.4.1
+      '@plonegovbr/volto-social-media': ^2.0.0-alpha.10
+      classnames: ^2.2.6
+      lodash: 4.17.21
+      react: 18.2.0
+      react-dom: 18.2.0
+      react-intl: ^3.12.1
+      react-redux: ^8.1.2
+      react-router-dom: ^5.2.0
+
+  '@kitconcept/volto-logos-block@3.0.0':
+    resolution: {integrity: sha512-6WNHiJE6sfIO1MaC7fYrpBZZQw3HenlwnsmEzdkbAGOY0bMZAxXpT633bGiVSBCvfE8hF3yC0Em9nKPo8LtnBQ==}
+    peerDependencies:
+      classnames: 2.5.1
+      react: 18.2.0
+      react-dom: 18.2.0
+      react-intl: ^3.12.1
 
   '@kitconcept/volto-separator-block@4.1.2':
     resolution: {integrity: sha512-SWgIu7/XmZA0BK0LX+ObM7w1YdFAyRAxQUBt/ICka+KKsIVUpYeBUiJ+Q9d9Z5bneh7Fwv3Oik6CAJ5BhqCn2A==}
@@ -7418,20 +7502,38 @@ packages:
   electron-to-chromium@1.5.155:
     resolution: {integrity: sha512-ps5KcGGmwL8VaeJlvlDlu4fORQpv3+GIcF5I3f9tUKUlJ/wsysh6HU8P5L1XWRYeXfA0oJd4PyM8ds8zTFf6Ng==}
 
+  embla-carousel-autoplay@8.5.2:
+    resolution: {integrity: sha512-27emJ0px3q/c0kCHCjwRrEbYcyYUPfGO3g5IBWF1i7714TTzE6L9P81V6PHLoSMAKJ1aHoT2e7YFOsuFKCbyag==}
+    peerDependencies:
+      embla-carousel: 8.5.2
+
   embla-carousel-autoplay@8.6.0:
     resolution: {integrity: sha512-OBu5G3nwaSXkZCo1A6LTaFMZ8EpkYbwIaH+bPqdBnDGQ2fh4+NbzjXjs2SktoPNKCtflfVMc75njaDHOYXcrsA==}
     peerDependencies:
       embla-carousel: 8.6.0
+
+  embla-carousel-react@8.5.2:
+    resolution: {integrity: sha512-Tmx+uY3MqseIGdwp0ScyUuxpBgx5jX1f7od4Cm5mDwg/dptEiTKf9xp6tw0lZN2VA9JbnVMl/aikmbc53c6QFA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.1 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
 
   embla-carousel-react@8.6.0:
     resolution: {integrity: sha512-0/PjqU7geVmo6F734pmPqpyHqiM99olvyecY7zdweCw+6tKEXnrE90pBiBbMMU8s5tICemzpQ3hi5EpxzGW+JA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.1 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
 
+  embla-carousel-reactive-utils@8.5.2:
+    resolution: {integrity: sha512-QC8/hYSK/pEmqEdU1IO5O+XNc/Ptmmq7uCB44vKplgLKhB/l0+yvYx0+Cv0sF6Ena8Srld5vUErZkT+yTahtDg==}
+    peerDependencies:
+      embla-carousel: 8.5.2
+
   embla-carousel-reactive-utils@8.6.0:
     resolution: {integrity: sha512-fMVUDUEx0/uIEDM0Mz3dHznDhfX+znCCDCeIophYb1QGVM7YThSWX+wz11zlYwWFOr74b4QLGg0hrGPJeG2s4A==}
     peerDependencies:
       embla-carousel: 8.6.0
+
+  embla-carousel@8.5.2:
+    resolution: {integrity: sha512-xQ9oVLrun/eCG/7ru3R+I5bJ7shsD8fFwLEY7yPe27/+fDHCNj0OT5EoG5ZbFyOxOcG6yTwW8oTz/dWyFnyGpg==}
 
   embla-carousel@8.6.0:
     resolution: {integrity: sha512-SjWyZBHJPbqxHOzckOfo8lHisEaJWmwd23XppYFYVh10bU66/Pn5tkVkbkCMZVdbUE5eTCI2nD8OyIP4Z+uwkA==}
@@ -16392,12 +16494,29 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
+  '@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      classnames: 2.5.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+
   '@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)':
     dependencies:
       classnames: 2.5.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-intl: 3.12.1(react@18.2.0)
+
+  '@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@kitconcept/volto-bm3-compat': 1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      embla-carousel-autoplay: 8.5.2(embla-carousel@8.6.0)
+      embla-carousel-react: 8.5.2(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - classnames
+      - embla-carousel
 
   '@kitconcept/volto-dsgvo-banner@2.3.2':
     dependencies:
@@ -16447,23 +16566,28 @@ snapshots:
     transitivePeerDependencies:
       - storybook
 
-  ? '@kitconcept/volto-light-theme@6.0.1(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))'
+  ? '@kitconcept/volto-light-theme@7.6.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-logos-block@3.0.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))'
   : dependencies:
       '@dnd-kit/core': 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       '@dnd-kit/utilities': 3.2.2(react@18.2.0)
       '@eeacms/volto-accordion-block': 10.4.6
       '@kitconcept/volto-banner-block': 1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@kitconcept/volto-bm3-compat': 1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-button-block': 3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
+      '@kitconcept/volto-carousel-block': 2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-dsgvo-banner': 2.3.2
       '@kitconcept/volto-heading-block': 2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-highlight-block': 4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-introduction-block': 1.0.0
+      '@kitconcept/volto-logos-block': 3.0.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
       '@kitconcept/volto-separator-block': 4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
       '@kitconcept/volto-slider-block': 6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0)
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
       '@plonegovbr/volto-social-media': 2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
       classnames: 2.5.1
+      embla-carousel-autoplay: 8.6.0(embla-carousel@8.6.0)
+      embla-carousel-react: 8.6.0(react@18.2.0)
       lodash: 4.17.21
       react: 18.2.0
       react-animate-height: 3.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -16475,6 +16599,70 @@ snapshots:
       react-router-dom: 5.2.0(react@18.2.0)
       uuid: 11.1.0
     transitivePeerDependencies:
+      - embla-carousel
+      - storybook
+
+  ? '@kitconcept/volto-light-theme@7.6.1(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-logos-block@3.0.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))'
+  : dependencies:
+      '@dnd-kit/core': 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      '@dnd-kit/utilities': 3.2.2(react@18.2.0)
+      '@eeacms/volto-accordion-block': 10.4.6
+      '@kitconcept/volto-banner-block': 1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@kitconcept/volto-bm3-compat': 1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@kitconcept/volto-button-block': 3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
+      '@kitconcept/volto-carousel-block': 2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@kitconcept/volto-dsgvo-banner': 2.3.2
+      '@kitconcept/volto-heading-block': 2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@kitconcept/volto-highlight-block': 4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@kitconcept/volto-introduction-block': 1.0.0
+      '@kitconcept/volto-logos-block': 3.0.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
+      '@kitconcept/volto-separator-block': 4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
+      '@kitconcept/volto-slider-block': 6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0)
+      '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
+      '@plonegovbr/volto-social-media': 2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
+      classnames: 2.5.1
+      embla-carousel-autoplay: 8.6.0(embla-carousel@8.6.0)
+      embla-carousel-react: 8.6.0(react@18.2.0)
+      lodash: 4.17.21
+      react: 18.2.0
+      react-animate-height: 3.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-aria-components: 1.8.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-colorful: 5.6.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
+      react-intl: 3.12.1(react@18.2.0)
+      react-redux: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-router-dom: 5.2.0(react@18.2.0)
+      uuid: 11.1.0
+    transitivePeerDependencies:
+      - embla-carousel
+      - storybook
+
+  ? '@kitconcept/volto-logos-block@3.0.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))'
+  : dependencies:
+      '@kitconcept/volto-light-theme': 7.6.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-logos-block@3.0.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0(classnames@2.5.1)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-highlight-block@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.6.0)(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(classnames@2.5.1)(embla-carousel@8.6.0)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
+      '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
+      classnames: 2.5.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-intl: 3.12.1(react@18.2.0)
+    transitivePeerDependencies:
+      - '@eeacms/volto-accordion-block'
+      - '@kitconcept/volto-banner-block'
+      - '@kitconcept/volto-bm3-compat'
+      - '@kitconcept/volto-button-block'
+      - '@kitconcept/volto-carousel-block'
+      - '@kitconcept/volto-dsgvo-banner'
+      - '@kitconcept/volto-heading-block'
+      - '@kitconcept/volto-highlight-block'
+      - '@kitconcept/volto-introduction-block'
+      - '@kitconcept/volto-separator-block'
+      - '@kitconcept/volto-slider-block'
+      - '@plonegovbr/volto-social-media'
+      - embla-carousel
+      - lodash
+      - react-redux
+      - react-router-dom
       - storybook
 
   '@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))':
@@ -22430,9 +22618,19 @@ snapshots:
 
   electron-to-chromium@1.5.155: {}
 
+  embla-carousel-autoplay@8.5.2(embla-carousel@8.6.0):
+    dependencies:
+      embla-carousel: 8.6.0
+
   embla-carousel-autoplay@8.6.0(embla-carousel@8.6.0):
     dependencies:
       embla-carousel: 8.6.0
+
+  embla-carousel-react@8.5.2(react@18.2.0):
+    dependencies:
+      embla-carousel: 8.5.2
+      embla-carousel-reactive-utils: 8.5.2(embla-carousel@8.5.2)
+      react: 18.2.0
 
   embla-carousel-react@8.6.0(react@18.2.0):
     dependencies:
@@ -22440,9 +22638,15 @@ snapshots:
       embla-carousel-reactive-utils: 8.6.0(embla-carousel@8.6.0)
       react: 18.2.0
 
+  embla-carousel-reactive-utils@8.5.2(embla-carousel@8.5.2):
+    dependencies:
+      embla-carousel: 8.5.2
+
   embla-carousel-reactive-utils@8.6.0(embla-carousel@8.6.0):
     dependencies:
       embla-carousel: 8.6.0
+
+  embla-carousel@8.5.2: {}
 
   embla-carousel@8.6.0: {}
 
