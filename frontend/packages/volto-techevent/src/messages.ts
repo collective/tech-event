@@ -61,6 +61,10 @@ const messages = defineMessages({
     id: 'Align',
     defaultMessage: 'Align',
   },
+  blockWidth: {
+    id: 'Block Width',
+    defaultMessage: 'Block Width',
+  },
   sponsor: {
     id: 'Sponsor Us',
     defaultMessage: 'Sponsor Us',
@@ -92,6 +96,44 @@ const messages = defineMessages({
   presentations: {
     id: 'Presentations',
     defaultMessage: 'Presentations',
+  },
+
+  /// Countdown Block
+  countdownBlockTitle: {
+    id: 'Countdown Block',
+    defaultMessage: 'Countdown Block',
+  },
+  countdownHasSeparator: {
+    id: 'Display Separator',
+    defaultMessage: 'Display Separator',
+  },
+  countdownHideAfterTarget: {
+    id: 'Hide after target date is reached',
+    defaultMessage: 'Hide after target date is reached',
+  },
+  countdownDisplayFormat: {
+    id: 'What should be displayed?',
+    defaultMessage: 'What should be displayed?',
+  },
+  countdownFormatDDHHMMSS: {
+    id: 'Days, Hours, Minutes, Seconds (DD:HH:MM:SS)',
+    defaultMessage: 'Days, Hours, Minutes, Seconds (DD:HH:MM:SS)',
+  },
+  countdownFormatDDHHMM: {
+    id: 'Days, Hours, Minutes (DD:HH:MM)',
+    defaultMessage: 'Days, Hours, Minutes (DD:HH:MM)',
+  },
+  countdownFormatDDHH: {
+    id: 'Days, Hours (DD:HH)',
+    defaultMessage: 'Days, Hours (DD:HH)',
+  },
+  countdownFormatDD: {
+    id: 'Days (DD)',
+    defaultMessage: 'Days (DD)',
+  },
+  countdownSize: {
+    id: 'Countdown Size',
+    defaultMessage: 'Countdown Size',
   },
 });
 

@@ -1,0 +1,31 @@
+#page-document .blocks-group-wrapper .block.countdownBlock,
+.block-editor-countdownBlock {
+  max-width: var(--block-width, var(--narrow-container-width));
+  .countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: var(--block-alignment);
+    .countdown-title {
+      padding: 0 $spacing-xsmall;
+      @include add(size, xl);
+      @include add(height, xl);
+      @include add(weight, bold);
+      &.size-s {
+        @include add(size, m);
+        @include add(height, m);
+      }
+      &.size-m {
+        @include add(size, l);
+        @include add(height, l);
+      }
+    }
+    .countdown-elements {
+      justify-content: var(--block-alignment);
+    }
+  }
+}
+
+.countdown-wrapper {
+  position: relative;
+  overflow: hidden;
+}
