@@ -21,10 +21,25 @@ msgstr ""
 msgid "Add (object list)"
 msgstr "Adicionar"
 
+#. Default: "Add Button"
+#: messages
+msgid "Add Button"
+msgstr "Adicionar Botão"
+
 #. Default: "Align"
 #: messages
 msgid "Align"
 msgstr "Alinhamento"
+
+#. Default: "Background Image"
+#: messages
+msgid "Background Image"
+msgstr "Imagem de Fundo"
+
+#. Default: "Background color"
+#: components/Blocks/schema
+msgid "Background color"
+msgstr "Cor de Fundo"
 
 #. Default: "Be the first!"
 #: messages
@@ -36,20 +51,75 @@ msgstr "Seja o primeiro!"
 msgid "Benefit"
 msgstr "Benefício"
 
+#. Default: "Block Width"
+#: messages
+msgid "Block Width"
+msgstr ""
+
+#. Default: "Button"
+#: messages
+msgid "Button"
+msgstr "Botão"
+
 #. Default: "CTA Label"
 #: messages
 msgid "CTA Label"
 msgstr "Texto CTA"
+
+#. Default: "Call to Action"
+#: messages
+msgid "Call to Action"
+msgstr "Ação"
 
 #. Default: "Collapse item"
 #: components/Widgets/DataGridList
 msgid "Collapse item"
 msgstr "Colapsar item"
 
+#. Default: "Countdown Block"
+#: messages
+msgid "Countdown Block"
+msgstr "Contagem Regressiva"
+
+#. Default: "Countdown Size"
+#: messages
+msgid "Countdown Size"
+msgstr ""
+
 #. Default: "Day"
 #: components/Schedule/Schedule
 msgid "Day"
 msgstr "Dia"
+
+#. Default: "Days (DD)"
+#: messages
+msgid "Days (DD)"
+msgstr "Dias (DD)"
+
+#. Default: "Days, Hours (DD:HH)"
+#: messages
+msgid "Days, Hours (DD:HH)"
+msgstr "Dias, Horas (DD:HH)"
+
+#. Default: "Days, Hours, Minutes (DD:HH:MM)"
+#: messages
+msgid "Days, Hours, Minutes (DD:HH:MM)"
+msgstr "Dias, Horas, Minutos (DD:HH:MM)"
+
+#. Default: "Days, Hours, Minutes, Seconds (DD:HH:MM:SS)"
+#: messages
+msgid "Days, Hours, Minutes, Seconds (DD:HH:MM:SS)"
+msgstr "Dias, Horas, Minutos, Segundos (DD:HH:MM:SS)"
+
+#. Default: "Default"
+#: components/Attendee/AttendeeLogin
+msgid "Default"
+msgstr "Padrão"
+
+#. Default: "Description"
+#: messages
+msgid "Description"
+msgstr "Descrição"
 
 #. Default: "Details"
 #: messages
@@ -66,6 +136,11 @@ msgstr "Exibir botão de ação"
 msgid "Display Headline?"
 msgstr "Exibir Cabeçalho"
 
+#. Default: "Display Separator"
+#: messages
+msgid "Display Separator"
+msgstr "Exibir Separador"
+
 #. Default: "Empty object list"
 #: components/Widgets/DataGridList
 msgid "Empty object list"
@@ -76,15 +151,60 @@ msgstr "Lista vazia"
 msgid "Filter by Day"
 msgstr "Filtro por Dia"
 
+#. Default: "Full Overlay"
+#: messages
+msgid "Full Overlay"
+msgstr "Overlay Completo"
+
 #. Default: "Heading"
 #: messages
 msgid "Heading"
 msgstr "Cabeçalho"
 
+#. Default: "Height"
+#: messages
+msgid "Height"
+msgstr ""
+
+#. Default: "Hide Button"
+#: messages
+msgid "Hide Button"
+msgstr "Ocultar Botão"
+
+#. Default: "Hide after target date is reached"
+#: messages
+msgid "Hide after target date is reached"
+msgstr "Ocultar após a data alvo ser alcançada"
+
+#. Default: "Link"
+#: messages
+msgid "Link"
+msgstr "Link"
+
 #. Default: "Materials"
 #: messages
 msgid "Materials"
-msgstr ""
+msgstr "Materiais"
+
+#. Default: "Open link in new tab"
+#: messages
+msgid "Open link in new tab"
+msgstr "Abrir link em nova aba"
+
+#. Default: "Overlay"
+#: messages
+msgid "Overlay"
+msgstr "Sobreposição"
+
+#. Default: "Overlay Color"
+#: messages
+msgid "Overlay Color"
+msgstr "Cor da Sobreposição"
+
+#. Default: "Overlay Text Color"
+#: messages
+msgid "Overlay Text Color"
+msgstr "Cor do Texto da Sobreposição"
 
 #. Default: "Package Benefits"
 #: messages
@@ -101,6 +221,11 @@ msgstr "Comparação de cotas"
 msgid "Packages & Sponsors"
 msgstr "Cotas e Apoiadores"
 
+#. Default: "Parallax Block"
+#: messages
+msgid "Parallax Block"
+msgstr "Bloco de Parallax"
+
 #. Default: "Presentations"
 #: messages
 msgid "Presentations"
@@ -111,6 +236,11 @@ msgstr ""
 msgid "Remove item"
 msgstr "Excluir item"
 
+#. Default: "Request sent"
+#: components/Attendee/AttendeeLogin
+msgid "Request sent"
+msgstr "Solicitação enviada"
+
 #. Default: "Requirements"
 #: messages
 msgid "Requirements"
@@ -120,6 +250,11 @@ msgstr "Requisitos"
 #: messages
 msgid "Schedule Block"
 msgstr "Bloco de Grade"
+
+#. Default: "Send request"
+#: components/Attendee/AttendeeLogin
+msgid "Send request"
+msgstr "Enviar solicitação"
 
 #. Default: "Show item"
 #: components/Widgets/DataGridList
@@ -146,6 +281,16 @@ msgstr "Apoiadores"
 msgid "Sponsorship Form"
 msgstr "Formulário de patrocínio"
 
+#. Default: "Text"
+#: messages
+msgid "Text"
+msgstr "Texto"
+
+#. Default: "Textbox"
+#: messages
+msgid "Textbox"
+msgstr "Caixa de Texto"
+
 #. Default: "Title"
 #: messages
 msgid "Title"
@@ -154,22 +299,82 @@ msgstr "Título"
 #. Default: "Video"
 #: messages
 msgid "Video"
-msgstr ""
+msgstr "Vídeo"
+
+#. Default: "What should be displayed?"
+#: messages
+msgid "What should be displayed?"
+msgstr "O que deve ser exibido?"
+
+#. Default: "Your email is required to request a one-time password."
+#: components/Attendee/AttendeeLogin
+msgid "Your email is required to request a one-time password."
+msgstr "Seu e-mail é necessário para solicitar uma senha de uso único."
+
+#. Default: "Request a one-time password"
+#: components/Attendee/AttendeeLogin
+msgid "box_request_one_time_password"
+msgstr "Solicitar uma senha de uso único"
+
+#. Default: "Continue to login"
+#: components/Attendee/AttendeeLogin
+msgid "continue_to_login"
+msgstr "Continuar para login"
+
+#. Default: "days"
+#: components/Countdown/CountdownElements
+msgid "days"
+msgstr "dias"
+
+#. Default: "Enter your email to receive a one-time password for login."
+#: components/Attendee/AttendeeLogin
+msgid "description_request_one_time_password"
+msgstr "Digite seu e-mail para receber uma senha de uso único para login."
+
+#. Default: "Please, check your email and log in using your email address and the one-time password you received."
+#: components/Attendee/AttendeeLogin
+msgid "description_request_sent"
+msgstr "Por favor, verifique seu e-mail e faça login usando seu endereço de e-mail e a senha de uso único que você recebeu."
+
+#. Default: "One-time password sent"
+#: components/Attendee/AttendeeLogin
+msgid "heading_request_sent"
+msgstr "Senha de uso único enviada"
+
+#. Default: "hours"
+#: components/Countdown/CountdownElements
+msgid "hours"
+msgstr "horas"
 
 #. Default: "Instructor"
 #: components/Presenter/PresenterCategory
 msgid "instructor"
-msgstr "instrutor/a"
+msgstr "ministrante"
 
 #. Default: "Keynote Speaker"
 #: components/Presenter/PresenterCategory
 msgid "keynote-speaker"
-msgstr "Keynote"
+msgstr "Palestrante Principal"
+
+#. Default: "My email is"
+#: components/Attendee/AttendeeLogin
+msgid "label_my_email_is"
+msgstr "Meu e-mail é"
+
+#. Default: "minutes"
+#: components/Countdown/CountdownElements
+msgid "minutes"
+msgstr "minutos"
 
 #. Default: "Plone Foundation Member"
 #: components/Presenter/PresenterCategory
 msgid "pf-member"
 msgstr "Membro Plone Foundation"
+
+#. Default: "seconds"
+#: components/Countdown/CountdownElements
+msgid "seconds"
+msgstr "segundos"
 
 #. Default: "Speaker"
 #: components/Presenter/PresenterCategory

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-08-08T15:07:00.152Z\n"
+"POT-Creation-Date: 2025-11-07T14:55:34.341Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -18,9 +18,24 @@ msgstr ""
 msgid "Add (object list)"
 msgstr ""
 
+#. Default: "Add Button"
+#: messages
+msgid "Add Button"
+msgstr ""
+
 #. Default: "Align"
 #: messages
 msgid "Align"
+msgstr ""
+
+#. Default: "Background Image"
+#: messages
+msgid "Background Image"
+msgstr ""
+
+#. Default: "Background color"
+#: components/Blocks/schema
+msgid "Background color"
 msgstr ""
 
 #. Default: "Be the first!"
@@ -33,9 +48,24 @@ msgstr ""
 msgid "Benefit"
 msgstr ""
 
+#. Default: "Block Width"
+#: messages
+msgid "Block Width"
+msgstr ""
+
+#. Default: "Button"
+#: messages
+msgid "Button"
+msgstr ""
+
 #. Default: "CTA Label"
 #: messages
 msgid "CTA Label"
+msgstr ""
+
+#. Default: "Call to Action"
+#: messages
+msgid "Call to Action"
 msgstr ""
 
 #. Default: "Collapse item"
@@ -43,9 +73,49 @@ msgstr ""
 msgid "Collapse item"
 msgstr ""
 
+#. Default: "Countdown Block"
+#: messages
+msgid "Countdown Block"
+msgstr ""
+
+#. Default: "Countdown Size"
+#: messages
+msgid "Countdown Size"
+msgstr ""
+
 #. Default: "Day"
 #: components/Schedule/Schedule
 msgid "Day"
+msgstr ""
+
+#. Default: "Days (DD)"
+#: messages
+msgid "Days (DD)"
+msgstr ""
+
+#. Default: "Days, Hours (DD:HH)"
+#: messages
+msgid "Days, Hours (DD:HH)"
+msgstr ""
+
+#. Default: "Days, Hours, Minutes (DD:HH:MM)"
+#: messages
+msgid "Days, Hours, Minutes (DD:HH:MM)"
+msgstr ""
+
+#. Default: "Days, Hours, Minutes, Seconds (DD:HH:MM:SS)"
+#: messages
+msgid "Days, Hours, Minutes, Seconds (DD:HH:MM:SS)"
+msgstr ""
+
+#. Default: "Default"
+#: components/Attendee/AttendeeLogin
+msgid "Default"
+msgstr ""
+
+#. Default: "Description"
+#: messages
+msgid "Description"
 msgstr ""
 
 #. Default: "Details"
@@ -63,6 +133,11 @@ msgstr ""
 msgid "Display Headline?"
 msgstr ""
 
+#. Default: "Display Separator"
+#: messages
+msgid "Display Separator"
+msgstr ""
+
 #. Default: "Empty object list"
 #: components/Widgets/DataGridList
 msgid "Empty object list"
@@ -73,14 +148,59 @@ msgstr ""
 msgid "Filter by Day"
 msgstr ""
 
+#. Default: "Full Overlay"
+#: messages
+msgid "Full Overlay"
+msgstr ""
+
 #. Default: "Heading"
 #: messages
 msgid "Heading"
 msgstr ""
 
+#. Default: "Height"
+#: messages
+msgid "Height"
+msgstr ""
+
+#. Default: "Hide Button"
+#: messages
+msgid "Hide Button"
+msgstr ""
+
+#. Default: "Hide after target date is reached"
+#: messages
+msgid "Hide after target date is reached"
+msgstr ""
+
+#. Default: "Link"
+#: messages
+msgid "Link"
+msgstr ""
+
 #. Default: "Materials"
 #: messages
 msgid "Materials"
+msgstr ""
+
+#. Default: "Open link in new tab"
+#: messages
+msgid "Open link in new tab"
+msgstr ""
+
+#. Default: "Overlay"
+#: messages
+msgid "Overlay"
+msgstr ""
+
+#. Default: "Overlay Color"
+#: messages
+msgid "Overlay Color"
+msgstr ""
+
+#. Default: "Overlay Text Color"
+#: messages
+msgid "Overlay Text Color"
 msgstr ""
 
 #. Default: "Package Benefits"
@@ -98,6 +218,11 @@ msgstr ""
 msgid "Packages & Sponsors"
 msgstr ""
 
+#. Default: "Parallax Block"
+#: messages
+msgid "Parallax Block"
+msgstr ""
+
 #. Default: "Presentations"
 #: messages
 msgid "Presentations"
@@ -108,6 +233,11 @@ msgstr ""
 msgid "Remove item"
 msgstr ""
 
+#. Default: "Request sent"
+#: components/Attendee/AttendeeLogin
+msgid "Request sent"
+msgstr ""
+
 #. Default: "Requirements"
 #: messages
 msgid "Requirements"
@@ -116,6 +246,11 @@ msgstr ""
 #. Default: "Schedule Block"
 #: messages
 msgid "Schedule Block"
+msgstr ""
+
+#. Default: "Send request"
+#: components/Attendee/AttendeeLogin
+msgid "Send request"
 msgstr ""
 
 #. Default: "Show item"
@@ -143,6 +278,16 @@ msgstr ""
 msgid "Sponsorship Form"
 msgstr ""
 
+#. Default: "Text"
+#: messages
+msgid "Text"
+msgstr ""
+
+#. Default: "Textbox"
+#: messages
+msgid "Textbox"
+msgstr ""
+
 #. Default: "Title"
 #: messages
 msgid "Title"
@@ -151,6 +296,51 @@ msgstr ""
 #. Default: "Video"
 #: messages
 msgid "Video"
+msgstr ""
+
+#. Default: "What should be displayed?"
+#: messages
+msgid "What should be displayed?"
+msgstr ""
+
+#. Default: "Your email is required to request a one-time password."
+#: components/Attendee/AttendeeLogin
+msgid "Your email is required to request a one-time password."
+msgstr ""
+
+#. Default: "Request a one-time password"
+#: components/Attendee/AttendeeLogin
+msgid "box_request_one_time_password"
+msgstr ""
+
+#. Default: "Continue to login"
+#: components/Attendee/AttendeeLogin
+msgid "continue_to_login"
+msgstr ""
+
+#. Default: "days"
+#: components/Countdown/CountdownElements
+msgid "days"
+msgstr ""
+
+#. Default: "Enter your email to receive a one-time password for login."
+#: components/Attendee/AttendeeLogin
+msgid "description_request_one_time_password"
+msgstr ""
+
+#. Default: "Please, check your email and log in using your email address and the one-time password you received."
+#: components/Attendee/AttendeeLogin
+msgid "description_request_sent"
+msgstr ""
+
+#. Default: "One-time password sent"
+#: components/Attendee/AttendeeLogin
+msgid "heading_request_sent"
+msgstr ""
+
+#. Default: "hours"
+#: components/Countdown/CountdownElements
+msgid "hours"
 msgstr ""
 
 #. Default: "Instructor"
@@ -163,9 +353,24 @@ msgstr ""
 msgid "keynote-speaker"
 msgstr ""
 
+#. Default: "My email is"
+#: components/Attendee/AttendeeLogin
+msgid "label_my_email_is"
+msgstr ""
+
+#. Default: "minutes"
+#: components/Countdown/CountdownElements
+msgid "minutes"
+msgstr ""
+
 #. Default: "Plone Foundation Member"
 #: components/Presenter/PresenterCategory
 msgid "pf-member"
+msgstr ""
+
+#. Default: "seconds"
+#: components/Countdown/CountdownElements
+msgid "seconds"
 msgstr ""
 
 #. Default: "Speaker"

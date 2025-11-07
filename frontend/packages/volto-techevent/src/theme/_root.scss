@@ -1,5 +1,280 @@
+/*
+===================================
+Typed custom properties (@property)
+====================================
+*/
+
+/* Spacing primitives (replaces #{$spacing-small}) */
+@property --spacing-small {
+  inherits: true;
+  initial-value: 20px;
+  syntax: '<length>';
+}
+
+/* Generic theme hooks used as fallbacks */
+@property --theme-foreground-color {
+  inherits: true;
+  initial-value: #ffffff;
+  syntax: '<color>';
+}
+@property --theme-color {
+  inherits: true;
+  initial-value: #000000;
+  syntax: '<color>';
+}
+
+/* Buttons */
+@property --techevent-button-color {
+  inherits: true;
+  initial-value: #ffffff;
+  syntax: '<color>';
+}
+@property --techevent-button-background-color {
+  inherits: true;
+  initial-value: #000000;
+  syntax: '<color>';
+}
+@property --techevent-button-border-color {
+  inherits: true;
+  initial-value: #000000;
+  syntax: '<color>';
+}
+@property --techevent-button-border-radius {
+  inherits: true;
+  initial-value: 5px;
+  syntax: '<length>';
+}
+@property --techevent-button-border-width {
+  inherits: true;
+  initial-value: 1px;
+  syntax: '<length>';
+}
+@property --techevent-button-hover-color {
+  inherits: true;
+  initial-value: #ffffff;
+  syntax: '<color>';
+}
+@property --techevent-button-hover-background-color {
+  inherits: true;
+  initial-value: #000000;
+  syntax: '<color>';
+}
+@property --techevent-button-hover-border-color {
+  inherits: true;
+  initial-value: #000000;
+  syntax: '<color>';
+}
+@property --techevent-button-hover-border-radius {
+  inherits: true;
+  initial-value: 5px;
+  syntax: '<length>';
+}
+@property --techevent-button-hover-border-width {
+  inherits: true;
+  initial-value: 1px;
+  syntax: '<length>';
+}
+
+/* SponsorTile */
+@property --techevent-sponsortile-background-main {
+  inherits: true;
+  initial-value: transparent;
+  syntax: '<color> | transparent';
+}
+@property --techevent-sponsortile-min-width {
+  inherits: true;
+  initial-value: 200px;
+  syntax: '<length>';
+}
+@property --techevent-sponsortile-max-width {
+  inherits: true;
+  initial-value: 400px;
+  syntax: '<length>';
+}
+@property --techevent-sponsortile-border-width {
+  inherits: true;
+  initial-value: 1px;
+  syntax: '<length>';
+}
+@property --techevent-sponsortile-border-radius {
+  inherits: true;
+  initial-value: var(--spacing-small);
+  syntax: '<length>';
+}
+@property --techevent-sponsortile-margin {
+  inherits: true;
+  initial-value: var(--spacing-small);
+  syntax: '<length>';
+}
+@property --techevent-sponsortile-padding {
+  inherits: true;
+  initial-value: 7px;
+  syntax: '<length>';
+}
+@property --techevent-sponsortile-hover-border-width {
+  inherits: true;
+  initial-value: 1px;
+  syntax: '<length>';
+}
+@property --techevent-sponsortile-hover-border-radius {
+  inherits: true;
+  initial-value: var(--spacing-small);
+  syntax: '<length>';
+}
+@property --techevent-sponsortile-hover-margin {
+  inherits: true;
+  initial-value: var(--spacing-small);
+  syntax: '<length>';
+}
+
+/* SponsorLevel */
+@property --techevent-sponsorlevel-title-padding-y {
+  inherits: true;
+  initial-value: 1rem; /* from "0 0 1rem 0" keep the vertical part typed */
+  syntax: '<length>';
+}
+@property --techevent-sponsorlevel-title-margin-y {
+  inherits: true;
+  initial-value: 1.2rem; /* from "1.2rem 0" keep the vertical part typed */
+  syntax: '<length>';
+}
+@property --techevent-sponsorlevel-title-border-bottom-width {
+  inherits: true;
+  initial-value: 1px;
+  syntax: '<length>';
+}
+@property --techevent-sponsorlevel-title-before-height {
+  inherits: true;
+  initial-value: 3px;
+  syntax: '<length>';
+}
+@property --techevent-sponsorlevel-title-before-width {
+  inherits: true;
+  initial-value: 400px;
+  syntax: '<length>';
+}
+
+/* Presenter */
+@property --techevent-presenter-category-background-color {
+  inherits: true;
+  initial-value: #cccccc;
+  syntax: '<color>';
+}
+@property --techevent-presenter-category-color {
+  inherits: true;
+  initial-value: #000000;
+  syntax: '<color>';
+}
+
+/* Misc text tokens */
+@property --techevent-vocabulary-foreground-color {
+  inherits: true;
+  initial-value: #ffffff;
+  syntax: '<color>';
+}
+@property --techevent-session-track-foreground-color {
+  inherits: true;
+  initial-value: #ffffff;
+  syntax: '<color>';
+}
+
+/* Schedule */
+@property --techevent-schedule-color {
+  inherits: true;
+  initial-value: rgb(1, 106, 173);
+  syntax: '<color>';
+}
+@property --techevent-schedule-border-color {
+  inherits: true;
+  initial-value: #cccccc;
+  syntax: '<color>';
+}
+@property --techevent-schedule-room-color {
+  inherits: true;
+  initial-value: #000000;
+  syntax: '<color>';
+}
+@property --techevent-schedule-secondary-color {
+  inherits: true;
+  initial-value: #cccccc;
+  syntax: '<color>';
+}
+@property --techevent-schedule-reverse-color {
+  inherits: true;
+  initial-value: #ffffff;
+  syntax: '<color>';
+}
+@property --techevent-schedule-gap {
+  inherits: true;
+  initial-value: 2px;
+  syntax: '<length>';
+}
+
+/* Parallax Block */
+@property --techevent-parallax-overlay-color {
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0.66);
+  syntax: '<color>';
+}
+@property --techevent-parallax-foreground-color {
+  inherits: true;
+  initial-value: rgb(0, 0, 0);
+  syntax: '<color>';
+}
+@property --techevent-parallax-content-max-width {
+  inherits: true;
+  initial-value: 940px;
+  syntax: '<length>';
+}
+@property --techevent-parallax-height-s {
+  inherits: true;
+  initial-value: 300px;
+  syntax: '<length>';
+}
+@property --techevent-parallax-height-m {
+  inherits: true;
+  initial-value: 600px;
+  syntax: '<length>';
+}
+@property --techevent-parallax-height-l {
+  inherits: true;
+  initial-value: 900px;
+  syntax: '<length>';
+}
+
+/* Parallax Button */
+@property --theme-parallax-button-color {
+  inherits: true;
+  initial-value: #000000;
+  syntax: '<color>';
+}
+@property --theme-parallax-button-border-color {
+  inherits: true;
+  initial-value: #000000;
+  syntax: '<color>';
+}
+
+/* ================================
+   Tokens (values) — pure CSS
+   ================================ */
+
 :root {
-  // SponsorTile
+  /* Button */
+  --techevent-button-padding: 10px 20px;
+  --techevent-button-color: var(--theme-foreground-color, #fff);
+  --techevent-button-background-color: var(--theme-color, #000);
+  --techevent-button-border-color: var(--theme-color, #000);
+  --techevent-button-border-radius: 5px;
+  --techevent-button-border-style: solid;
+  --techevent-button-border-width: 1px;
+  --techevent-button-hover-color: var(--theme-foreground-color, #fff);
+  --techevent-button-hover-background-color: var(--theme-color, #000);
+  --techevent-button-hover-border-color: var(--theme-color, #000);
+  --techevent-button-hover-border-radius: 5px;
+  --techevent-button-hover-border-style: solid;
+  --techevent-button-hover-border-width: 1px;
+
+  /* SponsorTile */
   --techevent-sponsortile-background-main: transparent;
   --techevent-sponsortile-min-width: 200px;
   --techevent-sponsortile-max-width: 400px;
@@ -7,24 +282,23 @@
   --techevent-sponsortile-justify-content: center;
   --techevent-sponsortile-border-width: 1px;
   --techevent-sponsortile-border-style: solid;
-  //--techevent-sponsortile-border-color: ;
-  --techevent-sponsortile-border-radius: #{$spacing-small};
-  --techevent-sponsortile-margin: #{$spacing-small};
-  //--techevent-sponsortile-box-shadow: 0px 3px 16px 0px #000;
+  /* --techevent-sponsortile-border-color: ; */
+  --techevent-sponsortile-border-radius: var(--spacing-small);
+  --techevent-sponsortile-margin: var(--spacing-small);
+  /* --techevent-sponsortile-box-shadow: 0px 3px 16px 0px #000; */
   --techevent-sponsortile-padding: 7px;
-  /// hover
+  /* hover */
   --techevent-sponsortile-hover-border-width: 1px;
   --techevent-sponsortile-hover-border-style: solid;
-  //--techevent-sponsortile-hover-border-color: ;
-  --techevent-sponsortile-hover-border-radius: #{$spacing-small};
-  --techevent-sponsortile-hover-margin: #{$spacing-small};
-  //--techevent-sponsortile-hover-box-shadow: 0px 3px 16px 0px #000;
+  /* --techevent-sponsortile-hover-border-color: ; */
+  --techevent-sponsortile-hover-border-radius: var(--spacing-small);
+  --techevent-sponsortile-hover-margin: var(--spacing-small);
+  /* --techevent-sponsortile-hover-box-shadow: 0px 3px 16px 0px #000; */
 
-  // SponsorLevel
-  /// Title
-  //--techevent-sponsorlevel-title-color: ;
-  //--techevent-sponsorlevel-title-border-color: ;
-  //--techevent-sponsorlevel-title-before-background: ;
+  /* SponsorLevel (kept shorthands for authoring ergonomics) */
+  /* --techevent-sponsorlevel-title-color: ; */
+  /* --techevent-sponsorlevel-title-border-color: ; */
+  /* --techevent-sponsorlevel-title-before-background: ; */
   --techevent-sponsorlevel-title-padding: 0 0 1rem 0;
   --techevent-sponsorlevel-title-margin: 1.2rem 0;
   --techevent-sponsorlevel-title-border-bottom-style: solid;
@@ -32,16 +306,16 @@
   --techevent-sponsorlevel-title-before-height: 3px;
   --techevent-sponsorlevel-title-before-width: 400px;
 
-  // Presenter
-  /// PresenterCategory
+  /* Presenter */
   --techevent-presenter-category-background-color: #ccc;
   --techevent-presenter-category-color: #000;
 
   --techevent-vocabulary-foreground-color: #fff;
-  //Track foreground color
+
+  /* Track foreground color */
   --techevent-session-track-foreground-color: #fff;
 
-  // Schedule
+  /* Schedule */
   --techevent-schedule-color: rgb(1, 106, 173);
   --techevent-schedule-border-color: #ccc;
   --techevent-schedule-room-color: #000;
@@ -49,7 +323,22 @@
   --techevent-schedule-reverse-color: #fff;
   --techevent-schedule-gap: 2px;
 
-  // SessionTile
-  --techevent-sessionTile-background-color: #ecebeb;
-  --techevent-sessionTile-color: #000;
+  /* Parallax Block */
+  --techevent-parallax-overlay-color: rgba(255, 255, 255, 0.66);
+  --techevent-parallax-foreground-color: rgb(0, 0, 0);
+  --techevent-parallax-content-max-width: var(--narrow-container-width, 940px);
+  --techevent-parallax-height-s: 300px;
+  --techevent-parallax-height-m: 600px;
+  --techevent-parallax-height-l: 900px;
+
+  /* Parallax Button */
+  --theme-parallax-button-color: var(
+    --techevent-parallax-foreground-color,
+    #000
+  );
+  --theme-parallax-button-padding: 8px 20px;
+  --theme-parallax-button-background: transparent;
+  --theme-parallax-button-border-color: #000;
+  --theme-parallax-button-border: 1px solid
+    var(--theme-parallax-button-border-color);
 }

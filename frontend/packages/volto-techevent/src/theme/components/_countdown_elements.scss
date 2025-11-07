@@ -1,0 +1,53 @@
+.countdown-elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+  &.size-m {
+    gap: 5px;
+  }
+  &.size-s {
+    gap: 2px;
+  }
+  &.has-separator {
+    &.size-m,
+    &.size-s {
+      .countdown-element-wrapper:not(:last-child) {
+        &::after {
+          margin-right: 0px;
+          margin-left: 0px;
+        }
+      }
+    }
+    &.size-m {
+      .countdown-element-wrapper:not(:last-child) {
+        &::after {
+          content: ':';
+          @include add(size, l);
+          @include add(height, l);
+        }
+      }
+    }
+    &.size-s {
+      .countdown-element-wrapper:not(:last-child) {
+        &::after {
+          content: ':';
+          @include add(size, m);
+          @include add(height, m);
+        }
+      }
+    }
+    .countdown-element-wrapper:not(:last-child) {
+      &::after {
+        margin-right: $spacing-2xsmall;
+        margin-left: $spacing-2xsmall;
+        content: ':';
+        @include add(size, xl);
+        @include add(height, xl);
+        @include add(weight, bold);
+      }
+    }
+  }
+}

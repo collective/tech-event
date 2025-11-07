@@ -132,3 +132,31 @@ $spacing-xlarge: 80px !default;
     margin-bottom: $spacing-xsmall;
   }
 }
+
+@mixin button() {
+  @include add(size, m);
+  @include add(height, m);
+  padding: var(--techevent-button-padding);
+  border-width: var(--techevent-button-border-width, 1px);
+  border-style: var(--techevent-button-border-style, solid);
+  border-color: var(--techevent-button-border-color);
+  border-radius: var(--techevent-button-border-radius, 0px);
+  background-color: var(--techevent-button-background-color);
+  color: var(--techevent-button-color);
+  &:hover {
+    border-width: var(--techevent-button-border-width, 1px);
+    border-style: var(--techevent-button-hover-border-style, solid);
+    border-color: var(--techevent-button-hover-border-color);
+    border-radius: var(--techevent-button-hover-border-radius, 0px);
+    background-color: var(--techevent-button-hover-background-color);
+    color: var(--techevent-button-hover-color);
+  }
+  &.size-l {
+    @include add(size, l);
+    @include add(height, l);
+  }
+  &.size-s {
+    @include add(size, s);
+    @include add(height, s);
+  }
+}

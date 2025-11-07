@@ -1,0 +1,43 @@
+.countdown-element-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .countdown-element {
+    display: flex;
+    min-width: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-small $spacing-xsmall;
+    .value {
+      @include add(size, xl);
+      @include add(height, xl);
+      @include add(weight, bold);
+    }
+    .label {
+      @include add(size, m);
+      @include add(height, m);
+      @include add(weight, medium);
+    }
+    &.size-s {
+      .value {
+        @include add(size, m);
+        @include add(height, m);
+      }
+      .label {
+        @include add(size, s);
+        @include add(height, s);
+      }
+    }
+    &.size-m {
+      .value {
+        @include add(size, l);
+        @include add(height, l);
+      }
+      .label {
+        @include add(size, s);
+        @include add(height, s);
+      }
+    }
+  }
+}

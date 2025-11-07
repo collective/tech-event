@@ -27,19 +27,25 @@
     "release-alpha": "release-it --preRelease=alpha"
   },
   "addons": [
+    "@kitconcept/volto-bm3-compat",
     "@plonegovbr/volto-social-media",
     "@kitconcept/volto-light-theme"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
+    "@kitconcept/volto-bm3-compat": "*",
     "@plonegovbr/volto-social-media": "2.0.0-alpha.6"
   },
   "peerDependencies": {
     "react-intl": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-redux": "*",
     "react-aria-components": "*",
     "@kitconcept/volto-light-theme": "*",
+    "@storybook/react": "*",
+    "classnames": "*",
+    "uuid": "*",
     "semantic-ui-react": "*"
   },
   "devDependencies": {

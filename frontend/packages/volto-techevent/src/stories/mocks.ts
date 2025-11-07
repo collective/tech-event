@@ -1,0 +1,160 @@
+const demoImage = 'image-light.jpg';
+
+export const imageHref = [
+  {
+    '@id': '.',
+    '@type': 'Image',
+    CreationDate: '2025-05-20T14:33:13-03:00',
+    Creator: 'admin',
+    Date: '2025-05-20T14:33:13-03:00',
+    Description: '',
+    EffectiveDate: 'None',
+    ExpirationDate: 'None',
+    ModificationDate: '2025-05-20T14:33:13-03:00',
+    Subject: [],
+    Title: 'image-light.png',
+    Type: 'Image',
+    UID: '5f3664436f464aae9e3a8a31cb6cf649',
+    cmf_uid: null,
+    created: '2025-05-20T17:33:13+00:00',
+    description: '',
+    effective: '1969-12-31T03:00:00+00:00',
+    end: null,
+    exclude_from_nav: null,
+    expires: '2499-12-31T03:00:00+00:00',
+    getIcon: true,
+    getId: 'image-light.png',
+    getObjSize: '551.0 KB',
+    getPath: '/Plone/images/image-light.png',
+    getRemoteUrl: null,
+    getURL: 'http://localhost:3000/image-light.png',
+    hasPreviewImage: null,
+    head_title: null,
+    id: 'image-light.png',
+    image_field: 'image',
+    image_scales: {
+      image: [
+        {
+          'content-type': 'image/png',
+          download: demoImage,
+          filename: 'image-light.png',
+          height: 900,
+          scales: {
+            great: {
+              download: demoImage,
+              height: 675,
+              width: 1200,
+            },
+            huge: {
+              download: demoImage,
+              height: 900,
+              width: 1600,
+            },
+            icon: {
+              download: demoImage,
+              height: 18,
+              width: 32,
+            },
+            large: {
+              download: demoImage,
+              height: 450,
+              width: 800,
+            },
+            larger: {
+              download: demoImage,
+              height: 562,
+              width: 1000,
+            },
+            mini: {
+              download: demoImage,
+              height: 112,
+              width: 200,
+            },
+            preview: {
+              download: demoImage,
+              height: 225,
+              width: 400,
+            },
+            teaser: {
+              download: demoImage,
+              height: 337,
+              width: 600,
+            },
+            thumb: {
+              download: demoImage,
+              height: 72,
+              width: 128,
+            },
+            tile: {
+              download: demoImage,
+              height: 36,
+              width: 64,
+            },
+          },
+          size: 564202,
+          width: 1600,
+        },
+      ],
+    },
+    is_folderish: false,
+    level: null,
+    listCreators: ['admin'],
+    location: null,
+    mime_type: 'image/jpg',
+    modified: '2025-05-20T17:33:13+00:00',
+    nav_title: null,
+    portal_type: 'Image',
+    review_state: null,
+    social_links: null,
+    start: null,
+    sync_uid: null,
+    title: 'image-light.jpg',
+    type_title: 'Image',
+  },
+];
+
+export const parallaxItems = [
+  {
+    '@id': '89f33226-ff73-4324-a807-8b55ba170cdf',
+    href: [
+      {
+        '@id': 'https://plone.org/foundation',
+        title: 'plone.org/foundation',
+      },
+    ],
+    label: 'Plone.org',
+    openLinkInNewTab: true,
+  },
+  {
+    '@id': 'ad4e8231-b699-46e0-b9ac-9507e032699f',
+    href: [
+      {
+        '@id': 'http://localhost:3000/schedule',
+        '@type': 'Schedule',
+        Description: 'Conference Schedule',
+        Title: 'Schedule',
+        hasPreviewImage: null,
+        head_title: null,
+        image_field: '',
+        title: 'Schedule',
+      },
+    ],
+    label: 'Schedule',
+  },
+  {
+    '@id': 'c8cd65b4-2aed-44b7-96c5-24ec260e6b93',
+    href: [
+      {
+        '@id': 'http://localhost:3000/sponsor-us',
+        '@type': 'SponsorsDB',
+        Description: 'Support our event',
+        Title: 'Sponsor Us',
+        hasPreviewImage: null,
+        head_title: null,
+        image_field: '',
+        title: 'Sponsor Us',
+      },
+    ],
+    label: 'Sponsor',
+  },
+];
