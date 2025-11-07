@@ -135,6 +135,73 @@ const messages = defineMessages({
     id: 'Countdown Size',
     defaultMessage: 'Countdown Size',
   },
+  // Parallax Block
+  parallaxBlockTitle: {
+    id: 'Parallax Block',
+    defaultMessage: 'Parallax Block',
+  },
+  parallaxBgImage: {
+    id: 'Background Image',
+    defaultMessage: 'Background Image',
+  },
+  parallaxDescription: {
+    id: 'Description',
+    defaultMessage: 'Description',
+  },
+  parallaxHeight: {
+    id: 'Height',
+    defaultMessage: 'Height',
+  },
+  overlay: {
+    id: 'Overlay',
+    defaultMessage: 'Overlay',
+  },
+  overlayFull: {
+    id: 'Full Overlay',
+    defaultMessage: 'Full Overlay',
+  },
+  overlayBox: {
+    id: 'Textbox',
+    defaultMessage: 'Textbox',
+  },
+  overlayColor: {
+    id: 'Overlay Color',
+    defaultMessage: 'Overlay Color',
+  },
+  overlayForegroundColor: {
+    id: 'Overlay Text Color',
+    defaultMessage: 'Overlay Text Color',
+  },
+  parallaxCTAItems: {
+    id: 'Call to Action',
+    defaultMessage: 'Call to Action',
+  },
+
+  /// Parallax Block CTA
+  buttonTitle: {
+    id: 'Button',
+    defaultMessage: 'Button',
+  },
+  buttonAdd: {
+    id: 'Add Button',
+    defaultMessage: 'Add Button',
+  },
+  buttonLabel: {
+    id: 'Text',
+    defaultMessage: 'Text',
+  },
+  buttonHref: {
+    id: 'Link',
+    defaultMessage: 'Link',
+  },
+  buttonHide: {
+    id: 'Hide Button',
+    defaultMessage: 'Hide Button',
+  },
+  openLinkInNewTab: {
+    id: 'Open link in new tab',
+    defaultMessage: 'Open link in new tab',
+  },
 });
 
 export default messages;

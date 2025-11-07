@@ -13,6 +13,9 @@ import LevelBenefitsBlockInfo from '@plone-collective/volto-techevent/components
 // LevelComparison
 import LevelComparisonBlockInfo from '@plone-collective/volto-techevent/components/Blocks/Sponsors/LevelComparison';
 
+// Parallax
+import ParallaxBlockInfo from '@plone-collective/volto-techevent/components/Blocks/Parallax';
+
 // Countdown
 import CountdownBlockInfo from '@plone-collective/volto-techevent/components/Blocks/Countdown';
 
@@ -29,6 +32,7 @@ declare module '@plone/types' {
     scheduleBlock: BlockConfigBase;
     sponsorLevelBlock: BlockConfigBase;
     sponsorsShowcaseBlock: BlockConfigBase;
+    parallaxBlock: BlockConfigBase;
     countdownBlock: BlockConfigBase;
   }
 }
@@ -47,6 +51,7 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.levelBenefitsBlock = LevelBenefitsBlockInfo;
   config.blocks.blocksConfig.levelComparisonBlock = LevelComparisonBlockInfo;
   config.blocks.blocksConfig.scheduleBlock = ScheduleBlockInfo;
+  config.blocks.blocksConfig.parallaxBlock = ParallaxBlockInfo;
   config.blocks.blocksConfig.countdownBlock = CountdownBlockInfo;
 
   // Variations

@@ -1,4 +1,19 @@
 :root {
+  // Button
+  --techevent-button-padding: 10px 20px;
+  --techevent-button-color: var(--theme-foreground-color, #fff);
+  --techevent-button-background-color: var(--theme-color, #000);
+  --techevent-button-border-color: var(--theme-color, #000);
+  --techevent-button-border-radius: 5px;
+  --techevent-button-border-style: solid;
+  --techevent-button-border-width: 1px;
+  --techevent-button-hover-color: var(--theme-foreground-color, #fff);
+  --techevent-button-hover-background-color: var(--theme-color, #000);
+  --techevent-button-hover-border-color: var(--theme-color, #000);
+  --techevent-button-hover-border-radius: 5px;
+  --techevent-button-hover-border-style: solid;
+  --techevent-button-hover-border-width: 1px;
+
   // SponsorTile
   --techevent-sponsortile-background-main: transparent;
   --techevent-sponsortile-min-width: 200px;
@@ -49,6 +64,25 @@
   --techevent-schedule-secondary-color: #ccc;
   --techevent-schedule-reverse-color: #fff;
   --techevent-schedule-gap: 2px;
+
+  // Parallax Block
+  --techevent-parallax-overlay-color: rgba(255, 255, 255, 0.66);
+  --techevent-parallax-foreground-color: rgb(0, 0, 0);
+  --techevent-parallax-content-max-width: var(--narrow-container-width, 940px);
+  --techevent-parallax-height-s: 300px;
+  --techevent-parallax-height-m: 600px;
+  --techevent-parallax-height-l: 900px;
+
+  /// Paralax Button
+  --theme-parallax-button-color: var(
+    --techevent-parallax-foreground-color,
+    #000
+  );
+  --theme-parallax-button-padding: 8px 20px;
+  --theme-parallax-button-background: transparent;
+  --theme-parallax-button-border-color: #000;
+  --theme-parallax-button-border: 1px solid
+    var(--theme-parallax-button-border-color);
 
   // SessionTile
   --techevent-sessionTile-background-color: #ecebeb;
