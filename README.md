@@ -61,6 +61,57 @@ Monorepo for building tech event sites (conference/symposium/seminar) with Plone
 
 Voilà! Your Plone site should be live and kicking! 🎉
 
+### Example content structure
+
+This example is useful for a typical Plone conference:
+
+* first two days of training, with parallel training sessions
+* then the main part with three days of talks, and one keynote per day
+* then a weekend with a sprint (coding and organising together)
+* each conference year gets its own website
+* multiple venues: typically training and sprint are in a different location than the main conference
+
+The next content structure would work for this.
+We will use CT as abbreviation for "content type".
+
+* About: CT Page.  So: create an instance of content type Page, with as title: "About".  Add some text blocks and image blocks, etc, in here.
+  * Venue: CT Page, with a Listing block
+    * Main venue: CT Venue with a Listing block
+      * Main room: CT Room
+    * If you have only one venue, you can replace the "Venue" CT Page with a single CT Venue.
+* Sponsors: CT Sponsors Database, with Listing block (to show the levels) and Packages & Sponsors block
+  * Organizers: CT Sponsorship Level, with Sponsor Level block
+    * Your organization: CT Sponsor
+  * Other levels (Platinum, Gold, ...): CT Sponsorship Level, with Sponsor Level block.  In this block you can optionally configure a Call To Action pointing to a page with a form or info on how to become a sponsor.
+    * If someone becomes a sponsor, you would add a CT Sponsor within the Sponsorship Level.
+* Travel: CT Page, with Text blocks with travel information.
+* Tickets: CT Page, with Text blocks explaining how to get tickets.
+* Schedule: CT Schedule, with a Schedule block configured to show the 3 main days
+  * Keynotes: CT Page, with a Listing block
+    * For each keynote: a CT Keynote
+  * Talks: CT Page, with Search block with as criterion: Type = Talk or Lightning Talk
+    * For each talk add a CT Talk.
+    * For each lightning talk session add a CT Lightning Talk
+  * Speakers: CT Page, with Search block with as criterion: Type = Presenter
+    * For each speaker a CT Presenter
+  * Training: CT Page, with a Schedule block configured to only show the two training days
+    * For each training: a CT training
+  * Open spaces: CT Page, with Search block or Listing block or Schedule block, depending on how many open spaces you have, if any.  You can exclude this from navigation or delete the Page if you don't have any.
+    * For each open space, add a CT Open space
+  * Sprint: CT Page, with a Listing block
+    * For each sprint day: add a CT Sprint
+    * or simply add some text blocks in the CT Page
+  * Breaks: CT Page, optionally with Listing block, excluded from navigation
+    * For each coffee or lunch break, add a CT Break
+  * Slots: CT Page, optionally with Listing block, excluded from navigation
+    * For each non-talk moment, add a CT Slot.
+      This is for general slots like Registration and taking a conference photo.
+  * Full schedule: CT Page, with a Schedule block not filtering on days
+  * Optionally Meetings: CT Page, with a Search block with criterion Type = Meeting.
+    * For each meeting add a CT Meeting.
+    * This can be used for the Plone Foundation Annual General Meeting, but you can also create this as a CT Talk.
+
+
 ### Local Stack Deployment 📦
 
 Deploy a local `Docker Compose` environment that includes:
