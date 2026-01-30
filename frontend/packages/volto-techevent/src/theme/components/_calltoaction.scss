@@ -1,0 +1,21 @@
+.cta {
+  margin: $spacing-small 0px;
+  &.size-l {
+    margin: $spacing-medium 0px;
+  }
+  &.size-s {
+    margin: $spacing-xsmall 0px;
+  }
+  .cta-link {
+    text-decoration: none !important;
+    &.external {
+      text-decoration: none !important;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .cta-button {
+    @include button();
+  }
+}

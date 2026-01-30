@@ -1,6 +1,10 @@
 // This extends the volto-light-theme
 @import 'root';
+@import 'components/calltoaction';
 @import 'components/card';
+@import 'components/parallax';
+@import 'components/countdown_element';
+@import 'components/countdown_elements';
 @import 'components/schedule/schedule';
 @import 'components/schedule/session_date';
 @import 'components/schedule/session_track';
@@ -23,6 +27,8 @@
 @import 'components/presenter/presenter_category';
 @import 'components/presenter/presenter_tile';
 @import 'components/presenter/presenter_view';
+@import 'components/block_countdown';
+@import 'components/block_parallax';
 @import 'components/block_sponsors_levelbenefits';
 @import 'components/block_sponsors_levelcomparison';
 @import 'components/block_sponsors_showcase';
