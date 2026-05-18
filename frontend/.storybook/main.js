@@ -74,6 +74,10 @@ module.exports = {
     name: '@storybook/react-webpack5',
     options: { builder: { useSWC: true } },
   },
+  staticDirs: [
+    '../packages/volto-techevent/src/stories/static',
+    { from: '../packages', to: '/packages' },
+  ],
   typescript: {
     check: false,
     checkOptions: {},
