@@ -51,6 +51,11 @@ msgstr "Colapsar item"
 msgid "Day"
 msgstr "Dia"
 
+#. Default: "Default"
+#: components/Attendee/AttendeeLogin
+msgid "Default"
+msgstr ""
+
 #. Default: "Details"
 #: messages
 msgid "Details"
@@ -111,6 +116,11 @@ msgstr ""
 msgid "Remove item"
 msgstr "Excluir item"
 
+#. Default: "Request sent"
+#: components/Attendee/AttendeeLogin
+msgid "Request sent"
+msgstr ""
+
 #. Default: "Requirements"
 #: messages
 msgid "Requirements"
@@ -120,6 +130,11 @@ msgstr "Requisitos"
 #: messages
 msgid "Schedule Block"
 msgstr "Bloco de Grade"
+
+#. Default: "Send request"
+#: components/Attendee/AttendeeLogin
+msgid "Send request"
+msgstr ""
 
 #. Default: "Show item"
 #: components/Widgets/DataGridList
@@ -156,6 +171,31 @@ msgstr "Título"
 msgid "Video"
 msgstr ""
 
+#. Default: "Request a one-time password"
+#: components/Attendee/AttendeeLogin
+msgid "box_request_one_time_password"
+msgstr ""
+
+#. Default: "Continue to login"
+#: components/Attendee/AttendeeLogin
+msgid "continue_to_login"
+msgstr ""
+
+#. Default: "Enter your email to receive a one-time password for login."
+#: components/Attendee/AttendeeLogin
+msgid "description_request_one_time_password"
+msgstr ""
+
+#. Default: "Please, check your email and log in using your email address and the one-time password you received."
+#: components/Attendee/AttendeeLogin
+msgid "description_request_sent"
+msgstr ""
+
+#. Default: "One-time password sent"
+#: components/Attendee/AttendeeLogin
+msgid "heading_request_sent"
+msgstr ""
+
 #. Default: "Instructor"
 #: components/Presenter/PresenterCategory
 msgid "instructor"
@@ -165,6 +205,11 @@ msgstr "instrutor/a"
 #: components/Presenter/PresenterCategory
 msgid "keynote-speaker"
 msgstr "Keynote"
+
+#. Default: "My email is"
+#: components/Attendee/AttendeeLogin
+msgid "label_my_email_is"
+msgstr ""
 
 #. Default: "Plone Foundation Member"
 #: components/Presenter/PresenterCategory
