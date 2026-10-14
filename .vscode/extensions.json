@@ -1,15 +1,16 @@
 {
-    "recommendations": [
-        "charliermarsh.ruff",
-        "dbaeumer.vscode-eslint",
-        "editorconfig.editorconfig",
-        "esbenp.prettier-vscode",
-        "ExecutableBookProject.myst-highlight",
-        "github.vscode-github-actions",
-        "ms-python.python",
-        "ms-vscode-remote.remote-containers",
-        "redhat.vscode-yaml",
-        "stylelint.vscode-stylelint",
-        "plone.plone-vs-utilities"
-    ]
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "esbenp.prettier-vscode",
+    "charliermarsh.ruff",
+    "ms-python.python",
+    "ms-python.vscode-python-envs",
+    "ExecutableBookProject.myst-highlight",
+    "ms-vscode-remote.remote-containers",
+    "redhat.vscode-yaml",
+    "editorconfig.editorconfig",
+    "github.vscode-github-actions",
+    "plone.plone-vs-utilities"
+  ]
 }
