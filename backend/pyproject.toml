@@ -4,7 +4,9 @@ dynamic = ["version"]
 description = "Support for implementing tech conference in a Plone site."
 readme = "README.md"
 license = "GPL-2.0-only"
-requires-python = ">=3.10"
+# plonegovbr.socialmedia 3.x requires Python 3.11 or later, so this package
+# cannot be installed on 3.10 once it depends on that release.
+requires-python = ">=3.11"
 authors = [
     { name = "PloneGov-BR", email = "gov@plone.org.br" },
 ]
@@ -18,33 +20,35 @@ keywords = [
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Web Environment",
-    "Framework :: Plone","Framework :: Plone :: 6.0",
-    "Framework :: Plone","Framework :: Plone :: 6.1",
+    "Framework :: Plone",
+    "Framework :: Plone :: 6.1",
+    "Framework :: Plone :: 6.2",
     "Framework :: Plone :: Addon",
     "Operating System :: OS Independent",
-    "Programming Language :: Python","Programming Language :: Python :: 3.10",
-    "Programming Language :: Python","Programming Language :: Python :: 3.11",
-    "Programming Language :: Python","Programming Language :: Python :: 3.12",
-    "Programming Language :: Python","Programming Language :: Python :: 3.13",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
     "Products.CMFPlone",
     "plone.api",
     "plone.restapi>=9.15.2",
     "plone.volto",
-    "plonegovbr.socialmedia",
+    "plonegovbr.socialmedia>=3.0.0",
     "collective.z3cform.datagridfield",
 ]
 
 [project.optional-dependencies]
 test = [
     "horse-with-no-namespace",
+    "mypy",
     "plone.app.testing",
     "plone.restapi[test]",
     "pytest>=8.0.0",
     "pytest-cov",
-    "pytest-plone>=1.0.0a2",
-    "Products.PrintingMailHost",
+    "pytest-plone>=1.1.0",
 ]
 users = [
     "Products.membrane",
@@ -122,12 +126,14 @@ name = "Tests"
 showcontent = true
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py311"
 line-length = 88
 fix = true
 lint.select = [
     # flake8-2020
     "YTT",
+    # flake8-annotations: every function in src/ is fully annotated
+    "ANN",
     # flake8-bandit
     "S",
     # flake8-bugbear
@@ -156,6 +162,9 @@ lint.select = [
 lint.ignore = [
     # DoNotAssignLambda
     "E731",
+    # AnyType: Zope and Plone objects (contexts, requests, brains) are
+    # untyped, so `Any` is the honest annotation for them.
+    "ANN401",
 ]
 
 [tool.ruff.lint.isort]
@@ -171,7 +180,8 @@ order-by-type = false
 preview = true
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*" = ["E501", "RUF001", "S101"]
+"tests/*" = ["ANN", "E501", "RUF001", "S101"]
+"scripts/*" = ["ANN"]
 
 [tool.check-manifest]
 ignore = [
@@ -191,3 +201,29 @@ parallel = true
 omit = [
   "src/collective/techevent/locales/*.py",
 ]
+
+# Branch coverage, enforced. `make check-pragmas` keeps the few allowed
+# exclusions honest.
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+skip_covered = true
+
+[tool.mypy]
+# plone-stubs uses 3.12 syntax in its stubs; ruff's py311 target keeps
+# this package's own code 3.11-compatible.
+python_version = "3.12"
+files = ["src"]
+# Native namespace: resolve modules as collective.techevent.*, not techevent.*.
+mypy_path = "src"
+explicit_package_bases = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+warn_unused_ignores = true
+ignore_missing_imports = true
+
+# zope.interface methods declare an explicit self, as plone-stubs does, and
+# a docstring for a body: there is nothing to return.
+[[tool.mypy.overrides]]
+module = ["collective.techevent.interfaces"]
+disable_error_code = ["empty-body"]
