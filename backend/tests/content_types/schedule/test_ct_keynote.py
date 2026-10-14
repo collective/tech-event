@@ -1,5 +1,8 @@
+from collective.techevent.content.schedule.keynote import IKeynote
 from collective.techevent.content.schedule.keynote import Keynote
 from plone import api
+from plone.dexterity.utils import iterSchemataForType
+from zope.schema import getFieldNames
 
 import pytest
 
@@ -48,6 +51,61 @@ class TestContentType:
         assert len(results) > 0
         uids = [brain.UID for brain in results]
         assert content_instance.UID() in uids
+
+
+class TestDuration:
+    """``duration`` is a schema field of ``IKeynote``, not a class attribute."""
+
+    @pytest.fixture(autouse=True)
+    def _setup(self, portal, container, content_factory, payloads):
+        self.portal = portal
+        self.container = container
+        self.content_factory = content_factory
+        self.payloads = payloads
+
+    def _keynote(self, **kw) -> Keynote:
+        """Create a Keynote from the first payload, without a duration.
+
+        :param kw: Values overriding the payload.
+        :returns: The new Keynote.
+        """
+        payload = {**self.payloads["Keynote"][0], **kw}
+        payload.pop("duration", None)
+        return self.content_factory(self.container, payload)
+
+    def test_in_interface(self):
+        assert "duration" in IKeynote
+
+    def test_in_type_schema(self, portal_type):
+        fields = [
+            name
+            for schema in iterSchemataForType(portal_type)
+            for name in getFieldNames(schema)
+        ]
+        assert "duration" in fields
+
+    def test_unset_is_none(self):
+        content = self._keynote()
+        assert content.duration is None
+
+    def test_reindex_with_duration_index(self):
+        """A Keynote without duration indexes beside Talks that have one.
+
+        Sites may add a ``duration`` index. Before ``duration`` moved to
+        ``IKeynote``, the field object itself reached that index, and comparing
+        it with the string keys of the Talks raised a ``TypeError``.
+        """
+        catalog = self.portal.portal_catalog
+        catalog.addIndex("duration", "FieldIndex")
+        catalog.manage_reindexIndex(ids=["duration"])
+        talk = self.content_factory(self.container, self.payloads["Talk"][0])
+        content = self._keynote()
+
+        content.reindexObject()
+
+        brains = catalog.unrestrictedSearchResults(duration="long")
+        assert [brain.UID for brain in brains] == [talk.UID()]
+        assert len(catalog.unrestrictedSearchResults(UID=content.UID())) == 1
 
 
 class TestVersioning:

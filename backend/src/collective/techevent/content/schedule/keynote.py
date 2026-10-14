@@ -8,14 +8,14 @@ from zope.interface import implementer
 class IKeynote(ISession):
     """A Keynote in the event."""
 
-
-@implementer(IKeynote)
-class Keynote(Session):
-    """Convenience subclass for ``Keynote`` portal type."""
-
     duration = schema.Choice(
         title=_("Duration"),
         description=_("Duration of the keynote"),
         required=False,
         vocabulary="collective.techevent.vocabularies.durations_keynote",
     )
+
+
+@implementer(IKeynote)
+class Keynote(Session):
+    """Convenience subclass for ``Keynote`` portal type."""
