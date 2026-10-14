@@ -1,203 +1,133 @@
-# Tech Event Support for Plone 🚀
+# Tech Event Support for Plone
 
-Monorepo for building tech event sites (conference/symposium/seminar) with Plone 6 and Volto.
+Tech Event Support for Plone helps you build tech event sites (conference, symposium or seminar) with Plone 6 and Volto.
+It is a monorepo with a backend add-on, a frontend add-on and the documentation.
 
-- Backend: [collective.techevent](https://pypi.org/project/collective.techevent) (Plone add-on) provides content types, behaviors, and REST endpoints (e.g., /@schedule, /@sponsors).
-- Frontend: [@plone-collective/volto-techevent](https://www.npmjs.com/package/@plone-collective/volto-techevent) (Volto add-on) provides the UI: views, blocks, schedule, sponsors, listings, etc.
-- Relationship:
-  - The frontend requires the backend to be installed and activated in Plone.
-  - The backend is intended to be used with the Volto addon for the full UX.
+- The backend, [collective.techevent](https://pypi.org/project/collective.techevent), is a Plone add-on.
+  It provides the content types, the behaviors and the REST endpoints `@schedule` and `@sponsors`.
+- The frontend, [@plone-collective/volto-techevent](https://www.npmjs.com/package/@plone-collective/volto-techevent), is a Volto add-on.
+  It provides the views, the blocks and the listings for the schedule and the sponsors.
+- The documentation is at [collective.github.io/tech-event](https://collective.github.io/tech-event/).
 
-[![Built with Cookieplone](https://img.shields.io/badge/built%20with-Cookieplone-0083be.svg?logo=cookiecutter)](https://github.com/plone/cookieplone-templates/)
+The frontend needs the backend.
+The backend is designed to be used with the frontend.
+
 [![CI](https://github.com/collective/tech-event/actions/workflows/main.yml/badge.svg)](https://github.com/collective/tech-event/actions/workflows/main.yml)
+[![Docs](https://github.com/collective/tech-event/actions/workflows/docs.yaml/badge.svg)](https://github.com/collective/tech-event/actions/workflows/docs.yaml)
+[![PyPI](https://img.shields.io/pypi/v/collective.techevent)](https://pypi.org/project/collective.techevent)
+[![npm](https://img.shields.io/npm/v/@plone-collective/volto-techevent)](https://www.npmjs.com/package/@plone-collective/volto-techevent)
+[![Built with Cookieplone](https://img.shields.io/badge/built%20with-Cookieplone-0083be.svg?logo=cookiecutter)](https://github.com/plone/cookieplone-templates/)
 
+## Supported versions
 
-## Quick Start 🏁
+| Component | Versions |
+| --- | --- |
+| Plone | 6.1 and 6.2 |
+| Python | 3.11 to 3.14 (3.14 requires Plone 6.2) |
+| Volto | 19 |
 
-### Prerequisites ✅
+## Quick start
 
-- An [operating system](https://6.docs.plone.org/install/create-project-cookieplone.html#prerequisites-for-installation) that runs all the requirements mentioned
-- [uv](https://6.docs.plone.org/install/create-project-cookieplone.html#uv)
-- [nvm](https://6.docs.plone.org/install/create-project-cookieplone.html#nvm)
-- [Node.js 22 and pnpm](https://6.docs.plone.org/install/create-project.html#node-js)
-- [Make](https://6.docs.plone.org/install/create-project-cookieplone.html#make)
-- [Git](https://6.docs.plone.org/install/create-project-cookieplone.html#git)
-- [Docker](https://docs.docker.com/get-started/get-docker/) (optional)
+### Prerequisites
 
-### Installation 🔧
+-   An [operating system](https://6.docs.plone.org/install/create-project-cookieplone.html#prerequisites-for-installation) that runs all the requirements mentioned.
+-   [uv](https://docs.astral.sh/uv/)
+-   [Node.js 22 and pnpm](https://6.docs.plone.org/install/create-project.html#node-js)
+-   [Make](https://6.docs.plone.org/install/create-project-cookieplone.html#make)
+-   [Git](https://6.docs.plone.org/install/create-project-cookieplone.html#git)
+-   [Docker](https://docs.docker.com/get-started/get-docker/) (optional)
 
-1. Clone this repository, then change your working directory.
+### Install the code base
 
-    ```shell
-    git clone git@github.com:collective/tech-event.git
-    cd tech-event
-    ```
+Clone the repository and change into it.
 
-2. Install this code base.
+```shell
+git clone git@github.com:collective/tech-event.git
+cd tech-event
+```
 
-    ```shell
-    make install
-    ```
+Install the backend and the frontend.
 
-### Fire Up the Servers 🔥
+```shell
+make install
+```
 
-1. Create a new Plone site on your first run.
+### Start the servers
 
-    ```shell
-    make backend-create-site
-    ```
+Create a Plone site on your first run.
+The site comes with example content.
 
-2. Start the backend at http://localhost:8080/.
+```shell
+make backend-create-site
+```
 
-    ```shell
-    make backend-start
-    ```
+Start the backend at http://localhost:8080/.
 
-3. In a new shell session, start the frontend at http://localhost:3000/.
+```shell
+make backend-start
+```
 
-    ```shell
-    make frontend-start
-    ```
+In a new terminal, start the frontend at http://localhost:3000/.
 
-Voilà! Your Plone site should be live and kicking! 🎉
+```shell
+make frontend-start
+```
 
-### Example content structure
+To learn more, follow the [first event tutorial](https://collective.github.io/tech-event/tutorials/first-event.html).
 
-This example is useful for a typical Plone conference:
+## Local stack deployment
 
-* first two days of training, with parallel training sessions
-* then the main part with three days of talks, and one keynote per day
-* then a weekend with a sprint (coding and organising together)
-* each conference year gets its own website
-* multiple venues: typically training and sprint are in a different location than the main conference
-
-The next content structure would work for this.
-We will use CT as abbreviation for "content type".
-
-* About: CT Page.  So: create an instance of content type Page, with as title: "About".  Add some text blocks and image blocks, etc, in here.
-  * Venue: CT Page, with a Listing block
-    * Main venue: CT Venue with a Listing block
-      * Main room: CT Room
-    * If you have only one venue, you can replace the "Venue" CT Page with a single CT Venue.
-* Sponsors: CT Sponsors Database, with Listing block (to show the levels) and Packages & Sponsors block
-  * Organizers: CT Sponsorship Level, with Sponsor Level block
-    * Your organization: CT Sponsor
-  * Other levels (Platinum, Gold, ...): CT Sponsorship Level, with Sponsor Level block.  In this block you can optionally configure a Call To Action pointing to a page with a form or info on how to become a sponsor.
-    * If someone becomes a sponsor, you would add a CT Sponsor within the Sponsorship Level.
-* Travel: CT Page, with Text blocks with travel information.
-* Tickets: CT Page, with Text blocks explaining how to get tickets.
-* Schedule: CT Schedule, with a Schedule block configured to show the 3 main days
-  * Keynotes: CT Page, with a Listing block
-    * For each keynote: a CT Keynote
-  * Talks: CT Page, with Search block with as criterion: Type = Talk or Lightning Talk
-    * For each talk add a CT Talk.
-    * For each lightning talk session add a CT Lightning Talk
-  * Speakers: CT Page, with Search block with as criterion: Type = Presenter
-    * For each speaker a CT Presenter
-  * Training: CT Page, with a Schedule block configured to only show the two training days
-    * For each training: a CT training
-  * Open spaces: CT Page, with Search block or Listing block or Schedule block, depending on how many open spaces you have, if any.  You can exclude this from navigation or delete the Page if you don't have any.
-    * For each open space, add a CT Open space
-  * Sprint: CT Page, with a Listing block
-    * For each sprint day: add a CT Sprint
-    * or simply add some text blocks in the CT Page
-  * Breaks: CT Page, optionally with Listing block, excluded from navigation
-    * For each coffee or lunch break, add a CT Break
-  * Slots: CT Page, optionally with Listing block, excluded from navigation
-    * For each non-talk moment, add a CT Slot.
-      This is for general slots like Registration and taking a conference photo.
-  * Full schedule: CT Page, with a Schedule block not filtering on days
-  * Optionally Meetings: CT Page, with a Search block with criterion Type = Meeting.
-    * For each meeting add a CT Meeting.
-    * This can be used for the Plone Foundation Annual General Meeting, but you can also create this as a CT Talk.
-
-
-### Local Stack Deployment 📦
-
-Deploy a local `Docker Compose` environment that includes:
-
-- Docker images for Backend and Frontend 🖼️
-- A stack with a Traefik router and a Postgres database 🗃️
-- Accessible at [http://tech-event.localhost](http://tech-event.localhost) 🌐
-
-Execute the following:
+The Docker Compose stack runs the backend and the frontend behind a Traefik router, with a Postgres database.
+It is accessible at http://tech-event.localhost.
 
 ```shell
 make stack-start
 make stack-create-site
 ```
 
-And... you're all set! Your Plone site is up and running locally! 🚀
+## Project structure
 
-## Project Structure 🏗️
+-   `backend/`: the Python package `collective.techevent`, with the content types, behaviors, vocabularies and REST endpoints.
+-   `frontend/`: the Volto project and the add-on package `frontend/packages/volto-techevent`.
+-   `docs/`: the Sphinx documentation, published on GitHub Pages.
 
-This monorepo consists of the following sections:
+## Development commands
 
-- backend
-  - Python package collective.techevent (Plone add-on)
-  - Provides content types (Talk, Keynote, Training, Presenter, Schedule, Sponsor, etc.), behaviors, and REST endpoints (/@schedule, /@sponsors)
-  - Intended to be used with the Volto addon for the UI
-- frontend
-  - Volto addon @plone-collective/volto-techevent
-  - Provides blocks (Schedule, Sponsors, Packages), views, listings, and integrations
-  - Requires the backend add-on to be installed in Plone
-- docs
-  - Project documentation
+Run `make help` to list all the commands.
 
-## Code Quality Assurance 🧐
+| Command | Description |
+| --- | --- |
+| `make install` | Install the backend and the frontend. |
+| `make backend-create-site` | Create a Plone site, with the example content. |
+| `make backend-start` | Start the backend at http://localhost:8080/. |
+| `make frontend-start` | Start the frontend at http://localhost:3000/. |
+| `make format` | Format the backend and the frontend. |
+| `make lint` | Lint the backend and the frontend. |
+| `make check` | Format and lint the code base. |
+| `make test` | Run the backend and the frontend tests. |
+| `make docs-install` | Install the documentation toolchain. |
+| `make docs-build` | Build the documentation, with warnings as errors. |
+| `make docs-livehtml` | Build the documentation, with live reload in the browser. |
+| `make docs-clean` | Remove the documentation build. |
 
-To automatically format your code and ensure it adheres to quality standards, execute:
+### Code quality
 
-```shell
-make check
-```
+The backend uses Ruff, Pyroma, check-python-versions and zpretty.
+The frontend uses ESLint, Prettier and Stylelint.
+Each section can also be formatted and linted from its own folder.
 
-### Format the codebase
+## Documentation
 
-To format the codebase, run:
+The documentation covers the concepts, the tutorial, the how-to guides and the reference.
+It also shows how to plan the content of a conference, and how to use the example content.
 
-```shell
-make format
-```
-
-| Section | Tool | Description | Configuration |
-| --- | --- | --- | --- |
-| backend | Ruff | Python code formatting, imports sorting | [`backend/pyproject.toml`](./backend/pyproject.toml) |
-| backend | zpretty | XML and ZCML formatting | -- |
-| frontend | ESLint | Fixes most common frontend issues | [`frontend/.eslintrc.js`](./frontend/.eslintrc.js) |
-| frontend | Prettier | Format JS and TypeScript code | [`frontend/.prettierrc`](./frontend/.prettierrc) |
-| frontend | Stylelint | Format styles (CSS, Less, Sass) | [`frontend/.stylelintrc`](./frontend/.stylelintrc) |
-
-Formatters can also be run within the backend or frontend folders.
-
-### Linting the codebase
-
-To lint the codebase, run:
+Build it locally with the following command.
 
 ```shell
-make lint
+make docs-build
 ```
 
-| Section | Tool | Description | Configuration |
-| --- | --- | --- | --- |
-| backend | Ruff | Checks code formatting, imports sorting | [`backend/pyproject.toml`](./backend/pyproject.toml) |
-| backend | Pyroma | Checks Python package metadata | -- |
-| backend | check-python-versions | Checks Python version information | -- |
-| backend | zpretty | Checks XML and ZCML formatting | -- |
-| frontend | ESLint | Checks JS / TypeScript lint | [`frontend/.eslintrc.js`](./frontend/.eslintrc.js) |
-| frontend | Prettier | Checks JS / TypeScript formatting | [`frontend/.prettierrc`](./frontend/.prettierrc) |
-| frontend | Stylelint | Checks styles (CSS, Less, Sass) formatting | [`frontend/.stylelintrc`](./frontend/.stylelintrc) |
+## Credits and acknowledgements
 
-Linters can be run individually within the backend or frontend folders.
-
-## Internationalization 🌐
-
-Generate translation files for Plone and Volto with ease:
-
-```shell
-make i18n
-```
-
-## Credits and Acknowledgements 🙏
-
-Generated using [Cookieplone (0.9.7)](https://github.com/plone/cookieplone) and [cookieplone-templates (27a6b7b)](https://github.com/plone/cookieplone-templates/commit/27a6b7bd7b0ba9a77b04109d73c4ee975ab95cc3) on 2025-05-13 21:27:39.934395. A special thanks to all contributors and supporters!
+Generated using [Cookieplone](https://github.com/plone/cookieplone) and [cookieplone-templates](https://github.com/plone/cookieplone-templates/).
+A special thanks to all contributors and supporters!
