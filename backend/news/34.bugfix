@@ -1,1 +1,0 @@
-Fix the Keynote duration field, which was declared on the class instead of the IKeynote schema. A Keynote without a duration no longer breaks catalog indexing on sites with a duration index, and its duration now shows in forms and the REST API. @ericof

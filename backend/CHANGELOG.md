@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b3 (2026-10-14)
+
+
+### Bug fixes:
+
+- Fix the Keynote duration field, which was declared on the class instead of the IKeynote schema. A Keynote without a duration no longer breaks catalog indexing on sites with a duration index, and its duration now shows in forms and the REST API. @ericof [#34](https://github.com/collective/tech-event/issues/34)
+
 ## 1.0.0b2 (2026-10-13)
 
 
