@@ -6,9 +6,20 @@ import Image from '@plone/volto/components/theme/Image/Image';
 import { useEventSettings } from '@plone-collective/volto-techevent/hooks/useEventSettings';
 import { useSponsors } from '@plone-collective/volto-techevent/hooks/useSponsors';
 import type { BlockViewProps } from '@plone/types';
+import type {
+  SponsorBenefit,
+  SponsorLevel,
+} from '@plone-collective/volto-techevent/types/sponsors';
+import type { LevelComparisonBlockData } from '@plone-collective/volto-techevent/components/Sponsors/types';
 import messages from '@plone-collective/volto-techevent/messages';
 
-const BenefitHeaderRow = ({ title, displayLevels }) => {
+const BenefitHeaderRow = ({
+  title,
+  displayLevels,
+}: {
+  title: string;
+  displayLevels: SponsorLevel[];
+}) => {
   return (
     <tr className={'benefitHead'}>
       <th className={'benefitCol cell'}>
@@ -32,7 +43,13 @@ const BenefitHeaderRow = ({ title, displayLevels }) => {
   );
 };
 
-const BenefitRow = ({ benefit, displayLevels }) => {
+const BenefitRow = ({
+  benefit,
+  displayLevels,
+}: {
+  benefit: SponsorBenefit;
+  displayLevels: SponsorLevel[];
+}) => {
   return (
     <tr className={'benefitRow'}>
       <td className={'benefitTitle cell'}>
@@ -41,7 +58,7 @@ const BenefitRow = ({ benefit, displayLevels }) => {
         <span className={'description'}>{benefit.description}</span>
       </td>
       {displayLevels.map((level, idx) => {
-        const value = benefit.levels[level.id];
+        const value = benefit.levels?.[level.id];
         const displayValue = value === undefined ? '' : value || '✅';
         return (
           <td key={idx} className={'benefitValue cell level'}>
@@ -53,14 +70,8 @@ const BenefitRow = ({ benefit, displayLevels }) => {
   );
 };
 
-const View: React.FC<BlockViewProps> = ({
-  data,
-  className,
-  style,
-  content,
-  properties,
-}) => {
-  const { title, tableTitle } = data;
+const View: React.FC<BlockViewProps> = ({ data, className, style }) => {
+  const { title, tableTitle } = data as LevelComparisonBlockData;
   const intl = useIntl();
 
   // Use hook only if eventRoot exists
@@ -68,7 +79,7 @@ const View: React.FC<BlockViewProps> = ({
   const { benefits, levels } = useSponsors(eventRoot ?? '');
   const allBenefits =
     benefits &&
-    benefits.reduce((obj, benefit) => {
+    benefits.reduce<Record<string, SponsorBenefit>>((obj, benefit) => {
       obj[benefit.id] = benefit;
       return obj;
     }, {});

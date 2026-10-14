@@ -11,5 +11,5 @@ export function useVocabularyColors(
     },
     {} as Record<string, string>,
   );
-  return colors;
+  return colors ?? {};
 }
