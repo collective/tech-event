@@ -1,133 +1,75 @@
 # Tech Event Support for Plone (collective.techevent)
 
-Content types, behaviors, and REST endpoints to build tech event sites (conference/symposium/seminar) in Plone.
+`collective.techevent` is a Plone add-on for building tech event sites: conferences, symposiums and seminars.
+It provides the content types, the behaviors, the vocabularies and the REST endpoints that a tech event needs.
 
-Important: This backend package requires a Volto frontend with the addon `@plone-collective/volto-techevent` installed. The frontend consumes the endpoints and provides the UI for schedules, sessions, sponsors, and more.
+The add-on is designed to be used with the Volto add-on [@plone-collective/volto-techevent](https://www.npmjs.com/package/@plone-collective/volto-techevent), which provides the user interface.
+
+Read the documentation at [collective.github.io/tech-event](https://collective.github.io/tech-event/).
 
 ## Features
 
-### Content types
+-   **Event**: one edition of the event, with its dates, tracks, levels, audiences and durations.
+    The site itself is the event, or each edition is a Tech Event item.
+-   **Schedule**: a container for the slots of the program.
+    Slots are talks, keynotes, trainings, lightning talks, open spaces, meetings, breaks and general slots.
+-   **Presenters**: the people who take part in the event, with their biography, email address and labels.
+-   **Locations**: venues, and rooms inside each venue.
+-   **Sponsors**: a sponsors database with the benefits, the sponsorship levels and the sponsors.
+-   **REST endpoints** on the event root:
+    -   `@schedule` returns the published slots, grouped by day and by room.
+    -   `@sponsors` returns the published sponsors, grouped by sponsorship level, with the benefits of each level.
 
-#### Event root
-- Tech Event: Represents an event edition. Available if the site supports multiple editions, otherwise the Plone Site acts as the event root.
+## Supported versions
 
-#### Location
-- **Venue**: Location where the event takes place.
-- **Room**: A room/auditorium inside a venue.
-
-#### Event schedule
-- **Schedule**: Folderish content to organize the event schedule.
-- **Keynote**: Main presentation of the event.
-- **Talk**: A session presentation.
-- **Training**: A training/tutorial.
-- **Open Space**: Open space session.
-- **Lightning Talks**: Lightning talks session (supports listing each short presentation).
-- **Meeting**: Meetings (e.g., Plone Foundation Annual Membership Meeting).
-- **Slot**: Generic slot in the schedule (Registration, Group Photo, Party, etc.).
-- **Break**: Coffee break or lunch time slot.
-- **Presenter**: Presenter profile.
-
-#### Sponsor support
-- **SponsorsDB**: Folderish container for sponsoring information.
-- **SponsorLevel**: Sponsoring package/level available for the event.
-- **Sponsor**: Sponsor/supporter entry.
-
-### Behaviors
-- `collective.techevent.event_settings`: Event configuration; marks content as IEventRoot.
-- `collective.techevent.schedule`: Scheduling support for content items.
-- `collective.techevent.session`: Basic session information.
-- `collective.techevent.presenter_roles`: Presenter roles on a content item.
-
-### REST endpoints
-- `/@schedule` (on event root): Returns the complete event schedule.
-- `/@sponsors` (on event root): Lists all sponsors, grouped by package level.
-
-## See it in action
-
-- [Python Cerrado 2025](https://2025.pythoncerrado.org)
-- [Plone Conference 2025](https://2025.ploneconf.org)
-- [Python Brasil 2025](https://2025.pythonbrasil.org.br)
+Plone 6.1 and 6.2, on Python 3.11 to 3.14 (Python 3.14 requires Plone 6.2).
 
 ## Installation
 
-Considering you have a Plone project created with latest `cookieplone`, add `collective.techevent` as a dependency on the `backend/pyproject.toml`.
-
-```toml
-[project]
-dependencies = [
-  # ...existing dependencies...
-  "collective.techevent",
-]
-```
-
-Then run the installation with:
+Add the package to your project's dependencies.
 
 ```shell
-make install
+uv add collective.techevent
 ```
 
-Load the package ZCML (if not using auto-include) in dependencies.zcml:
+The add-on loads through the `plone.autoinclude.plugin` entry point.
+If your project loads its ZCML explicitly, add the include to your configuration.
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configure xmlns="http://namespaces.zope.org/zope">
-  <!-- ...existing includes... -->
-  <include package="collective.techevent" />
-</configure>
+<include package="collective.techevent" />
 ```
 
-Ensure the GenericSetup profile is installed (e.g., from your policy package metadata.xml):
+Restart the backend after you install the package.
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<metadata>
-  <version>1000</version>
-  <dependencies>
-    <!-- ...existing dependencies... -->
-    <dependency>profile-collective.techevent:default</dependency>
-  </dependencies>
-</metadata>
+Then install the profile **Tech Event for Plone: Install** in the Add-ons control panel of the Plone site.
+The profile **Tech Event for Plone: Demo content** adds example content, which is useful to explore the add-on.
+
+## Frontend
+
+Install the Volto add-on in your frontend project, with pnpm.
+
+```shell
+pnpm add @plone-collective/volto-techevent
 ```
 
-Create your Plone site as usual and install the “Tech Event” add-on in the Add-ons control panel if not auto-installed.
+Your project also brings its own Volto theme.
+The add-on is tested with `@kitconcept/volto-light-theme` version 8.0.0.
 
-### Frontend requirement
+## Documentation
 
-This package is intended to be used with a Volto frontend:
-- Install @plone-collective/volto-techevent in your Volto app.
-- The Volto addon integrates with the endpoints and content types provided here.
+-   [Concepts](https://collective.github.io/tech-event/concepts/): how an event site is built.
+-   [Tutorial](https://collective.github.io/tech-event/tutorials/first-event.html): create your first event.
+-   [How-to guides](https://collective.github.io/tech-event/how-to-guides/): install, configure and run an event.
+-   [Reference](https://collective.github.io/tech-event/reference/): content types, behaviors, endpoints and settings.
 
 ## Contribute
 
-- [Issue tracker](https://github.com/collective/tech-event/issues)
-- [Source code](https://github.com/collective/tech-event/)
+-   [Issue tracker](https://github.com/collective/tech-event/issues)
+-   [Source code](https://github.com/collective/tech-event)
 
-### Prerequisites ✅
-
--   An [operating system](https://6.docs.plone.org/install/create-project-cookieplone.html#prerequisites-for-installation) that runs all the requirements mentioned.
--   [uv](https://6.docs.plone.org/install/create-project-cookieplone.html#uv)
--   [Make](https://6.docs.plone.org/install/create-project-cookieplone.html#make)
--   [Git](https://6.docs.plone.org/install/create-project-cookieplone.html#git)
--   [Docker](https://docs.docker.com/get-started/get-docker/) (optional)
-
-### Installation 🔧
-
-1.  Clone this repository.
-
-    ```shell
-    git clone git@github.com:collective/tech-event.git
-    ```
-
-2.  Install this code base.
-
-    ```shell
-    make install
-    ```
+To set up a development environment, clone the repository and run `make install` in the root of the repository.
+Run `make test` in the `backend` folder to run the tests.
 
 ## License
 
-GPLv2
-
-## Credits and acknowledgements 🙏
-
-Generated from the [`cookieplone-templates`  template](https://github.com/plone/cookieplone-templates/tree/main/) on 2025-05-14 00:29:28.. A special thanks to all contributors and supporters!
+GPL-2.0-only.
