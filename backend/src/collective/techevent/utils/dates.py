@@ -4,7 +4,7 @@ from datetime import tzinfo
 from plone import api
 from plone.dexterity.content import DexterityContent
 from zope.interface import provider
-from zope.schema.interfaces import IContextAwareDefaultFactory
+from zope.schema.interfaces import IContextAwareDefaultFactory  # type: ignore[attr-defined]  # plone-stubs does not export IContextAwareDefaultFactory
 
 import pytz
 
@@ -45,13 +45,13 @@ def _default_start(context: DexterityContent | None = None) -> datetime:
     return localized_now(context)
 
 
-@provider(IContextAwareDefaultFactory)
+@provider(IContextAwareDefaultFactory)  # type: ignore[type-var]  # zope.interface.provider accepts functions; plone-stubs types it for classes only
 def default_start(context: DexterityContent | None = None) -> datetime:
     """Provide default start for the form."""
     return _default_start(context)
 
 
-@provider(IContextAwareDefaultFactory)
+@provider(IContextAwareDefaultFactory)  # type: ignore[type-var]  # zope.interface.provider accepts functions; plone-stubs types it for classes only
 def default_end(context: DexterityContent | None = None) -> datetime:
     """Provide default end for the form."""
     return _default_start(context) + timedelta(hours=1)

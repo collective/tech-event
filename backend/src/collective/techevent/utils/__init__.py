@@ -24,17 +24,36 @@ DEFAULT_ROLES = [
 
 
 def _get_fti(portal_type: str) -> DexterityFTI:
-    return queryUtility(IDexterityFTI, name=portal_type)
+    """Return the Dexterity FTI registered for a portal type.
+
+    :param portal_type: Name of the portal type.
+    :returns: The Dexterity FTI of the portal type.
+    """
+    # queryUtility returns None when the FTI does not exist, as before.
+    return queryUtility(IDexterityFTI, name=portal_type)  # type: ignore[return-value, arg-type]  # plone-stubs types queryUtility with DexterityFTI as the interface
 
 
-def modify_permission(context: DexterityContent, permission_id: str, roles: list[str]):
+def modify_permission(
+    context: DexterityContent, permission_id: str, roles: list[str]
+) -> None:
+    """Set the roles of a permission on an object and log the change.
+
+    :param context: Object whose permission is changed.
+    :param permission_id: Permission title.
+    :param roles: Roles granted the permission, acquisition disabled.
+    """
     path = context.absolute_url()
     context.manage_permission(permission_id, roles=roles, acquire=False)
-    roles = ", ".join(roles)
-    logger.info(f"{path}: Set {permission_id} to roles {roles}")
+    roles_label = ", ".join(roles)
+    logger.info(f"{path}: Set {permission_id} to roles {roles_label}")
 
 
-def _modify_tech_event_ct(portal_type: str, enable: bool):
+def _modify_tech_event_ct(portal_type: str, enable: bool) -> None:
+    """Enable or disable the global_allow flag of the TechEvent type.
+
+    :param portal_type: Name of the portal type.
+    :param enable: True to allow the type globally, False to disallow it.
+    """
     fti = _get_fti(portal_type)
     if enable and not fti.global_allow:
         fti.global_allow = True
@@ -44,7 +63,12 @@ def _modify_tech_event_ct(portal_type: str, enable: bool):
         logger.info(f"Disabled {portal_type}")
 
 
-def _modify_conference_behavior(portal_type: str, enable: bool):
+def _modify_conference_behavior(portal_type: str, enable: bool) -> None:
+    """Add or remove the conference behavior from a portal type.
+
+    :param portal_type: Name of the portal type.
+    :param enable: True to add the behavior, False to remove it.
+    """
     behavior = "collective.techevent.event_settings"
     fti = _get_fti(portal_type)
     behaviors = list(fti.behaviors)
@@ -57,18 +81,27 @@ def _modify_conference_behavior(portal_type: str, enable: bool):
     fti.behaviors = tuple(behaviors)
 
 
-def _modify_permissions(context: DexterityContent, enable: bool):
+def _modify_permissions(context: DexterityContent, enable: bool) -> None:
+    """Grant or remove the TechEvent add permissions on a context.
+
+    :param context: Object whose permissions are changed.
+    :param enable: True to grant the default roles, False to remove them.
+    """
     roles = DEFAULT_ROLES if enable else []
     for permission_id in PERMISSIONS:
         modify_permission(context, permission_id, roles)
     # Handle SponsorDB
     permission_id = "collective.techevent: Add SponsorsDB"
     brains = api.content.find(context, portal_type="SponsorsDB")
-    if len(brains) == 0:
+    if not brains:
         modify_permission(context, permission_id, roles)
 
 
-def setup_tech_event(portal: DexterityContent):
+def setup_tech_event(portal: DexterityContent) -> None:
+    """Configure the TechEvent content type and behavior for the site.
+
+    :param portal: The Plone site (replaced by the portal from the API).
+    """
     multiple_events = api.portal.get_registry_record(
         "collective.techevent.settings.support_multiple_events"
     )
@@ -90,8 +123,11 @@ def setup_tech_event(portal: DexterityContent):
         _modify_permissions(portal, True)
 
 
-def setup_tech_event_users(portal: DexterityContent):
-    """Initialize the Attendees content type and container."""
+def setup_tech_event_users(portal: DexterityContent) -> None:
+    """Initialize the Attendees content type and container.
+
+    :param portal: The Plone site where the Attendees container is created.
+    """
     # Create the Attendees container if it doesn't exist
     if "attendees" not in portal:
         # Get the FTI for Attendees

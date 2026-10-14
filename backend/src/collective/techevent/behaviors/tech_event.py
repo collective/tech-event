@@ -13,6 +13,7 @@ from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.content import DexterityContent
 from plone.supermodel import model
 from plone.supermodel.model import Schema
+from typing import Any
 from zope import schema
 from zope.interface import implementer
 from zope.interface import invariant
@@ -137,7 +138,7 @@ class IActivityDuration(Schema):
 class ISettings(model.Schema):
     """Tech Event configuration."""
 
-    model.fieldset(
+    model.fieldset(  # type: ignore[attr-defined]  # plone-stubs does not export supermodel.model.fieldset
         "event-settings",
         label=_("Event Settings"),
         fields=[
@@ -175,7 +176,12 @@ class ISettings(model.Schema):
     )
 
     @invariant
-    def validate_start_end(data):
+    def validate_start_end(data: Any) -> None:
+        """Check that the start time is not after the end time.
+
+        :param data: The schema data being validated.
+        :raises StartBeforeEnd: When the start is after the end.
+        """
         start: datetime | None = data.start
         end: datetime | None = data.end
         if (start and end) and start > end:
@@ -310,7 +316,7 @@ class ISettings(model.Schema):
 class Settings:
     """Tech Event settings."""
 
-    def __init__(self, context: DexterityContent):
+    def __init__(self, context: DexterityContent) -> None:
         self.context = context
 
     @property
@@ -319,7 +325,7 @@ class Settings:
         return self.context.start
 
     @start.setter
-    def start(self, value: datetime):
+    def start(self, value: datetime) -> None:
         """Setter, called by the form, set on context."""
         self.context.start = value
 
@@ -329,7 +335,7 @@ class Settings:
         return self.context.end
 
     @end.setter
-    def end(self, value: datetime):
+    def end(self, value: datetime) -> None:
         """Setter, called by the form, set on context."""
         self.context.end = value
 
@@ -339,7 +345,7 @@ class Settings:
         return self.context.tracks
 
     @tracks.setter
-    def tracks(self, value: list[ITrack]):
+    def tracks(self, value: list[ITrack]) -> None:
         """Setter, called by the form, set on context."""
         self.context.tracks = value
 
@@ -349,7 +355,7 @@ class Settings:
         return self.context.levels
 
     @levels.setter
-    def levels(self, value: list[ILevel]):
+    def levels(self, value: list[ILevel]) -> None:
         """Setter, called by the form, set on context."""
         self.context.levels = value
 
@@ -359,7 +365,7 @@ class Settings:
         return self.context.audience
 
     @audience.setter
-    def audience(self, value: list[IAudienceGroup]):
+    def audience(self, value: list[IAudienceGroup]) -> None:
         """Setter, called by the form, set on context."""
         self.context.audience = value
 
@@ -369,7 +375,7 @@ class Settings:
         return self.context.durations_keynote
 
     @durations_keynote.setter
-    def durations_keynote(self, value: list[IActivityDuration]):
+    def durations_keynote(self, value: list[IActivityDuration]) -> None:
         """Setter, called by the form, set on context."""
         self.context.durations_keynote = value
 
@@ -379,7 +385,7 @@ class Settings:
         return self.context.durations_talk
 
     @durations_talk.setter
-    def durations_talk(self, value: list[IAudienceGroup]):
+    def durations_talk(self, value: list[IActivityDuration]) -> None:
         """Setter, called by the form, set on context."""
         self.context.durations_talk = value
 
@@ -389,7 +395,7 @@ class Settings:
         return self.context.durations_training
 
     @durations_training.setter
-    def durations_training(self, value: list[IAudienceGroup]):
+    def durations_training(self, value: list[IActivityDuration]) -> None:
         """Setter, called by the form, set on context."""
         self.context.durations_training = value
 
@@ -398,13 +404,13 @@ class Settings:
         """Getter, read from context and return back"""
         start = self.context.start
         end = self.context.end
-        days = []
+        days: list[str] = []
         if start and end and (start <= end):
             return get_iso_dates_between(start, end)
         return days
 
     @days.setter
-    def days(self, value: list):
+    def days(self, value: list[str]) -> None:
         """Setter, called by the form, set on context."""
         pass
 
@@ -414,6 +420,6 @@ class Settings:
         return getattr(self.context, "schedule_review_states", None) or []
 
     @schedule_review_states.setter
-    def schedule_review_states(self, value: list[str]):
+    def schedule_review_states(self, value: list[str]) -> None:
         """Setter, called by the form, set workflow states on context."""
         self.context.schedule_review_states = list(value or [])

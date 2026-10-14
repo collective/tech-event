@@ -1,20 +1,30 @@
+"""Deserializers for datagrid fields."""
+
 from collective.techevent.interfaces import IBrowserLayer
 from collective.z3cform.datagridfield.interfaces import IRow
 from plone.dexterity.interfaces import IDexterityContent
 from plone.restapi.deserializer.dxfields import DefaultFieldDeserializer
 from plone.restapi.interfaces import IFieldDeserializer
+from typing import Any
 from zope.component import adapter
 from zope.component import queryMultiAdapter
 from zope.interface import implementer
-from zope.schema import getFields
+from zope.schema import getFields  # type: ignore[attr-defined]  # partial zope-stubs omit getFields
 from zope.schema.interfaces import IDatetime
 
 
 @implementer(IFieldDeserializer)
 @adapter(IRow, IDexterityContent, IBrowserLayer)
 class DatagridRowDeserializer(DefaultFieldDeserializer):
-    def __call__(self, row: dict) -> dict:
-        row_data = {}
+    """Deserialize the rows of a datagrid field."""
+
+    def __call__(self, row: dict[str, Any]) -> dict[str, Any]:
+        """Deserialize a single row, field by field.
+
+        :param row: The raw row value from the request.
+        :returns: The deserialized row.
+        """
+        row_data: dict[str, Any] = {}
         for name, field in list(getFields(self.field.schema).items()):
             if field.readonly:
                 continue

@@ -1,5 +1,6 @@
 from plone.dexterity.content import DexterityContent
 from zope.component import getUtility
+from zope.schema.interfaces import IVocabulary
 from zope.schema.interfaces import IVocabularyFactory
 
 
@@ -14,11 +15,23 @@ ATTRIBUTE_VOCABULARY = {
 }
 
 
-def get_vocabulary(name: str, context: DexterityContent):
+def get_vocabulary(name: str, context: DexterityContent) -> IVocabulary:
+    """Return the vocabulary registered as the utility ``name``.
+
+    :param name: Name of the IVocabularyFactory utility.
+    :param context: Context used to build the vocabulary.
+    :returns: The vocabulary instance.
+    """
     factory = getUtility(IVocabularyFactory, name)
     return factory(context)
 
 
-def get_vocabulary_for_attr(attr: str, context: DexterityContent):
+def get_vocabulary_for_attr(attr: str, context: DexterityContent) -> IVocabulary | None:
+    """Return the vocabulary configured for an attribute, if any.
+
+    :param attr: Attribute name, a key of ``ATTRIBUTE_VOCABULARY``.
+    :param context: Context used to build the vocabulary.
+    :returns: The vocabulary, or None when the attribute has no vocabulary.
+    """
     name = ATTRIBUTE_VOCABULARY.get(attr)
     return get_vocabulary(name, context) if name else None

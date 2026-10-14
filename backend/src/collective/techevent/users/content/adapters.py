@@ -1,6 +1,8 @@
 from borg.localrole.interfaces import ILocalRoleProvider
 from collective.techevent import logger
+from collective.techevent.users.content import BaseUser
 from collective.techevent.users.content import IBaseUser
+from collections.abc import Iterator
 from plone import api
 from plone.app.textfield.value import RichTextValue
 from Products.membrane.interfaces import IMembraneUserProperties
@@ -27,25 +29,43 @@ class MembraneUserProperties:
             "home_page": "remoteUrl",
         }
 
-    def __init__(self, context):
+    def __init__(self, context: BaseUser) -> None:
+        """Store the adapted user.
+
+        :param context: The user content object.
+        """
         self.user = context
 
     @property
-    def fullname(self):
+    def fullname(self) -> str:
+        """Return the full name of the user.
+
+        :returns: The title of the user.
+        """
         # Note: we only define a getter; a setter would be too tricky
         # due to the multiple fields that are behind this one
         # property.
         return self.user.title
 
     @property
-    def category(self):
+    def category(self) -> str:
+        """Return the portal type of the user.
+
+        :returns: The portal type name.
+        """
         return self.user.portal_type
 
     @property
-    def uuid(self):
+    def uuid(self) -> str:
+        """Return the UUID of the user.
+
+        :returns: The UUID of the user content object.
+        """
         return api.content.get_uuid(self.user)
 
-    def getPropertiesForUser(self, user, request=None):
+    def getPropertiesForUser(
+        self, user: object, request: object = None
+    ) -> MutablePropertySheet:
         """Get properties for this user.
 
         Find the fields of the user schema that make sense as a user
@@ -55,6 +75,10 @@ class MembraneUserProperties:
 
         Also, it looks like we can ignore the user argument and just
         check self.context.
+
+        :param user: The user (unused, see above).
+        :param request: The request (unused).
+        :returns: Property sheet with the user properties.
         """
         properties = {
             "fullname": self.fullname,
@@ -72,7 +96,9 @@ class MembraneUserProperties:
             properties[prop_name] = value
         return MutablePropertySheet(self.user.id, **properties)
 
-    def setPropertiesForUser(self, user, propertysheet):
+    def setPropertiesForUser(
+        self, user: object, propertysheet: MutablePropertySheet
+    ) -> None:
         """
         Set modified properties on the user persistently.
 
@@ -82,6 +108,9 @@ class MembraneUserProperties:
 
         For example, fullname cannot be handled as we don't know how
         to split that into first, middle and last name.
+
+        :param user: The user (unused).
+        :param propertysheet: Property sheet with the new values.
         """
         properties = dict(propertysheet.propertyItems())
         for prop_name, field_name in self.property_map.items():
@@ -94,7 +123,7 @@ class MembraneUserProperties:
             logger.debug(f"Setting field {field_name}: {value}")
             setattr(self.user, field_name, value)
 
-    def deleteUser(self, user_id):
+    def deleteUser(self, user_id: str) -> None:
         """
         Remove properties stored for a user
 
@@ -102,6 +131,8 @@ class MembraneUserProperties:
         indeed seems unneeded, as the properties are stored on the
         content item, so they get removed anyway without needing
         special handling.
+
+        :param user_id: ID of the user being removed (unused).
         """
         pass
 
@@ -109,21 +140,38 @@ class MembraneUserProperties:
 @implementer(ILocalRoleProvider)
 @adapter(IBaseUser)
 class MembraneRoleProvider:
-    def __init__(self, context):
+    """Local role provider giving the user the Reader and Owner roles on itself."""
+
+    def __init__(self, context: BaseUser) -> None:
+        """Store the adapted user and compute its roles.
+
+        :param context: The user content object.
+        """
         self.user = context
         self.roles = self._roles()
 
-    def _roles(self):
+    def _roles(self) -> tuple[str, str]:
+        """Return the roles granted to the user on itself.
+
+        :returns: Tuple with the role names.
+        """
         return ("Reader", "Owner")
 
-    def getRoles(self, user_id):
+    def getRoles(self, user_id: str) -> tuple[str, ...]:
+        """Return the roles of the user for the given user ID.
+
+        :param user_id: ID of the user.
+        :returns: The roles, or an empty tuple when the ID does not match.
+        """
         user = self.user
         if user.getUserId() != user_id:
             return ()
         return self.roles
 
-    def getAllRoles(self):
+    def getAllRoles(self) -> Iterator[tuple[str, tuple[str, ...]]]:
         """Here we should apparently enumerate all users who should
         get an extra role.
+
+        :returns: Iterator of (user ID, roles) tuples.
         """
         yield self.user.getUserId(), self.roles

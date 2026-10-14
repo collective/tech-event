@@ -1,3 +1,5 @@
+"""Upgrade steps to profile version 1007: reindex schedule-related catalog fields."""
+
 from collective.techevent import logger
 from plone import api
 from Products.GenericSetup.tool import SetupTool
@@ -5,8 +7,11 @@ from Products.GenericSetup.tool import SetupTool
 import pytz
 
 
-def reindex_schedule_objects(context: SetupTool):
-    """Reindex schedule-related fields for existing schedule objects."""
+def reindex_schedule_objects(context: SetupTool) -> None:
+    """Reindex schedule-related fields for existing schedule objects.
+
+    :param context: The ``portal_setup`` tool.
+    """
     idxs = [
         "slot_room",
         "session_level",
@@ -23,8 +28,11 @@ def reindex_schedule_objects(context: SetupTool):
         logger.info(f"Reindexed {', '.join(idxs)} {obj.absolute_url()}")
 
 
-def reindex_presenter_objects(context: SetupTool):
-    """Reindex presenter categories for existing Presenter objects."""
+def reindex_presenter_objects(context: SetupTool) -> None:
+    """Reindex presenter categories for existing Presenter objects.
+
+    :param context: The ``portal_setup`` tool.
+    """
     idxs = [
         "presenter_categories",
     ]
@@ -35,8 +43,11 @@ def reindex_presenter_objects(context: SetupTool):
         logger.info(f"Reindexed {', '.join(idxs)} {obj.absolute_url()}")
 
 
-def reindex_start_end_dates(context: SetupTool):
-    """Make start and end attributes datetime timezone aware for existing objects."""
+def reindex_start_end_dates(context: SetupTool) -> None:
+    """Make start and end attributes datetime timezone aware for existing objects.
+
+    :param context: The ``portal_setup`` tool.
+    """
     from collective.techevent.behaviors.schedule import IScheduleSlot
     from collective.techevent.behaviors.tech_event import ISettings
 

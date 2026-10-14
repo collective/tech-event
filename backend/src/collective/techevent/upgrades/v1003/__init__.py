@@ -1,10 +1,16 @@
+"""Upgrade step to profile version 1003."""
+
 from collective.techevent import logger
 from collective.techevent.utils.permissions import modify_schedule_permissions
 from plone import api
 from Products.GenericSetup.tool import SetupTool
 
 
-def update_schedule_permissions(context: SetupTool):
+def update_schedule_permissions(context: SetupTool) -> None:
+    """Reapply the schedule permissions to every existing Schedule.
+
+    :param context: The ``portal_setup`` tool.
+    """
     brains = api.content.find(
         portal_type=["Schedule"],
     )
