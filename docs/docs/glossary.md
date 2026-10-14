@@ -1,18 +1,11 @@
 ---
 myst:
   html_meta:
-    "description": "Terms and definitions used throughout the Plone Sphinx Theme documentation."
-    "property=og:description": "Terms and definitions used throughout the Plone Sphinx Theme documentation."
+    "description": "Terms and definitions used in the documentation of Tech Event Support for Plone."
+    "property=og:description": "Terms and definitions used in the documentation of Tech Event Support for Plone."
     "property=og:title": "Glossary"
-    "keywords": "Plone, documentation, glossary, term, definition"
+    "keywords": "Plone, tech event, glossary, term, definition"
 ---
-
-This glossary provides example terms and definitions relevant to **Tech Event Support for Plone**.
-Support for implementing tech conference in a Plone site.
-
-```{note}
-This is an example glossary demonstrating MyST Markdown’s `{glossary}` directive. You can adapt it for your project’s appendix by editing or replacing these entries with your own terms and definitions.
-```
 
 (glossary-label)=
 
@@ -24,7 +17,6 @@ This is an example glossary demonstrating MyST Markdown’s `{glossary}` directi
 Plone
     [Plone](https://plone.org/) is an open-source content management system that is used to create, edit, and manage digital content, like websites, intranets and custom solutions.
     It comes with over 20 years of growth, optimisations, and refinements.
-    The result is a system trusted by governments, universities, businesses, and other organisations all over the world.
 
 add-on
     An add-on in Plone extends its functionality.
@@ -34,24 +26,57 @@ add-on
 
     In Plone core, an add-on is a Python package.
 
-    -   [Plone core add-ons](https://github.com/collective/awesome-plone#readme)
-    -   [Volto add-ons](https://github.com/collective/awesome-volto#readme)
-    -   [Add-ons tagged with the trove classifier `Framework :: Plone` on PyPI](https://pypi.org/search/?c=Framework+%3A%3A+Plone)
+Tech event
+    One edition of a conference, symposium or seminar, with its program, its venues and its sponsors.
+
+Event root
+    The item that holds the settings of an event.
+    It is the Plone site in single event mode, and a Tech Event item in multiple events mode.
+
+Schedule
+    The container for the slots of an event.
+    The schedule is published through the `@schedule` endpoint.
+
+Slot
+    Anything with a start time, an end time and an optional room on the schedule.
+
+Session
+    A slot that is part of the program, such as a talk, a keynote or a training.
+
+Presenter
+    A person who takes part in an event.
+
+Venue
+    A place where an event happens.
+    A venue holds rooms.
+
+Room
+    A room of a venue.
+    Each room is a column of the schedule.
+
+Track
+    A theme of the program, with its own color.
+
+SponsorsDB
+    The container of the sponsorship levels, the sponsors and the benefits of an event.
+
+Sponsorship level
+    A group of sponsors that pay the same investment and receive the same benefits.
+
+Sponsor
+    A company or a person that supports an event.
 
 Plone Sphinx Theme
 plone-sphinx-theme
     [Plone Sphinx Theme](https://plone-sphinx-theme.readthedocs.io/) is a Sphinx theme for [Plone 6 Documentation](https://6.docs.plone.org/), [Plone Conference Training](https://training.plone.org/), and documentation of various Plone packages.
-    This scaffold uses Plone Sphinx Theme.
+    This documentation uses Plone Sphinx Theme.
 
 Markedly Structured Text
 MyST
     [Markedly Structured Text (MyST)](https://myst-parser.readthedocs.io/en/latest/) is a rich and extensible flavor of Markdown, for authoring Plone Documentation.
-    The sample documentation in this scaffold is written in MyST.
+    The pages of this documentation are written in MyST.
 
 Sphinx
     [Sphinx](https://www.sphinx-doc.org/en/master/) is a tool that makes it easy to create intelligent and beautiful documentation.
-    It was originally created for Python documentation, and it has excellent facilities for the documentation of software projects in a range of languages.
     It can generate multiple output formats, including HTML and PDF, from a single source.
-    This scaffold uses Sphinx to generate documentation in HTML format.
-
 ```
