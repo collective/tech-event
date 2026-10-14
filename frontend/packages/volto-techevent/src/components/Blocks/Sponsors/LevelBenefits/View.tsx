@@ -4,8 +4,19 @@ import { Container } from '@plone/components';
 import { useEventSettings } from '@plone-collective/volto-techevent/hooks/useEventSettings';
 import { useSponsors } from '@plone-collective/volto-techevent/hooks/useSponsors';
 import type { BlockViewProps } from '@plone/types';
+import type { SponsorBenefit } from '@plone-collective/volto-techevent/types/sponsors';
+import type { LevelBenefitsBlockData } from '@plone-collective/volto-techevent/components/Sponsors/types';
 
-const BenefitItem = ({ benefit, value }) => {
+/** A benefit as the page stores it: a reference to a benefit and its value. */
+type LocalBenefit = { code: { token: string }; value?: string };
+
+const BenefitItem = ({
+  benefit,
+  value,
+}: {
+  benefit: SponsorBenefit;
+  value?: string;
+}) => {
   const displayValue = value === undefined ? '' : value || '✅';
   return (
     <>
@@ -22,20 +33,23 @@ const View: React.FC<BlockViewProps> = ({
   content,
   properties,
 }) => {
-  const { title } = data;
-  const localBenefits = content.benefits || properties.benefits || [];
+  const { title } = data as LevelBenefitsBlockData;
+  const localBenefits: LocalBenefit[] =
+    (content as { benefits?: LocalBenefit[] }).benefits ||
+    (properties as { benefits?: LocalBenefit[] }).benefits ||
+    [];
   // Use hook only if eventRoot exists
   const eventRoot = useEventSettings()?.eventRoot;
   const { benefits } = useSponsors(eventRoot ?? '');
   const allBenefits =
     benefits &&
-    benefits.reduce((obj, benefit) => {
+    benefits.reduce<Record<string, SponsorBenefit>>((obj, benefit) => {
       obj[benefit.id] = benefit;
       return obj;
     }, {});
   const localBenefitsMap =
     localBenefits &&
-    localBenefits.reduce((obj, benefit) => {
+    localBenefits.reduce<Record<string, LocalBenefit>>((obj, benefit) => {
       obj[benefit.code.token] = benefit;
       return obj;
     }, {});

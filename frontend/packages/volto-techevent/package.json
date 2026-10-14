@@ -19,7 +19,18 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "src",
+    "!src/**/*.test.*",
+    "!src/**/*.stories.*",
+    "!src/testing",
+    "!src/structure.test.ts",
+    "locales",
+    "tsconfig.json",
+    "CHANGELOG.md"
+  ],
   "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.dev.json",
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
     "dry-release": "release-it --dry-run",
     "release": "release-it",
@@ -27,24 +38,43 @@
     "release-alpha": "release-it --preRelease=alpha"
   },
   "addons": [
-    "@plonegovbr/volto-social-media",
-    "@kitconcept/volto-light-theme"
+    "@plonegovbr/volto-social-media"
   ],
+  "theme": "",
   "dependencies": {
+    "@dnd-kit/core": "6.3.1",
+    "@dnd-kit/sortable": "10.0.0",
+    "@dnd-kit/utilities": "3.2.2",
     "@plone/components": "workspace:*",
-    "@plonegovbr/volto-social-media": "2.0.0-alpha.6"
+    "@plonegovbr/volto-social-media": "3.0.0",
+    "classnames": "2.5.1",
+    "react-animate-height": "2.0.17",
+    "uuid": "^14.0.0"
   },
   "peerDependencies": {
     "react-intl": "*",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-aria-components": "*",
-    "@kitconcept/volto-light-theme": "*",
+    "react-redux": "^8.1.2",
+    "react-router-dom": "^5.2.0",
     "semantic-ui-react": "*"
   },
   "devDependencies": {
-    "@plone/types": "workspace:*",
+    "@plone/registry": "workspace:*",
     "@plone/scripts": "workspace:*",
-    "release-it": "^17.1.1"
+    "@plone/types": "workspace:*",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@types/react-redux": "^7.1.34",
+    "@types/react-router-dom": "^5.3.3",
+    "react-redux": "8.1.2",
+    "react-router-dom": "5.2.0",
+    "typescript": "^5.7.3",
+    "@storybook/react": "^8.0.4",
+    "@testing-library/react": "^16.2.0",
+    "react-aria-components": "^1.17.0",
+    "release-it": "^19.0.5",
+    "vitest": "^3.2.4"
   }
 }

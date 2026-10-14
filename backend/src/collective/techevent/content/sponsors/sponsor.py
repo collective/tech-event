@@ -31,7 +31,7 @@ class ISponsor(Interface):
         required=False,
     )
     directives.widget("text", RichTextFieldWidget)
-    model.primary("text")
+    model.primary("text")  # type: ignore[attr-defined]  # plone-stubs does not export supermodel.model.primary
     searchable("text")
 
 

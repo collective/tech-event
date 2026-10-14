@@ -1,3 +1,5 @@
+"""Serializers and JSON schema providers for datagrid fields."""
+
 from collective.techevent.fields.datagrid import IDataGrid
 from collective.z3cform.datagridfield.interfaces import IRow
 from copy import deepcopy
@@ -10,10 +12,11 @@ from plone.restapi.types.interfaces import IJsonSchemaProvider
 from plone.restapi.types.utils import get_fieldsets
 from plone.restapi.types.utils import get_jsonschema_properties
 from plone.restapi.types.utils import iter_fields
+from typing import Any
 from zope.component import adapter
 from zope.interface import implementer
 from zope.interface import Interface
-from zope.schema import getFields
+from zope.schema import getFields  # type: ignore[attr-defined]  # partial zope-stubs omit getFields
 from zope.schema.interfaces import IChoice
 from zope.schema.interfaces import IVocabularyTokenized
 
@@ -21,14 +24,30 @@ from zope.schema.interfaces import IVocabularyTokenized
 @adapter(IRow, Interface, Interface)
 @implementer(IJsonSchemaProvider)
 class DataGridRowJsonSchemaProvider(ObjectJsonSchemaProvider):
-    def __init__(self, field, context, request):
+    """JSON schema provider for the rows of a datagrid field."""
+
+    def __init__(self, field: Any, context: Any, request: Any) -> None:
+        """Set up the fieldsets used to build the row schema.
+
+        :param field: The datagrid field.
+        :param context: The content object.
+        :param request: The current request.
+        """
         super().__init__(field, context, request)
         self.fieldsets = get_fieldsets(context, request, self.field.schema)
 
-    def get_factory(self):
+    def get_factory(self) -> str:  # type: ignore[override]  # plone-stubs declare the base as -> None
+        """Return the factory name of the row schema.
+
+        :returns: The factory name.
+        """
         return "DataGridField Row"
 
-    def get_properties(self):
+    def get_properties(self) -> dict[str, Any]:
+        """Return the JSON schema properties of the row fields.
+
+        :returns: The properties keyed by field name.
+        """
         if self.prefix:
             prefix = ".".join([self.prefix, self.field.__name__])
         else:
@@ -37,7 +56,11 @@ class DataGridRowJsonSchemaProvider(ObjectJsonSchemaProvider):
             self.context, self.request, self.fieldsets, prefix
         )
 
-    def additional(self):
+    def additional(self) -> dict[str, Any]:
+        """Add fieldsets, required fields and properties to the schema.
+
+        :returns: The additional schema information.
+        """
         info = super().additional()
         properties = self.get_properties()
         required = []
@@ -67,11 +90,19 @@ class DataGridRowJsonSchemaProvider(ObjectJsonSchemaProvider):
 @implementer(IFieldSerializer)
 @adapter(IDataGrid, IDexterityContent, Interface)
 class DataGridSerializer(CollectionFieldSerializer):
-    schema_fields: tuple[tuple[str,], ...]
+    """Serialize a datagrid field as a list of JSON rows."""
+
+    schema_fields: tuple[tuple[str, Any], ...]
     alias_id: str
     alias_title: str
 
-    def __init__(self, field, context, request):
+    def __init__(self, field: Any, context: Any, request: Any) -> None:
+        """Bind the serializer to the datagrid field.
+
+        :param field: The datagrid field.
+        :param context: The content object.
+        :param request: The current request.
+        """
         self.context = context
         self.request = request
         self.field = field
@@ -80,6 +111,11 @@ class DataGridSerializer(CollectionFieldSerializer):
         self.alias_title = field.alias_title or ""
 
     def _serialize_row_item(self, row_item: dict) -> dict:
+        """Serialize a single row, resolving choice values to tokens and titles.
+
+        :param row_item: The raw row value.
+        :returns: The serialized row.
+        """
         item = deepcopy(row_item)
         fields = self.schema_fields
         for field_name, field_type in fields:
@@ -102,7 +138,11 @@ class DataGridSerializer(CollectionFieldSerializer):
             item["title"] = value["title"] if isinstance(value, dict) else f"{value}"
         return item
 
-    def _get_schema_fields(self) -> tuple[tuple[str,], ...]:
+    def _get_schema_fields(self) -> tuple[tuple[str, Any], ...]:
+        """Return the row schema fields, bound to the context.
+
+        :returns: Pairs of field name and bound field.
+        """
         value_type = self.field.value_type
         schema = value_type.schema
         fields = tuple(
@@ -112,6 +152,10 @@ class DataGridSerializer(CollectionFieldSerializer):
         return fields
 
     def __call__(self) -> list[dict]:
+        """Serialize every row of the datagrid field.
+
+        :returns: The JSON compatible rows.
+        """
         raw_value = self.get_value()
         response = []
         for item in raw_value:

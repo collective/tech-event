@@ -1,9 +1,11 @@
+from collective.techevent.users.content import BaseUser
 from collective.techevent.users.content import IBaseUser
 from collective.techevent.users.utils import verify_totp_code
 from datetime import datetime
 from datetime import timedelta
 from plone import api
 from Products.membrane import interfaces as ifaces
+from typing import Any
 from zope.component import adapter
 from zope.interface import implementer
 
@@ -16,12 +18,22 @@ ALLOWED_STATES = [
 @adapter(IBaseUser)
 @implementer(ifaces.IMembraneUserAuth)
 class MembraneUserAuthentication:
-    def __init__(self, context):
+    """Authenticate users with their TOTP one-time password."""
+
+    def __init__(self, context: BaseUser) -> None:
+        """Store the adapted user.
+
+        :param context: The user content object.
+        """
         self.user = context
 
     def verifyCredentials(self, credentials: dict[str, str]) -> bool:
-        """Returns True is password is authenticated, False if not."""
-        user = self.user
+        """Returns True is password is authenticated, False if not.
+
+        :param credentials: Credentials with the one-time password under ``password``.
+        :returns: True when the one-time password is valid.
+        """
+        user: Any = self.user
 
         # Initialize _v_totp_guess if not present
         if not hasattr(user, "_v_totp_guess"):
@@ -45,10 +57,16 @@ class MembraneUserAuthentication:
     def authenticateCredentials(
         self, credentials: dict[str, str]
     ) -> tuple[str, str] | None:
+        """Return the user ID and name when the credentials are valid.
+
+        :param credentials: Credentials with the one-time password.
+        :returns: Tuple with user ID and user name, or None.
+        """
         # Should not authenticate when the user is not enabled.
-        user = self.user
+        user: Any = self.user
         state = api.content.get_state(user)
         if state not in ALLOWED_STATES:
             return None
         if self.verifyCredentials(credentials):
             return (user.getUserId(), user.getUserName())
+        return None

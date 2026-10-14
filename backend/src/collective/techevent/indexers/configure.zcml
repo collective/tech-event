@@ -38,9 +38,5 @@
       />
 
   <!-- -*- extra stuff goes here -*- -->
-  <adapter
-      factory=".social_links.links_indexer"
-      name="links"
-      />
 
 </configure>

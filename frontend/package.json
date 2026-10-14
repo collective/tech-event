@@ -1,5 +1,5 @@
 {
-  "name": "volto-techevent-dev",
+  "name": "@plone-collective/volto-techevent-dev",
   "version": "1.0.0-beta.1",
   "description": "Support for implementing tech conference in a Plone site.",
   "author": "PloneGov-BR",
@@ -18,7 +18,8 @@
     "build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
     "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
     "i18n": "pnpm --filter @plone-collective/volto-techevent i18n && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto i18n",
-    "test": "RAZZLE_JEST_CONFIG=$(pwd)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests",
+    "typecheck": "pnpm --filter @plone-collective/volto-techevent typecheck",
+    "test": "pnpm --filter @plone-collective/volto-techevent exec vitest --passWithNoTests",
     "lint": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
@@ -35,7 +36,7 @@
   "dependencies": {
     "@plone/volto": "workspace:*",
     "@plone/registry": "workspace:*",
-    "@kitconcept/volto-light-theme": "6.0.1",
+    "@kitconcept/volto-light-theme": "^8.0.0",
     "@plone-collective/volto-techevent": "workspace:*"
   },
   "devDependencies": {
@@ -45,7 +46,19 @@
     "overrides": {
       "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
       "react-refresh": "^0.14.2"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher"
+    ],
+    "onlyBuiltDependencies": [
+      "core-js",
+      "core-js-pure",
+      "cypress",
+      "es5-ext",
+      "esbuild",
+      "lightningcss-cli",
+      "unrs-resolver"
+    ]
   },
-  "packageManager": "pnpm@9.1.1"
+  "packageManager": "pnpm@10.20.0"
 }

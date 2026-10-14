@@ -1,11 +1,13 @@
 import messages from '@plone-collective/volto-techevent/messages';
-import type { BlockSchemaProps } from '@plone-collective/volto-techevent/types/common';
+import type { SponsorsSchemaArgs } from '@plone-collective/volto-techevent/components/Sponsors/types';
 import type { JSONSchema } from '@plone/types';
 
-export const levelComparisonSchema = (props: BlockSchemaProps): JSONSchema => {
+export const levelComparisonSchema = (
+  props: SponsorsSchemaArgs,
+): JSONSchema => {
   const { intl } = props;
 
-  const schema: Record<string, unknown> = {
+  const schema: JSONSchema = {
     title: intl.formatMessage(messages.levelComparisonBlockTitle),
     fieldsets: [
       {

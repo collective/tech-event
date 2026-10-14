@@ -3,6 +3,7 @@ from plone import api
 from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.schema.email import Email
+from typing import Any
 from zope import schema
 from zope.interface import implementer
 from zope.interface import Interface
@@ -56,7 +57,7 @@ class Presenter(Container):
     """Convenience subclass for ``Presenter`` portal type."""
 
     @property
-    def activities(self):
+    def activities(self) -> list[Any]:
         """Return a list of activities connected to this presenter.
 
         :returns: List of activities connected to this presenter.

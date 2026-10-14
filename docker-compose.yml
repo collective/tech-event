@@ -3,7 +3,7 @@ name: tech-event
 
 services:
   traefik:
-    image: traefik:v2.11
+    image: traefik:v3.7
 
     ports:
       - 80:80

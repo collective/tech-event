@@ -19,18 +19,34 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PLONE_VERSION=6
+REPOSITORY_SETTINGS := $(shell uvx repoplone settings dump)
+
 DOCKER_IMAGE=plone/server-dev:${PLONE_VERSION}
 DOCKER_IMAGE_ACCEPTANCE=plone/server-acceptance:${PLONE_VERSION}
 
-ADDON_NAME='@plone-collective/volto-techevent'
-IMAGE_NAME=ghcr.io/collective/tech-event-frontend
+ADDON_NAME := $(shell echo '$(REPOSITORY_SETTINGS)' | jq -r '.frontend.name')
+IMAGE_NAME_PREFIX := $(shell echo '$(REPOSITORY_SETTINGS)' | jq -r '.container_images_prefix')
+IMAGE_NAME_SEPARATOR := -
+IMAGE_NAME_PREFIX_WITH_SEPARATOR := $(IMAGE_NAME_PREFIX)$(IMAGE_NAME_SEPARATOR)
+
 IMAGE_TAG=latest
-VOLTO_VERSION = $(shell cat ./mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
+IMAGE_NAME=$(IMAGE_NAME_PREFIX_WITH_SEPARATOR)frontend:$(IMAGE_TAG)
+
+# Environment variables to be exported
+export VOLTO_VERSION := $(shell echo '$(REPOSITORY_SETTINGS)' | jq -r '.frontend.volto_version')
+export PLONE_VERSION := $(shell echo '$(REPOSITORY_SETTINGS)' | jq -r '.backend.base_package_version')
+
 
 .PHONY: help
 help: ## Show this help
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
+
+.PHONY: debug-settings
+debug-settings:  ## Debug settings
+	@echo "VOLTO_VERSION: $(VOLTO_VERSION)"
+	@echo "PLONE_VERSION: $(PLONE_VERSION)"
+	@echo "ADDON_NAME: $(ADDON_NAME)"
+	@echo "IMAGE_NAME: $(IMAGE_NAME)"
 
 # Dev Helpers
 .PHONY: clean
@@ -81,6 +97,10 @@ lint: ## Lint, or catch and remove problems, in code base
 	pnpm prettier
 	pnpm stylelint --allow-empty-input
 
+.PHONY: typecheck
+typecheck: ## Type check the add-on with tsc
+	pnpm typecheck
+
 .PHONY: release
 release: ## Release the add-on on npmjs.org
 	pnpm release
@@ -97,7 +117,7 @@ test: ## Run unit tests
 ci-test: ## Run unit tests in CI
 	# Unit Tests need the i18n to be built
 	VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto i18n
-	CI=1 RAZZLE_JEST_CONFIG=$(CURRENT_DIR)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests
+	CI=1 pnpm run test
 
 .PHONY: backend-docker-start
 backend-docker-start:	## Starts a Docker-based backend for development

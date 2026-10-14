@@ -1,3 +1,5 @@
+"""Vocabularies for the categories and rooms of schedule slots."""
+
 from collective.techevent import _
 from collective.techevent.utils import find_event_root
 from plone import api
@@ -16,8 +18,8 @@ CATEGORIES = (
 )
 
 
-@provider(IVocabularyFactory)
-def slot_categories(context):
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
+def slot_categories(context: DexterityContent) -> SimpleVocabulary:
     """Slot Categories."""
     terms = []
     for token, title in CATEGORIES:
@@ -31,8 +33,8 @@ BREAK_CATEGORIES = (
 )
 
 
-@provider(IVocabularyFactory)
-def break_categories(context):
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
+def break_categories(context: DexterityContent) -> SimpleVocabulary:
     """Break Categories."""
     terms = []
     for token, title in BREAK_CATEGORIES:
@@ -43,8 +45,8 @@ def break_categories(context):
 SESSION_CATEGORIES = (("activity", _("Activity")),)
 
 
-@provider(IVocabularyFactory)
-def session_categories(context):
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
+def session_categories(context: DexterityContent) -> SimpleVocabulary:
     """Session Categories."""
     terms = []
     for token, title in SESSION_CATEGORIES:
@@ -52,7 +54,7 @@ def session_categories(context):
     return SimpleVocabulary(terms)
 
 
-@provider(IVocabularyFactory)
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
 def slot_rooms(context: DexterityContent) -> SimpleVocabulary:
     """Available Slot Rooms."""
     terms = []

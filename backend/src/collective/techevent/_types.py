@@ -8,7 +8,7 @@ class APIImageScale(TypedDict):
 
 
 APIImageScales = TypedDict(
-    "APIImageScale",
+    "APIImageScales",
     {
         "content-type": str,
         "download": str,

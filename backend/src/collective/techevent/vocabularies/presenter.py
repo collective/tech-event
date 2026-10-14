@@ -1,8 +1,12 @@
+"""Vocabularies for the Presenter content type."""
+
 from collective.techevent import _
 from collective.techevent.utils import find_event_root
 from plone import api
 from plone.dexterity.content import DexterityContent
 from plone.uuid.interfaces import IUUID
+from typing import Any
+from typing import cast
 from zope.interface import implementer
 from zope.interface import provider
 from zope.schema.interfaces import IVocabularyFactory
@@ -29,7 +33,8 @@ class Vocabulary(SimpleVocabulary):
         content object.
         """
         if not isinstance(value, str):
-            value = IUUID(value)
+            value = cast(str, IUUID(value))
+        query: dict[str, Any]
         if value.startswith("/"):
             # it is a path query
             site_path = "/".join(api.portal.get().getPhysicalPath())
@@ -48,7 +53,7 @@ class PresentersVocabulary:
     def query(
         self,
         context: DexterityContent,
-    ) -> dict:
+    ) -> dict[str, Any]:
         """Query for Presenters."""
         event_root = find_event_root(context)
         return {
@@ -58,13 +63,19 @@ class PresentersVocabulary:
         }
 
     @staticmethod
-    def prepare_title(result) -> str:
+    def prepare_title(result: Any) -> str:
         """Return a friendly value to be used in the vocabulary."""
         return result.Title
 
     def __call__(
-        self, context: DexterityContent, query: dict | None = None
+        self, context: DexterityContent, query: dict[str, Any] | None = None
     ) -> Vocabulary:
+        """Build the vocabulary of Presenters found under the event root.
+
+        :param context: Object used to locate the event root.
+        :param query: Unused, kept for the vocabulary factory signature.
+        :returns: The vocabulary of presenters.
+        """
         query = self.query(context)
         results = api.content.find(**query)
         terms = []
@@ -77,8 +88,8 @@ class PresentersVocabulary:
 PresentersVocabularyFactory = PresentersVocabulary()
 
 
-@provider(IVocabularyFactory)
-def presenter_labels(context: DexterityContent):
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
+def presenter_labels(context: DexterityContent) -> SimpleVocabulary:
     """Available Labels for a presenter."""
     terms = []
     for token, title in LABELS.items():

@@ -13,7 +13,7 @@ export function useSchedule(eventRoot: string): UseScheduleResult {
   const dispatch = useDispatch();
 
   const { items, loading, error } = useSelector(
-    (state) => state.schedule,
+    (state: { schedule: UseScheduleResult }) => state.schedule,
     shallowEqual,
   );
 

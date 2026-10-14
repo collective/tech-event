@@ -1,3 +1,4 @@
+from collections.abc import Sequence
 from collective.techevent.content.presenter import Presenter
 
 import pytest
@@ -46,9 +47,14 @@ class TestContentType:
         assert len(links) == 2
 
     def test_social_links_metadata(self, brain_for_content, content_instance):
+        """The catalog metadata holds the links, as a PersistentList.
+
+        The socialmedia indexer stores a PersistentList, which is a Sequence
+        but not a list, so the check is against the abstract type.
+        """
         brain = brain_for_content(content_instance)
         links = brain.social_links
-        assert isinstance(links, list)
+        assert isinstance(links, Sequence)
         assert len(links) == 2
 
     @pytest.mark.parametrize(

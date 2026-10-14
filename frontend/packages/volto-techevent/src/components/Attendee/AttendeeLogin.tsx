@@ -31,20 +31,26 @@ const messages = defineMessages({
     id: 'Send request',
     defaultMessage: 'Send request',
   },
-  emailRequired: {
-    id: 'Your email is required to request a one-time password.',
-    defaultMessage: 'Your email is required to request a one-time password.',
-  },
   requestSent: {
     id: 'Request sent',
     defaultMessage: 'Request sent',
   },
 });
 
+interface UsersState {
+  users: {
+    reset: {
+      loading: boolean;
+      loaded: boolean;
+      error: string | null;
+    };
+  };
+}
+
 const useUsers = () => {
-  const loading = useSelector((state) => state.users.reset.loading);
-  const loaded = useSelector((state) => state.users.reset.loaded);
-  const error = useSelector((state) => state.users.reset.error);
+  const loading = useSelector((state: UsersState) => state.users.reset.loading);
+  const loaded = useSelector((state: UsersState) => state.users.reset.loaded);
+  const error = useSelector((state: UsersState) => state.users.reset.error);
 
   return { loading, loaded, error };
 };
@@ -52,34 +58,23 @@ const useUsers = () => {
 const RequestOneTimePassword = () => {
   const intl = useIntl();
   const dispatch = useDispatch();
-  const [error, setError] = useState(null);
   const [isSuccessful, setisSuccessful] = useState(false);
   const history = useHistory();
-  const identifierTitle = useRef();
-  const identifierRequiredMessage = useRef();
+  const identifierTitle = useRef<string>();
   const { loaded, loading, error: props_error } = useUsers();
   const prevloading = usePrevious(loading);
 
   const identifierField = 'email';
 
   identifierTitle.current = intl.formatMessage(messages.emailTitle);
-  identifierRequiredMessage.current = intl.formatMessage(
-    messages.emailRequired,
-  );
 
   useEffect(() => {
     if (prevloading && loaded) setisSuccessful(true);
   }, [prevloading, loaded]);
 
+  // Volto's Form has already rejected an empty email (it is required).
   const onSubmit = (data: { [key: string]: string }) => {
-    if (data[identifierField]) {
-      dispatch(resetPassword(data[identifierField]));
-      setError(null);
-    } else {
-      setError({
-        message: identifierRequiredMessage.current,
-      });
-    }
+    dispatch(resetPassword(data[identifierField]));
   };
 
   const onCancel = () => {
@@ -122,7 +117,8 @@ const RequestOneTimePassword = () => {
           description={intl.formatMessage(messages.description)}
           onSubmit={onSubmit}
           onCancel={onCancel}
-          error={error || props_error}
+          submitLabel={intl.formatMessage(messages.sendRequest)}
+          error={props_error}
           schema={{
             fieldsets: [
               {
@@ -137,7 +133,6 @@ const RequestOneTimePassword = () => {
                 title: identifierTitle.current,
               },
             },
-            submitLabel: intl.formatMessage(messages.sendRequest),
             required: [identifierField],
           }}
         />

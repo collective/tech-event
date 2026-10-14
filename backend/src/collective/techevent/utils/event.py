@@ -1,5 +1,4 @@
 from Acquisition import aq_parent
-from collective.techevent.behaviors.tech_event import Settings
 from collective.techevent.content.sponsors.sponsor_level import SponsorLevel
 from collective.techevent.content.sponsors.sponsors_db import SponsorsDB
 from collective.techevent.interfaces import IEventRoot
@@ -7,8 +6,12 @@ from plone import api
 from plone.dexterity.content import DexterityContent
 
 
-def find_event_root(context: DexterityContent) -> Settings:
-    """Find nearest event root."""
+def find_event_root(context: DexterityContent) -> DexterityContent:
+    """Find nearest event root.
+
+    :param context: Object to start the search from.
+    :returns: The nearest object providing IEventRoot.
+    """
     if IEventRoot.providedBy(context):
         return context
     else:
@@ -16,15 +19,25 @@ def find_event_root(context: DexterityContent) -> Settings:
 
 
 def find_sponsors_db(context: DexterityContent) -> SponsorsDB | None:
-    """Find nearest sponsors db."""
+    """Find nearest sponsors db.
+
+    :param context: Object to start the search from.
+    :returns: The SponsorsDB inside the nearest event root, or None.
+    """
     event_root = find_event_root(context)
     brains = api.content.find(event_root, portal_type="SponsorsDB")
     if brains:
-        sponsors_db = brains[0].getObject()
+        sponsors_db = next(iter(brains)).getObject()
         return sponsors_db
+    return None
 
 
 def sponsor_levels(context: DexterityContent) -> list[tuple[SponsorLevel, dict]]:
+    """Return the sponsor levels with their image scales.
+
+    :param context: Object used to locate the SponsorsDB.
+    :returns: List of (SponsorLevel, image scales) tuples.
+    """
     items = []
 
     if sponsors_db := find_sponsors_db(context):

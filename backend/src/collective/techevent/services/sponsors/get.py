@@ -1,4 +1,7 @@
+"""REST service returning the sponsors grouped by level."""
+
 from collections import defaultdict
+from collections.abc import Callable
 from collective.techevent import _types as t
 from collective.techevent.content.sponsors.sponsor_level import SponsorLevel
 from collective.techevent.content.sponsors.sponsors_db import SponsorsDB
@@ -8,6 +11,8 @@ from plone import api
 from plone.restapi.interfaces import ISerializeToJsonSummary
 from plone.restapi.serializer.converters import json_compatible
 from plone.restapi.services import Service
+from typing import Any
+from typing import cast
 from zope.component import getMultiAdapter
 
 
@@ -37,7 +42,7 @@ class GetSponsors(Service):
         benefits_list = [{"id": key, **value} for key, value in all_benefits.items()]
         return benefits_list
 
-    def get_sponsors(self, sponsors_db: SponsorsDB) -> dict[str, list[dict[str, str]]]:
+    def get_sponsors(self, sponsors_db: SponsorsDB) -> dict[str, list[dict[str, Any]]]:
         """Return all published sponsors, grouped by level."""
         response = defaultdict(list)
         results = api.content.find(
@@ -47,9 +52,12 @@ class GetSponsors(Service):
             sort_on="getObjPositionInParent",
         )
         for brain in results:
-            serializer = getMultiAdapter(
-                (brain, self.request),
-                interface=ISerializeToJsonSummary,
+            serializer = cast(
+                Callable[[], dict[str, Any]],
+                getMultiAdapter(
+                    (brain, self.request),
+                    interface=ISerializeToJsonSummary,
+                ),
             )
             serialized = serializer()
             response[brain.level].append(serialized)
@@ -60,7 +68,9 @@ class GetSponsors(Service):
 
         :returns: Sponsors grouped by level.
         """
-        sponsors_db = find_sponsors_db(self.context)
+        # find_sponsors_db() is typed Optional, but the service has always
+        # assumed a SponsorsDB exists; keep that behaviour unchanged here.
+        sponsors_db = cast(SponsorsDB, find_sponsors_db(self.context))
         all_sponsors = self.get_sponsors(sponsors_db)
         raw_levels = []
         levels = []

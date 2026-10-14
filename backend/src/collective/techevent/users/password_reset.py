@@ -6,18 +6,29 @@ from plone.base.utils import safe_text
 from Products.CMFPlone.browser.login.password_reset import (
     PasswordResetToolView as BasePasswordResetToolView,
 )
+from Products.PlonePAS.tools.memberdata import MemberData
 from zope.i18n import translate
 from zope.interface import implementer
 
 
 @implementer(IPasswordResetToolView)
 class PasswordResetToolView(BasePasswordResetToolView):
-    def __call__(self, member, **kwargs):
+    """Password reset view sending a one-time password to attendees."""
+
+    def __call__(self, member: MemberData, **kwargs: object) -> str:
+        """Render the one-time password email for a member.
+
+        :param member: The member requesting the password reset.
+        :param kwargs: Extra keyword arguments passed to the default template.
+        :returns: The email text, or the default template output for unknown users.
+        """
         user = get_membrane_user(
             self.context, member.getUserId(), get_object=True, unrestricted=True
         )
         if user is None:
             return self.index(member=member, **kwargs)
+        # The membrane user object carries totp_seed at runtime.
+        totp_seed = user.totp_seed  # type: ignore[attr-defined]
         return f"""\
 From: {self.encoded_mail_sender()}
 To: {member.getProperty("email")}
@@ -26,14 +37,18 @@ Content-Type: text/plain
 Precedence: bulk
 
 
-Your one-time password is: {create_totp_code(user.totp_seed)}
+Your one-time password is: {create_totp_code(totp_seed)}
 
 This password is valid for 10 minutes.
 
 If you did not request this, please ignore this email.
 """
 
-    def mail_totp_subject(self):
+    def mail_totp_subject(self) -> str:
+        """Return the translated subject of the one-time password email.
+
+        :returns: The email subject.
+        """
         portal_name = self.portal_state().portal_title()
         return translate(
             _(

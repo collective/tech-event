@@ -6,9 +6,10 @@ import SponsorLevel from '@plone-collective/volto-techevent/components/Sponsors/
 import { useSponsors } from '@plone-collective/volto-techevent/hooks/useSponsors';
 import type { SponsorLevel as SponsorLevelType } from '@plone-collective/volto-techevent/types/sponsors';
 import type { BlockViewProps } from '@plone/types';
+import type { SponsorsShowcaseBlockData } from '@plone-collective/volto-techevent/components/Sponsors/types';
 
 const View: React.FC<BlockViewProps> = ({ data, className, style }) => {
-  const { title, styles } = data;
+  const { title, styles } = data as SponsorsShowcaseBlockData;
   const eventRoot = useEventSettings()?.eventRoot;
 
   // Use hook only if eventRoot exists

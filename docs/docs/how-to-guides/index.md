@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Tech Event Support for Plone how-to guides"
-    "property=og:description": "Tech Event Support for Plone how-to guides"
+    "description": "How-to guides for Tech Event Support for Plone: install, configure and run a tech event."
+    "property=og:description": "How-to guides for Tech Event Support for Plone: install, configure and run a tech event."
     "property=og:title": "Tech Event Support for Plone how-to guides"
     "keywords": "Plone, Tech Event Support for Plone, how-to, guides"
 ---
@@ -18,13 +18,69 @@ This part of the documentation contains how-to guides, including installation an
 https://diataxis.fr/how-to-guides/
 ```
 
+```{toctree}
+:maxdepth: 1
+:hidden: true
 
-## Authors
+install-the-add-on
+configure-the-volto-add-on
+enable-multiple-events
+set-up-the-schedule
+add-sponsors
+use-example-content
+plan-the-content-structure
+```
 
--   {doc}`plone:contributing/documentation/myst-reference`
--   {doc}`plone:contributing/documentation/authors`
+`````{grid} 1 1 2 2
+:gutter: 3
 
+````{grid-item-card} 📦 Install the add-on
+:link: install-the-add-on
+:link-type: doc
 
-## Designers
+Add the backend and frontend add-ons to an existing Plone 6 and Volto project.
+````
 
--   [Contribute to Plone Sphinx Theme](https://plone-sphinx-theme.readthedocs.io/guides/contribute.html)
+````{grid-item-card} 🎨 Configure the Volto add-on
+:link: configure-the-volto-add-on
+:link-type: doc
+
+Register the add-on and the theme it is tested with in your Volto project.
+````
+
+````{grid-item-card} 🗂️ Enable multiple events
+:link: enable-multiple-events
+:link-type: doc
+
+Run several editions of your event in one site, each with its own Tech Event item.
+````
+
+````{grid-item-card} 🗓️ Set up the schedule
+:link: set-up-the-schedule
+:link-type: doc
+
+Configure the event settings, rooms and durations, and add the slots.
+````
+
+````{grid-item-card} 🤝 Add sponsors
+:link: add-sponsors
+:link-type: doc
+
+Define the benefits, create the sponsorship levels and add each sponsor.
+````
+
+````{grid-item-card} 🧪 Use the example content
+:link: use-example-content
+:link-type: doc
+
+Explore the add-on with example content, or create a site without it.
+````
+
+````{grid-item-card} 🧭 Plan the content structure
+:link: plan-the-content-structure
+:link-type: doc
+
+Lay out a typical conference site, from the about pages to the full schedule.
+````
+`````
+

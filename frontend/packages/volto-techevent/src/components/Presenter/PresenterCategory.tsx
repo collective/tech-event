@@ -33,25 +33,38 @@ const messages = defineMessages({
   },
 });
 
-const PresenterCategory = ({ label }) => {
+export type PresenterCategoryLabel = string | { token: string; title?: string };
+
+type PresenterCategoryProps = {
+  /** A category token, or a term carrying a token and optionally a title. */
+  label: PresenterCategoryLabel;
+};
+
+const PresenterCategory = ({ label }: PresenterCategoryProps) => {
   const intl = useIntl();
-  const token = label?.token ? label.token : label;
-  const title = label?.title
-    ? label.title
-    : intl.formatMessage(messages[label]);
-  const icon = icons[label.token];
+  const token = typeof label === 'string' ? label : label?.token ?? '';
+  const term = typeof label === 'string' ? undefined : label;
+  const known = token in messages;
+  const title = term?.title
+    ? term.title
+    : known
+      ? intl.formatMessage(messages[token as keyof typeof messages])
+      : token;
+  const icon = icons[token as keyof typeof icons];
   return (
     <Popup
       hoverable
       size={'small'}
       trigger={
         <span className={'presenterCategoryWrapper'}>
-          <Icon
-            name={icon}
-            size={'20px'}
-            color={'#FFF'}
-            className={`presenterCategory ${token}`}
-          />
+          {icon && (
+            <Icon
+              name={icon}
+              size={'20px'}
+              color={'#FFF'}
+              className={`presenterCategory ${token}`}
+            />
+          )}
         </span>
       }
       position="top center"

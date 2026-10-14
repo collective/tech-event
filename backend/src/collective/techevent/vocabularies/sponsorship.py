@@ -1,13 +1,16 @@
+"""Vocabularies for the sponsorship levels and benefits."""
+
 from collective.techevent.utils import get_sponsorship_benefits
 from collective.techevent.utils import sponsor_levels
+from plone.dexterity.content import DexterityContent
 from zope.interface import provider
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 
-@provider(IVocabularyFactory)
-def sponsorship_levels(context):
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
+def sponsorship_levels(context: DexterityContent) -> SimpleVocabulary:
     """Available Sponsorship Levels."""
     terms = []
     levels = sponsor_levels(context)
@@ -16,8 +19,8 @@ def sponsorship_levels(context):
     return SimpleVocabulary(terms)
 
 
-@provider(IVocabularyFactory)
-def sponsorship_benefits(context):
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
+def sponsorship_benefits(context: DexterityContent) -> SimpleVocabulary:
     """All Sponsorship Benefits."""
     terms = []
     benefits = get_sponsorship_benefits(context)

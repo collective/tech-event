@@ -2,6 +2,7 @@ import React from 'react';
 import Image from '@plone/volto/components/theme/Image/Image';
 import SocialNetworks from '@plonegovbr/volto-social-media/components/SocialNetworks/SocialNetworks';
 import { Container } from '@plone/components';
+import type { SocialLink } from '@plone-collective/volto-techevent/types/common';
 
 /**
  * Type definitions for SponsorView content
@@ -15,6 +16,7 @@ interface SponsorContent {
   image?: any; // Adjust if you have specific typing for image
   image_caption?: string;
   links?: Record<string, string>; // Adjust to match SocialNetworks prop shape
+  social_links?: SocialLink[] | null;
 }
 
 interface SponsorViewProps {
@@ -67,7 +69,10 @@ const SponsorView: React.FC<SponsorViewProps> = ({ content }) => {
           narrow
           className="sponsorText"
           dangerouslySetInnerHTML={{ __html: text.data }}
-        />
+        >
+          {/* Container requires children; the HTML is set above. */}
+          {undefined}
+        </Container>
       )}
       {social_links && (
         <Container narrow className="sponsorLinks">

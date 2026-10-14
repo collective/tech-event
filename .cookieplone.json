@@ -1,0 +1,16 @@
+{
+    "title": "Tech Event Support for Plone",
+    "description": "Support for implementing tech conference in a Plone site.",
+    "project_slug": "tech-event",
+    "author": "PloneGov-BR",
+    "email": "gov@plone.org.br",
+    "use_prerelease_versions": false,
+    "plone_version": "6.2.2",
+    "volto_version": "19.5.0",
+    "python_package_name": "collective.techevent",
+    "npm_package_name": "@plone-collective/volto-techevent",
+    "github_organization": "collective",
+    "container_registry": "github",
+    "initialize_documentation": true,
+    "__template__": "monorepo_addon"
+}

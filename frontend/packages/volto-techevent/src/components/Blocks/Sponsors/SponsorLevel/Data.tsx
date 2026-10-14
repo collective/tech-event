@@ -1,25 +1,14 @@
 import React from 'react';
 import BlockDataForm from '@plone/volto/components/manage/Form/BlockDataForm';
 import { sponsorLevelSchema } from './schema';
-import type { BlocksConfigData } from '@plone/types';
+import type { BlockEditProps } from '@plone/types';
 import { useIntl } from 'react-intl';
 
-interface SponsorLevelData {
-  title?: string;
-  href?: string;
-  displayCTA?: boolean;
-  label?: string;
-  [key: string]: any;
-}
-
-interface SponsorLevelBlockDataProps {
-  data: SponsorLevelData;
-  block: string;
-  onChangeBlock: (block: string, data: SponsorLevelData) => void;
-  blocksConfig?: BlocksConfigData;
-  navRoot?: string;
-  contentType?: string;
-}
+type SponsorLevelBlockDataProps = Pick<
+  BlockEditProps,
+  'data' | 'block' | 'onChangeBlock'
+> &
+  Partial<Pick<BlockEditProps, 'blocksConfig' | 'navRoot' | 'contentType'>>;
 
 const SponsorLevelBlockData: React.FC<SponsorLevelBlockDataProps> = (props) => {
   const { data, block, onChangeBlock, blocksConfig, navRoot, contentType } =

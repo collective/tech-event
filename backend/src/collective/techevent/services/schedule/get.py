@@ -1,3 +1,6 @@
+"""REST service returning the conference schedule."""
+
+from collections.abc import Callable
 from collective.techevent.behaviors.schedule import IScheduleSlot
 from collective.techevent.utils.vocabularies import get_vocabulary_for_attr
 from copy import deepcopy
@@ -10,10 +13,17 @@ from plone.restapi.interfaces import ISerializeToJsonSummary
 from plone.restapi.serializer.converters import json_compatible
 from plone.restapi.services import Service
 from typing import Any
+from typing import cast
 from zope.component import getMultiAdapter
 
 
-def dict_as_sorted_list(data: dict, enforceIso: bool = False) -> list[dict]:
+def dict_as_sorted_list(data: dict[str, Any], enforceIso: bool = False) -> list[dict]:
+    """Sort a mapping by key and return it as a list of ``id``/``items`` dicts.
+
+    :param data: The mapping to sort, keyed by slot start time.
+    :param enforceIso: Normalize the keys to ISO 8601 before sorting.
+    :returns: The sorted list of dicts.
+    """
     keys = sorted(data.keys())
     local_data = deepcopy(data)
     if enforceIso:
@@ -61,7 +71,10 @@ def process_trainings(slots: list[dict]) -> list[dict]:
 
 
 def round_time(dt: datetime) -> datetime:
-    """Round datetime up to the next quarter (00, 15, 30, 45), ignoring seconds and microseconds."""
+    """Round datetime up to the next quarter (00, 15, 30, 45).
+
+    Seconds and microseconds are ignored.
+    """
     minute = ((dt.minute + 14) // 15) * 15
     if minute == 60:
         dt = dt.replace(hour=(dt.hour + 1) % 24, minute=0, second=0, microsecond=0)
@@ -71,12 +84,23 @@ def round_time(dt: datetime) -> datetime:
 
 
 def time_slot(value: datetime) -> str:
+    """Return the grid row name for a time, rounded to the quarter hour.
+
+    :param value: The datetime to convert.
+    :returns: The row name, e.g. ``time-0930``.
+    """
     return f"time-{round_time(value).strftime('%H%M')}"
 
 
 def group_slots(slots: list[dict], rooms_vocab: dict[str, str]) -> list[dict]:
+    """Group the slots by day and compute their grid positioning.
+
+    :param slots: The serialized slots.
+    :param rooms_vocab: The room titles keyed by room token.
+    :returns: The days, each with its rooms and positioned items.
+    """
     response = []
-    days = {}
+    days: dict[str, list[dict]] = {}
 
     # Pre-process training slots to split long sessions
     slots = process_trainings(slots)
@@ -120,7 +144,8 @@ def group_slots(slots: list[dict], rooms_vocab: dict[str, str]) -> list[dict]:
             if slot.get("@type") == "Keynote":
                 slot["gridColumn"] = "room-1 / room-all"
             elif room_tokens:
-                # Use room-# with index+1 of the slot's room in vocab_rooms (not ordered_rooms)
+                # Use room-# with index+1 of the slot's room in vocab_rooms
+                # (not ordered_rooms)
                 token = room_tokens[0]
                 if token in vocab_rooms:
                     track_index = vocab_rooms.index(token) + 1
@@ -148,18 +173,35 @@ class ScheduleGet(Service):
 
     context: DexterityContent
 
-    def _serialize_brain(self, brain) -> dict[str, Any]:
+    def _serialize_brain(self, brain: Any) -> dict[str, Any]:
+        """Serialize a catalog brain of a schedule slot.
+
+        :param brain: The catalog brain to serialize.
+        :returns: The JSON summary of the slot.
+        """
         obj = brain.getObject()
-        result = getMultiAdapter((obj, self.request), ISerializeToJsonSummary)()
+        serializer = cast(
+            Callable[[], dict[str, Any]],
+            getMultiAdapter((obj, self.request), ISerializeToJsonSummary),
+        )
+        result = serializer()
         return result
 
     def get_rooms(self) -> dict[str, str]:
+        """Return the room titles keyed by room token.
+
+        :returns: The room titles.
+        """
         rooms = get_vocabulary_for_attr("room", self.context)
         if not rooms:
             return {}
-        return {room.token: room.title for room in rooms}
+        return {room.token: room.title for room in rooms}  # type: ignore[attr-defined]  # zope-stubs omit IVocabulary.__iter__
 
     def get_slots(self) -> list[dict[str, Any]]:
+        """Return the serialized published schedule slots.
+
+        :returns: The JSON summaries of the slots, sorted by start.
+        """
         portal = api.portal.get()
         review_states = getattr(self.context, "schedule_review_states", None)
         results = api.content.find(
@@ -172,6 +214,10 @@ class ScheduleGet(Service):
         return [self._serialize_brain(brain) for brain in results]
 
     def reply(self) -> dict[str, list[dict]]:
+        """Return the conference schedule grouped by day.
+
+        :returns: The schedule items.
+        """
         rooms = self.get_rooms()
         raw_slots = self.get_slots()
         slots = group_slots(raw_slots, rooms)

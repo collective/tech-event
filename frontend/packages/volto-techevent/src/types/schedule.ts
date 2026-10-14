@@ -25,7 +25,7 @@ export interface SessionInfo extends ScheduleInfo {
   session_audience: Audience[];
   session_duration: Duration[];
   session_level: Level[];
-  session_track: Level[];
+  session_track: Track[];
   text: RichText | null;
   session_language: Term;
   session_video: string | null;

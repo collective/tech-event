@@ -1,12 +1,12 @@
 import React from 'react';
 import { useVocabularyColors } from '@plone-collective/volto-techevent/hooks/useVocabularyColors';
-import type { SessionInfo } from '@plone-collective/volto-techevent/types/schedule';
+import type { TermLike } from './fields';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import targetSVG from '@plone/volto/icons/target.svg';
 import SessionPill from './SessionPill';
 
 interface SessionAudienceProps {
-  item: SessionInfo;
+  item: { session_audience?: TermLike[] | null };
 }
 
 const SessionAudience: React.FC<SessionAudienceProps> = ({ item }) => {
@@ -19,7 +19,7 @@ const SessionAudience: React.FC<SessionAudienceProps> = ({ item }) => {
         <Icon name={targetSVG} className={'categoryIcon'} />
         {session_audience.map((item, i) => {
           const { token } = item;
-          const color = colors?.[token] || 'unset';
+          const color = (token && colors?.[token]) || 'unset';
           return (
             <SessionPill
               key={i}

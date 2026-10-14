@@ -1,4 +1,6 @@
-// This extends the volto-light-theme
+// The theme works with or without the Volto light theme. Its variables are
+// `!default`, so the light theme's values win when it is loaded first.
+@import 'variables';
 @import 'root';
 @import 'components/card';
 @import 'components/schedule/schedule';

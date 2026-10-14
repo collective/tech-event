@@ -11,10 +11,11 @@ import SessionPresenters from '@plone-collective/volto-techevent/components/Sche
 
 interface SessionTileProps {
   item: BrainSessionInfo;
-  showDescription: boolean;
-  showAudience: boolean;
-  showLevel: boolean;
-  shortDate: boolean;
+  showDescription?: boolean;
+  showAudience?: boolean;
+  showLevel?: boolean;
+  shortDate?: boolean;
+  showRoom?: boolean;
 }
 
 const SessionTile: React.FC<SessionTileProps> = ({

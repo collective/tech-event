@@ -12,6 +12,10 @@ from zope.interface import Interface
 
 
 def generate_uuid() -> str:
+    """Return a new random UUID as string.
+
+    :returns: The UUID4 as string.
+    """
     return f"{uuid4()}"
 
 
@@ -67,7 +71,7 @@ class ISponsorLevel(Interface):
         default="",
         required=False,
     )
-    model.fieldset(
+    model.fieldset(  # type: ignore[attr-defined]  # plone-stubs does not export supermodel.model.fieldset
         "benefits",
         label=_("Benefits"),
         fields=[

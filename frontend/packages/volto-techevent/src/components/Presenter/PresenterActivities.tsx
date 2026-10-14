@@ -2,8 +2,20 @@ import React from 'react';
 import { Tabs } from '@plone/components';
 import { Tab, TabList, TabPanel } from 'react-aria-components';
 import SessionTile from '@plone-collective/volto-techevent/components/Schedule/SessionTile';
+import type { BrainSessionInfo } from '@plone-collective/volto-techevent/types/schedule';
 
-const PresenterActivityGroup = ({ activityGroup }) => {
+/** A group of activities of a presenter, shown as one tab. */
+export type PresenterActivityGroup = {
+  '@id': string;
+  title: string;
+  items: BrainSessionInfo[];
+};
+
+const PresenterActivityGroupPanel = ({
+  activityGroup,
+}: {
+  activityGroup: PresenterActivityGroup;
+}) => {
   return (
     <TabPanel id={activityGroup['@id']} className={'activityGroup'}>
       {activityGroup.items.map((item, i) => (
@@ -13,13 +25,18 @@ const PresenterActivityGroup = ({ activityGroup }) => {
           showDescription
           showAudience
           showLevel
+          shortDate={false}
         />
       ))}
     </TabPanel>
   );
 };
 
-const PresenterActivities = ({ activities }) => {
+const PresenterActivities = ({
+  activities,
+}: {
+  activities: PresenterActivityGroup[];
+}) => {
   return (
     activities &&
     activities.length > 0 && (
@@ -35,7 +52,7 @@ const PresenterActivities = ({ activities }) => {
           ))}
         </TabList>
         {activities.map((activityGroup, i) => (
-          <PresenterActivityGroup activityGroup={activityGroup} key={i} />
+          <PresenterActivityGroupPanel activityGroup={activityGroup} key={i} />
         ))}
       </Tabs>
     )

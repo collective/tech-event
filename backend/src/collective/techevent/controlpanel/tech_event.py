@@ -19,14 +19,18 @@ class ITechEventSettings(Interface):
 
 
 class TechEventSettingsEditForm(RegistryEditForm):
-    schema = ITechEventSettings
+    """Edit form for the TechEvent registry settings."""
+
+    schema = ITechEventSettings  # type: ignore[assignment]  # plone-stubs types RegistryEditForm.schema as None
     label = _("TechEvent Settings")
     schema_prefix = "collective.techevent.settings"
 
-    def updateFields(self):
+    def updateFields(self) -> None:
+        """Update the form fields."""
         super().updateFields()
 
-    def updateWidgets(self):
+    def updateWidgets(self) -> None:
+        """Update the form widgets."""
         super().updateWidgets()
 
 

@@ -4,27 +4,6 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "ruff.organizeImports": true,
-  "python.analysis.include": [
-    "${workspaceFolder:<workspaceName>}/backend/.venv/**/*",
-    "${workspaceFolder:<workspaceName>}/backend/src/**/*",
-    "${workspaceFolder:<workspaceName>}/backend/scripts/**/*",
-    "${workspaceFolder:<workspaceName>}/backend/tests/**/*"
-  ],
-  "[python]": {
-    "editor.formatOnType": true,
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    }
-  },
-  "python.terminal.activateEnvironment": true,
-  "python.testing.pytestArgs": [
-    "backend/tests"
-  ],
-  "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true,
   "[css][less][scss]": {
     "editor.tabSize": 2,
     "editor.formatOnSave": true,
@@ -33,6 +12,16 @@
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "ruff.organizeImports": true,
+  "python-envs.workspaceSearchPaths": [
+    "backend/.venv"
+  ],
+  "python.terminal.activateEnvironment": true,
+  "python.testing.pytestArgs": [
+    "backend/tests"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
   "[markdown]": {
     "editor.formatOnSave": false
   }

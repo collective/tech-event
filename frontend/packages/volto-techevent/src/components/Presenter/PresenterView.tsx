@@ -2,13 +2,13 @@ import React from 'react';
 import SocialNetworks from '@plonegovbr/volto-social-media/components/SocialNetworks/SocialNetworks';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { Container } from '@plone/components';
-import type { Presenter as PresenterContent } from '@plone-collective/volto-techevent/types/presenter';
+import type { PresenterItem } from './types';
 import PresenterCategory from './PresenterCategory';
 import PresenterActivities from './PresenterActivities';
 import Card from '../primitives/Card/Card';
 
 interface PresenterViewProps {
-  content: PresenterContent;
+  content: PresenterItem;
 }
 
 /**
@@ -56,7 +56,10 @@ const PresenterView: React.FC<PresenterViewProps> = ({ content }) => {
               <Container
                 className="presenterText"
                 dangerouslySetInnerHTML={{ __html: text.data }}
-              />
+              >
+                {/* Container requires children; the HTML is set above. */}
+                {undefined}
+              </Container>
             )}
             {social_links && (
               <Container className="presenterLinks">

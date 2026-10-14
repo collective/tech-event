@@ -3,10 +3,10 @@ import Image from '@plone/volto/components/theme/Image/Image';
 import { Container } from '@plone/components';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import type { SponsorInfo } from '@plone-collective/volto-techevent/types/sponsors';
+import type { SponsorTileItem } from './types';
 
 interface SponsorTileProps {
-  item: SponsorInfo;
+  item: SponsorTileItem;
 }
 
 const SponsorTile: React.FC<SponsorTileProps> = ({ item }) => {

@@ -12,7 +12,7 @@ const blockInfo: BlockConfigBase = {
   group: 'event-sponsors',
   category: 'sponsors',
   icon: listBulletSVG,
-  blockSchema: sponsorLevelSchema,
+  blockSchema: sponsorLevelSchema as BlockConfigBase['blockSchema'],
   view: SponsorLevelBlockView,
   edit: SponsorLevelBlockEdit,
   restricted: sponsorLevelRestrict,

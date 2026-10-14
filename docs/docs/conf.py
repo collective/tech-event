@@ -24,7 +24,7 @@ author = "PloneGov-BR"
 trademark_name = "collective"
 now = datetime.now()
 year = str(now.year)
-copyright = year
+copyright = year  # noqa: A001
 
 
 # The version info for the project you're documenting, acts as replacement for
@@ -75,8 +75,6 @@ extensions = [
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
     "sphinxcontrib.mermaid",
-    "sphinxcontrib.video",
-    "sphinxcontrib.youtube",
     "sphinxext.opengraph",
 ]
 
@@ -95,13 +93,14 @@ linkcheck_ignore = [
     # Ignore file downloads
     r"^/_static/",
     # Ignore pages that require authentication
-    r"https://github.com/collective/techconferenceforplone/issues/new",  # requires auth
+    r"https://github.com/collective/tech-event/issues/new",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
     # Ignore other specific anchors
 ]
 linkcheck_allowed_redirects = {  # TODO: Confirm usage of linkcheck_allowed_redirects
-    # All HTTP redirections from the source URI to the canonical URI will be treated as "working".
+    # Treat all HTTP redirections from the source URI to the canonical URI as
+    # working.
 }
 linkcheck_anchors = True
 linkcheck_timeout = 5
@@ -131,7 +130,8 @@ suppress_warnings = []
 html_theme = "plone_sphinx_theme"  # This can be configured
 html_logo = "_static/logo.svg"
 html_favicon = "_static/favicon.ico"
-# The default value includes icon-links, so override it with that one omitted, and add it to html_theme_options[footer_content_items].
+# The default value includes icon-links. Override it with that item omitted,
+# then add it to html_theme_options[footer_content_items].
 html_sidebars = {
     "**": [
         "navbar-logo",
@@ -141,8 +141,7 @@ html_sidebars = {
 }
 html_theme_options = {
     "article_header_start": ["toggle-primary-sidebar"],
-    # "extra_footer": """<p>Example `extra_footer` content. License info. Trademark info and usage.</p>
-    # <p>Pull request previews by <a href="https://readthedocs.org/">Read the Docs</a>.</p>""",
+    # "extra_footer": "<p>Example `extra_footer` content.</p>",
     "footer_content_items": [
         "author",
         "copyright",
@@ -155,7 +154,7 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/collective/techconferenceforplone",
+            "url": "https://github.com/collective/tech-event",
             "icon": "fa-brands fa-square-github",
             "type": "fontawesome",
             "attributes": {
@@ -182,7 +181,7 @@ html_theme_options = {
     "navigation_with_keys": True,
     "path_to_docs": "docs/docs",
     "repository_branch": "main",
-    "repository_url": "https://github.com/collective/techconferenceforplone",
+    "repository_url": "https://github.com/collective/tech-event",
     "search_bar_text": "Search",
     "show_toc_level": 2,
     "use_edit_page_button": True,
@@ -192,12 +191,11 @@ html_theme_options = {
 # suggest edit link
 # remark:  is mandatory in "edit_page_url_template"
 # html_context = {
-#     "edit_page_url_template": "https://github.com/collective/techconferenceforplone/edit/main/docs/",
+#     "edit_page_url_template": "https://github.com/collective/tech-event/edit/main/docs/",
 # }
 
 # Announce that we have an opensearch plugin
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
-html_use_opensearch = "https://MY_READTHEDOCS_PROJECT_SLUG.readthedocs.io"
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -235,7 +233,7 @@ autodoc_class_signature = "separated"
 # -- Options for sphinx_sitemap to html -----------------------------
 
 # Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://MY_READTHEDOCS_PROJECT_SLUG.readthedocs.io/"
+html_baseurl = "https://collective.github.io/tech-event/"
 # https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
 sitemap_url_scheme = "{link}"
 sitemap_filename = "sitemap-custom.xml"
@@ -247,7 +245,7 @@ sitemap_filename = "sitemap-custom.xml"
 myst_enable_extensions = [
     "attrs_block",  # Support parsing of block attributes.
     "attrs_inline",  # Support parsing of inline attributes.
-    "colon_fence",  # You can also use ::: delimiters to denote code fences, instead of ```.
+    "colon_fence",  # Use ::: delimiters for code fences instead of ```.
     "deflist",  # Support definition lists. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
     "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images
     "linkify",  # Identify "bare" web URLs and add hyperlinks.
@@ -283,9 +281,9 @@ mermaid_version = "11.2.0"
 
 
 # -- OpenGraph configuration ----------------------------------
-ogp_site_url = "https://MY_READTHEDOCS_PROJECT_SLUG.readthedocs.io/"
+ogp_site_url = "https://collective.github.io/tech-event/"
 ogp_description_length = 200
-ogp_image = "https://MY_READTHEDOCS_PROJECT_SLUG/_static/MY_LOGO.svg"
+ogp_image = "https://collective.github.io/tech-event/_static/logo.svg"
 ogp_site_name = "Tech Event Support for Plone Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
@@ -356,7 +354,7 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{SUPPORTED_PYTHON_VERSIONS}": "3.10, 3.11, 3.12, or 3.13",
+    "{SUPPORTED_PYTHON_VERSIONS}": "3.11, 3.12, 3.13, or 3.14",
 }
 
 

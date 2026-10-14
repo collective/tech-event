@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="collective.techevent:default"
+      source="1007"
+      destination="1008"
+      >
+    <genericsetup:upgradeStep
+        title="Add the socialmedia social_links catalog metadata"
+        description="Runs the plonegovbr.socialmedia 1001 step, which creates and fills the social_links column."
+        handler=".upgrade_social_links"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>

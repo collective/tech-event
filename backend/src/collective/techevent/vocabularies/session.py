@@ -1,3 +1,5 @@
+"""Vocabularies for session settings configured on the event root."""
+
 from collective.techevent.utils import find_event_root
 from plone.dexterity.content import DexterityContent
 from zope.interface import provider
@@ -6,7 +8,7 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 
-@provider(IVocabularyFactory)
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
 def session_tracks(context: DexterityContent) -> SimpleVocabulary:
     """Available Session Tracks."""
     terms = []
@@ -17,7 +19,7 @@ def session_tracks(context: DexterityContent) -> SimpleVocabulary:
     return SimpleVocabulary(terms)
 
 
-@provider(IVocabularyFactory)
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
 def session_levels(context: DexterityContent) -> SimpleVocabulary:
     """Available Session Levels."""
     terms = []
@@ -28,7 +30,7 @@ def session_levels(context: DexterityContent) -> SimpleVocabulary:
     return SimpleVocabulary(terms)
 
 
-@provider(IVocabularyFactory)
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
 def session_audiences(context: DexterityContent) -> SimpleVocabulary:
     """Available Session Audiences."""
     terms = []
@@ -39,7 +41,7 @@ def session_audiences(context: DexterityContent) -> SimpleVocabulary:
     return SimpleVocabulary(terms)
 
 
-@provider(IVocabularyFactory)
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
 def durations_keynote(context: DexterityContent) -> SimpleVocabulary:
     """Available Keynote Duration."""
     terms = []
@@ -50,7 +52,7 @@ def durations_keynote(context: DexterityContent) -> SimpleVocabulary:
     return SimpleVocabulary(terms)
 
 
-@provider(IVocabularyFactory)
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
 def durations_talk(context: DexterityContent) -> SimpleVocabulary:
     """Available Talk Duration."""
     terms = []
@@ -61,7 +63,7 @@ def durations_talk(context: DexterityContent) -> SimpleVocabulary:
     return SimpleVocabulary(terms)
 
 
-@provider(IVocabularyFactory)
+@provider(IVocabularyFactory)  # type: ignore[type-var]  # zope-stubs bind provider's _C to type
 def durations_training(context: DexterityContent) -> SimpleVocabulary:
     """Available Training Duration."""
     terms = []

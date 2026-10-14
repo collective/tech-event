@@ -26,6 +26,7 @@ interface SessionViewProps {
  */
 const SessionView: React.FC<SessionViewProps> = ({ content }) => {
   const { title, description, text, presenters } = content;
+  const { requirements } = content as TrainingInfo;
   const portal_type = content['@type'];
   const intl = useIntl();
 
@@ -56,13 +57,13 @@ const SessionView: React.FC<SessionViewProps> = ({ content }) => {
               </Container>
             )}
 
-            {content.requirements && (
+            {requirements && (
               <Container className="sessionBody sessionSection">
                 <h3>{intl.formatMessage(messages.requirements)}</h3>
                 <div
                   className="sessionText"
                   dangerouslySetInnerHTML={{
-                    __html: content.requirements.data,
+                    __html: requirements.data,
                   }}
                 />
               </Container>

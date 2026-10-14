@@ -3,11 +3,12 @@ import { Container } from '@plone/components';
 import type { SponsorLevel as SponsorLevelType } from '@plone-collective/volto-techevent/types/sponsors';
 import SponsorList from './SponsorList';
 import { extractAlignment } from '@plone-collective/volto-techevent/helpers/styles';
+import type { SponsorsStyles } from './types';
 
 interface SponsorLevelProps {
   item: SponsorLevelType;
-  style: object;
-  title: string;
+  styles?: SponsorsStyles;
+  title?: string;
 }
 
 const SponsorLevel: React.FC<SponsorLevelProps> = ({

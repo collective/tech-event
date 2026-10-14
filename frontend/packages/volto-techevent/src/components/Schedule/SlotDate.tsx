@@ -1,15 +1,15 @@
-import type { ScheduleInfo } from '@plone-collective/volto-techevent/types/schedule';
 import { formatDate } from '@plone/volto/helpers/Utils/Date';
+import type { TimeSpan } from './fields';
 
 interface SlotDateProps {
-  item: ScheduleInfo;
+  item: TimeSpan;
   shortFormat: boolean;
   locale: string;
   className?: string;
 }
 
 interface FormatProps {
-  item: ScheduleInfo;
+  item: TimeSpan;
   start: Date;
   end: Date;
   locale: string;
@@ -35,7 +35,12 @@ const ShortFormat: React.FC<FormatProps> = ({ item, start, end, locale }) => (
 );
 
 const LongFormat: React.FC<FormatProps> = ({ item, start, end, locale }) => {
-  const date = formatDate({ date: start, locale: locale, includeTime: false });
+  // Without `format`, formatDate returns a string; the parts array needs `formatToParts`.
+  const date = formatDate({
+    date: start,
+    locale: locale,
+    includeTime: false,
+  } as Parameters<typeof formatDate>[0]) as string;
   return (
     <>
       <span className="date">{date}</span> –{' '}

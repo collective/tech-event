@@ -1,212 +1,154 @@
 # Tech Event Support for Plone (@plone-collective/volto-techevent)
 
-Volto components to implement a tech event (conference / symposium / seminar) frontend for the Plone CMS.
+`@plone-collective/volto-techevent` is a Volto add-on with the components for a tech event site: conferences, symposiums and seminars.
+It shows the schedule, the presenters, the sessions and the sponsors of an event.
 
-[![npm](https://img.shields.io/npm/v/@plone-collective/volto-techevent)](https://www.npmjs.com/package/@plone-collective/volto-techevent)
-[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://collective.github.io/tech-event/)
-[![CI](https://github.com/collective/tech-event/actions/workflows/main.yml/badge.svg)](https://github.com/collective/tech-event/actions/workflows/main.yml)
+It needs the backend add-on [collective.techevent](https://pypi.org/project/collective.techevent) in your Plone site.
 
+Read the documentation at [collective.github.io/tech-event](https://collective.github.io/tech-event/).
 
 ## Features
 
-### Content type views
+### Views
 
-- `Keynote`, `Talk`, `Training`, `Open Space`
-- `Lightning Talks`
-- `Presenter`
-- `Break`, `Slot`, `Meeting`
-- `Sponsor`
-
-The content types `Venue`, `Room`, `SponsorsDB`, `SponsorLevel`, and `Schedule` use blocks.
+The add-on provides views for these content types: Talk, Keynote, Training, Open Space, Lightning Talks, Presenter, Break, Slot, Meeting and Sponsor.
 
 ### Blocks
-- **Schedule Block**: present the schedule of a day — or multiple days — of the event.
-- **Packages and Sponsors**: list sponsors grouped by package level.
-- **Package Comparison**: comparison of package level benefits.
-- **Package Benefits**: list benefits of a package level.
-- **Sponsors List**: list of sponsors for a package level.
 
-### Grid listing variations
-- Content types: Talk, Training, Keynote, Presenter
+The blocks are in the **Event** and **Event Sponsors** groups of the block chooser.
 
-### Actions and reducers
-- Support for sponsors and registration endpoints.
+-   **Schedule**: shows the schedule of the event, for one day or for several days.
+-   **Sponsors Showcase**: shows the sponsors of all levels.
+-   **Sponsor Level**: shows the sponsors of one level.
+-   **Level Benefits**: shows the benefits of one level.
+-   **Level Comparison**: compares the levels and their benefits.
 
-## See it in action
+### Listings
 
-- [Python Cerrado 2025](https://2025.pythoncerrado.org)
-- [Plone Conference 2025](https://2025.ploneconf.org)
-- [Python Brasil 2025](https://2025.pythonbrasil.org.br)
+The Listing block has grid templates for presenters, keynotes, talks and trainings.
+
+## Supported versions
+
+Volto 19, with Plone 6.1 or 6.2.
 
 ## Installation
 
-To install this addon a project, add `@plone-collective/volto-techevent` to the `package.json` to the main package of your project.
+Install the add-on with pnpm.
+
+```shell
+pnpm add @plone-collective/volto-techevent
+```
+
+Add the add-on to the `addons` list in the `package.json` of your project.
 
 ```json
-"addons": {
+{
+  "addons": [
     "@plone-collective/volto-techevent"
-},
-"dependencies": {
-    "@plone-collective/volto-techevent": "*"
+  ]
 }
 ```
 
-Ensure `@kitconcept/volto-light-theme` as the default theme on your project by editing `volto.config.js`.
+### Theme
 
-```javascript
-const theme = '@kitconcept/volto-light-theme';
+The add-on does not depend on a theme.
+Your project brings its own theme.
+The add-on is tested with `@kitconcept/volto-light-theme` version 8.0.0, so add it to your project and list it in `addons` before the Tech Event add-on.
+
+```shell
+pnpm add @kitconcept/volto-light-theme@^8.0.0
 ```
 
-### Backend add-on
+### Backend
 
-`@plone-collective/volto-techevent` requires the installation of its sibling add-on, `collective.techevent` on the backend.
+Install `collective.techevent` in the backend of your project, and install its profile in the Plone site.
+See the [installation guide](https://collective.github.io/tech-event/how-to-guides/install-the-add-on.html) for the steps.
 
-### Test installation
+## Customize the styles
 
-Visit http://localhost:3000/ in a browser, login, and check the awesome new features.
-
-## Customize it in your project
-
-The easiest way to customize the design of this package is by using CSS Custom Properties (CSS variables).
-Override these variables in your project's theme (for example, src/theme/theme.css or app.less).
+Override the CSS custom properties in your project's theme, for example in `src/theme/theme.css`.
 
 ```css
 :root {
-  /* SponsorTile */
-  --techevent-sponsortile-background-main: transparent;
-  --techevent-sponsortile-min-width: 200px;
-  --techevent-sponsortile-max-width: 400px;
-  --techevent-sponsortile-align-items: center;
-  --techevent-sponsortile-justify-content: center;
-  --techevent-sponsortile-border-width: 1px;
-  --techevent-sponsortile-border-style: solid;
-  /* --techevent-sponsortile-border-color: <color>; */
-  --techevent-sponsortile-border-radius: 0.5rem;
-  --techevent-sponsortile-margin: 0.5rem;
-  /* --techevent-sponsortile-box-shadow: 0px 3px 16px 0px #000; */
-  --techevent-sponsortile-padding: 7px;
-
-  /* SponsorTile (hover) */
-  --techevent-sponsortile-hover-border-width: 1px;
-  --techevent-sponsortile-hover-border-style: solid;
-  /* --techevent-sponsortile-hover-border-color: <color>; */
-  --techevent-sponsortile-hover-border-radius: 0.5rem;
-  --techevent-sponsortile-hover-margin: 0.5rem;
-  /* --techevent-sponsortile-hover-box-shadow: 0px 3px 16px 0px #000; */
-
-  /* SponsorLevel */
-  /* Title */
-  /* --techevent-sponsorlevel-title-color: <color>; */
-  /* --techevent-sponsorlevel-title-border-color: <color>; */
-  /* --techevent-sponsorlevel-title-before-background: <color>; */
-  --techevent-sponsorlevel-title-padding: 0 0 1rem 0;
-  --techevent-sponsorlevel-title-margin: 1.2rem 0;
-  --techevent-sponsorlevel-title-border-bottom-style: solid;
-  --techevent-sponsorlevel-title-border-bottom-width: 1px;
-  --techevent-sponsorlevel-title-before-height: 3px;
-  --techevent-sponsorlevel-title-before-width: 400px;
-
-  /* Presenter */
-  /* PresenterCategory */
-  --techevent-presenter-category-background-color: #ccc;
-  --techevent-presenter-category-color: #000;
-
-  --techevent-vocabulary-foreground-color: #fff;
-  /* Track foreground color */
-  --techevent-session-track-foreground-color: #fff;
-
   /* Schedule */
   --techevent-schedule-color: rgb(1, 106, 173);
   --techevent-schedule-border-color: #ccc;
   --techevent-schedule-room-color: #000;
-  --techevent-schedule-secondary-color: #ccc;
-  --techevent-schedule-reverse-color: #fff;
   --techevent-schedule-gap: 2px;
 
-  /* SessionTile */
+  /* Session tile */
   --techevent-sessionTile-background-color: #ecebeb;
   --techevent-sessionTile-color: #000;
+
+  /* Sponsor tile */
+  --techevent-sponsortile-border-radius: 0.5rem;
+  --techevent-sponsortile-padding: 7px;
 }
 ```
 
 ## Contribute
 
-This add-on is developed with pnpm workspaces and targets Volto 18. It requires pnpm for development.
+-   [Issue tracker](https://github.com/collective/tech-event/issues)
+-   [Source code](https://github.com/collective/tech-event)
 
-### Prerequisites ✅
+This add-on is developed with pnpm workspaces.
+Run `make install` in the root of the repository, then `make frontend-start` to start Volto.
+
+## License
+
+MIT.
+
+## Development
+
+The `frontend` folder of the repository is the Volto project that develops and tests this add-on, in `packages/volto-techevent`.
+
+### Prerequisites
 
 -   An [operating system](https://6.docs.plone.org/install/create-project-cookieplone.html#prerequisites-for-installation) that runs all the requirements mentioned.
 -   [nvm](https://6.docs.plone.org/install/create-project-cookieplone.html#nvm)
--   [Node.js and pnpm](https://6.docs.plone.org/install/create-project.html#node-js) 22
+-   [Node.js 22 and pnpm](https://6.docs.plone.org/install/create-project.html#node-js)
 -   [Make](https://6.docs.plone.org/install/create-project-cookieplone.html#make)
 -   [Git](https://6.docs.plone.org/install/create-project-cookieplone.html#git)
 -   [Docker](https://docs.docker.com/get-started/get-docker/) (optional)
 
-### Installation 🔧
+### Install
 
-1. Clone this repository, then change your working directory.
+Run the following commands in the root of the repository, not in this folder.
 
-    ```shell
-    git clone git@github.com:collective/tech-event.git
-    cd tech-event
-    ```
-
-2. Install this code base.
-
-    ```shell
-    make install
-    ```
-
-### Make convenience commands
-
-Run `make help` to list the available Make commands.
+```shell
+make install
+```
 
 ### Start developing
 
-Start the backend.
+Start the backend in one terminal.
 
 ```shell
 make backend-start
 ```
 
-In a separate terminal session, start the frontend.
+In a second terminal, start the frontend at http://localhost:3000/.
 
 ```shell
 make frontend-start
 ```
 
-### Lint code
+### Make commands
 
-Run ESLint, Prettier, and Stylelint in check mode.
+Run `make help` in this folder to list the commands.
 
-```shell
-make lint
-```
+| Command | Description |
+| --- | --- |
+| `make install` | Install the add-on in a development environment. |
+| `make start` | Start Volto, with reloading of the add-on. |
+| `make build` | Build a production bundle. |
+| `make format` | Format the code with ESLint, Prettier and Stylelint, in fix mode. |
+| `make lint` | Lint the code with ESLint, Prettier and Stylelint, in check mode. |
+| `make typecheck` | Check the TypeScript types. |
+| `make test` | Run the unit tests in watch mode. |
+| `make ci-test` | Run the unit tests once, as CI does. |
+| `make i18n` | Update the translation catalogs. |
+| `make storybook-start` | Start Storybook on port 6006. |
+| `make storybook-build` | Build the static Storybook. |
 
-### Format code
-
-Run ESLint, Prettier, and Stylelint in fix mode.
-
-```shell
-make format
-```
-
-### i18n
-
-Extract translation messages.
-
-```shell
-make i18n
-```
-
-### Unit tests
-
-Run unit tests.
-
-```shell
-make test
-```
-
-## License
-
-The project is licensed under the MIT license.
+The add-on lives in `packages/volto-techevent`, and the `core` folder is the Volto checkout that mrs-developer manages.

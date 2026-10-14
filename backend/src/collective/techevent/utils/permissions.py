@@ -1,9 +1,11 @@
 from collective.techevent.content.schedule.schedule import Schedule
 
 
-def modify_schedule_permissions(content: Schedule):
+def modify_schedule_permissions(content: Schedule) -> None:
     """Modify permissions inside the Schedule object to allow adding activities
     inside subfolders.
+
+    :param content: The Schedule whose permissions are changed.
     """
     default_roles = ["Manager", "Site Administrator", "Owner", "Contributor"]
     permissions = [
