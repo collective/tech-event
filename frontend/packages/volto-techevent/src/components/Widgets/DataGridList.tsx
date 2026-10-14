@@ -8,7 +8,7 @@ import { applySchemaDefaults } from '@plone/volto/helpers/Blocks/Blocks';
 import { reorderArray } from '@plone/volto/helpers/Utils/Utils';
 import AnimateHeight from 'react-animate-height';
 import ObjectWidget from '@plone/volto/components/manage/Widgets/ObjectWidget';
-import DndSortableList from '@kitconcept/volto-light-theme/helpers/DndSortableList';
+import DndSortableList from './DndSortableList/DndSortableList';
 import cx from 'classnames';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
@@ -19,7 +19,6 @@ import { v4 as uuid } from 'uuid';
 import type { BlockConfigBase, Content, JSONSchema } from '@plone/types';
 import type { IntlShape } from 'react-intl';
 import config from '@plone/volto/registry';
-import isEmpty from 'lodash/isEmpty';
 
 const messages = defineMessages({
   labelRemoveItem: {
@@ -234,7 +233,7 @@ const DataGridListWidget = (props: DataGridListWidgetProps) => {
           />
         )}
       </FormFieldWrapper>
-      {!isEmpty(value) && (
+      {value.length > 0 && (
         <DndSortableList
           items={value || []}
           handleDragEnd={handleDragEnd}
@@ -314,7 +313,7 @@ const DataGridListWidget = (props: DataGridListWidgetProps) => {
                           ? // @ts-ignore - TODO Make sure this continues to have sense
                             schemaEnhancer({
                               schema: objectSchema,
-                              formData: item,
+                              formData: item as BlockConfigBase,
                               intl,
                             })
                           : objectSchema

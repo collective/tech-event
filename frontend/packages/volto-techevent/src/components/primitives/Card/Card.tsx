@@ -1,5 +1,6 @@
 import * as React from 'react';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import Image from '@plone/volto/components/theme/Image/Image';
 import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
 
@@ -16,7 +17,7 @@ type CardProps = {
 const DefaultImage = (props: any) => {
   const { src, item, imageField, alt, loading, responsive } = props;
   return (
-    <img
+    <Image
       src={
         src ||
         item?.image_scales?.[imageField]?.[0].download ||
@@ -24,7 +25,7 @@ const DefaultImage = (props: any) => {
       }
       alt={alt}
       loading={loading}
-      className={responsive ? 'responsive' : ''}
+      responsive={responsive}
     />
   );
 };
