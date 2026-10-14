@@ -11,7 +11,7 @@ const blockInfo: BlockConfigBase = {
   group: 'event-sponsors',
   category: 'sponsors',
   icon: spreadsheetSVG,
-  blockSchema: levelComparisonSchema,
+  blockSchema: levelComparisonSchema as BlockConfigBase['blockSchema'],
   view: LevelComparisonBlockView,
   edit: LevelComparisonBlockEdit,
   restricted: false,

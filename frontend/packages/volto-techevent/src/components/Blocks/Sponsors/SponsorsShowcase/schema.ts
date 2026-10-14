@@ -1,9 +1,11 @@
 import { addStyling } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
 import messages from '@plone-collective/volto-techevent/messages';
-import type { BlockSchemaProps } from '@plone-collective/volto-techevent/types/common';
+import type { SponsorsSchemaArgs } from '@plone-collective/volto-techevent/components/Sponsors/types';
 import type { JSONSchema } from '@plone/types';
 
-export const sponsorsShowcaseSchema = (props: BlockSchemaProps): JSONSchema => {
+export const sponsorsShowcaseSchema = (
+  props: SponsorsSchemaArgs,
+): JSONSchema => {
   const { intl } = props;
 
   const schema: JSONSchema = {

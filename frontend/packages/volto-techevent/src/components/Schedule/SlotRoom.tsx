@@ -1,9 +1,9 @@
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import locationSVG from '@plone/volto/icons/map.svg';
-import type { ScheduleInfo } from '@plone-collective/volto-techevent/types/schedule';
+import type { RoomField } from './fields';
 
 interface SlotRoomProps {
-  item: ScheduleInfo;
+  item: RoomField;
   className: string;
 }
 

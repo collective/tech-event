@@ -4,7 +4,7 @@ import { listSponsors } from '@plone-collective/volto-techevent/actions/sponsors
 import type {
   SponsorBenefit,
   SponsorLevel,
-} from '@plone-collective/volto-techevent/types';
+} from '@plone-collective/volto-techevent/types/sponsors';
 
 interface UseSponsorsResult {
   benefits: SponsorBenefit[];
@@ -17,7 +17,7 @@ export function useSponsors(eventRoot: string): UseSponsorsResult {
   const dispatch = useDispatch();
 
   const { benefits, levels, loading, error } = useSelector(
-    (state) => state.sponsors,
+    (state: { sponsors: UseSponsorsResult }) => state.sponsors,
     shallowEqual,
   );
 

@@ -5,10 +5,10 @@ import type { BrainSessionInfo } from '@plone-collective/volto-techevent/types/s
 
 interface SlotTileProps {
   item: BrainSessionInfo;
-  showDescription: boolean;
-  showAudience: boolean;
-  showLevel: boolean;
-  shortDate: boolean;
+  showDescription?: boolean;
+  showAudience?: boolean;
+  showLevel?: boolean;
+  shortDate?: boolean;
 }
 
 const SlotTile: React.FC<SlotTileProps> = ({

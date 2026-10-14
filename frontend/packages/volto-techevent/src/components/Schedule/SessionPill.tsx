@@ -1,8 +1,8 @@
 import React from 'react';
-import type { Term } from '@plone-collective/volto-techevent/types/common';
+import type { TermLike } from './fields';
 
 interface SessionPillProps {
-  term: Term;
+  term: TermLike;
   className: string;
   color: string;
 }
@@ -17,7 +17,11 @@ const SessionPill: React.FC<SessionPillProps> = ({
     term && (
       <div
         className={className}
-        style={{ '--vocabulary-background-color': color }}
+        style={
+          {
+            ['--vocabulary-background-color' as any]: color,
+          } as React.CSSProperties
+        }
       >
         <div className={`audience ${token}`}>{title}</div>
       </div>

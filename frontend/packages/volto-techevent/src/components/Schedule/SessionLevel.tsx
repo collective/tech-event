@@ -1,12 +1,12 @@
 import React from 'react';
 import { useVocabularyColors } from '@plone-collective/volto-techevent/hooks/useVocabularyColors';
-import type { SessionInfo } from '@plone-collective/volto-techevent/types/schedule';
+import type { TermLike } from './fields';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import levelSVG from '@plone/volto/icons/vertical.svg';
 import SessionPill from './SessionPill';
 
 interface SessionLevelProps {
-  item: SessionInfo;
+  item: { session_level?: TermLike[] | null };
 }
 
 const SessionLevel: React.FC<SessionLevelProps> = ({ item }) => {
@@ -19,7 +19,7 @@ const SessionLevel: React.FC<SessionLevelProps> = ({ item }) => {
         <Icon name={levelSVG} className={'categoryIcon'} />
         {session_level.map((item, i) => {
           const { token } = item;
-          const color = colors?.[token] || 'unset';
+          const color = (token && colors?.[token]) || 'unset';
           return (
             <SessionPill
               key={i}

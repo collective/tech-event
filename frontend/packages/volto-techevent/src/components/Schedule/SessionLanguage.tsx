@@ -1,7 +1,7 @@
-import type { SessionInfo } from '@plone-collective/volto-techevent/types/schedule';
+import type { LanguageField } from './fields';
 
 interface SessionLanguageProps {
-  item: SessionInfo;
+  item: LanguageField;
   className?: string;
 }
 
@@ -12,7 +12,7 @@ const SessionLanguage: React.FC<SessionLanguageProps> = ({
   const language = Array.isArray(item.session_language)
     ? item.session_language[0]
     : item.session_language;
-  const token = language?.token || language;
+  const token = typeof language === 'string' ? language : language?.token;
 
   return (
     language && (

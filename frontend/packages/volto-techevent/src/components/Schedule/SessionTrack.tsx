@@ -1,9 +1,9 @@
 import React from 'react';
 import { useVocabularyColors } from '@plone-collective/volto-techevent/hooks/useVocabularyColors';
-import type { Term } from '@plone-collective/volto-techevent/types/common';
+import type { TermLike } from './fields';
 
 interface SessionTrackProps {
-  term: Term;
+  item: { session_track?: TermLike[] | null };
 }
 
 const SessionTrack: React.FC<SessionTrackProps> = ({ item }) => {
@@ -14,7 +14,7 @@ const SessionTrack: React.FC<SessionTrackProps> = ({ item }) => {
       {tracks.map((track) => {
         const token = track?.token;
         const title = track?.title;
-        const value = colors?.[token] || 'unset';
+        const value = (token && colors?.[token]) || 'unset';
         return (
           token && (
             <div

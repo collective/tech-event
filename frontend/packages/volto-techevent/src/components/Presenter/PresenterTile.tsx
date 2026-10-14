@@ -5,10 +5,10 @@ import Image from '@plone/volto/components/theme/Image/Image';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { Container } from '@plone/components';
-import type { Presenter as PresenterContent } from '@plone-collective/volto-techevent/types/presenter';
+import type { PresenterItem } from './types';
 
 interface PresenterTileProps {
-  item: PresenterContent;
+  item: PresenterItem;
 }
 
 /**

@@ -6,7 +6,9 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import { useEventSettings } from '@plone-collective/volto-techevent/hooks/useEventSettings';
 import SponsorList from '@plone-collective/volto-techevent/components/Sponsors/SponsorList';
 import { useSponsors } from '@plone-collective/volto-techevent/hooks/useSponsors';
+import type { SponsorLevel as SponsorLevelType } from '@plone-collective/volto-techevent/types/sponsors';
 import type { BlockViewProps } from '@plone/types';
+import type { SponsorLevelBlockData } from '@plone-collective/volto-techevent/components/Sponsors/types';
 import messages from '@plone-collective/volto-techevent/messages';
 
 const View: React.FC<BlockViewProps> = ({
@@ -16,12 +18,13 @@ const View: React.FC<BlockViewProps> = ({
   className,
   style,
 }) => {
-  const { title, href, label, displayCTA, styles } = data;
+  const { title, href, label, displayCTA, styles } =
+    data as SponsorLevelBlockData;
   const intl = useIntl();
   const level_id = content.id || properties.id;
   const eventRoot = useEventSettings()?.eventRoot;
   const { levels, loading } = useSponsors(eventRoot ?? '');
-  const [level, setLevel] = useState();
+  const [level, setLevel] = useState<SponsorLevelType>();
 
   useEffect(() => {
     if (levels) {

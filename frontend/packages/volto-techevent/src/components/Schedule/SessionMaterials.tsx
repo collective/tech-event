@@ -1,13 +1,11 @@
 import React from 'react';
 import { Container } from '@plone/components';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import type {
-  SessionInfo,
-  TrainingInfo,
-} from '@plone-collective/volto-techevent/types/schedule';
+import type { Content } from '@plone/types';
+import type { LinkItem } from './fields';
 
 interface SessionMaterialsProps {
-  content: SessionInfo | TrainingInfo;
+  content: { items?: Content['items'] };
 }
 
 /**
@@ -28,7 +26,10 @@ const SessionMaterials: React.FC<SessionMaterialsProps> = ({ content }) => {
             const { title } = item;
             return (
               <li key={index} className="session-material-item">
-                <UniversalLink item={item} openLinkInNewTab={true}>
+                <UniversalLink
+                  item={item as unknown as LinkItem}
+                  openLinkInNewTab={true}
+                >
                   {title}
                 </UniversalLink>
               </li>

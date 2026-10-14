@@ -6,13 +6,13 @@
 import { LIST_SPONSORS } from '@plone-collective/volto-techevent/constants/ActionTypes';
 import type {
   SponsorBenefit,
-  SponsorsLevel,
+  SponsorLevel,
   SponsorsLevels,
 } from '@plone-collective/volto-techevent/types/sponsors';
 
 interface SponsorsState {
   benefits: SponsorBenefit[];
-  levels: SponsorsLevel[];
+  levels: SponsorLevel[];
   loading: boolean;
   error: string | null;
 }

@@ -11,7 +11,7 @@ const blockInfo: BlockConfigBase = {
   group: 'event-sponsors',
   category: 'sponsors',
   icon: sponsorsSVG,
-  blockSchema: sponsorsShowcaseSchema,
+  blockSchema: sponsorsShowcaseSchema as BlockConfigBase['blockSchema'],
   view: SponsorsShowcaseBlockView,
   edit: SponsorsShowcaseBlockEdit,
   restricted: false,

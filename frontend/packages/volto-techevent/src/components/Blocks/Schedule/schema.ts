@@ -1,9 +1,14 @@
 import { addStyling } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
 import messages from '@plone-collective/volto-techevent/messages';
-import type { ScheduleBlockSchemaProps } from '@plone-collective/volto-techevent/types/common';
+import type { IntlShape } from 'react-intl';
 import type { JSONSchema } from '@plone/types';
 
-export const scheduleSchema = (props: ScheduleBlockSchemaProps): JSONSchema => {
+export interface ScheduleSchemaArgs {
+  intl: IntlShape;
+  days?: string[];
+}
+
+export const scheduleSchema = (props: ScheduleSchemaArgs): JSONSchema => {
   const { intl, days } = props;
 
   const daysChoices = days !== undefined ? days.map((day) => [day, day]) : [];

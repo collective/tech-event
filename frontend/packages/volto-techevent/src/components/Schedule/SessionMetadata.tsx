@@ -1,11 +1,11 @@
 import SlotDate from '@plone-collective/volto-techevent/components/Schedule/SlotDate';
 import SessionLanguage from '@plone-collective/volto-techevent/components/Schedule/SessionLanguage';
 import SlotRoom from '@plone-collective/volto-techevent/components/Schedule/SlotRoom';
-import type { BrainSessionInfo } from '@plone-collective/volto-techevent/types/schedule';
+import type { LanguageField, RoomField, TimeSpan } from './fields';
 
 interface SessionMetadataProps {
-  item: BrainSessionInfo;
-  showRoom: boolean;
+  item: TimeSpan & RoomField & LanguageField;
+  showRoom?: boolean;
   shortDate: boolean;
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ComponentProps } from 'react';
 import { Tab, Menu } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
@@ -38,12 +38,14 @@ const Schedule = (props) => {
               )}
               <div className={'description'}>
                 <FormattedDate
-                  date={date}
-                  includeTime={false}
-                  format={{
-                    month: 'short',
-                    day: 'numeric',
-                  }}
+                  {...({
+                    date,
+                    includeTime: false,
+                    format: {
+                      month: 'short',
+                      day: 'numeric',
+                    },
+                  } as ComponentProps<typeof FormattedDate>)}
                 />
               </div>
             </div>

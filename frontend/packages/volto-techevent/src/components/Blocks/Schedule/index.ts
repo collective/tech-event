@@ -1,9 +1,9 @@
 // Schedule
 import ScheduleBlockEdit from './Edit';
 import ScheduleBlockView from './View';
-import { scheduleSchema } from './schema';
+import { scheduleSchema, type ScheduleSchemaArgs } from './schema';
 import scheduleSVG from '@plone/volto/icons/calendar.svg';
-import type { BlockConfigBase } from '@plone/types';
+import type { BlockConfigBase, BlockSchemaArgs } from '@plone/types';
 
 const blockInfo: BlockConfigBase = {
   id: 'scheduleBlock',
@@ -11,7 +11,8 @@ const blockInfo: BlockConfigBase = {
   group: 'event',
   category: 'event',
   icon: scheduleSVG,
-  blockSchema: scheduleSchema,
+  blockSchema: (args?: BlockSchemaArgs) =>
+    scheduleSchema(args as ScheduleSchemaArgs),
   view: ScheduleBlockView,
   edit: ScheduleBlockEdit,
   restricted: false,
