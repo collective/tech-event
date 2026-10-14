@@ -117,8 +117,9 @@ _BEHAVIORS_BY_CT = (
             "plone.categorization",
             "plone.excludefromnavigation",
             "collective.techevent.schedule",
-            "volto.preview_image_link",
             "plone.shortname",
+            "volto.preview_image_link",
+            "plone.basic",
             "plone.versioning",
         ],
     ),
@@ -129,8 +130,9 @@ _BEHAVIORS_BY_CT = (
             "plone.categorization",
             "plone.excludefromnavigation",
             "collective.techevent.schedule",
-            "volto.preview_image_link",
             "plone.shortname",
+            "volto.preview_image_link",
+            "plone.basic",
             "plone.versioning",
         ],
     ),
@@ -141,8 +143,9 @@ _BEHAVIORS_BY_CT = (
             "plone.categorization",
             "plone.excludefromnavigation",
             "collective.techevent.schedule",
-            "volto.preview_image_link",
             "plone.shortname",
+            "volto.preview_image_link",
+            "plone.basic",
             "plone.versioning",
         ],
     ),
@@ -153,8 +156,9 @@ _BEHAVIORS_BY_CT = (
             "plone.categorization",
             "plone.excludefromnavigation",
             "collective.techevent.schedule",
-            "volto.preview_image_link",
             "plone.shortname",
+            "volto.preview_image_link",
+            "plone.basic",
             "plone.versioning",
         ],
     ),
@@ -181,6 +185,19 @@ _BEHAVIORS_BY_CT = (
             "plone.namefromtitle",
             "plone.excludefromnavigation",
             "plone.shortname",
+            "plone.versioning",
+        ],
+    ),
+    (
+        "Tech Event",
+        [
+            "collective.techevent.event_settings",
+            "plone.dublincore",
+            "plone.namefromtitle",
+            "plone.excludefromnavigation",
+            "volto.preview_image_link",
+            "plone.shortname",
+            "volto.blocks",
             "plone.versioning",
         ],
     ),
@@ -343,5 +360,25 @@ class TestContentTypeFTI:
         behaviors_parameters(),
     )
     def test_behavior_present(self, get_fti, portal_type: str, behavior: str):
+        """The behavior is enabled on the type."""
         behaviors = get_fti(portal_type).behaviors
         assert behavior in behaviors
+
+    @pytest.mark.parametrize("portal_type,expected", list(_BEHAVIORS_BY_CT))
+    def test_behaviors_order_and_count(
+        self, get_fti, portal_type: str, expected: list[str]
+    ):
+        """The behaviors are in the expected order, and there are no extra ones.
+
+        The per-index checks alone pass when an extra behavior is appended, so
+        the count is checked as well.
+
+        :param get_fti: Pytest fixture returning the FTI of a portal type.
+        :param portal_type: The portal type under test.
+        :param expected: The behaviors, in the order the type declares them.
+        """
+        behaviors = get_fti(portal_type).behaviors
+
+        assert len(behaviors) == len(expected)
+        for idx, behavior in enumerate(expected):
+            assert behaviors[idx] == behavior

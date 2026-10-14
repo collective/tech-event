@@ -46,3 +46,35 @@ def content_factory():
 def portal(integration) -> DexterityContent:
     portal = integration["portal"]
     return portal
+
+
+@pytest.fixture
+def attendee_factory(content_factory, portal):
+    """Create attendees in the attendees container, for the duration of a test.
+
+    :param content_factory: Factory creating content in a container.
+    :param portal: The Plone site.
+    :returns: A callable creating an attendee with a given id and e-mail.
+    """
+    created = []
+
+    def func(attendee_id: str, email: str):
+        with api.env.adopt_roles(["Manager"]):
+            attendee = content_factory(
+                portal["attendees"],
+                {
+                    "type": "Attendee",
+                    "id": attendee_id,
+                    "first_name": "Jane",
+                    "last_name": "Doe",
+                    "email": email,
+                },
+            )
+        created.append(attendee_id)
+        return attendee
+
+    yield func
+    with api.env.adopt_roles(["Manager"]):
+        for attendee_id in created:
+            if attendee_id in portal["attendees"]:
+                portal["attendees"].manage_delObjects([attendee_id])
