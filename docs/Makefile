@@ -9,6 +9,7 @@ PAPER           ?=
 # Internal variables.
 GREEN=`tput setaf 2`
 RESET=`tput sgr0`
+SPHINXBUILD     = "$(realpath .venv/bin/sphinx-build)"
 DOCS_DIR        = ./docs/
 BUILDDIR        = ./_build
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -16,7 +17,7 @@ PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) $(DOCS_DIR)
 VALEFILES       := $(shell find $(DOCS_DIR) -type f -name "*.md" -print)
 VALEOPTS        ?=
-PYTHONVERSION   = >=3.11,<3.14
+PYTHONVERSION   = 3.14
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
@@ -38,18 +39,16 @@ init: clean clean-python .venv/bin/python  ## Clean docs build directory and Pyt
 
 .PHONY: clean
 clean:  ## Clean docs build directory
-	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
+	@rm -rf $(BUILDDIR) .venv .*_cache *.egg-info
 
 .PHONY: clean-python
 clean-python: clean
-	rm -rf .venv/
-	rm -rf *.egg-info
+	@rm -rf .venv/
+	@rm -rf *.egg-info
 # /environment management
 
-# documentation builders
-.PHONY: build
-build: html
 
+# documentation builders
 .PHONY: html
 html: .venv/bin/python  ## Build html
 	@uv run sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
@@ -87,17 +86,10 @@ changes: .venv/bin/python
 	@echo
 	@echo "The overview file is in $(BUILDDIR)/changes."
 
-.PHONY: rtd-prepare
-rtd-prepare:  ## Prepare environment on Read the Docs
-	asdf plugin add uv
-	asdf install uv latest
-	asdf global uv latest
+.PHONY: build
+build: html  ## Build documentation in HTML format
 
-.PHONY: rtd-pr-preview  ## Build pull request previews on Read the Docs
-rtd-pr-preview: rtd-prepare .venv/bin/python ## Build pull request preview on Read the Docs
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
 # /documentation builders
-
 
 # test
 .PHONY: linkcheck
