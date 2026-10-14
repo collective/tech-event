@@ -10,13 +10,18 @@ on:
         required: false
         type: string
         default: docs
+    outputs:
+      artifacts-name:
+        description: "Name of the uploaded docs artifact, propagated from the build job"
+        value: ${{ jobs.build.outputs.artifacts-name }}
 
 jobs:
 
   build:
     name: "Docs: Build"
-    uses: plone/meta/.github/workflows/docs-build.yml@2.x
+    uses: ./.github/workflows/tmp-docs-build.yml
     with:
       python-version: ${{ inputs.python-version }}
       working-directory: ${{ inputs.working-directory }}
       check-vale: true
+      artifacts-store: true

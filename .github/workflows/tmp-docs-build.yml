@@ -1,0 +1,96 @@
+name: Documentation Build
+
+# Fork of plone/meta/.github/workflows/docs-build.yml@2.x, adding artifact
+# upload so the built site can be deployed alongside Storybook by
+# tmp-docs-publish.yml. The `tmp-` prefix marks it as living here only until
+# plone/meta grows the same capability; keep the diff against upstream small.
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        # Upstream marks this required *and* gives it a default, which
+        # actionlint flags as unreachable. The caller always passes one.
+        required: true
+        type: string
+      working-directory:
+        type: string
+        required: false
+        default: '.'
+      check-links:
+        default: true
+        type: boolean
+      check-vale:
+        default: true
+        type: boolean
+      artifacts-store:
+        default: false
+        type: boolean
+      artifacts-name-prefix:
+        type: string
+        required: false
+        default: 'docs-artifacts'
+    outputs:
+      artifacts-name:
+        description: "Name of the uploaded docs artifact (only meaningful when artifacts-store: true)"
+        value: ${{ jobs.docs.outputs.artifacts-name }}
+
+jobs:
+  docs:
+    name: Documentation
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    outputs:
+      artifacts-name: ${{ steps.artifact-name.outputs.name }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup uv
+        uses: plone/meta/.github/actions/setup_uv@2.x
+        with:
+          python-version: ${{ inputs.python-version }}
+          working-directory: ${{ inputs.working-directory }}
+
+      - name: Install Dependencies
+        shell: bash
+        run: make install
+
+      - name: Check for broken links
+        if: ${{ inputs.check-links }}
+        shell: bash
+        run: |
+          make linkcheckbroken
+
+      - name: Build HTML documentation
+        shell: bash
+        run: |
+          make build
+
+      - name: Run vale checks
+        if: ${{ inputs.check-vale }}
+        shell: bash
+        run: |
+          make vale VALEOPTS="--minAlertLevel='warning'"
+
+      - name: Compute artifact name
+        id: artifact-name
+        shell: bash
+        # Artifact names may not contain "/", which branch names often do, so
+        # it is replaced. The branch reaches the script through the environment
+        # rather than an expression, so its text is never parsed as shell.
+        env:
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          echo "name=${{ inputs.artifacts-name-prefix }}-${REF_NAME//\//-}" >> "$GITHUB_OUTPUT"
+
+      - name: Archive documentation artifacts
+        if: ${{ inputs.artifacts-store }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ steps.artifact-name.outputs.name }}
+          path: ${{ inputs.working-directory }}/_build/html
+          if-no-files-found: error

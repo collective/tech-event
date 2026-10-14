@@ -37,9 +37,15 @@ jobs:
     name: "Backend: Test"
     uses: plone/meta/.github/workflows/backend-pytest.yml@2.x
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.13", "3.12", "3.11", "3.10"]
-        plone-version: ["6.1-latest", "6.0-latest"]
+        # plonegovbr.socialmedia 3.x requires Python 3.11 or later.
+        python-version: ['3.11', '3.12', '3.13', '3.14']
+        plone-version: ['6.2-latest', '6.1-latest']
+        exclude:
+          # Plone 6.1 does not support Python 3.14.
+          - python-version: '3.14'
+            plone-version: '6.1-latest'
     with:
       python-version: ${{ matrix.python-version }}
       plone-version: ${{ matrix.plone-version }}
@@ -48,19 +54,47 @@ jobs:
   coverage:
     name: "Backend: Coverage"
     uses: plone/meta/.github/workflows/backend-pytest-coverage.yml@2.x
-    needs:
-      - test
     with:
       python-version: ${{ inputs.python-version }}
       plone-version: ${{ inputs.plone-version }}
       working-directory: ${{ inputs.working-directory }}
+
+  # Checks the reusable plone/meta workflows do not run: the coverage
+  # pragma policy, and mypy (which needs Python 3.12 or later for
+  # plone-stubs; the configured version is newer).
+  checks:
+    name: "Backend: Pragmas and types"
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup codebase
+        uses: plone/meta/.github/actions/setup_backend_uv@2.x
+        with:
+          python-version: ${{ inputs.python-version }}
+          plone-version: ${{ inputs.plone-version }}
+          working-directory: ${{ inputs.working-directory }}
+
+      - name: Check the coverage pragma policy
+        run: make check-pragmas
+
+      - name: Check types
+        run: make typecheck
 
   release:
     name: "Backend: Build and publish Container Image"
     uses: plone/meta/.github/workflows/container-image-build-push.yml@2.x
     needs:
       - lint
+      - test
       - coverage
+      - checks
     permissions:
       contents: read
       packages: write
@@ -84,6 +118,7 @@ jobs:
       - lint
       - test
       - coverage
+      - checks
       - release
     steps:
       - name: Write report
@@ -94,4 +129,5 @@ jobs:
           echo '| lint | ${{ needs.lint.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| test | ${{ needs.test.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| coverage | ${{ needs.coverage.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| checks | ${{ needs.checks.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| release | ${{ needs.release.result }} |' >> $GITHUB_STEP_SUMMARY
