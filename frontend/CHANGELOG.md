@@ -8,6 +8,40 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.2 (2026-10-13)
+
+
+### Breaking
+
+- Require Volto 19.5 or later, and stop depending on @kitconcept/volto-light-theme: projects that use it register the theme in their own volto.config.js. Use @plonegovbr/volto-social-media 3.0.0. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+### Feature
+
+- Add Storybook stories for every component, published with the documentation. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+### Bugfix
+
+- Fix crashes in the sponsor level comparison and the presenter category, show edit mode in the schedule block, show the configured label on the attendee login button, and return an empty map for an unknown vocabulary in useVocabularyColors. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+### Internal
+
+- Update the translation catalogs. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Align the frontend with the cookieplone monorepo add-on template: pnpm 10, Vitest, the typecheck, i18n and storybook-build targets, and a shipped tsconfig.json that maps only the add-on itself. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Add TypeScript types to the components, hooks and configuration, so the add-on passes make typecheck. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+### Documentation
+
+- Rewrite the README published on npm, with installation, the theme note, the blocks and views, and the development commands. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+### Tests
+
+- Test every component, hook, helper, reducer, action and configuration step with Vitest, and fail the suite when a component lacks a test or a story. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
 ## 1.0.0-beta.1 (2025-10-16)
 
 ### Internal

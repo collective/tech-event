@@ -9,6 +9,41 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b2 (2026-10-13)
+
+
+### Breaking changes:
+
+- Drop support for Plone 6.0 and Python 3.10, and add support for Plone 6.2 and Python 3.14. Require plonegovbr.socialmedia 3.0 or later and pytest-plone 1.1 or later. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+### New features:
+
+- Add an upgrade step that creates the social_links catalog column of plonegovbr.socialmedia 3.0, and drop the indexer it now provides. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+### Bug fixes:
+
+- Apply the Tech Event setting as soon as it is saved in the control panel, so the Tech Event content type becomes addable, or stops being addable, without reinstalling the add-on. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+### Internal:
+
+- Add type hints and reStructuredText docstrings across the backend code. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Update the translation catalogs, and complete the Brazilian Portuguese translation. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Use a native namespace package for collective.techevent. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Align the backend tooling with the cookieplone monorepo add-on template, and check types with mypy and plone-stubs. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+### Documentation:
+
+- Rewrite the README as a self-contained package description, with installation steps, features and a link to the documentation. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+### Tests
+
+- Test every content type, the services, serializers, vocabularies, upgrade steps and attendee support, raising the coverage to 95%. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
 ## 1.0.0b1 (2025-10-16)
 
 

@@ -7,6 +7,99 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0b2 (2026-10-13)
+
+### Backend
+
+
+#### Breaking changes:
+
+- Drop support for Plone 6.0 and Python 3.10, and add support for Plone 6.2 and Python 3.14. Require plonegovbr.socialmedia 3.0 or later and pytest-plone 1.1 or later. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### New features:
+
+- Add an upgrade step that creates the social_links catalog column of plonegovbr.socialmedia 3.0, and drop the indexer it now provides. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### Bug fixes:
+
+- Apply the Tech Event setting as soon as it is saved in the control panel, so the Tech Event content type becomes addable, or stops being addable, without reinstalling the add-on. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### Internal:
+
+- Add type hints and reStructuredText docstrings across the backend code. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Update the translation catalogs, and complete the Brazilian Portuguese translation. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Use a native namespace package for collective.techevent. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Align the backend tooling with the cookieplone monorepo add-on template, and check types with mypy and plone-stubs. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### Documentation:
+
+- Rewrite the README as a self-contained package description, with installation steps, features and a link to the documentation. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### Tests
+
+- Test every content type, the services, serializers, vocabularies, upgrade steps and attendee support, raising the coverage to 95%. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+
+### Frontend
+
+
+#### Breaking
+
+- Require Volto 19.5 or later, and stop depending on @kitconcept/volto-light-theme: projects that use it register the theme in their own volto.config.js. Use @plonegovbr/volto-social-media 3.0.0. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### Feature
+
+- Add Storybook stories for every component, published with the documentation. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### Bugfix
+
+- Fix crashes in the sponsor level comparison and the presenter category, show edit mode in the schedule block, show the configured label on the attendee login button, and return an empty map for an unknown vocabulary in useVocabularyColors. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### Internal
+
+- Update the translation catalogs. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Align the frontend with the cookieplone monorepo add-on template: pnpm 10, Vitest, the typecheck, i18n and storybook-build targets, and a shipped tsconfig.json that maps only the add-on itself. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Add TypeScript types to the components, hooks and configuration, so the add-on passes make typecheck. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### Documentation
+
+- Rewrite the README published on npm, with installation, the theme note, the blocks and views, and the development commands. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### Tests
+
+- Test every component, hook, helper, reducer, action and configuration step with Vitest, and fail the suite when a component lacks a test or a story. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+
+### Project
+
+
+#### Internal
+
+- Build the documentation with the same toolchain as the other collective monorepo add-ons, installing collective.techevent from the local backend. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Update the GitHub Actions workflows to the latest cookieplone-templates: test the backend on Plone 6.1 and 6.2, check backend types, publish the documentation and Storybook on GitHub Pages, and configure Dependabot. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Align the repository configuration with the cookieplone monorepo add-on template. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+
+
+#### Documentation
+
+- Document the concepts, a first-event tutorial, how-to guides and the reference of Tech Event Support for Plone. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Update the README with the supported versions, the badges and the development commands. @ericof [#32](https://github.com/collective/tech-event/issues/32)
+- Document an example content structure.  @mauritsvanrees 
+
+
+
 ## 1.0.0b1 (2025-10-16)
 
 ### Backend
