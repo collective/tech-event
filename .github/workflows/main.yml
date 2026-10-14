@@ -70,12 +70,10 @@ jobs:
     uses: ./.github/workflows/tmp-frontend-storybook.yml
     needs:
       - config
-      - frontend
-    # Built only where it is published from, and only once the frontend jobs
-    # it would otherwise duplicate have passed. `always()` lets it run when
-    # `frontend` was skipped for a docs-only change; the failure check keeps it
-    # from publishing on top of a broken build.
-    if: ${{ needs.config.outputs.deploy-docs == 'true' && always() && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure') }}
+    # Built whenever the frontend changed, and whenever the documentation site
+    # is published, in parallel with the frontend jobs rather than after them.
+    # Only the deploy waits for the frontend to pass.
+    if: ${{ needs.config.outputs.frontend == 'true' || (needs.config.outputs.deploy-docs == 'true' && github.ref == 'refs/heads/main') }}
     with:
       node-version: ${{ needs.config.outputs.node-version }}
       working-directory: "frontend"
@@ -87,6 +85,7 @@ jobs:
     needs:
       - config
       - docs
+      - frontend
       - storybook
     if: ${{ needs.config.outputs.deploy-docs == 'true' && always() && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure') }}
     concurrency:
