@@ -21,4 +21,10 @@
       handler=".schedule.schedule_added_handler"
       />
 
+  <!-- TechEvent Settings: apply support_multiple_events when it changes -->
+  <subscriber
+      for="plone.registry.interfaces.IRecordModifiedEvent"
+      handler=".settings.settings_modified_handler"
+      />
+
 </configure>
