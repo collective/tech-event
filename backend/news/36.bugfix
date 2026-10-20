@@ -1,0 +1,1 @@
+Fix the `@schedule` endpoint on sites with multiple tech events. It now lists only the slots inside the event it is called on, instead of every slot in the site, and no longer fails when slots exist outside any event. @ericof

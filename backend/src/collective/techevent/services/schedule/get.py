@@ -198,14 +198,13 @@ class ScheduleGet(Service):
         return {room.token: room.title for room in rooms}  # type: ignore[attr-defined]  # zope-stubs omit IVocabulary.__iter__
 
     def get_slots(self) -> list[dict[str, Any]]:
-        """Return the serialized published schedule slots.
+        """Return the serialized published schedule slots of this event.
 
         :returns: The JSON summaries of the slots, sorted by start.
         """
-        portal = api.portal.get()
         review_states = getattr(self.context, "schedule_review_states", None)
         results = api.content.find(
-            context=portal,
+            context=self.context,
             object_provides=IScheduleSlot,
             review_state=list(set(review_states or []).union({"published"})),
             sort_on="start",

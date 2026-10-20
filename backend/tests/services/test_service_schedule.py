@@ -1,7 +1,9 @@
 from collective.techevent.services.schedule.get import round_time
 from collective.techevent.services.schedule.get import time_slot
+from collective.techevent.subscribers.settings import SUPPORT_MULTIPLE_EVENTS
 from collective.techevent.utils import find_event_root
 from datetime import datetime
+from datetime import UTC
 from plone import api
 
 import pytest
@@ -99,6 +101,74 @@ class TestScheduleGet:
         assert len(days) > 1
         rooms = [x[-1] for x in days[1]["rooms"]]
         assert rooms == ["_all_", "Beta Room", "Main Room"]
+
+
+class TestScheduleMultipleEvents:
+    """Each Tech Event's @schedule lists only the slots inside it (#36)."""
+
+    @pytest.fixture(autouse=True)
+    def _setup(self, portal):
+        """Create two Tech Events, each with a Schedule and a published Talk.
+
+        :param portal: The Plone site, with the demo content.
+        """
+        self.portal = portal
+        with api.env.adopt_roles(["Manager"]):
+            api.portal.set_registry_record(SUPPORT_MULTIPLE_EVENTS, True)
+            for year in (2025, 2026):
+                event = api.content.create(
+                    container=portal,
+                    type="Tech Event",
+                    id=f"event-{year}",
+                    title=f"Event {year}",
+                )
+                schedule = api.content.create(
+                    container=event, type="Schedule", id="schedule", title="Schedule"
+                )
+                talk = api.content.create(
+                    container=schedule,
+                    type="Talk",
+                    id=f"talk-{year}",
+                    title=f"Talk {year}",
+                    start=datetime(year, 9, 1, 10, 0, tzinfo=UTC),
+                    end=datetime(year, 9, 1, 10, 45, tzinfo=UTC),
+                )
+                api.content.transition(talk, transition="publish")
+        transaction.commit()
+        yield
+        with api.env.adopt_roles(["Manager"]):
+            api.portal.set_registry_record(SUPPORT_MULTIPLE_EVENTS, False)
+        transaction.commit()
+
+    def slot_ids(self, api_manager_request, year: int) -> list[str]:
+        """Return the ids of the slots in an event's schedule.
+
+        :param api_manager_request: REST API session for a Manager.
+        :param year: Year of the event to query.
+        :returns: The slot ids, in schedule order.
+        """
+        response = api_manager_request.get(f"event-{year}/@schedule")
+        assert response.status_code == 200
+        return [
+            slot["@id"].rsplit("/", 1)[-1]
+            for day in response.json()["items"]
+            for slot in day["items"]
+        ]
+
+    @pytest.mark.parametrize("year", [2025, 2026])
+    def test_schedule_only_lists_own_slots(self, api_manager_request, year: int):
+        with api.env.adopt_roles(["Manager"]):
+            api.content.delete(self.portal["schedule"])
+        transaction.commit()
+        assert self.slot_ids(api_manager_request, year) == [f"talk-{year}"]
+
+    @pytest.mark.parametrize("year", [2025, 2026])
+    def test_schedule_ignores_slots_outside_events(
+        self, api_manager_request, year: int
+    ):
+        # Slots left at the site root have no event root once multiple
+        # events are enabled; they must not reach an event's schedule.
+        assert self.slot_ids(api_manager_request, year) == [f"talk-{year}"]
 
 
 @pytest.mark.parametrize(
