@@ -8,6 +8,11 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.4 (2026-10-20)
+
+No significant changes.
+
+
 ## 1.0.0-beta.3 (2026-10-14)
 
 No significant changes.

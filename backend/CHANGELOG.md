@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b4 (2026-10-20)
+
+
+### Bug fixes:
+
+- Fix the `@schedule` endpoint on sites with multiple tech events. It now lists only the slots inside the event it is called on, instead of every slot in the site, and no longer fails when slots exist outside any event. @ericof [#36](https://github.com/collective/tech-event/issues/36)
+
 ## 1.0.0b3 (2026-10-14)
 
 
