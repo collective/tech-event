@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import type { ConfigType } from '@plone/registry';
+import { contentIcons } from '../helpers/icons';
 import installSettings from './settings';
 
 type Querystring = Record<string, string>;
@@ -44,6 +45,23 @@ describe('installSettings', () => {
       'expand.inherit.behaviors':
         'some.behavior,collective.techevent.event_settings',
     });
+  });
+
+  it('registers the icons of the add-on content types', () => {
+    const config = installSettings(makeConfig());
+    expect(config.settings.contentIcons.Talk).toBe(contentIcons.Talk);
+    expect(config.settings.contentIcons['Tech Event']).toBe(
+      contentIcons['Tech Event'],
+    );
+  });
+
+  it('keeps the content icons already registered', () => {
+    const config = {
+      settings: { apiExpanders: [], contentIcons: { Document: 'page' } },
+    } as unknown as ConfigType;
+    installSettings(config);
+    expect(config.settings.contentIcons.Document).toBe('page');
+    expect(config.settings.contentIcons.Presenter).toBe(contentIcons.Presenter);
   });
 
   it('keeps the expanders already registered', () => {

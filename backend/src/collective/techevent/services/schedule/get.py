@@ -43,8 +43,79 @@ def dict_as_sorted_list(data: dict[str, Any], enforceIso: bool = False) -> list[
     return response
 
 
+MAX_TRAINING_BLOCK = timedelta(hours=4)
+
+
+def room_tokens(slot: dict) -> set[str]:
+    """Return the room tokens of a serialized slot.
+
+    :param slot: The serialized slot.
+    :returns: The tokens; empty when the slot has no room.
+    """
+    return {r.get("token") for r in slot.get("room") or [] if r.get("token")}
+
+
+def get_breaks(slots: list[dict]) -> list[tuple[datetime, datetime, set[str]]]:
+    """Return the start, end and rooms of every dated Break.
+
+    :param slots: The serialized slots.
+    :returns: One ``(start, end, rooms)`` tuple per Break.
+    """
+    return [
+        (parse(slot["start"]), parse(slot["end"]), room_tokens(slot))
+        for slot in slots
+        if slot.get("@type") == "Break" and slot.get("start") and slot.get("end")
+    ]
+
+
+def split_around_breaks(
+    start: datetime,
+    end: datetime,
+    rooms: set[str],
+    breaks: list[tuple[datetime, datetime, set[str]]],
+) -> list[tuple[datetime, datetime]]:
+    """Return the parts of ``start``-``end`` not covered by a break.
+
+    A break counts when it overlaps the period and shares a room with it; a
+    break or a period without a room is in every room.
+
+    :param start: Start of the period.
+    :param end: End of the period.
+    :param rooms: Room tokens of the period.
+    :param breaks: The ``(start, end, rooms)`` of the breaks.
+    :returns: The uncovered parts, in order; the whole period when no break
+        overlaps it.
+    """
+    overlapping = sorted(
+        (max(b_start, start), min(b_end, end))
+        for b_start, b_end, b_rooms in breaks
+        if b_start < end
+        and b_end > start
+        and (not b_rooms or not rooms or b_rooms & rooms)
+    )
+    parts = []
+    cursor = start
+    for b_start, b_end in overlapping:
+        if b_start > cursor:
+            parts.append((cursor, b_start))
+        cursor = max(cursor, b_end)
+    if cursor < end:
+        parts.append((cursor, end))
+    return parts
+
+
 def process_trainings(slots: list[dict]) -> list[dict]:
-    """Break whole day training sessions as 2 slots."""
+    """Split long trainings into the blocks shown in the schedule grid.
+
+    A Training is cut around the Breaks that overlap it, so a whole day
+    training with lunch in the middle becomes a morning and an afternoon
+    block. A Training longer than four hours with no Break in it is shown as
+    its first and its last four hours.
+
+    :param slots: The serialized slots, sorted by start.
+    :returns: The slots with the trainings split, sorted by start.
+    """
+    breaks = get_breaks(slots)
     response = []
     for slot in slots:
         raw_start = slot["start"]
@@ -54,20 +125,19 @@ def process_trainings(slots: list[dict]) -> list[dict]:
             continue
         start = parse(raw_start)
         end = parse(raw_end)
-        if (end - start).seconds > 14400:
-            # change the first slot end
-            new_end = (start + timedelta(seconds=14400)).isoformat()
-            slot["end"] = new_end
-            response.append(slot)
-            slot = deepcopy(slot)
-            # change the second slot start
-            new_start = (end - timedelta(seconds=14400)).isoformat()
-            slot["start"] = new_start
-            slot["end"] = raw_end
-            response.append(slot)
-        else:
-            response.append(slot)
-    return response
+        parts = split_around_breaks(start, end, room_tokens(slot), breaks)
+        if parts == [(start, end)] and end - start > MAX_TRAINING_BLOCK:
+            parts = [
+                (start, start + MAX_TRAINING_BLOCK),
+                (end - MAX_TRAINING_BLOCK, end),
+            ]
+        for part_start, part_end in parts:
+            part = deepcopy(slot)
+            part["start"] = raw_start if part_start == start else part_start.isoformat()
+            part["end"] = raw_end if part_end == end else part_end.isoformat()
+            response.append(part)
+    # The serializer returns every start as UTC ISO 8601, which sorts as text.
+    return sorted(response, key=lambda slot: slot["start"] or "")
 
 
 def round_time(dt: datetime) -> datetime:

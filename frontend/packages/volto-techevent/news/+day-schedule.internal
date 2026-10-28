@@ -1,0 +1,1 @@
+Split the day schedule into smaller components, move its grid logic to a tested helper, and type the days of the `@schedule` service as the backend returns them. @ericof

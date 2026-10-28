@@ -1,0 +1,1 @@
+Extend the schedule grid to the latest end time of the day, so a long session that ends after the last slot keeps all its rows. @ericof

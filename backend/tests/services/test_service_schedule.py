@@ -1,3 +1,4 @@
+from collective.techevent.services.schedule.get import process_trainings
 from collective.techevent.services.schedule.get import round_time
 from collective.techevent.services.schedule.get import time_slot
 from collective.techevent.subscribers.settings import SUPPORT_MULTIPLE_EVENTS
@@ -204,3 +205,112 @@ def test_round_time_quarters(dt, expected) -> None:
 )
 def test_time_slot(dt, expected) -> None:
     assert time_slot(dt) == expected
+
+
+def make_slot(portal_type: str, start: str, end: str, room: str = "") -> dict:
+    """Return a serialized slot with only the keys the training split reads.
+
+    :param portal_type: The ``@type`` of the slot.
+    :param start: Start time, ``HH:MM`` in UTC on 2025-07-31.
+    :param end: End time, ``HH:MM`` in UTC on 2025-07-31.
+    :param room: Token of the slot's room; empty for every room.
+    :returns: The slot.
+    """
+    return {
+        "@type": portal_type,
+        "title": portal_type,
+        "start": f"2025-07-31T{start}:00+00:00",
+        "end": f"2025-07-31T{end}:00+00:00",
+        "room": [{"token": room, "title": room}] if room else None,
+    }
+
+
+def hours(slots: list[dict]) -> list[tuple[str, str, str]]:
+    """Return the type, start and end hour of each slot.
+
+    :param slots: The serialized slots.
+    :returns: ``(type, HH:MM, HH:MM)`` per slot, in order.
+    """
+    return [(s["@type"], s["start"][11:16], s["end"][11:16]) for s in slots]
+
+
+class TestProcessTrainings:
+    """Whole day trainings are split around the breaks inside them (#31)."""
+
+    def test_split_around_lunch(self):
+        slots = [
+            make_slot("Training", "12:00", "21:00", room="training"),
+            make_slot("Break", "15:00", "17:00"),
+        ]
+        assert hours(process_trainings(slots)) == [
+            ("Training", "12:00", "15:00"),
+            ("Break", "15:00", "17:00"),
+            ("Training", "17:00", "21:00"),
+        ]
+
+    def test_split_around_several_breaks(self):
+        slots = [
+            make_slot("Training", "12:00", "21:00"),
+            make_slot("Break", "13:30", "14:00"),
+            make_slot("Break", "15:00", "16:00"),
+        ]
+        assert hours(process_trainings(slots)) == [
+            ("Training", "12:00", "13:30"),
+            ("Break", "13:30", "14:00"),
+            ("Training", "14:00", "15:00"),
+            ("Break", "15:00", "16:00"),
+            ("Training", "16:00", "21:00"),
+        ]
+
+    def test_break_in_another_room_does_not_split(self):
+        slots = [
+            make_slot("Training", "12:00", "15:00", room="training"),
+            make_slot("Break", "13:00", "13:30", room="main"),
+        ]
+        assert hours(process_trainings(slots)) == [
+            ("Training", "12:00", "15:00"),
+            ("Break", "13:00", "13:30"),
+        ]
+
+    def test_break_at_the_edge_trims_the_training(self):
+        slots = [
+            make_slot("Training", "12:00", "15:00"),
+            make_slot("Break", "11:30", "12:30"),
+        ]
+        assert hours(process_trainings(slots)) == [
+            ("Break", "11:30", "12:30"),
+            ("Training", "12:30", "15:00"),
+        ]
+
+    def test_long_training_without_break_keeps_first_and_last_hours(self):
+        slots = [make_slot("Training", "12:00", "21:00")]
+        assert hours(process_trainings(slots)) == [
+            ("Training", "12:00", "16:00"),
+            ("Training", "17:00", "21:00"),
+        ]
+
+    def test_short_training_without_break_is_kept(self):
+        slots = [make_slot("Training", "12:00", "15:00")]
+        assert process_trainings(slots) == slots
+
+    def test_other_types_are_not_split(self):
+        slots = [
+            make_slot("Talk", "12:00", "21:00"),
+            make_slot("Break", "15:00", "17:00"),
+        ]
+        assert hours(process_trainings(slots)) == hours(slots)
+
+    def test_parts_keep_the_training_data(self):
+        slots = [
+            make_slot("Training", "12:00", "21:00", room="training"),
+            make_slot("Break", "15:00", "17:00"),
+        ]
+        first, _, second = process_trainings(slots)
+        assert first["title"] == second["title"] == "Training"
+        assert (
+            first["room"]
+            == second["room"]
+            == [{"token": "training", "title": "training"}]
+        )
+        assert first["start"] == slots[0]["start"]
+        assert second["end"] == slots[0]["end"]

@@ -7,6 +7,11 @@ import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/defau
 import { Container } from '@plone/components';
 import type { PresenterItem } from './types';
 
+// The picture links to the same page as the name, so keep that second link
+// out of the tab order and the accessibility tree. UniversalLink forwards
+// these props, but its types do not declare them.
+const duplicateLinkProps = { tabIndex: -1, 'aria-hidden': true };
+
 interface PresenterTileProps {
   item: PresenterItem;
 }
@@ -21,27 +26,30 @@ const PresenterTile: React.FC<PresenterTileProps> = ({ item }) => {
   const hasImage = Boolean(item?.image_scales);
   const { title, social_links } = item;
   const portal_type = item['@type'];
+  const href = flattenToAppURL(item['@id']);
 
   return (
     <Container className={`presenterTile ${portal_type}`}>
       <Container className="imgWrapper">
-        {hasImage ? (
-          <Image
-            item={item}
-            imageField={'image'}
-            alt={item.title}
-            className={'presenterImage'}
-          />
-        ) : (
-          <Image
-            src={DefaultImageSVG}
-            alt="Default image"
-            className={'presenterImage'}
-          />
-        )}
+        <UniversalLink href={href} {...duplicateLinkProps}>
+          {hasImage ? (
+            <Image
+              item={item}
+              imageField={'image'}
+              alt={item.title}
+              className={'presenterImage'}
+            />
+          ) : (
+            <Image
+              src={DefaultImageSVG}
+              alt="Default image"
+              className={'presenterImage'}
+            />
+          )}
+        </UniversalLink>
       </Container>
       <Container className="presenterTitle">
-        <UniversalLink href={flattenToAppURL(item['@id'])} className={'title'}>
+        <UniversalLink href={href} className={'title'}>
           {title}
         </UniversalLink>
       </Container>

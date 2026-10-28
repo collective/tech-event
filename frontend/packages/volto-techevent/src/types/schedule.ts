@@ -46,15 +46,27 @@ export interface LightningTalksInfo extends ScheduleInfo {
   session_video: string | null;
 }
 
-export interface SlotItem {
-  id: string;
-  items: Record<string, BrainSessionInfo[]>;
-  types: string[];
+/**
+ * A slot or session in a day of the `@schedule` service, with the CSS grid
+ * placement the backend computes for it.
+ */
+export interface ScheduleSlot extends BrainSessionInfo {
+  slot_category?: string | null;
+  /** Grid row range, e.g. `time-0900 / time-0930`; empty without dates. */
+  gridRow: string;
+  /** Grid column range, e.g. `room-2` or `room-1 / room-all`. */
+  gridColumn: string;
+  /** Duration in 15 minute rows. */
+  gridHeight: number;
 }
+
+/** A room of the day, as an `[id, label]` pair; `_all_` spans every room. */
+export type ScheduleRoom = [id: string, label: string];
+
 export interface DaySchedule {
   id: string;
-  items: SlotItem[];
-  rooms: string[];
+  items: ScheduleSlot[];
+  rooms: ScheduleRoom[];
 }
 export interface ScheduleActionResult {
   items: DaySchedule[];

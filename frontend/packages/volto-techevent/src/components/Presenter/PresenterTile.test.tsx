@@ -11,6 +11,15 @@ describe('PresenterTile', () => {
     expect(link.getAttribute('href')).toBe(presenterAda['@id']);
   });
 
+  it('links the presenter picture to the presenter', () => {
+    const { getByAltText } = renderInVolto(
+      <PresenterTile item={presenterAda} />,
+    );
+    const link = getByAltText('Default image').closest('a');
+    expect(link?.getAttribute('href')).toBe(presenterAda['@id']);
+    expect(link?.getAttribute('tabindex')).toBe('-1');
+  });
+
   it('marks the tile with the type of the content', () => {
     const { container } = renderInVolto(<PresenterTile item={presenterAda} />);
     const tile = container.querySelector('.presenterTile');

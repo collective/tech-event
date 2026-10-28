@@ -1,4 +1,5 @@
 import type { ConfigType } from '@plone/registry';
+import { contentIcons } from '@plone-collective/volto-techevent/helpers/icons';
 
 type apiExpanderInherit = {
   match: string;
@@ -32,5 +33,9 @@ export default function install(config: ConfigType) {
       },
     } as apiExpanderInherit,
   ];
+  config.settings.contentIcons = {
+    ...config.settings.contentIcons,
+    ...contentIcons,
+  };
   return config;
 }
