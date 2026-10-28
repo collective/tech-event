@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="collective.techevent:default"
+      source="1008"
+      destination="1009"
+      >
+    <genericsetup:upgradeStep
+        title="Add permissions on existing Tech Events"
+        description="Grants the permissions to add Presenters, Venues and a SponsorsDB inside each Tech Event."
+        handler=".setup_tech_event_permissions"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>

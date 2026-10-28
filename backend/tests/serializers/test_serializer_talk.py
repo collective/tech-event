@@ -1,3 +1,4 @@
+import json
 import pytest
 
 
@@ -46,3 +47,10 @@ class TestSerializer:
             assert isinstance(value, dict)
             assert "token" in value
             assert "title" in value
+
+    @pytest.mark.parametrize("attribute", ["session_audience", "session_level"])
+    def test_summary_empty_set(self, serializer, attribute: str):
+        setattr(self.content, attribute, set())
+        result = serializer(self.content, summary=True)()
+        assert result[attribute] == []
+        assert json.dumps(result)

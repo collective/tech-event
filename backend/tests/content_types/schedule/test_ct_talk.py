@@ -1,7 +1,9 @@
 from collective.techevent.content.schedule.talk import Talk
 from plone import api
 from plone.app.testing import TEST_USER_ID
+from plone.restapi.interfaces import ISerializeToJsonSummary
 from z3c.relationfield import RelationValue
+from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.intid.interfaces import IIntIds
 
@@ -170,3 +172,31 @@ class TestPresenterRolesEnabled:
         assert presenter_roles != {}
         assert talk_roles == presenter_roles
         assert "Owner" in test_user.getRolesInContext(self.talk)
+
+
+class TestDeletePresenter:
+    @pytest.fixture(autouse=True)
+    def _setup(self, setup_talk_and_presenter, notify_mofified):
+        self.talk, self.presenter = setup_talk_and_presenter()
+        # Register the relation in the relation catalog
+        with api.env.adopt_roles(["Manager"]):
+            notify_mofified(self.talk)
+
+    def test_delete_presenter(self, portal):
+        presenter_id = self.presenter.getId()
+        with api.env.adopt_roles(["Manager"]):
+            api.content.delete(self.presenter, check_linkintegrity=False)
+        assert presenter_id not in portal.objectIds()
+
+    def test_delete_presenter_breaks_relation(self):
+        with api.env.adopt_roles(["Manager"]):
+            api.content.delete(self.presenter, check_linkintegrity=False)
+        relations = self.talk.presenters
+        assert len(relations) == 1
+        assert relations[0].isBroken()
+
+    def test_summary_after_delete_presenter(self, http_request):
+        with api.env.adopt_roles(["Manager"]):
+            api.content.delete(self.presenter, check_linkintegrity=False)
+        serializer = getMultiAdapter((self.talk, http_request), ISerializeToJsonSummary)
+        assert serializer()["presenters"] == []

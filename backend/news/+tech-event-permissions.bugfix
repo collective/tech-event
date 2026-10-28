@@ -1,0 +1,1 @@
+Fix adding Presenters, Venues and a SponsorsDB inside a Tech Event when multiple events are enabled. Nobody, not even a Manager, could add them. New Tech Events now grant these permissions, and so does enabling multiple events; the upgrade step to 1009 grants them on existing Tech Events. @ericof

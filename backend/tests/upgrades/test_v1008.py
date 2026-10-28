@@ -28,17 +28,18 @@ class TestUpgrade:
         setup_tool.setLastVersionForProfile(SOCIALMEDIA_PROFILE, "1000")
 
     def _steps(self) -> list[dict]:
-        """Return the upgrade steps offered from the source version.
+        """Return the upgrade steps offered from the source to the destination.
 
         ``listUpgrades`` returns the steps of a grouped ``upgradeSteps`` as a
-        list, and a lone step as a bare info.
+        list, and a lone step as a bare info. Steps of later versions are left
+        out.
 
         :returns: The step infos, flattened.
         """
         steps: list[dict] = []
         for entry in self.setup_tool.listUpgrades(PROFILE):
             steps.extend(entry if isinstance(entry, list) else [entry])
-        return steps
+        return [s for s in steps if s["sdest"] == DESTINATION]
 
     def test_available(self):
         """The site at the source version is offered exactly this step."""

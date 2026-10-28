@@ -7,7 +7,11 @@ uses, and turns it off again afterwards.
 
 from collective.techevent.content.tech_event import TechEvent
 from collective.techevent.subscribers.settings import SUPPORT_MULTIPLE_EVENTS
+from collective.techevent.utils import DEFAULT_ROLES
 from plone import api
+from z3c.relationfield import RelationValue
+from zope.component import getUtility
+from zope.intid.interfaces import IIntIds
 
 import pytest
 
@@ -100,6 +104,70 @@ class TestContentType:
         """
         roles = roles_permission_on(permission, self.portal)
         assert (role in roles) is expected
+
+    @pytest.mark.parametrize("child_type", ["Presenter", "Venue"])
+    def test_add_inside(self, content_factory, payload, payloads, child_type: str):
+        """Presenters and Venues can be added inside a new Tech Event.
+
+        :param content_factory: Factory creating content in a container.
+        :param payload: Creation payload.
+        :param payloads: Creation payloads by portal type.
+        :param child_type: The portal type added inside the Tech Event.
+        """
+        content = content_factory(self.portal, payload)
+        item = content_factory(content, payloads[child_type][0])
+        assert item.portal_type == child_type
+        assert item.getId() in content.objectIds()
+
+    @pytest.mark.parametrize(
+        "permission_id",
+        [
+            "collective.techevent: Add Presenter",
+            "collective.techevent: Add Venue",
+            "collective.techevent: Add SponsorsDB",
+        ],
+    )
+    def test_existing_get_permissions(
+        self, content_factory, payload, roles_permission_on, permission_id: str
+    ):
+        """Enabling multiple events grants the permissions on existing events.
+
+        :param content_factory: Factory creating content in a container.
+        :param payload: Creation payload.
+        :param roles_permission_on: Helper returning the roles for a permission.
+        :param permission_id: The add permission under test.
+        """
+        content = content_factory(self.portal, payload)
+        # A Tech Event created before the permissions were granted on it
+        content.manage_permission(permission_id, roles=[], acquire=True)
+        assert roles_permission_on(permission_id, content) == ()
+        with api.env.adopt_roles(["Manager"]):
+            api.portal.set_registry_record(SUPPORT_MULTIPLE_EVENTS, False)
+            api.portal.set_registry_record(SUPPORT_MULTIPLE_EVENTS, True)
+        roles = roles_permission_on(permission_id, content)
+        assert set(roles) == set(DEFAULT_ROLES)
+
+    def test_delete_with_sessions_and_presenters(
+        self, content_factory, payload, payloads
+    ):
+        """A Tech Event holding sessions with presenters can be deleted.
+
+        :param content_factory: Factory creating content in a container.
+        :param payload: Creation payload.
+        :param payloads: Creation payloads by portal type.
+        """
+        content = content_factory(self.portal, payload)
+        presenter = content_factory(content, payloads["Presenter"][0])
+        schedule = content_factory(content, payloads["Schedule"][0])
+        talk_payload = {
+            **payloads["Talk"][0],
+            "presenters": [RelationValue(getUtility(IIntIds).getId(presenter))],
+        }
+        talk = content_factory(schedule, talk_payload)
+        assert talk.presenters[0].to_object == presenter
+        with api.env.adopt_roles(["Manager"]):
+            api.content.delete(content, check_linkintegrity=False)
+        assert payload["id"] not in self.portal.objectIds()
 
 
 class TestVersioning:

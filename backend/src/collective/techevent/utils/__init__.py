@@ -97,6 +97,24 @@ def _modify_permissions(context: DexterityContent, enable: bool) -> None:
         modify_permission(context, permission_id, roles)
 
 
+def setup_tech_event_permissions(tech_event: DexterityContent) -> None:
+    """Grant the TechEvent add permissions on a Tech Event.
+
+    With multiple events on, the Plone Site loses these permissions, so each
+    Tech Event must grant them for its own content.
+
+    :param tech_event: The Tech Event whose permissions are granted.
+    """
+    _modify_permissions(tech_event, True)
+
+
+def _setup_existing_tech_events() -> None:
+    """Grant the TechEvent add permissions on every existing Tech Event."""
+    # Tech Events are private when created, so search unrestricted.
+    for brain in api.content.find(portal_type="Tech Event", unrestricted=True):
+        setup_tech_event_permissions(brain._unrestrictedGetObject())
+
+
 def setup_tech_event(portal: DexterityContent) -> None:
     """Configure the TechEvent content type and behavior for the site.
 
@@ -114,6 +132,7 @@ def setup_tech_event(portal: DexterityContent) -> None:
         # Remove permissions from Plone Site
         _modify_permissions(portal, False)
         # Setup permissions on existing TechEvent instances
+        _setup_existing_tech_events()
     else:
         # Enable behavior for Plone Site
         _modify_conference_behavior("Plone Site", True)
@@ -161,6 +180,7 @@ __all__ = [
     "get_sponsorship_benefits",
     "modify_permission",
     "setup_tech_event",
+    "setup_tech_event_permissions",
     "setup_tech_event_users",
     "sponsor_levels",
 ]
