@@ -86,6 +86,19 @@ describe('buildContinuousGridRows', () => {
     ]);
   });
 
+  it('ends on the latest time, not on the last label', () => {
+    // A training from 9 to 17 with lunch from 12 to 13, in slot order.
+    const rows = buildContinuousGridRows([
+      'time-0900',
+      'time-1700',
+      'time-1200',
+      'time-1300',
+    ]);
+    expect(rows[0]).toBe('time-0900');
+    expect(rows[rows.length - 1]).toBe('time-1700');
+    expect(rows).toHaveLength(33);
+  });
+
   it('ignores labels that are not times', () => {
     expect(buildContinuousGridRows(['', 'time-0900', 'time-0915'])).toEqual([
       'time-0900',

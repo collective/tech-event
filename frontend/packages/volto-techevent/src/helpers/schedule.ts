@@ -75,13 +75,15 @@ export function getGridRowsAndColumns(slots: ScheduleSlot[]): {
 }
 
 /**
- * Every 15 minute row label from the first to the last of `gridRows`, so the
- * grid has no gaps. Labels that are not `time-HHMM` are ignored.
+ * Every 15 minute row label from the earliest to the latest of `gridRows`, so
+ * the grid has no gaps. Labels that are not `time-HHMM` are ignored.
  */
 export function buildContinuousGridRows(gridRows: string[]): string[] {
+  // The labels come in slot order, so a long slot can end after the last one.
   const times = gridRows
     .map((label) => label.match(/time-(\d{4})/)?.[1])
-    .filter((time): time is string => Boolean(time));
+    .filter((time): time is string => Boolean(time))
+    .sort();
   if (times.length === 0) {
     return [];
   }
