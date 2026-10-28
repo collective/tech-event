@@ -1,11 +1,15 @@
+import beerSVG from '@plone-collective/volto-techevent/icons/beer.svg';
 import coffeeSVG from '@plone-collective/volto-techevent/icons/coffee.svg';
+import lunchSVG from '@plone-collective/volto-techevent/icons/lunch.svg';
 import meetingSVG from '@plone-collective/volto-techevent/icons/meeting.svg';
 import microphoneSVG from '@plone-collective/volto-techevent/icons/microphone.svg';
 import trainingSVG from '@plone-collective/volto-techevent/icons/training.svg';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
+import cameraSVG from '@plone/volto/icons/camera.svg';
 import clockSVG from '@plone/volto/icons/clock.svg';
 import eventSVG from '@plone/volto/icons/event.svg';
 import lightningTalksSVG from '@plone/volto/icons/fast-forward.svg';
+import registrationSVG from '@plone/volto/icons/finger-print.svg';
 import heartSVG from '@plone/volto/icons/heart.svg';
 import homeSVG from '@plone/volto/icons/home.svg';
 import mapSVG from '@plone/volto/icons/map.svg';
@@ -33,3 +37,32 @@ export const contentIcons: Record<string, string> = {
   SponsorLevel: trophySVG,
   Sponsor: heartSVG,
 };
+
+/**
+ * Icon of the slot categories that mean more than their content type.
+ *
+ * The generic categories (`slot`, `activity`) are left out on purpose: those
+ * slots show the icon of their type.
+ */
+export const slotCategoryIcons: Record<string, string> = {
+  registration: registrationSVG,
+  meeting: meetingSVG,
+  photo: cameraSVG,
+  'coffee-break': coffeeSVG,
+  lunch: lunchSVG,
+  party: beerSVG,
+};
+
+interface IconSlot {
+  '@type'?: string;
+  slot_category?: string | null;
+}
+
+/** Icon for a schedule slot: its category first, then its type. */
+export function getSlotIcon(slot: IconSlot): string {
+  const category = slot.slot_category;
+  if (category && slotCategoryIcons[category]) {
+    return slotCategoryIcons[category];
+  }
+  return contentIcons[slot['@type'] ?? ''] ?? contentIcons.Slot;
+}

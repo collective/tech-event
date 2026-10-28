@@ -1,34 +1,10 @@
 import React from 'react';
 import { formatHour } from '@plone-collective/volto-techevent/helpers/date';
+import { getSlotIcon } from '@plone-collective/volto-techevent/helpers/icons';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import SessionTile from './SessionTile';
 import SlotTile from './SlotTile';
-import lunchSVG from '@plone-collective/volto-techevent/icons/lunch.svg';
-import microphoneSVG from '@plone-collective/volto-techevent/icons/microphone.svg';
-import trainingSVG from '@plone-collective/volto-techevent/icons/training.svg';
-import coffeeSVG from '@plone-collective/volto-techevent/icons/coffee.svg';
-import beerSVG from '@plone-collective/volto-techevent/icons/beer.svg';
-import meetingSVG from '@plone-collective/volto-techevent/icons/meeting.svg';
-import keynoteSVG from '@plone/volto/icons/star.svg';
-import registrationSVG from '@plone/volto/icons/finger-print.svg';
 import roomSVG from '@plone/volto/icons/map.svg';
-import lightingTalksSVG from '@plone/volto/icons/fast-forward.svg';
-import cameraSVG from '@plone/volto/icons/camera.svg';
-
-const iconDict = {
-  registration: registrationSVG,
-  Slot: coffeeSVG,
-  Break: coffeeSVG,
-  photo: cameraSVG,
-  lunch: lunchSVG,
-  party: beerSVG,
-  Meeting: meetingSVG,
-  OpenSpace: meetingSVG,
-  LightningTalks: lightingTalksSVG,
-  Training: trainingSVG,
-  Talk: microphoneSVG,
-  Keynote: keynoteSVG,
-};
 
 function nextTimeSlot(t: string): string {
   // Get the next time slot (15 min increments)
@@ -142,15 +118,11 @@ const DaySchedule = (props) => {
         const finalSlots = [];
         slots.forEach((slot, slotIndex) => {
           if (timeSlots[slot.start] === undefined) {
-            const slot_category =
-              slot.slot_category && slot.slot_category !== 'activity'
-                ? slot.slot_category
-                : slot['@type'];
             timeSlots[slot.start] = true;
             finalSlots.push({
               '@type': 'aside',
               start: slot.start,
-              icon: iconDict[slot_category] || iconDict['Slot'],
+              icon: getSlotIcon(slot),
               gridColumn: 'times',
               gridRow: slot.gridRow.split('/')[0].trim(),
             });
