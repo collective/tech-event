@@ -3,9 +3,9 @@ import schedule from './schedule';
 import { LIST_SCHEDULE } from '../../constants/ActionTypes';
 import type { DaySchedule } from '../../types/schedule';
 
-const days = [
-  { id: '2026-10-13', items: [], rooms: ['Room A'] },
-] as DaySchedule[];
+const days: DaySchedule[] = [
+  { id: '2026-10-13', items: [], rooms: [['room-a', 'Room A']] },
+];
 
 const initial = { items: [], loading: false, error: null };
 

@@ -9,6 +9,7 @@ import type {
   DaySchedule,
   LightningTalksInfo,
   ScheduleInfo,
+  ScheduleSlot,
   SessionInfo,
 } from '@plone-collective/volto-techevent/types/schedule';
 
@@ -148,23 +149,43 @@ export const lightningTalksContent = {
   items: [],
 } as unknown as LightningTalksInfo;
 
+/** The brain session placed in the first room of the schedule grid. */
+export const scheduleTalk: ScheduleSlot = {
+  ...brainSession,
+  slot_category: 'activity',
+  gridRow: 'time-0900 / time-0930',
+  gridColumn: 'room-1',
+  gridHeight: 2,
+};
+
+/** A plain slot spanning every room of the schedule grid. */
+export const scheduleSlot: ScheduleSlot = {
+  ...slotBrain,
+  slot_category: 'slot',
+  gridRow: 'time-1200 / time-1300',
+  gridColumn: 'room-1 / room-all',
+  gridHeight: 4,
+};
+
 /** One day of the schedule: two rooms, one talk in the first room. */
 export const day: DaySchedule = {
   id: '2026-10-13',
-  // Rooms are [id, label] pairs; the type in `types/schedule` says string.
   rooms: [
     ['room-a', 'Room A'],
     ['room-b', 'Room B'],
-  ] as unknown as string[],
-  items: [
-    {
-      ...brainSession,
-      '@type': 'Talk',
-      gridRow: 'time-0900',
-      gridColumn: 'room-1',
-      gridHeight: 2,
-    },
-  ] as unknown as DaySchedule['items'],
+  ],
+  items: [scheduleTalk],
+};
+
+/** A day with a talk, a slot for every room, and the "every room" entry. */
+export const fullDay: DaySchedule = {
+  id: '2026-10-13',
+  rooms: [
+    ['_all_', '_all_'],
+    ['room-a', 'Room A'],
+    ['room-b', ''],
+  ],
+  items: [scheduleTalk, scheduleSlot],
 };
 
 /**
@@ -176,6 +197,6 @@ export const asProps = <P>(props: Partial<P>): P => props as P;
 /** A day with no slots, for the empty branch. */
 export const emptyDay: DaySchedule = {
   id: '2026-10-14',
-  rooms: [] as unknown as string[],
+  rooms: [],
   items: [],
 };
