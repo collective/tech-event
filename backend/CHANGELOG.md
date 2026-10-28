@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b5 (2026-10-28)
+
+
+### Bug fixes:
+
+- Split whole day trainings around the breaks inside them in `@schedule`, so a training with lunch in the middle shows a morning and an afternoon block that do not overlap the lunch. @ericof [#31](https://github.com/collective/tech-event/issues/31)
+
 ## 1.0.0b4 (2026-10-20)
 
 

@@ -7,6 +7,46 @@
 -->
 
 <!-- towncrier release notes start -->
+## 1.0.0b5 (2026-10-28)
+
+### Backend
+
+
+#### Bug fixes:
+
+- Split whole day trainings around the breaks inside them in `@schedule`, so a training with lunch in the middle shows a morning and an afternoon block that do not overlap the lunch. @ericof [#31](https://github.com/collective/tech-event/issues/31)
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Add icons for all content types of the add-on, shown in the toolbar, folder contents and object browser. @ericof [#41](https://github.com/collective/tech-event/issues/41)
+
+
+#### Bugfix
+
+- Extend the schedule grid to the latest end time of the day, so a long session that ends after the last slot keeps all its rows. @ericof [#31](https://github.com/collective/tech-event/issues/31)
+- Link the presenter picture to the presenter page, like the presenter name. @ericof [#42](https://github.com/collective/tech-event/issues/42)
+- Show the right icon in the schedule block for slots in the Slot and Meeting categories, and for Meetings, instead of the coffee-break icon. @ericof [#43](https://github.com/collective/tech-event/issues/43)
+- Show Breaks and Meetings in the schedule block with the slot tile, like other slots, instead of the session tile. @ericof 
+
+
+#### Internal
+
+- Split the day schedule into smaller components, move its grid logic to a tested helper, and type the days of the `@schedule` service as the backend returns them. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b4 (2026-10-20)
 
 ### Backend

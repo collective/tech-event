@@ -1,1 +1,0 @@
-Split whole day trainings around the breaks inside them in `@schedule`, so a training with lunch in the middle shows a morning and an afternoon block that do not overlap the lunch. @ericof
