@@ -124,9 +124,12 @@ export function getSlotRoomsClass(gridColumn: string): string {
     : gridLabels(gridColumn).join(' ');
 }
 
+/** Portal types that are slots, not sessions, in the backend. */
+export const SLOT_TYPES = ['Slot', 'Break', 'Meeting'];
+
 /** Whether the slot is shown as a session rather than a plain slot. */
 export function isSessionSlot(slot: ScheduleSlot): boolean {
-  return slot['@type'] !== 'Slot';
+  return !SLOT_TYPES.includes(slot['@type']);
 }
 
 /**

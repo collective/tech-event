@@ -167,9 +167,16 @@ describe('isSessionSlot', () => {
     expect(isSessionSlot(slot({ '@type': 'Slot' }))).toBe(false);
   });
 
-  it('treats a talk as a session', () => {
-    expect(isSessionSlot(slot({ '@type': 'Talk' }))).toBe(true);
+  it.each(['Break', 'Meeting'])('treats a %s as a slot', (portalType) => {
+    expect(isSessionSlot(slot({ '@type': portalType }))).toBe(false);
   });
+
+  it.each(['Talk', 'Keynote', 'Training', 'OpenSpace', 'LightningTalks'])(
+    'treats a %s as a session',
+    (portalType) => {
+      expect(isSessionSlot(slot({ '@type': portalType }))).toBe(true);
+    },
+  );
 });
 
 describe('buildTimeline', () => {
