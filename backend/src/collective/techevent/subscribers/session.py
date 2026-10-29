@@ -14,4 +14,6 @@ def modification_handler(obj: Session, _event: IObjectModifiedEvent) -> None:
     # Reindex labels attribute on presenters
     for relation in rel_presenters:
         presenter = relation.to_object
-        presenter.reindexObject(idxs=["labels"])
+        # Deleting a presenter notifies this event after breaking the relation
+        if presenter is not None:
+            presenter.reindexObject(idxs=["labels"])

@@ -1,0 +1,1 @@
+Fix adding content inside a session whose audience or level is empty. The session summary now returns an empty list for these fields, instead of a value that broke the response with a 500. @ericof

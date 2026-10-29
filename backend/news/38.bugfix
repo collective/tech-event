@@ -1,0 +1,1 @@
+Fix deleting a Presenter that a session references, and deleting a Tech Event whose sessions have presenters. Both raised `AttributeError` and deleted nothing. The summary of a session whose presenter was deleted no longer fails either. @ericof

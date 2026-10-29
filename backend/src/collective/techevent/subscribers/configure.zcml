@@ -21,6 +21,13 @@
       handler=".schedule.schedule_added_handler"
       />
 
+  <!-- TechEvent Subscribers -->
+  <subscriber
+      for="collective.techevent.content.tech_event.ITechEvent
+           zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".tech_event.added_handler"
+      />
+
   <!-- TechEvent Settings: apply support_multiple_events when it changes -->
   <subscriber
       for="plone.registry.interfaces.IRecordModifiedEvent"

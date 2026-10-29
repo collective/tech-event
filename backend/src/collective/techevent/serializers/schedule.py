@@ -60,6 +60,9 @@ class SessionJSONSummarySerializer(DefaultJSONSummarySerializer):
                 if rel_value.from_object == context
                 else rel_value.from_object
             )
+            # Skip broken relations, left behind by a deleted presenter
+            if item is None:
+                continue
             result.append({"@id": item.absolute_url(), "title": item.title})
         return result
 
@@ -84,8 +87,12 @@ class SessionJSONSummarySerializer(DefaultJSONSummarySerializer):
             summary[field_id] = value
 
         for field_id in self.vocabulary_fields:
-            if value := getattr(aq_base(context), field_id, None):
+            value = getattr(aq_base(context), field_id, None)
+            if value:
                 value = self.format_vocabulary_values(field_id, value)
+            elif isinstance(value, (set, frozenset, list, tuple)):
+                # An empty set is not JSON serializable
+                value = []
             summary[field_id] = value
         return summary
 
