@@ -6,7 +6,7 @@
     "email": "gov@plone.org.br",
     "use_prerelease_versions": false,
     "plone_version": "6.2.2",
-    "volto_version": "19.5.0",
+    "volto_version": "19.6.1",
     "python_package_name": "collective.techevent",
     "npm_package_name": "@plone-collective/volto-techevent",
     "github_organization": "collective",
