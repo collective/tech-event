@@ -27,6 +27,7 @@ configure-the-volto-add-on
 enable-multiple-events
 set-up-the-schedule
 add-sponsors
+enable-attendee-registration
 use-example-content
 plan-the-content-structure
 ```
@@ -67,6 +68,13 @@ Configure the event settings, rooms and durations, and add the slots.
 :link-type: doc
 
 Define the benefits, create the sponsorship levels and add each sponsor.
+````
+
+````{grid-item-card} 🎟️ Enable attendee registration
+:link: enable-attendee-registration
+:link-type: doc
+
+Let people register, set a deadline, and check attendees in at the desk.
 ````
 
 ````{grid-item-card} 🧪 Use the example content

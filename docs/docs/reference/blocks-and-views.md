@@ -20,6 +20,7 @@ The blocks are in two groups: **Event** and **Event Sponsors**.
 | Block | Group | Block type | Description |
 | --- | --- | --- | --- |
 | Schedule | Event | `scheduleBlock` | Shows the schedule from the `@schedule` endpoint. Options: title, show the day index, filter by day. |
+| Event Registration | Event | `eventRegistration` | Shows a button that opens the registration form, or the visitor's registration, in a modal, from the `@registration` endpoint. Options: title, button label. |
 | Sponsors Showcase | Event Sponsors | `sponsorsShowcaseBlock` | Shows the sponsors of all levels. |
 | Sponsor Level | Event Sponsors | `sponsorLevelBlock` | Shows the sponsors of one level. |
 | Level Benefits | Event Sponsors | `levelBenefitsBlock` | Shows the benefits of one level. |
@@ -28,13 +29,19 @@ The blocks are in two groups: **Event** and **Event Sponsors**.
 The sponsor blocks read the data from the `@sponsors` endpoint.
 The Schedule block reads the data from the `@schedule` endpoint.
 
+The Event Registration block takes its modal and its form from the component registry, as `TechEventRegistrationModal` and `TechEventRegistrationForm`, so another add-on can replace them.
+
 ## Views
 
-Each content type has a view.
+The Attendees type is a page with blocks, and uses the default view.
+A new Attendees database starts with a title block and an Event Registration block.
+
+Each other content type has a view.
 The views are registered for these portal types.
 
 | Portal type | View |
 | --- | --- |
+| Attendee | Attendee view: the name, registration code, state and email address of a registration |
 | Break | Slot view |
 | Keynote | Session view |
 | LightningTalks | Lightning talks view |
@@ -60,4 +67,10 @@ These templates are registered for the types below.
 
 ## Routes
 
-The add-on registers the route `/attendee-login`, which is also excluded from the content routes.
+The add-on registers the route `registration/verify`, at the site root and below any event root, which is also excluded from the content routes.
+It is the target of the link in the confirmation email, and verifies the registrant's email address.
+
+It also registers the route `manage-registrations`, also excluded from the content routes.
+Below an Attendees database, it is the registration desk: the registrations, with filters by state, a search, and the workflow actions.
+Anywhere else, it shows the page not found.
+On an Attendees database, a **Manage registrations** button in the toolbar leads to it, for the organizers.

@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = "==3.14.*"
 
 [[package]]
@@ -335,13 +335,11 @@ requires-dist = [
     { name = "plone-volto" },
     { name = "plonegovbr-socialmedia", specifier = ">=3.0.0" },
     { name = "products-cmfplone" },
-    { name = "products-membrane", marker = "extra == 'users'" },
-    { name = "pyotp", marker = "extra == 'users'" },
     { name = "pytest", marker = "extra == 'test'", specifier = ">=8.0.0" },
     { name = "pytest-cov", marker = "extra == 'test'" },
     { name = "pytest-plone", marker = "extra == 'test'", specifier = ">=1.1.0" },
 ]
-provides-extras = ["test", "users"]
+provides-extras = ["test"]
 
 [[package]]
 name = "collective-z3cform-datagridfield"
