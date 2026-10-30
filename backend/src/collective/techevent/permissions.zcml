@@ -77,6 +77,11 @@
       title="collective.techevent: Add Attendee"
       />
 
+  <permission
+      id="collective.techevent.AddTicket"
+      title="collective.techevent: Add Ticket"
+      />
+
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>

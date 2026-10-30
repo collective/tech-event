@@ -62,3 +62,18 @@ The categories of a presenter come from the `presenter_labels` vocabulary.
 
 A sponsor belongs to the level that contains it.
 The level of a sponsor is indexed, so that the sponsors endpoint can group them by level.
+
+## Attendees
+
+These types come with the **Tech Event for Plone: Attendee support** profile, `collective.techevent.users:default`.
+
+| Portal type | Description | Contains |
+| --- | --- | --- |
+| Attendees | The registrations of one event, with the registration settings: prefix, anonymous registration, confirmation policy and deadline. A page with blocks, which is the registration page of the event. At most one per event root. | Attendee, Ticket |
+| Attendee | One registration: first name, last name, email address, ticket, and the account it belongs to. Its ID is the registration code. | None |
+| Ticket | What registrants can choose for an event: title, summary, the period in which it is available, and whether it grants admission. It has no workflow, and follows its Attendees database. | None |
+
+The Attendees workflow has the states `created`, `open` and `closed`.
+An Attendees database is public in the `open` and `closed` states, and shows in the navigation; its registrations are not.
+The Attendee workflow has the states `pending`, `registered`, `attended` and `cancelled`.
+The email address and the account of an attendee are indexed without metadata columns, so search results never include them.

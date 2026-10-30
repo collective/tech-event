@@ -1,0 +1,1 @@
+Remove the `/attendee-login` route and its one-time password form, which the backend no longer supports. @ericof

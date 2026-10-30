@@ -1,4 +1,5 @@
 import type { ConfigType } from '@plone/registry';
+import AttendeeView from '@plone-collective/volto-techevent/components/Attendee/AttendeeView';
 import PresenterView from '@plone-collective/volto-techevent/components/Presenter/PresenterView';
 import SessionView from '@plone-collective/volto-techevent/components/Schedule/SessionView';
 import SlotView from '@plone-collective/volto-techevent/components/Schedule/SlotView';
@@ -8,6 +9,7 @@ import LightningTalksView from '@plone-collective/volto-techevent/components/Sch
 export default function install(config: ConfigType) {
   config.views.contentTypesViews = {
     ...config.views.contentTypesViews,
+    Attendee: AttendeeView,
     Break: SlotView,
     Keynote: SessionView,
     LightningTalks: LightningTalksView,

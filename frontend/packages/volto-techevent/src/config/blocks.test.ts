@@ -7,8 +7,11 @@ import SponsorLevelBlockInfo from '../components/Blocks/Sponsors/SponsorLevel';
 import LevelBenefitsBlockInfo from '../components/Blocks/Sponsors/LevelBenefits';
 import LevelComparisonBlockInfo from '../components/Blocks/Sponsors/LevelComparison';
 import ScheduleBlockInfo from '../components/Blocks/Schedule';
+import RegistrationBlockInfo from '../components/Blocks/Registration';
 import SessionGridItem from '../components/Blocks/Listing/SessionGridItem';
 import PresenterGridItem from '../components/Blocks/Listing/PresenterGridItem';
+import RegistrationForm from '../components/Registration/RegistrationForm';
+import RegistrationModal from '../components/Registration/RegistrationModal';
 
 // See views.test.ts: the social networks import is stubbed for this project.
 vi.mock(
@@ -44,6 +47,7 @@ describe('installBlocks', () => {
       levelBenefitsBlock: LevelBenefitsBlockInfo,
       levelComparisonBlock: LevelComparisonBlockInfo,
       scheduleBlock: ScheduleBlockInfo,
+      eventRegistration: RegistrationBlockInfo,
     });
     expect(config.blocks.blocksConfig.scheduleBlock).toBe(ScheduleBlockInfo);
   });
@@ -58,8 +62,7 @@ describe('installBlocks', () => {
 
   it('registers the grid listing variations for presenters and sessions', () => {
     const config = installBlocks(makeConfig());
-    expect(config.registerComponent).toHaveBeenCalledTimes(4);
-    expect(config.registerComponent).toHaveBeenNthCalledWith(1, {
+    expect(config.registerComponent).toHaveBeenCalledWith({
       name: 'GridListingItemTemplate',
       component: PresenterGridItem,
       dependencies: 'Presenter',
@@ -71,5 +74,30 @@ describe('installBlocks', () => {
         dependencies,
       });
     }
+  });
+
+  it('registers the registration modal and form, to be replaced', () => {
+    const config = installBlocks(makeConfig());
+    expect(config.registerComponent).toHaveBeenCalledWith({
+      name: 'TechEventRegistrationModal',
+      component: RegistrationModal,
+    });
+    expect(config.registerComponent).toHaveBeenCalledWith({
+      name: 'TechEventRegistrationForm',
+      component: RegistrationForm,
+    });
+    expect(config.registerComponent).toHaveBeenCalledTimes(6);
+  });
+
+  it('starts an Attendees page with a title and the registration block', () => {
+    const config = makeConfig();
+    (config.blocks as { initialBlocks?: object }).initialBlocks = {
+      Document: ['title'],
+    };
+    installBlocks(config);
+    expect(config.blocks.initialBlocks).toEqual({
+      Document: ['title'],
+      Attendees: ['title', 'eventRegistration'],
+    });
   });
 });

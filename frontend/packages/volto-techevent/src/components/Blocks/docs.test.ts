@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { BlockConfigBase } from '@plone/types';
+import eventRegistrationBlock from './Registration';
 import scheduleBlock from './Schedule';
 import sponsorsShowcaseBlock from './Sponsors/SponsorsShowcase';
 import sponsorLevelBlock from './Sponsors/SponsorLevel';
@@ -16,6 +17,7 @@ import levelComparisonBlock from './Sponsors/LevelComparison';
 const here = path.dirname(fileURLToPath(import.meta.url));
 
 const blocks: Array<{ block: BlockConfigBase; folder: string }> = [
+  { block: eventRegistrationBlock, folder: 'Registration' },
   { block: scheduleBlock, folder: 'Schedule' },
   { block: sponsorsShowcaseBlock, folder: 'Sponsors/SponsorsShowcase' },
   { block: sponsorLevelBlock, folder: 'Sponsors/SponsorLevel' },

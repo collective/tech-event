@@ -1,137 +1,226 @@
+"""The Attendee: one registration, named with a registration code."""
+
+from AccessControl.PermissionRole import rolesForPermissionOn
 from collective.techevent.users.content.attendee import Attendee
-from collective.techevent.users.utils import create_totp_code
+from collective.techevent.users.content.attendee import IAttendee
 from plone import api
-from plone.api.exc import InvalidParameterError
-from Products.membrane.interfaces import IMembraneUserAuth
+from plone.app.testing import login
+from plone.app.testing import logout
+from zope.interface import Invalid
 
-import datetime
 import pytest
+import re
 
 
-@pytest.fixture
-def portal_type() -> str:
-    return "Attendee"
+CODE_PATTERN = re.compile(r"^PYC26-[0-9A-HJKMNP-TV-Z]{8}$")
 
 
-@pytest.fixture
-def container(portal):
-    return portal["attendees"]
+class _Data:
+    """Form data, as the invariant validator sees it."""
 
-
-@pytest.fixture(scope="class")
-def content(portal_class, content_factory):
-    content = content_factory(
-        portal_class["attendees"],
-        {
-            "type": "Attendee",
-            "id": "1234567890",
-            "first_name": "Jane",
-            "last_name": "Doe",
-            "email": "janedoe@example.com",
-        },
-    )
-    yield content
+    def __init__(self, context, **fields):
+        self.__context__ = context
+        for key, value in fields.items():
+            setattr(self, key, value)
 
 
 class TestContentType:
     @pytest.fixture(autouse=True)
-    def _setup(self, portal):
-        self.portal = portal
+    def _setup(self, portal, attendees_factory, attendee_factory):
+        self.container = attendees_factory(portal, registration_confirmation="manual")
+        self.attendee = attendee_factory(self.container)
 
-    def test_create(self, content_factory, container, portal_type):
-        content = content_factory(
-            container,
-            {
-                "type": portal_type,
-                "id": "1234567890",
-                "first_name": "Jane",
-                "last_name": "Doe",
-                "email": "janedoe@example.com",
-            },
+    def test_create(self):
+        assert isinstance(self.attendee, Attendee)
+        assert self.attendee.title == "Jane Doe"
+        assert self.attendee.user_id is None
+        assert self.attendee.email_verified is False
+
+    def test_named_with_code(self):
+        """Without an id, the Attendee is named with a registration code."""
+        assert CODE_PATTERN.match(self.attendee.getId())
+
+    def test_upper_case_url(self):
+        assert self.attendee.absolute_url().endswith(
+            f"/attendees/{self.attendee.getId()}"
         )
-        assert content.portal_type == portal_type
-        assert isinstance(content, Attendee)
-        assert content.id == "1234567890"
-        assert content.first_name == "Jane"
-        assert content.last_name == "Doe"
-        assert content.title == "Jane Doe"
+        assert self.attendee.getId() == self.attendee.getId().upper()
+
+    def test_explicit_id_kept(self, attendee_factory):
+        """An id given by a sync script is kept."""
+        other = attendee_factory(
+            self.container, id="PYC26-SYNC0001", email="sync@example.org"
+        )
+        assert other.getId() == "PYC26-SYNC0001"
+
+    def test_initial_state(self):
+        assert api.content.get_state(self.attendee) == "pending"
+
+    def test_no_children(self):
+        assert self.attendee.allowedContentTypes() == []
 
 
-class TestContentTypeSubscriber:
+class TestIndexes:
     @pytest.fixture(autouse=True)
-    def _setup(self, content):
-        self.content = content
+    def _setup(self, portal, attendees_factory, attendee_factory):
+        self.container = attendees_factory(portal)
+        self.attendee = attendee_factory(
+            self.container, email=" Jane@Example.ORG ", user_id="jane"
+        )
 
-    def test_otp_seed(self):
-        totp_seed = getattr(self.content, "totp_seed", None)
-        assert totp_seed is not None
-        assert len(totp_seed) == 32
+    def test_email_normalized(self):
+        brains = api.content.find(attendee_email="jane@example.org", unrestricted=True)
+        assert [b.UID for b in brains] == [self.attendee.UID()]
+
+    def test_user_id(self):
+        brains = api.content.find(attendee_user_id="jane", unrestricted=True)
+        assert [b.UID for b in brains] == [self.attendee.UID()]
+
+    @pytest.mark.parametrize("column", ["attendee_email", "attendee_user_id", "email"])
+    def test_no_metadata(self, column):
+        catalog = api.portal.get_tool("portal_catalog")
+        assert column not in catalog.schema()
 
 
-class TestContentMembraneUser:
+class TestUniqueness:
     @pytest.fixture(autouse=True)
-    def _setup(self, content):
-        self.content = content
-        self.adapter = IMembraneUserAuth(self.content, None)
+    def _setup(self, portal, attendees_factory, attendee_factory):
+        self.container = attendees_factory(portal)
+        self.attendee = attendee_factory(self.container, user_id="jane")
 
-    def test_adapter_registration(self):
-        assert self.adapter is not None
+    def _validate(self, context, **fields):
+        data = _Data(context, **fields)
+        IAttendee.validateInvariants(data)
 
-    def test_verify_credentials(self):
-        credentials = {"password": create_totp_code(self.content.totp_seed)}
-        result = self.adapter.verifyCredentials(credentials)
-        assert result is True
+    def test_new_email(self):
+        self._validate(self.container, email="other@example.org", user_id=None)
 
-    def test_verify_credentials_invalid(self):
-        credentials = {"password": "invalid"}
-        result = self.adapter.verifyCredentials(credentials)
-        assert result is False
+    def test_duplicate_email(self):
+        with pytest.raises(Invalid) as exc:
+            self._validate(self.container, email="JANE@example.org", user_id=None)
+        assert "email is already registered" in str(exc.value)
 
-    def test_verify_credentials_expired(self):
-        dt_expired = datetime.datetime.now() - datetime.timedelta(minutes=11)
-        credentials = {
-            "password": create_totp_code(self.content.totp_seed, for_time=dt_expired)
-        }
-        result = self.adapter.verifyCredentials(credentials)
-        assert result is False
+    def test_duplicate_user(self):
+        with pytest.raises(Invalid) as exc:
+            self._validate(self.container, email="other@example.org", user_id="jane")
+        assert "already registered" in str(exc.value)
 
-    def test_authenticate_credentials(self):
-        credentials = {"password": create_totp_code(self.content.totp_seed)}
-        user = self.adapter.authenticateCredentials(credentials)
-        assert user == (self.content.getUserId(), self.content.getUserName())
+    def test_editing_itself(self):
+        self._validate(self.attendee, email="jane@example.org", user_id="jane")
 
-    def test_authenticate_credentials_invalid(self):
-        credentials = {"password": "invalid"}
-        user = self.adapter.authenticateCredentials(credentials)
-        assert user is None
+    def test_other_event(self, portal, content_factory):
+        """A registration in another container does not count."""
+        folder = content_factory(portal, {"type": "Document", "id": "doc"})
+        self._validate(folder, email="jane@example.org", user_id="jane")
 
 
-class TestContentWorkflow:
+class TestAutomaticConfirmation:
+    @pytest.mark.parametrize(
+        "policy,state",
+        [("automatic", "registered"), ("email", "pending"), ("manual", "pending")],
+    )
+    def test_created_by_organizer(
+        self, portal, attendees_factory, attendee_factory, policy, state
+    ):
+        container = attendees_factory(portal, registration_confirmation=policy)
+        attendee = attendee_factory(container)
+        assert api.content.get_state(attendee) == state
+
+    def test_created_anonymously(self, portal, attendees_factory, attendee_factory):
+        container = attendees_factory(portal)
+        logout()
+        attendee = attendee_factory(container)
+        assert api.content.get_state(attendee) == "pending"
+
+    def test_confirmation_email(
+        self, portal, attendees_factory, attendee_factory, mailhost, run_commit_hooks
+    ):
+        """The email, sent on commit, has the final registration code."""
+        container = attendees_factory(portal)
+        attendee = attendee_factory(container)
+        assert mailhost.messages == []
+        run_commit_hooks()
+        assert len(mailhost.messages) == 1
+        message = mailhost.messages[0].decode()
+        assert "To: jane@example.org" in message
+        assert attendee.getId() in message
+
+
+class TestWorkflow:
     @pytest.fixture(autouse=True)
-    def _setup(self, content):
-        self.content = content
-        self.adapter = IMembraneUserAuth(self.content, None)
+    def _setup(self, portal, attendees_factory, attendee_factory, member_factory):
+        self.container = attendees_factory(portal, registration_confirmation="manual")
+        member_factory("jane", "jane@example.org")
+        self.attendee = attendee_factory(self.container, user_id="jane")
+        self.attendee.manage_setLocalRoles("jane", ["Owner"])
+        self.attendee.reindexObjectSecurity()
 
-    def test_authenticate_credentials_roundtrip(self):
-        credentials = {"password": create_totp_code(self.content.totp_seed)}
-        user = self.adapter.authenticateCredentials(credentials)
-        assert user == (self.content.getUserId(), self.content.getUserName())
+    def _as_jane(self):
+        login(api.portal.get(), "jane")
 
-        assert api.content.get_state(self.content) == "registered"
-        with pytest.raises(InvalidParameterError):
-            api.content.transition(self.content, "cancel")
+    def _transition(self, *transitions):
         with api.env.adopt_roles(["Manager"]):
-            api.content.transition(self.content, "cancel")
-        assert api.content.get_state(self.content) == "cancelled"
+            for transition in transitions:
+                api.content.transition(obj=self.attendee, transition=transition)
 
-        user = self.adapter.authenticateCredentials(credentials)
-        assert user is None
+    @pytest.mark.parametrize(
+        "transitions,state",
+        [
+            (["confirm"], "registered"),
+            (["confirm", "check_in"], "attended"),
+            (["confirm", "check_in", "undo_check_in"], "registered"),
+            (["cancel"], "cancelled"),
+            (["confirm", "cancel"], "cancelled"),
+            (["cancel", "revert"], "pending"),
+        ],
+    )
+    def test_transitions(self, transitions, state):
+        self._transition(*transitions)
+        assert api.content.get_state(self.attendee) == state
 
-        with pytest.raises(InvalidParameterError):
-            api.content.transition(self.content, "revert")
-        with api.env.adopt_roles(["Manager"]):
-            api.content.transition(self.content, "revert")
-        assert api.content.get_state(self.content) == "registered"
+    @pytest.mark.parametrize("before", [[], ["confirm"]])
+    def test_owner_cancels(self, before):
+        self._transition(*before)
+        self._as_jane()
+        api.content.transition(obj=self.attendee, transition="cancel")
+        assert api.content.get_state(self.attendee) == "cancelled"
 
-        user = self.adapter.authenticateCredentials(credentials)
-        assert user == (self.content.getUserId(), self.content.getUserName())
+    @pytest.mark.parametrize(
+        "before,transition",
+        [([], "confirm"), (["confirm"], "check_in"), (["cancel"], "revert")],
+    )
+    def test_owner_cannot(self, before, transition):
+        self._transition(*before)
+        self._as_jane()
+        with pytest.raises(api.exc.InvalidParameterError):
+            api.content.transition(obj=self.attendee, transition=transition)
+
+    @pytest.mark.parametrize(
+        "transitions,owner_modifies",
+        [
+            ([], True),
+            (["confirm"], True),
+            (["confirm", "check_in"], False),
+            (["cancel"], False),
+        ],
+    )
+    def test_owner_modifies(self, transitions, owner_modifies):
+        """Once checked in, or cancelled, the attendee cannot change the record."""
+        self._transition(*transitions)
+        roles = rolesForPermissionOn("Modify portal content", self.attendee)
+        assert ("Owner" in roles) is owner_modifies
+
+    @pytest.mark.parametrize(
+        "transitions,owner_views",
+        [
+            ([], True),
+            (["confirm"], True),
+            (["confirm", "check_in"], True),
+            (["cancel"], False),
+        ],
+    )
+    def test_owner_views(self, transitions, owner_views):
+        self._transition(*transitions)
+        roles = rolesForPermissionOn("View", self.attendee)
+        assert ("Owner" in roles) is owner_views
+        assert "Anonymous" not in roles

@@ -11,7 +11,7 @@
   >Attendee</property>
   <property name="description"
             i18n:translate=""
-  >A attendee in the conference.</property>
+  >A registration for an event.</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Attendee</property>
@@ -21,9 +21,7 @@
   <!-- Hierarchy control -->
   <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
-  <property name="allowed_content_types">
-    <element value="File" />
-  </property>
+  <property name="allowed_content_types" />
 
   <!-- Schema, class and security -->
   <property name="add_permission">collective.techevent.AddAttendee</property>

@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <!-- Registration for an event, on its event root -->
+  <plone:service
+      method="GET"
+      factory=".registration.GetRegistration"
+      for="collective.techevent.interfaces.IEventRoot"
+      permission="zope2.Public"
+      name="@registration"
+      />
+
+  <plone:service
+      method="POST"
+      factory=".registration.PostRegistration"
+      for="collective.techevent.interfaces.IEventRoot"
+      permission="zope2.Public"
+      name="@registration"
+      />
+
+  <!-- Registrations of an event, for its organizers -->
+  <plone:service
+      method="GET"
+      factory=".attendees.GetAttendees"
+      for="collective.techevent.users.content.attendees.IAttendees"
+      permission="zope2.View"
+      name="@attendees"
+      />
+
+</configure>

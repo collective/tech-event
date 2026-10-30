@@ -25,10 +25,7 @@
   <include package=".services" />
   <include package=".subscribers" />
   <include package=".vocabularies" />
-  <include
-      package=".users"
-      zcml:condition="installed Products.membrane"
-      />
+  <include package=".users" />
 
   <!-- -*- extra stuff goes here -*- -->
 

@@ -4,6 +4,7 @@ import installBlocks from './config/blocks';
 import installReducers from './config/reducers';
 import installRoutes from './config/routes';
 import installSettings from './config/settings';
+import installToolbar from './config/toolbar';
 import installViews from './config/views';
 import installWidgets from './config/widgets';
 
@@ -12,6 +13,7 @@ export function applyConfig(config: ConfigType) {
   installBlocks(config);
   installReducers(config);
   installRoutes(config);
+  installToolbar(config);
   installViews(config);
   installWidgets(config);
   return config;
