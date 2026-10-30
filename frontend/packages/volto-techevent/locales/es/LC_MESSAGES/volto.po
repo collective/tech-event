@@ -18,6 +18,11 @@ msgstr ""
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: Poedit 2.2.1\n"
 
+#. Default: "Actions"
+#: components/Registration/messages
+msgid "Actions"
+msgstr ""
+
 #. Default: "Add"
 #: components/Widgets/DataGridList
 msgid "Add (object list)"
@@ -26,6 +31,26 @@ msgstr ""
 #. Default: "Align"
 #: messages
 msgid "Align"
+msgstr ""
+
+#. Default: "All"
+#: components/Registration/messages
+msgid "All"
+msgstr ""
+
+#. Default: "Attended"
+#: components/Registration/messages
+msgid "Attended"
+msgstr ""
+
+#. Default: "Attendees"
+#: components/Registration/messages
+msgid "Attendees"
+msgstr ""
+
+#. Default: "Back"
+#: components/Registration/messages
+msgid "Back"
 msgstr ""
 
 #. Default: "Be the first!"
@@ -38,9 +63,49 @@ msgstr ""
 msgid "Benefit"
 msgstr ""
 
+#. Default: "Button label"
+#: components/Registration/messages
+msgid "Button label"
+msgstr ""
+
 #. Default: "CTA Label"
 #: messages
 msgid "CTA Label"
+msgstr ""
+
+#. Default: "Cancel"
+#: components/Registration/messages
+msgid "Cancel"
+msgstr ""
+
+#. Default: "Cancel my registration"
+#: components/Registration/messages
+msgid "Cancel my registration"
+msgstr ""
+
+#. Default: "Cancel your registration for this event?"
+#: components/Registration/messages
+msgid "Cancel your registration for this event?"
+msgstr ""
+
+#. Default: "Cancelled"
+#: components/Registration/messages
+msgid "Cancelled"
+msgstr ""
+
+#. Default: "Check in"
+#: components/Registration/messages
+msgid "Check in"
+msgstr ""
+
+#. Default: "Check your email: follow the link we sent to confirm your registration."
+#: components/Registration/messages
+msgid "Check your email: follow the link we sent to confirm your registration."
+msgstr ""
+
+#. Default: "Code"
+#: components/Registration/messages
+msgid "Code"
 msgstr ""
 
 #. Default: "Collapse item"
@@ -48,14 +113,19 @@ msgstr ""
 msgid "Collapse item"
 msgstr ""
 
+#. Default: "Confirm"
+#: components/Registration/messages
+msgid "Confirm"
+msgstr ""
+
+#. Default: "Confirming your email address…"
+#: components/Registration/messages
+msgid "Confirming your email address…"
+msgstr ""
+
 #. Default: "Day"
 #: components/Schedule/Schedule
 msgid "Day"
-msgstr ""
-
-#. Default: "Default"
-#: components/Attendee/AttendeeLogin
-msgid "Default"
 msgstr ""
 
 #. Default: "Details"
@@ -73,9 +143,29 @@ msgstr ""
 msgid "Display Headline?"
 msgstr ""
 
+#. Default: "Email"
+#: components/Registration/messages
+msgid "Email"
+msgstr ""
+
+#. Default: "Email confirmed"
+#: components/Registration/messages
+msgid "Email confirmed"
+msgstr ""
+
+#. Default: "Email not confirmed"
+#: components/Registration/messages
+msgid "Email not confirmed"
+msgstr ""
+
 #. Default: "Empty object list"
 #: components/Widgets/DataGridList
 msgid "Empty object list"
+msgstr ""
+
+#. Default: "Event Registration"
+#: components/Registration/messages
+msgid "Event Registration"
 msgstr ""
 
 #. Default: "Filter by Day"
@@ -83,14 +173,59 @@ msgstr ""
 msgid "Filter by Day"
 msgstr ""
 
+#. Default: "First name"
+#: components/Registration/messages
+msgid "First name"
+msgstr ""
+
 #. Default: "Heading"
 #: messages
 msgid "Heading"
 msgstr ""
 
+#. Default: "Keep my registration"
+#: components/Registration/messages
+msgid "Keep my registration"
+msgstr ""
+
+#. Default: "Last name"
+#: components/Registration/messages
+msgid "Last name"
+msgstr ""
+
+#. Default: "Loading registration…"
+#: components/Registration/messages
+msgid "Loading registration…"
+msgstr ""
+
+#. Default: "Log in"
+#: components/Registration/messages
+msgid "Log in"
+msgstr ""
+
+#. Default: "Log in to register for this event."
+#: components/Registration/messages
+msgid "Log in to register for this event."
+msgstr ""
+
+#. Default: "Manage registrations"
+#: components/Registration/messages
+msgid "Manage registrations"
+msgstr ""
+
 #. Default: "Materials"
 #: messages
 msgid "Materials"
+msgstr ""
+
+#. Default: "Name"
+#: components/Registration/messages
+msgid "Name"
+msgstr ""
+
+#. Default: "No registrations."
+#: components/Registration/messages
+msgid "No registrations."
 msgstr ""
 
 #. Default: "Package Benefits"
@@ -108,9 +243,49 @@ msgstr ""
 msgid "Packages & Sponsors"
 msgstr ""
 
+#. Default: "Pending"
+#: components/Registration/messages
+msgid "Pending"
+msgstr ""
+
 #. Default: "Presentations"
 #: messages
 msgid "Presentations"
+msgstr ""
+
+#. Default: "Register"
+#: components/Registration/messages
+msgid "Register"
+msgstr ""
+
+#. Default: "Registered"
+#: components/Registration/messages
+msgid "Registered"
+msgstr ""
+
+#. Default: "Registration"
+#: components/Registration/messages
+msgid "Registration"
+msgstr ""
+
+#. Default: "Registration closes on {date}."
+#: components/Registration/messages
+msgid "Registration closes on {date}."
+msgstr ""
+
+#. Default: "Registration code"
+#: components/Registration/messages
+msgid "Registration code"
+msgstr ""
+
+#. Default: "Registration is not open."
+#: components/Registration/messages
+msgid "Registration is not open."
+msgstr ""
+
+#. Default: "Registration is open."
+#: components/Registration/messages
+msgid "Registration is open."
 msgstr ""
 
 #. Default: "Remove item"
@@ -118,14 +293,14 @@ msgstr ""
 msgid "Remove item"
 msgstr ""
 
-#. Default: "Request sent"
-#: components/Attendee/AttendeeLogin
-msgid "Request sent"
-msgstr ""
-
 #. Default: "Requirements"
 #: messages
 msgid "Requirements"
+msgstr ""
+
+#. Default: "Revert"
+#: components/Registration/messages
+msgid "Revert"
 msgstr ""
 
 #. Default: "Schedule Block"
@@ -133,14 +308,19 @@ msgstr ""
 msgid "Schedule Block"
 msgstr ""
 
-#. Default: "Send request"
-#: components/Attendee/AttendeeLogin
-msgid "Send request"
+#. Default: "Search by name, email or code"
+#: components/Registration/messages
+msgid "Search by name, email or code"
 msgstr ""
 
 #. Default: "Show item"
 #: components/Widgets/DataGridList
 msgid "Show item"
+msgstr ""
+
+#. Default: "Shown on the button that opens the registration form."
+#: components/Registration/messages
+msgid "Shown on the button that opens the registration form."
 msgstr ""
 
 #. Default: "Sponsor Level"
@@ -163,9 +343,40 @@ msgstr ""
 msgid "Sponsorship Form"
 msgstr ""
 
+#. Default: "Status"
+#: components/Registration/messages
+msgid "Status"
+msgstr ""
+
+#. Default: "The organizers will confirm your registration."
+#: components/Registration/messages
+msgid "The organizers will confirm your registration."
+msgstr ""
+
+#. Default: "The registration deadline has passed."
+#: components/Registration/messages
+msgid "The registration deadline has passed."
+msgstr ""
+
+#. Default: "This event does not take registrations."
+#: components/Registration/messages
+msgid "This event does not take registrations."
+msgstr ""
+
+#. Default: "This link is invalid or has expired."
+#: components/Registration/messages
+msgid "This link is invalid or has expired."
+msgstr ""
+
 #. Default: "Title"
+#: components/Registration/messages
 #: messages
 msgid "Title"
+msgstr ""
+
+#. Default: "Undo check-in"
+#: components/Registration/messages
+msgid "Undo check-in"
 msgstr ""
 
 #. Default: "Video"
@@ -173,29 +384,24 @@ msgstr ""
 msgid "Video"
 msgstr ""
 
-#. Default: "Request a one-time password"
-#: components/Attendee/AttendeeLogin
-msgid "box_request_one_time_password"
+#. Default: "Yes, cancel it"
+#: components/Registration/messages
+msgid "Yes, cancel it"
 msgstr ""
 
-#. Default: "Continue to login"
-#: components/Attendee/AttendeeLogin
-msgid "continue_to_login"
+#. Default: "Your email address is confirmed."
+#: components/Registration/messages
+msgid "Your email address is confirmed."
 msgstr ""
 
-#. Default: "Enter your email to receive a one-time password for login."
-#: components/Attendee/AttendeeLogin
-msgid "description_request_one_time_password"
+#. Default: "Your registration"
+#: components/Registration/messages
+msgid "Your registration"
 msgstr ""
 
-#. Default: "Please, check your email and log in using your email address and the one-time password you received."
-#: components/Attendee/AttendeeLogin
-msgid "description_request_sent"
-msgstr ""
-
-#. Default: "One-time password sent"
-#: components/Attendee/AttendeeLogin
-msgid "heading_request_sent"
+#. Default: "Your registration code"
+#: components/Registration/messages
+msgid "Your registration code"
 msgstr ""
 
 #. Default: "Instructor"
@@ -206,11 +412,6 @@ msgstr ""
 #. Default: "Keynote Speaker"
 #: components/Presenter/PresenterCategory
 msgid "keynote-speaker"
-msgstr ""
-
-#. Default: "My email is"
-#: components/Attendee/AttendeeLogin
-msgid "label_my_email_is"
 msgstr ""
 
 #. Default: "Plone Foundation Member"

@@ -1,27 +1,26 @@
 import React from 'react';
 import type { Decorator, Meta, StoryObj } from '@storybook/react';
 import Wrapper from '@plone/volto/storybook';
-import RequestOneTimePassword from './AttendeeLogin';
+import ManageRegistrations from './ManageRegistrations';
+import { attendeesStore } from '../Registration/fixtures';
 
 const withWrapper: Decorator = (Story) => (
   <Wrapper
-    anonymous
-    customStore={{
-      users: { reset: { loading: false, loaded: false, error: null } },
-    }}
+    customStore={attendeesStore()}
+    location="/registrations/manage-registrations"
   >
-    <div style={{ padding: 24, maxWidth: 480 }}>
+    <div style={{ padding: 24 }}>
       <Story />
     </div>
   </Wrapper>
 );
 
 const meta = {
-  title: 'Techevent/Attendee/AttendeeLogin',
-  component: RequestOneTimePassword,
+  title: 'Techevent/Registration/ManageRegistrations',
+  component: ManageRegistrations,
   decorators: [withWrapper],
   tags: ['autodocs'],
-} satisfies Meta<typeof RequestOneTimePassword>;
+} satisfies Meta<typeof ManageRegistrations>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

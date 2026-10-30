@@ -1,0 +1,74 @@
+// Registration block and modal, verification route, registration desk and
+// Attendee view
+.block.registration {
+  @include default-container-width;
+  .registration-title {
+    @include block-title;
+  }
+  .registration-form {
+    max-width: 480px;
+  }
+}
+
+.registration-summary {
+  dl {
+    display: grid;
+    gap: 0.25rem 1rem;
+    grid-template-columns: max-content 1fr;
+  }
+  dt {
+    font-weight: 700;
+  }
+  dd {
+    margin: 0;
+  }
+  .registration-cancel-confirm {
+    margin-top: 1rem;
+  }
+}
+
+.registration-code {
+  font-family: monospace;
+  font-size: 1.1em;
+  letter-spacing: 0.05em;
+}
+
+.registration-state {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  background: #eee;
+  font-size: 0.9em;
+  &.registration-state-registered {
+    background: #d7f0dd;
+  }
+  &.registration-state-attended {
+    background: #d6e6fb;
+  }
+  &.registration-state-cancelled {
+    background: #f7dcdc;
+    color: $grey;
+  }
+}
+
+.manage-registrations {
+  .attendees-search {
+    margin-bottom: 1rem;
+  }
+  .attendees-table .button {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.registration-modal {
+  .registration-form {
+    max-width: none;
+  }
+}
+
+.attendee-view {
+  .attendee-email-status {
+    color: $grey;
+    font-size: 0.9em;
+  }
+}

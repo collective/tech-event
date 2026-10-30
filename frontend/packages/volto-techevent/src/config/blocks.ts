@@ -13,6 +13,15 @@ import LevelBenefitsBlockInfo from '@plone-collective/volto-techevent/components
 // LevelComparison
 import LevelComparisonBlockInfo from '@plone-collective/volto-techevent/components/Blocks/Sponsors/LevelComparison';
 
+// Registration
+import RegistrationBlockInfo from '@plone-collective/volto-techevent/components/Blocks/Registration';
+import RegistrationForm from '@plone-collective/volto-techevent/components/Registration/RegistrationForm';
+import RegistrationModal from '@plone-collective/volto-techevent/components/Registration/RegistrationModal';
+import {
+  REGISTRATION_FORM,
+  REGISTRATION_MODAL,
+} from '@plone-collective/volto-techevent/constants/Registration';
+
 // Schedule
 import ScheduleBlockInfo from '@plone-collective/volto-techevent/components/Blocks/Schedule';
 
@@ -21,6 +30,7 @@ import PresenterGridItem from '@plone-collective/volto-techevent/components/Bloc
 
 declare module '@plone/types' {
   export interface BlocksConfigData {
+    eventRegistration: BlockConfigBase;
     levelBenefitsBlock: BlockConfigBase;
     levelComparisonBlock: BlockConfigBase;
     scheduleBlock: BlockConfigBase;
@@ -43,6 +53,23 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.levelBenefitsBlock = LevelBenefitsBlockInfo;
   config.blocks.blocksConfig.levelComparisonBlock = LevelComparisonBlockInfo;
   config.blocks.blocksConfig.scheduleBlock = ScheduleBlockInfo;
+  config.blocks.blocksConfig.eventRegistration = RegistrationBlockInfo;
+
+  // An Attendees container is the registration page of its event
+  config.blocks.initialBlocks = {
+    ...config.blocks.initialBlocks,
+    Attendees: ['title', 'eventRegistration'],
+  };
+
+  // Registration components, to replace or wrap in another add-on
+  config.registerComponent({
+    name: REGISTRATION_MODAL,
+    component: RegistrationModal,
+  });
+  config.registerComponent({
+    name: REGISTRATION_FORM,
+    component: RegistrationForm,
+  });
 
   // Variations
   config.registerComponent({
