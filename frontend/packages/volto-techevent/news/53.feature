@@ -1,0 +1,1 @@
+Document the Schedule, Packages and Sponsors, Sponsors List, Package Benefits and Package Comparison blocks for the `@blocks-schema` endpoint, and read their sidebar schemas from the block configuration. @ericof
