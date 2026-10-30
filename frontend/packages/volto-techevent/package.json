@@ -46,7 +46,7 @@
     "@dnd-kit/sortable": "10.0.0",
     "@dnd-kit/utilities": "3.2.2",
     "@plone/components": "workspace:*",
-    "@plonegovbr/volto-social-media": "3.0.0",
+    "@plonegovbr/volto-social-media": "3.1.0",
     "classnames": "2.5.1",
     "react-animate-height": "2.0.17",
     "uuid": "^14.0.0"
