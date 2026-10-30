@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="collective.techevent.users:default"
+      source="1000"
+      destination="1001"
+      >
+    <genericsetup:upgradeStep
+        title="Attendee registration without Membrane"
+        description="Adds the Attendees workflow, the pending and attended states, and the attendee indexes; closes existing Attendees containers, gives them a registration prefix and the blocks of a registration page, and shows them in the navigation."
+        handler=".v1001.upgrade"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>

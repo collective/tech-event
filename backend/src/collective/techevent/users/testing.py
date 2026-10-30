@@ -4,34 +4,30 @@ from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
+from plone.app.testing.utils import MockMailHost
 from plone.dexterity.content import DexterityContent
-from plone.testing import zope as zope_testing
 from plone.testing.zope import WSGI_SERVER_FIXTURE
-
-import Products.membrane
+from Products.MailHost.interfaces import IMailHost
+from typing import Any
+from zope.component import getSiteManager
 
 
 class Layer(PloneSandboxLayer):
     defaultBases = (TECH_EVENT_FIXTURE,)
 
-    def setUpZope(self, app: object, configurationContext: object) -> None:
-        """Load the ZCML needed by the test layer.
-
-        :param app: The Zope application root.
-        :param configurationContext: The ZCML configuration context.
-        """
-        # Load any other ZCML that is required for your tests.
-        # The z3c.autoinclude feature is disabled in the Plone fixture base
-        # layer.
-        self.loadZCML(package=Products.membrane)
-        zope_testing.installProduct(app, "Products.membrane")
-
     def setUpPloneSite(self, portal: DexterityContent) -> None:
-        """Apply the users GenericSetup profile to the Plone site.
+        """Apply the attendee registration profile, and mock the mail host.
 
         :param portal: The Plone site.
         """
         applyProfile(portal, "collective.techevent.users:default")
+        # Registrants get emails: keep them in MailHost.messages
+        portal.MailHost = mailhost = MockMailHost("MailHost")
+        # plone-stubs types the site manager as IComponentLookup, without
+        # the registration methods
+        sm: Any = getSiteManager(context=portal)
+        sm.unregisterUtility(provided=IMailHost)
+        sm.registerUtility(mailhost, provided=IMailHost)
 
 
 FIXTURE = Layer()

@@ -1,0 +1,1 @@
+Remove the dependency on `Products.membrane`: an Attendee is now a registration linked to an account, not a user. The one-time password login and the `users` extra are gone, and the attendee registration profile no longer creates an `attendees` folder. Uninstall Products.membrane before upgrading. @ericof

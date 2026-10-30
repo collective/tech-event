@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dc-workflow xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-             initial_state="registered"
+             description="Registration of an attendee: received, confirmed, at the event, or cancelled."
+             initial_state="pending"
              state_variable="review_state"
              title="Attendee Workflow"
              workflow_id="attendee_workflow"
@@ -12,10 +13,47 @@
   <permission>Access contents information</permission>
   <permission>Modify portal content</permission>
 
+  <state state_id="pending"
+         title="Pending"
+         i18n:attributes="title"
+  >
+    <description i18n:translate="">Registration received, not confirmed yet.</description>
+    <exit-transition transition_id="confirm" />
+    <exit-transition transition_id="cancel" />
+    <permission-map acquired="False"
+                    name="View"
+    >
+      <permission-role>Owner</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="Access contents information"
+    >
+      <permission-role>Owner</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="Modify portal content"
+    >
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
   <state state_id="registered"
          title="Registered"
          i18n:attributes="title"
   >
+    <description i18n:translate="">Registration confirmed.</description>
+    <exit-transition transition_id="check_in" />
     <exit-transition transition_id="cancel" />
     <permission-map acquired="False"
                     name="View"
@@ -47,24 +85,60 @@
     </permission-map>
   </state>
 
-  <state state_id="cancelled"
-         title="Cancelled"
+  <state state_id="attended"
+         title="Attended"
          i18n:attributes="title"
   >
-    <exit-transition transition_id="revert" />
+    <description i18n:translate="">The attendee was at the event.</description>
+    <exit-transition transition_id="undo_check_in" />
     <permission-map acquired="False"
                     name="View"
     >
+      <permission-role>Owner</permission-role>
       <permission-role>Reader</permission-role>
       <permission-role>Reviewer</permission-role>
+      <permission-role>Editor</permission-role>
       <permission-role>Manager</permission-role>
       <permission-role>Site Administrator</permission-role>
     </permission-map>
     <permission-map acquired="False"
                     name="Access contents information"
     >
+      <permission-role>Owner</permission-role>
       <permission-role>Reader</permission-role>
       <permission-role>Reviewer</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="Modify portal content"
+    >
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
+  <state state_id="cancelled"
+         title="Cancelled"
+         i18n:attributes="title"
+  >
+    <description i18n:translate="">Registration cancelled by the attendee or the organizers.</description>
+    <exit-transition transition_id="revert" />
+    <permission-map acquired="False"
+                    name="View"
+    >
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="Access contents information"
+    >
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Editor</permission-role>
       <permission-role>Manager</permission-role>
       <permission-role>Site Administrator</permission-role>
     </permission-map>
@@ -80,15 +154,49 @@
   <transition after_script=""
               before_script=""
               new_state="registered"
-              title="Revert attendee to registered state"
-              transition_id="revert"
+              title="Confirm the registration"
+              transition_id="confirm"
               trigger="USER"
               i18n:attributes="title"
   >
     <action category="workflow"
-            url="%(content_url)s/content_status_modify?workflow_action=revert"
+            url="%(content_url)s/content_status_modify?workflow_action=confirm"
             i18n:translate=""
-    >Revert attendee to registered state</action>
+    >Confirm</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition after_script=""
+              before_script=""
+              new_state="attended"
+              title="Check the attendee in at the event"
+              transition_id="check_in"
+              trigger="USER"
+              i18n:attributes="title"
+  >
+    <action category="workflow"
+            url="%(content_url)s/content_status_modify?workflow_action=check_in"
+            i18n:translate=""
+    >Check in</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition after_script=""
+              before_script=""
+              new_state="registered"
+              title="Undo the check-in"
+              transition_id="undo_check_in"
+              trigger="USER"
+              i18n:attributes="title"
+  >
+    <action category="workflow"
+            url="%(content_url)s/content_status_modify?workflow_action=undo_check_in"
+            i18n:translate=""
+    >Undo check-in</action>
     <guard>
       <guard-permission>Review portal content</guard-permission>
     </guard>
@@ -97,7 +205,7 @@
   <transition after_script=""
               before_script=""
               new_state="cancelled"
-              title="Cancel this attendee"
+              title="Cancel the registration"
               transition_id="cancel"
               trigger="USER"
               i18n:attributes="title"
@@ -105,7 +213,27 @@
     <action category="workflow"
             url="%(content_url)s/content_status_modify?workflow_action=cancel"
             i18n:translate=""
-    >Cancel this attendee</action>
+    >Cancel</action>
+    <guard>
+      <guard-role>Owner</guard-role>
+      <guard-role>Reviewer</guard-role>
+      <guard-role>Manager</guard-role>
+      <guard-role>Site Administrator</guard-role>
+    </guard>
+  </transition>
+
+  <transition after_script=""
+              before_script=""
+              new_state="pending"
+              title="Revert the cancellation"
+              transition_id="revert"
+              trigger="USER"
+              i18n:attributes="title"
+  >
+    <action category="workflow"
+            url="%(content_url)s/content_status_modify?workflow_action=revert"
+            i18n:translate=""
+    >Revert</action>
     <guard>
       <guard-permission>Review portal content</guard-permission>
     </guard>

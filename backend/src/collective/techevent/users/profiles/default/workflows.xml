@@ -3,9 +3,15 @@
   <object meta_type="Workflow"
           name="attendee_workflow"
   />
+  <object meta_type="Workflow"
+          name="attendees_workflow"
+  />
   <bindings>
     <type type_id="Attendee">
       <bound-workflow workflow_id="attendee_workflow" />
+    </type>
+    <type type_id="Attendees">
+      <bound-workflow workflow_id="attendees_workflow" />
     </type>
   </bindings>
 </object>

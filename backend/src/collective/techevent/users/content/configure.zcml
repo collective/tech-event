@@ -1,24 +1,47 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
   <adapter
-      factory=".adapters.MembraneRoleProvider"
-      name="collective.techevent.users.MembraneRoleProvider"
-      />
-
-  <adapter
-      factory=".adapters.MembraneUserProperties"
-      provides="Products.membrane.interfaces.IMembraneUserProperties"
-      />
-
-  <adapter
       factory="plone.app.dexterity.behaviors.exclfromnav.default_exclude_true"
-      for=".adapters.IBaseUser"
+      for=".attendee.IAttendee"
       />
 
+  <!-- Attendees are named with registration codes -->
+  <adapter
+      factory="collective.techevent.users.code.AttendeeNameChooser"
+      provides="zope.container.interfaces.INameChooser"
+      for=".attendees.IAttendees"
+      />
+
+  <!-- Indexers -->
+  <adapter
+      factory=".indexers.attendee_email_indexer"
+      name="attendee_email"
+      />
+  <adapter
+      factory=".indexers.attendee_user_id_indexer"
+      name="attendee_user_id"
+      />
+
+  <!-- Subscribers -->
   <subscriber
-      for="collective.techevent.users.content.attendee.IAttendee
-           zope.lifecycleevent.interfaces.IObjectCreatedEvent"
-      handler="collective.techevent.users.content.subscribers.generate_pyotp_shared_secret"
+      for=".attendees.IAttendees
+           zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".subscribers.impose_limit"
+      />
+  <subscriber
+      for=".attendees.IAttendees
+           zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".subscribers.registration_page"
+      />
+  <subscriber
+      for=".attendee.IAttendee
+           zope.lifecycleevent.interfaces.IObjectAddedEvent"
+      handler=".subscribers.confirm_automatically"
+      />
+  <subscriber
+      for=".attendee.IAttendee
+           Products.CMFCore.interfaces.IActionSucceededEvent"
+      handler=".subscribers.confirmed"
       />
 
 </configure>

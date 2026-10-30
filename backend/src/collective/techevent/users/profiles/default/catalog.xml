@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="portal_catalog">
+
+  <!-- Indexes, without metadata columns: emails stay out of search results -->
+  <!-- Attendee -->
+  <index meta_type="FieldIndex"
+         name="attendee_email"
+  >
+    <indexed_attr value="attendee_email" />
+  </index>
+  <index meta_type="FieldIndex"
+         name="attendee_user_id"
+  >
+    <indexed_attr value="attendee_user_id" />
+  </index>
+
+</object>

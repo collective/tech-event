@@ -11,7 +11,7 @@
   >Attendees</property>
   <property name="description"
             i18n:translate=""
-  >Attendees database</property>
+  >Registrations for an event, with their settings.</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Attendees</property>
@@ -19,7 +19,7 @@
   <property name="link_target" />
 
   <!-- Hierarchy control -->
-  <property name="global_allow">False</property>
+  <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
     <element value="Attendee" />
@@ -39,7 +39,6 @@
     <element value="plone.dublincore" />
     <element value="plone.excludefromnavigation" />
     <element value="volto.blocks" />
-    <element value="plone.constraintypes" />
   </property>
 
 

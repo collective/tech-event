@@ -95,6 +95,12 @@ def _modify_permissions(context: DexterityContent, enable: bool) -> None:
     brains = api.content.find(context, portal_type="SponsorsDB")
     if not brains:
         modify_permission(context, permission_id, roles)
+    # Handle Attendees, only where the attendee registration is installed
+    if _get_fti("Attendees") is not None:
+        permission_id = "collective.techevent: Add Attendees Database"
+        # The container is public only while open, so search unrestricted
+        brains = api.content.find(context, portal_type="Attendees", unrestricted=True)
+        modify_permission(context, permission_id, [] if brains else roles)
 
 
 def setup_tech_event_permissions(tech_event: DexterityContent) -> None:
@@ -142,38 +148,6 @@ def setup_tech_event(portal: DexterityContent) -> None:
         _modify_permissions(portal, True)
 
 
-def setup_tech_event_users(portal: DexterityContent) -> None:
-    """Initialize the Attendees content type and container.
-
-    :param portal: The Plone site where the Attendees container is created.
-    """
-    # Create the Attendees container if it doesn't exist
-    if "attendees" not in portal:
-        # Get the FTI for Attendees
-        fti = _get_fti("Attendees")
-
-        # Enable global_allow for Attendees
-        if not fti.global_allow:
-            fti.global_allow = True
-            logger.info("Enabled global_allow for Attendees")
-
-        try:
-            attendees = api.content.create(
-                container=portal,
-                type="Attendees",
-                id="attendees",
-                title="Attendees",
-            )
-            logger.info(f"Created Attendees container at {attendees.absolute_url()}")
-        except Exception as e:
-            logger.error(f"Failed to create Attendees container: {e}")
-
-        # Disable global_allow for Attendees
-        if fti.global_allow:
-            fti.global_allow = False
-            logger.info("Disabled global_allow for Attendees")
-
-
 __all__ = [
     "find_event_root",
     "find_sponsors_db",
@@ -181,6 +155,5 @@ __all__ = [
     "modify_permission",
     "setup_tech_event",
     "setup_tech_event_permissions",
-    "setup_tech_event_users",
     "sponsor_levels",
 ]

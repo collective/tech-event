@@ -42,12 +42,12 @@ msgstr ""
 msgid "A Venue in the Event."
 msgstr ""
 
-#: collective/techevent/users/profiles/default/types/Attendee.xml
-msgid "A attendee in the conference."
-msgstr ""
-
 #: collective/techevent/profiles/default/types/Meeting.xml
 msgid "A meeting in the Event."
+msgstr ""
+
+#: collective/techevent/users/profiles/default/types/Attendee.xml
+msgid "A registration for an event."
 msgstr ""
 
 #: collective/techevent/profiles/default/types/Break.xml
@@ -82,8 +82,16 @@ msgstr ""
 msgid "All tracks available at this event."
 msgstr ""
 
+#: collective/techevent/users/content/attendees.py:65
+msgid "Allow anonymous registration"
+msgstr ""
+
 #: collective/techevent/profiles/default/types/Tech_Event.xml
 msgid "An edition of an event."
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Attended"
 msgstr ""
 
 #: collective/techevent/users/profiles/default/types/Attendee.xml
@@ -98,14 +106,18 @@ msgstr ""
 msgid "Attendees"
 msgstr ""
 
-#: collective/techevent/users/profiles/default/types/Attendees.xml
-msgid "Attendees database"
+#: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
+msgid "Attendees Workflow"
 msgstr ""
 
 #: collective/techevent/behaviors/session.py:47
 #: collective/techevent/behaviors/tech_event.py:86
 #: collective/techevent/profiles/default/registry/plone.app.querystring.interfaces.IQueryField.xml
 msgid "Audience"
+msgstr ""
+
+#: collective/techevent/users/content/attendees.py:24
+msgid "Automatic: confirm registrations from logged-in users at once"
 msgstr ""
 
 #: collective/techevent/content/sponsors/sponsor_level.py:33
@@ -135,7 +147,11 @@ msgid "Break"
 msgstr ""
 
 #: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
-msgid "Cancel this attendee"
+msgid "Cancel"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Cancel the registration"
 msgstr ""
 
 #: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
@@ -156,6 +172,22 @@ msgstr ""
 #: collective/techevent/content/schedule/slot.py:13
 #: collective/techevent/content/schedule/slots/meeting.py:14
 msgid "Category of this slot"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Check in"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Check the attendee in at the event"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
+msgid "Close registration"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
+msgid "Closed"
 msgstr ""
 
 #: collective/techevent/behaviors/tech_event.py:27
@@ -196,12 +228,24 @@ msgstr ""
 msgid "Conference Photo"
 msgstr ""
 
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Confirm"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Confirm the registration"
+msgstr ""
+
+#: collective/techevent/users/emails.py:85
+msgid "Confirm your registration for ${event}"
+msgstr ""
+
 #: collective/techevent/profiles.zcml:23
 msgid "Create example content to showcase this add-on"
 msgstr ""
 
-#: collective/techevent/users/content/__init__.py:41
-msgid "Credentials"
+#: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
+msgid "Created"
 msgstr ""
 
 #: collective/techevent/content/sponsors/sponsors_db.py:32
@@ -212,13 +256,13 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: collective/techevent/content/schedule/keynote.py:17
+#: collective/techevent/content/schedule/keynote.py:12
 #: collective/techevent/content/schedule/talk.py:12
 #: collective/techevent/content/schedule/training.py:13
 msgid "Duration"
 msgstr ""
 
-#: collective/techevent/content/schedule/keynote.py:18
+#: collective/techevent/content/schedule/keynote.py:13
 msgid "Duration of the keynote"
 msgstr ""
 
@@ -230,7 +274,7 @@ msgstr ""
 msgid "Duration of the training"
 msgstr ""
 
-#: collective/techevent/users/content/__init__.py:33
+#: collective/techevent/users/content/attendee.py:33
 msgid "E-mail Address"
 msgstr ""
 
@@ -240,6 +284,14 @@ msgstr ""
 
 #: collective/techevent/content/presenter.py:39
 msgid "Email address"
+msgstr ""
+
+#: collective/techevent/users/content/attendee.py:42
+msgid "Email verified"
+msgstr ""
+
+#: collective/techevent/users/content/attendees.py:28
+msgid "Email: confirm once the registrant verifies the email address"
 msgstr ""
 
 #: collective/techevent/behaviors/schedule.py:33
@@ -280,8 +332,12 @@ msgstr ""
 msgid "Event days"
 msgstr ""
 
-#: collective/techevent/users/content/__init__.py:25
+#: collective/techevent/users/content/attendee.py:25
 msgid "First Name"
+msgstr ""
+
+#: collective/techevent/users/content/attendees.py:76
+msgid "How a new registration gets confirmed."
 msgstr ""
 
 #: collective/techevent/behaviors/tech_event.py:119
@@ -300,6 +356,10 @@ msgstr ""
 
 #: collective/techevent/vocabularies/presenter.py:20
 msgid "Instructor"
+msgstr ""
+
+#: collective/techevent/users/registration.py:198
+msgid "Invalid email address."
 msgstr ""
 
 #: collective/techevent/content/sponsors/sponsor_level.py:69
@@ -326,8 +386,12 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: collective/techevent/users/content/__init__.py:29
+#: collective/techevent/users/content/attendee.py:29
 msgid "Last Name"
+msgstr ""
+
+#: collective/techevent/users/content/attendees.py:66
+msgid "Let visitors without an account register. They must verify their email address."
 msgstr ""
 
 #: collective/techevent/behaviors/session.py:38
@@ -348,8 +412,20 @@ msgstr ""
 msgid "Lightning Talks slot in the Event."
 msgstr ""
 
+#: collective/techevent/users/registration.py:261
+msgid "Log in to cancel your registration."
+msgstr ""
+
+#: collective/techevent/users/registration.py:219
+msgid "Log in to register for this event."
+msgstr ""
+
 #: collective/techevent/vocabularies/slot.py:32
 msgid "Lunch"
+msgstr ""
+
+#: collective/techevent/users/content/attendees.py:32
+msgid "Manual: an organizer confirms each registration"
 msgstr ""
 
 #: collective/techevent/profiles/default/types/Meeting.xml
@@ -357,8 +433,20 @@ msgstr ""
 msgid "Meeting"
 msgstr ""
 
+#: collective/techevent/users/registration.py:191
+msgid "Missing value: ${field}"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
+msgid "Open"
+msgstr ""
+
 #: collective/techevent/profiles/default/types/OpenSpace.xml
 msgid "Open Space"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
+msgid "Open registration"
 msgstr ""
 
 #: collective/techevent/profiles/default/types/OpenSpace.xml
@@ -375,6 +463,10 @@ msgstr ""
 
 #: collective/techevent/profiles.zcml:14
 msgid "Package to configure a new Tech Event for Plone site"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Pending"
 msgstr ""
 
 #: collective/techevent/vocabularies/presenter.py:21
@@ -426,6 +518,54 @@ msgstr ""
 msgid "Registration"
 msgstr ""
 
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Registration cancelled by the attendee or the organizers."
+msgstr ""
+
+#: collective/techevent/users/content/attendees.py:75
+msgid "Registration confirmation"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Registration confirmed."
+msgstr ""
+
+#: collective/techevent/users/content/attendees.py:83
+msgid "Registration deadline"
+msgstr ""
+
+#: collective/techevent/users/content/attendees.py:84
+msgid "Registration ends at this date and time, even while the attendees database is open. Leave empty to close registration by hand."
+msgstr ""
+
+#: collective/techevent/users/registration.py:164
+msgid "Registration is not open."
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Registration of an attendee: received, confirmed, at the event, or cancelled."
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
+msgid "Registration period of an event: set up, open, or closed. The database is public while open; only organizers see its registrations."
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
+msgid "Registration period over."
+msgstr ""
+
+#: collective/techevent/users/content/attendees.py:55
+msgid "Registration prefix"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Registration received, not confirmed yet."
+msgstr ""
+
+#: collective/techevent/users/profiles/default/types/Attendees.xml
+msgid "Registrations for an event, with their settings."
+msgstr ""
+
 #: collective/techevent/content/schedule/training.py:20
 msgid "Requirements"
 msgstr ""
@@ -435,7 +575,11 @@ msgid "Requirements of this training"
 msgstr ""
 
 #: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
-msgid "Revert attendee to registered state"
+msgid "Revert"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Revert the cancellation"
 msgstr ""
 
 #: collective/techevent/behaviors/schedule.py:54
@@ -485,6 +629,10 @@ msgstr ""
 msgid "Session Track."
 msgstr ""
 
+#: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
+msgid "Set up, not taking registrations yet."
+msgstr ""
+
 #: collective/techevent/controlpanel/tech_event.py:14
 msgid "Should we support multiple events"
 msgstr ""
@@ -515,8 +663,12 @@ msgstr ""
 msgid "Start time"
 msgstr ""
 
-#: collective/techevent/users/content/__init__.py:37
-msgid "TOTP Shared Secret"
+#: collective/techevent/users/content/attendees.py:56
+msgid "Starts every registration code of this event, as in PYC26-7KQ3M9XD. Use 2 to 12 upper-case letters and digits."
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
+msgid "Taking registrations, until the registration deadline if there is one."
 msgstr ""
 
 #: collective/techevent/profiles/default/types/Talk.xml
@@ -565,6 +717,34 @@ msgstr ""
 
 #: collective/techevent/controlpanel/tech_event.py:25
 msgid "TechEvent Settings"
+msgstr ""
+
+#: collective/techevent/users/content/attendee.py:38
+msgid "The account this registration belongs to, if any."
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "The attendee was at the event."
+msgstr ""
+
+#: collective/techevent/users/registration.py:170
+msgid "The registration deadline has passed."
+msgstr ""
+
+#: collective/techevent/users/utils.py:97
+msgid "This email is already registered for this event."
+msgstr ""
+
+#: collective/techevent/users/services/registration.py:32
+msgid "This event does not take registrations."
+msgstr ""
+
+#: collective/techevent/users/registration.py:290
+msgid "This link is invalid or has expired."
+msgstr ""
+
+#: collective/techevent/users/registration.py:270
+msgid "This registration can no longer be cancelled."
 msgstr ""
 
 #: collective/techevent/behaviors/session.py:17
@@ -619,11 +799,23 @@ msgstr ""
 msgid "Training: Slot duration"
 msgstr ""
 
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Undo check-in"
+msgstr ""
+
+#: collective/techevent/users/profiles/default/workflows/attendee_workflow/definition.xml
+msgid "Undo the check-in"
+msgstr ""
+
 #: collective/techevent/profiles.zcml:31
 msgid "Uninstall Tech Event for Plone setup."
 msgstr ""
 
-#: collective/techevent/users/content/__init__.py:20
+#: collective/techevent/users/content/attendees.py:47
+msgid "Use 2 to 12 characters, only upper-case letters and digits."
+msgstr ""
+
+#: collective/techevent/users/content/attendee.py:37
 msgid "User ID"
 msgstr ""
 
@@ -651,6 +843,28 @@ msgstr ""
 
 #: collective/techevent/behaviors/tech_event.py:296
 msgid "Workflow states to include in the schedule in addition to 'published'."
+msgstr ""
+
+#: collective/techevent/users/utils.py:93
+msgid "You are already registered for this event."
+msgstr ""
+
+#: collective/techevent/users/registration.py:266
+msgid "You are not registered for this event."
+msgstr ""
+
+#: collective/techevent/users/emails.py:116
+msgid "Your registration for ${event} is confirmed"
+msgstr ""
+
+#. Default: "Hello ${name},\n\nYour registration for ${event} is confirmed.\n\nYour registration code is ${code}. Please have it with you at the registration desk."
+#: collective/techevent/users/emails.py:120
+msgid "email_confirmation_body"
+msgstr ""
+
+#. Default: "Hello ${name},\n\nThank you for registering for ${event}. Please confirm your email address by following this link within 48 hours:\n\n${url}\n\nYour registration code is ${code}.\n\nIf you did not register, ignore this message."
+#: collective/techevent/users/emails.py:89
+msgid "email_verification_body"
 msgstr ""
 
 #. Default: "Used in item listings and search results."
@@ -687,9 +901,4 @@ msgstr ""
 #. Default: "Title"
 #: collective/techevent/content/sponsors/sponsor.py:16
 msgid "label_title"
-msgstr ""
-
-#. Default: "Your one time password for ${portal_name}"
-#: collective/techevent/users/password_reset.py:54
-msgid "mailtemplate_subject_totp"
 msgstr ""
