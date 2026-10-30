@@ -30,7 +30,7 @@ class TestFTI:
             self.fti.klass == "collective.techevent.users.content.attendees.Attendees"
         )
         assert self.fti.global_allow is True
-        assert self.fti.allowed_content_types == ("Attendee",)
+        assert self.fti.allowed_content_types == ("Attendee", "Ticket")
 
     def test_blocks(self):
         assert "volto.blocks" in self.fti.behaviors

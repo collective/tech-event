@@ -41,7 +41,7 @@ The views are registered for these portal types.
 
 | Portal type | View |
 | --- | --- |
-| Attendee | Attendee view: the name, registration code, state and email address of a registration |
+| Attendee | Attendee view: the name, registration code, ticket, state and email address of a registration |
 | Break | Slot view |
 | Keynote | Session view |
 | LightningTalks | Lightning talks view |
@@ -71,6 +71,6 @@ The add-on registers the route `registration/verify`, at the site root and below
 It is the target of the link in the confirmation email, and verifies the registrant's email address.
 
 It also registers the route `manage-registrations`, also excluded from the content routes.
-Below an Attendees database, it is the registration desk: the registrations, with filters by state, a search, and the workflow actions.
+Below an Attendees database, it is the registration desk: the registrations, with their tickets, filters by state, a search, and the workflow actions.
 Anywhere else, it shows the page not found.
 On an Attendees database, a **Manage registrations** button in the toolbar leads to it, for the organizers.

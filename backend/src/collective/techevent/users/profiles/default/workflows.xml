@@ -13,5 +13,7 @@
     <type type_id="Attendees">
       <bound-workflow workflow_id="attendees_workflow" />
     </type>
+    <!-- A Ticket follows its Attendees container -->
+    <type type_id="Ticket" />
   </bindings>
 </object>

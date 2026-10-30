@@ -6,6 +6,7 @@ import View from './View';
 import { blockViewProps } from '../Sponsors/fixtures';
 import {
   closedStatus,
+  ticketsStatus,
   expiredStatus,
   memberStatus,
   openStatus,
@@ -142,6 +143,25 @@ describe('Registration block view', () => {
       ),
     );
     expect(button(container).textContent).toBe('Your registration');
+  });
+
+  it('says when no ticket is available', () => {
+    const { container } = renderInVolto(
+      <View {...props()} />,
+      registrationStore({ ...ticketsStatus, tickets: [] }, true),
+    );
+    expect(button(container)).toBeNull();
+    expect(container.querySelector('.registration-message')?.textContent).toBe(
+      'No tickets are available.',
+    );
+  });
+
+  it('offers registration while a ticket is available', () => {
+    const { container } = renderInVolto(
+      <View {...props()} />,
+      registrationStore(ticketsStatus, true),
+    );
+    expect(button(container)).not.toBeNull();
   });
 
   it('says registration is not open', () => {

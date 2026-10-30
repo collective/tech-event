@@ -8,6 +8,7 @@ enumeration, and it is still easy to read out at a registration desk.
 """
 
 from collections.abc import Container
+from plone.app.content.namechooser import NormalizingNameChooser
 from typing import Any
 from zope.container.interfaces import INameChooser
 from zope.interface import implementer
@@ -72,7 +73,7 @@ class AttendeeNameChooser:
     The name suggested by the caller, derived from the title, is ignored:
     an Attendee is always named with a new registration code. An explicit
     id never reaches the name chooser, so ids chosen by a sync script are
-    kept.
+    kept. A Ticket, the other type a container holds, is named as usual.
     """
 
     def __init__(self, context: Any) -> None:
@@ -95,13 +96,15 @@ class AttendeeNameChooser:
         return True
 
     def chooseName(self, name: str | None, obj: Any) -> str:
-        """Return a new registration code.
+        """Return a new registration code, or the name of a Ticket.
 
-        :param name: The suggested name (ignored).
-        :param obj: The Attendee to be named (unused).
+        :param name: The suggested name (ignored for an Attendee).
+        :param obj: The object to be named.
         :returns: A free registration code. A container without a prefix,
             which only code can create, uses one derived from its own id.
         """
+        if getattr(obj, "portal_type", None) == "Ticket":
+            return NormalizingNameChooser(self.context).chooseName(name, obj)
         prefix = getattr(self.context, "registration_prefix", None)
         prefix = prefix or prefix_from_id(self.context.getId())
         return generate_free_code(prefix, self.context)

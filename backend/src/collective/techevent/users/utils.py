@@ -1,6 +1,8 @@
 """Helpers for the attendee registration."""
 
 from collective.techevent import _
+from datetime import datetime
+from datetime import UTC
 from plone import api
 from plone.uuid.interfaces import IUUID
 from typing import Any
@@ -14,8 +16,8 @@ ORGANIZER_PERMISSIONS = ("Modify portal content", "Review portal content")
 def is_organizer(container: Any) -> bool:
     """Whether the current user organizes the registrations of a container.
 
-    The container is public while registration is open, so viewing it does
-    not make an organizer.
+    The container is public once opened, so viewing it does not make an
+    organizer.
 
     :param container: The Attendees container.
     :returns: ``True`` when the user can edit the container or review its
@@ -25,6 +27,17 @@ def is_organizer(container: Any) -> bool:
         api.user.has_permission(permission, obj=container)
         for permission in ORGANIZER_PERMISSIONS
     )
+
+
+def aware_datetime(value: datetime | None) -> datetime | None:
+    """Return a stored date as timezone aware.
+
+    :param value: The date, if any.
+    :returns: The date; one stored without a timezone is read as UTC.
+    """
+    if value is None or value.tzinfo is not None:
+        return value
+    return value.replace(tzinfo=UTC)
 
 
 def normalize_email(email: str | None) -> str:
@@ -49,6 +62,25 @@ def find_attendees(container: Any, **query: Any) -> list[Any]:
             depth=1,
             portal_type="Attendee",
             unrestricted=True,
+            **query,
+        )
+    )
+
+
+def find_tickets(container: Any, **query: Any) -> list[Any]:
+    """Search the Tickets of one container, in the order of the container.
+
+    :param container: The Attendees container.
+    :param query: Extra catalog criteria.
+    :returns: The catalog brains.
+    """
+    return list(
+        api.content.find(
+            context=container,
+            depth=1,
+            portal_type="Ticket",
+            unrestricted=True,
+            sort_on="getObjPositionInParent",
             **query,
         )
     )

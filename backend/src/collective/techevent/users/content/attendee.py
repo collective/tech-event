@@ -38,6 +38,12 @@ class IAttendee(Schema):
         description=_("The account this registration belongs to, if any."),
         required=False,
     )
+    ticket = schema.Choice(
+        title=_("Ticket"),
+        description=_("The ticket of this registration, if the event has tickets."),
+        vocabulary="collective.techevent.vocabularies.tickets",
+        required=False,
+    )
     email_verified = schema.Bool(
         title=_("Email verified"),
         default=False,
@@ -48,6 +54,7 @@ class IAttendee(Schema):
     directives.write_permission(
         email="cmf.ReviewPortalContent",
         user_id="cmf.ReviewPortalContent",
+        ticket="cmf.ReviewPortalContent",
         email_verified="cmf.ReviewPortalContent",
     )
 

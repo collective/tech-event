@@ -172,6 +172,8 @@ class TestRegistrationWindow:
             "expired": False,
             "allow_anonymous_registration": False,
             "registration_confirmation": "automatic",
+            "requires_ticket": False,
+            "tickets": [],
         }
 
     def test_status_expired(self):

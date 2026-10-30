@@ -3,6 +3,7 @@ import coffeeSVG from '@plone-collective/volto-techevent/icons/coffee.svg';
 import lunchSVG from '@plone-collective/volto-techevent/icons/lunch.svg';
 import meetingSVG from '@plone-collective/volto-techevent/icons/meeting.svg';
 import microphoneSVG from '@plone-collective/volto-techevent/icons/microphone.svg';
+import ticketSVG from '@plone-collective/volto-techevent/icons/ticket.svg';
 import trainingSVG from '@plone-collective/volto-techevent/icons/training.svg';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
 import cameraSVG from '@plone/volto/icons/camera.svg';
@@ -10,6 +11,7 @@ import clockSVG from '@plone/volto/icons/clock.svg';
 import eventSVG from '@plone/volto/icons/event.svg';
 import lightningTalksSVG from '@plone/volto/icons/fast-forward.svg';
 import registrationSVG from '@plone/volto/icons/finger-print.svg';
+import groupSVG from '@plone/volto/icons/group.svg';
 import heartSVG from '@plone/volto/icons/heart.svg';
 import homeSVG from '@plone/volto/icons/home.svg';
 import mapSVG from '@plone/volto/icons/map.svg';
@@ -36,6 +38,9 @@ export const contentIcons: Record<string, string> = {
   SponsorsDB: showcaseSVG,
   SponsorLevel: trophySVG,
   Sponsor: heartSVG,
+  Attendees: groupSVG,
+  Attendee: userSVG,
+  Ticket: ticketSVG,
 };
 
 /**

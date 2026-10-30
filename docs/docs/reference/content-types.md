@@ -69,8 +69,9 @@ These types come with the **Tech Event for Plone: Attendee support** profile, `c
 
 | Portal type | Description | Contains |
 | --- | --- | --- |
-| Attendees | The registrations of one event, with the registration settings: prefix, anonymous registration, confirmation policy and deadline. A page with blocks, which is the registration page of the event. At most one per event root. | Attendee |
-| Attendee | One registration: first name, last name, email address, and the account it belongs to. Its ID is the registration code. | None |
+| Attendees | The registrations of one event, with the registration settings: prefix, anonymous registration, confirmation policy and deadline. A page with blocks, which is the registration page of the event. At most one per event root. | Attendee, Ticket |
+| Attendee | One registration: first name, last name, email address, ticket, and the account it belongs to. Its ID is the registration code. | None |
+| Ticket | What registrants can choose for an event: title, summary, the period in which it is available, and whether it grants admission. It has no workflow, and follows its Attendees database. | None |
 
 The Attendees workflow has the states `created`, `open` and `closed`.
 An Attendees database is public in the `open` and `closed` states, and shows in the navigation; its registrations are not.

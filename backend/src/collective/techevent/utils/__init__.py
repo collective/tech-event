@@ -98,7 +98,7 @@ def _modify_permissions(context: DexterityContent, enable: bool) -> None:
     # Handle Attendees, only where the attendee registration is installed
     if _get_fti("Attendees") is not None:
         permission_id = "collective.techevent: Add Attendees Database"
-        # The container is public only while open, so search unrestricted
+        # The container is private until opened, so search unrestricted
         brains = api.content.find(context, portal_type="Attendees", unrestricted=True)
         modify_permission(context, permission_id, [] if brains else roles)
 

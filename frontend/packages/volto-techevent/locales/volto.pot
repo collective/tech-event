@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-10-30T00:30:31.118Z\n"
+"POT-Creation-Date: 2026-10-30T22:03:02.559Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -223,6 +223,11 @@ msgstr ""
 msgid "No registrations."
 msgstr ""
 
+#. Default: "No tickets are available."
+#: components/Registration/messages
+msgid "No tickets are available."
+msgstr ""
+
 #. Default: "Package Benefits"
 #: messages
 msgid "Package Benefits"
@@ -361,6 +366,11 @@ msgstr ""
 #. Default: "This link is invalid or has expired."
 #: components/Registration/messages
 msgid "This link is invalid or has expired."
+msgstr ""
+
+#. Default: "Ticket"
+#: components/Registration/messages
+msgid "Ticket"
 msgstr ""
 
 #. Default: "Title"

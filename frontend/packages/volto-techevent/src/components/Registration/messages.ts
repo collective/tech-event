@@ -202,6 +202,14 @@ const messages = defineMessages({
     id: 'Registration code',
     defaultMessage: 'Registration code',
   },
+  ticket: {
+    id: 'Ticket',
+    defaultMessage: 'Ticket',
+  },
+  noTickets: {
+    id: 'No tickets are available.',
+    defaultMessage: 'No tickets are available.',
+  },
 });
 
 export default messages;

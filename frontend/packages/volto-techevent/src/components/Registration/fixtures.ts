@@ -6,6 +6,7 @@ import type {
   AttendeesListing,
   Registration,
   RegistrationStatus,
+  Ticket,
 } from '@plone-collective/volto-techevent/types/registration';
 import { initialState as registrationInitial } from '@plone-collective/volto-techevent/reducers/registration/registration';
 
@@ -28,7 +29,30 @@ export const openStatus: RegistrationStatus = {
   expired: false,
   allow_anonymous_registration: true,
   registration_confirmation: 'automatic',
+  requires_ticket: false,
+  tickets: [],
   registration: null,
+};
+
+export const tickets: Ticket[] = [
+  {
+    UID: 'ticket-full',
+    title: 'Full conference',
+    description: 'All days and tutorials',
+    admission: true,
+  },
+  {
+    UID: 'ticket-tutorials',
+    title: 'Tutorials only',
+    description: '',
+    admission: true,
+  },
+];
+
+export const ticketsStatus: RegistrationStatus = {
+  ...openStatus,
+  requires_ticket: true,
+  tickets,
 };
 
 export const memberStatus: RegistrationStatus = {
@@ -87,6 +111,8 @@ export const attendeesListing: AttendeesListing = {
   expired: false,
   allow_anonymous_registration: true,
   registration_confirmation: 'manual',
+  requires_ticket: false,
+  tickets: [],
   items: [
     {
       ...registration,

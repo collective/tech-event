@@ -25,7 +25,7 @@ const RegistrationSummary: React.FC<RegistrationSummaryProps> = ({
 }) => {
   const intl = useIntl();
   const [confirming, setConfirming] = useState(false);
-  const { code, state, email_verified } = registration;
+  const { code, state, email_verified, ticket } = registration;
   const cancellable = canCancel && onCancel && CANCELLABLE.includes(state);
 
   return (
@@ -33,6 +33,12 @@ const RegistrationSummary: React.FC<RegistrationSummaryProps> = ({
       <dl>
         <dt>{intl.formatMessage(messages.yourCode)}</dt>
         <dd className="registration-code">{code}</dd>
+        {ticket && (
+          <>
+            <dt>{intl.formatMessage(messages.ticket)}</dt>
+            <dd className="registration-ticket">{ticket.title}</dd>
+          </>
+        )}
         <dt>{intl.formatMessage(messages.status)}</dt>
         <dd>
           <RegistrationStateLabel state={state} />

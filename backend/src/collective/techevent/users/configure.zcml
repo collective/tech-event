@@ -9,4 +9,9 @@
   <include package=".services" />
   <include package=".upgrades" />
 
+  <utility
+      name="collective.techevent.vocabularies.tickets"
+      component=".vocabularies.tickets"
+      />
+
 </configure>

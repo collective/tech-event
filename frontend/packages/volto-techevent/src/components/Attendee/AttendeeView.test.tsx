@@ -45,4 +45,19 @@ describe('AttendeeView', () => {
     );
     expect(terms(container)).toEqual(['Registration code']);
   });
+
+  it('shows the ticket', () => {
+    const { container } = renderInVolto(
+      <AttendeeView
+        content={{
+          ...content,
+          ticket: { token: 'ticket-full', title: 'Full conference' },
+        }}
+      />,
+    );
+    expect(terms(container)).toContain('Ticket');
+    expect(container.querySelector('.registration-ticket')?.textContent).toBe(
+      'Full conference',
+    );
+  });
 });

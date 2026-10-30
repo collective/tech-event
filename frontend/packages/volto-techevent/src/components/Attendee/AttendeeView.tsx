@@ -11,6 +11,7 @@ interface AttendeeContent {
   email?: string;
   email_verified?: boolean;
   review_state?: RegistrationState;
+  ticket?: { token: string; title: string } | null;
 }
 
 interface AttendeeViewProps {
@@ -19,11 +20,11 @@ interface AttendeeViewProps {
 
 /**
  * A registration, for its registrant and the organizers: the name, the
- * registration code, the email address and the state.
+ * registration code, the ticket, the email address and the state.
  */
 const AttendeeView: React.FC<AttendeeViewProps> = ({ content }) => {
   const intl = useIntl();
-  const { id, title, email, email_verified, review_state } = content;
+  const { id, title, email, email_verified, review_state, ticket } = content;
   return (
     <Container id="page-attendee" className="view-wrapper attendee-view">
       <h1 className="documentFirstHeading">{title}</h1>
@@ -31,6 +32,12 @@ const AttendeeView: React.FC<AttendeeViewProps> = ({ content }) => {
         <dl>
           <dt>{intl.formatMessage(messages.registrationCode)}</dt>
           <dd className="registration-code">{id}</dd>
+          {ticket && (
+            <>
+              <dt>{intl.formatMessage(messages.ticket)}</dt>
+              <dd className="registration-ticket">{ticket.title}</dd>
+            </>
+          )}
           {review_state && (
             <>
               <dt>{intl.formatMessage(messages.status)}</dt>

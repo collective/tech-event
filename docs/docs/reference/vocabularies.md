@@ -34,6 +34,7 @@ A vocabulary that reads its terms from the event comes from the nearest event ro
 | `presenter_labels` | Fixed list | Categories of a presenter |
 | `sponsorship_levels` | Levels of the sponsors database | Sponsor level |
 | `sponsorship_benefits` | Benefits of the sponsors database | Benefit of a sponsorship level |
+| `tickets` | Tickets in the Attendees database, in position order | Ticket of an attendee |
 
 ## Fixed terms
 

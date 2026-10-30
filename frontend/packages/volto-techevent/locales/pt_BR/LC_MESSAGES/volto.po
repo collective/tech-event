@@ -226,6 +226,11 @@ msgstr "Nome"
 msgid "No registrations."
 msgstr "Nenhuma inscrição."
 
+#. Default: "No tickets are available."
+#: components/Registration/messages
+msgid "No tickets are available."
+msgstr "Nenhum ingresso disponível."
+
 #. Default: "Package Benefits"
 #: messages
 msgid "Package Benefits"
@@ -365,6 +370,11 @@ msgstr "Este evento não recebe inscrições."
 #: components/Registration/messages
 msgid "This link is invalid or has expired."
 msgstr "Este link é inválido ou expirou."
+
+#. Default: "Ticket"
+#: components/Registration/messages
+msgid "Ticket"
+msgstr "Ingresso"
 
 #. Default: "Title"
 #: components/Registration/messages

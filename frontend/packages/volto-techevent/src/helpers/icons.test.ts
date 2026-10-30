@@ -23,6 +23,9 @@ const portalTypes = [
   'SponsorsDB',
   'SponsorLevel',
   'Sponsor',
+  'Attendees',
+  'Attendee',
+  'Ticket',
 ];
 
 describe('contentIcons', () => {

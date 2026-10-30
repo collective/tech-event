@@ -2,6 +2,7 @@ import React from 'react';
 import type { Decorator, Meta, StoryObj } from '@storybook/react';
 import Wrapper from '@plone/volto/storybook';
 import RegistrationForm from './RegistrationForm';
+import { tickets } from './fixtures';
 
 const withWrapper: Decorator = (Story) => (
   <Wrapper anonymous>
@@ -36,4 +37,8 @@ export const LoggedIn: Story = {
 
 export const Refused: Story = {
   args: { error: 'This email is already registered for this event.' },
+};
+
+export const WithTickets: Story = {
+  args: { tickets },
 };

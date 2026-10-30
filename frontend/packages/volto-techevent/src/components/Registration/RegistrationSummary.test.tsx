@@ -2,7 +2,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { fireEvent, screen } from '@testing-library/react';
 import RegistrationSummary from './RegistrationSummary';
-import { pendingRegistration, registration } from './fixtures';
+import { pendingRegistration, registration, tickets } from './fixtures';
 import { renderInVolto } from '../../testing/render';
 
 describe('RegistrationSummary', () => {
@@ -88,5 +88,23 @@ describe('RegistrationSummary', () => {
       <RegistrationSummary registration={registration} onCancel={vi.fn()} />,
     );
     expect(screen.queryByText('Cancel my registration')).toBeNull();
+  });
+
+  it('has no ticket line without a ticket', () => {
+    const { container } = renderInVolto(
+      <RegistrationSummary registration={registration} />,
+    );
+    expect(container.querySelector('.registration-ticket')).toBeNull();
+  });
+
+  it('shows the ticket', () => {
+    const { container } = renderInVolto(
+      <RegistrationSummary
+        registration={{ ...registration, ticket: tickets[0] }}
+      />,
+    );
+    expect(container.querySelector('.registration-ticket')?.textContent).toBe(
+      'Full conference',
+    );
   });
 });

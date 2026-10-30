@@ -74,6 +74,7 @@ const RegistrationModal: React.FC<RegistrationModalProps> = ({
             <RegistrationDeadline closesAt={status.closes_at} />
             <Form
               defaults={status.defaults}
+              tickets={status.tickets}
               submitting={submitting}
               error={error}
               onSubmit={onRegister}

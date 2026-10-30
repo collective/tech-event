@@ -2,6 +2,7 @@
 
 from collective.techevent import _
 from collective.techevent.users.code import PREFIX_PATTERN
+from collective.techevent.users.utils import aware_datetime
 from datetime import datetime
 from datetime import UTC
 from plone import api
@@ -99,12 +100,7 @@ class Attendees(Container):
         :returns: The deadline, timezone aware; a date stored without a
             timezone is read as UTC. ``None`` without one.
         """
-        deadline = getattr(self, "registration_deadline", None)
-        if deadline is None:
-            return None
-        if deadline.tzinfo is None:
-            return deadline.replace(tzinfo=UTC)
-        return deadline
+        return aware_datetime(getattr(self, "registration_deadline", None))
 
     @property
     def expired(self) -> bool:

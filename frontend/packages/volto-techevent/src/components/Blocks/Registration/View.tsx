@@ -80,6 +80,13 @@ const View: React.FC<BlockViewProps & { isEditMode?: boolean }> = ({
     }
     if (
       !status.registration &&
+      status.requires_ticket &&
+      !status.tickets.length
+    ) {
+      return message(intl.formatMessage(messages.noTickets));
+    }
+    if (
+      !status.registration &&
       !isLoggedIn &&
       !status.allow_anonymous_registration
     ) {

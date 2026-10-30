@@ -13,11 +13,13 @@ from collective.techevent.users.content.attendees import Attendees
 from collective.techevent.users.content.attendees import CONFIRMATION_AUTOMATIC
 from collective.techevent.users.content.attendees import CONFIRMATION_EMAIL
 from collective.techevent.users.content.attendees import OPEN_STATE
+from collective.techevent.users.content.ticket import Ticket
 from collective.techevent.users.emails import send_verification
 from collective.techevent.users.tokens import InvalidToken
 from collective.techevent.users.tokens import read_token
 from collective.techevent.users.utils import duplicate_message
 from collective.techevent.users.utils import find_attendees
+from collective.techevent.users.utils import find_tickets
 from collective.techevent.users.utils import is_organizer
 from collective.techevent.users.utils import normalize_email
 from plone import api
@@ -77,14 +79,49 @@ def _account(user: Any) -> dict[str, str]:
     }
 
 
+def _tickets(container: Attendees) -> list[Ticket]:
+    """Return the tickets of an event, in the order of the container.
+
+    :param container: The Attendees container of the event.
+    :returns: Its tickets.
+    """
+    return [brain._unrestrictedGetObject() for brain in find_tickets(container)]
+
+
+def _serialize_ticket(ticket: Ticket) -> dict[str, Any]:
+    """Describe a ticket.
+
+    :param ticket: The Ticket.
+    :returns: Its ``UID``, ``title``, ``description`` and ``admission``.
+    """
+    return {
+        "UID": ticket.UID(),
+        "title": ticket.title,
+        "description": ticket.description,
+        "admission": bool(ticket.admission),
+    }
+
+
+def tickets_by_uid(container: Attendees) -> dict[str, dict[str, Any]]:
+    """Describe the tickets of an event, available now or not.
+
+    :param container: The Attendees container of the event.
+    :returns: The description of each ticket, keyed by its UID.
+    """
+    return {ticket.UID(): _serialize_ticket(ticket) for ticket in _tickets(container)}
+
+
 def registration_status(container: Attendees) -> dict[str, Any]:
     """Describe whether, and how, an event takes registrations.
 
     :param container: The Attendees container of the event.
     :returns: The state of the container, whether it takes registrations,
-        the deadline and the settings a registration form needs.
+        the deadline and the settings a registration form needs. An event
+        with tickets has ``requires_ticket``; ``tickets`` lists those
+        available now.
     """
     closes_at = container.closes_at()
+    tickets = _tickets(container)
     return {
         "state": api.content.get_state(container),
         "open": container.is_open,
@@ -92,16 +129,27 @@ def registration_status(container: Attendees) -> dict[str, Any]:
         "expired": container.expired,
         "allow_anonymous_registration": bool(container.allow_anonymous_registration),
         "registration_confirmation": container.registration_confirmation,
+        "requires_ticket": bool(tickets),
+        "tickets": [
+            _serialize_ticket(ticket) for ticket in tickets if ticket.is_available
+        ],
     }
 
 
-def serialize_registration(attendee: Attendee) -> dict[str, Any]:
+def serialize_registration(
+    attendee: Attendee, tickets: dict[str, dict[str, Any]] | None = None
+) -> dict[str, Any]:
     """Describe a registration for its registrant.
 
     :param attendee: The Attendee.
-    :returns: The registration code, state and personal data. ``@id`` only
+    :param tickets: The result of :func:`tickets_by_uid`, for callers
+        serializing many registrations of one event.
+    :returns: The registration code, state, ticket and personal data. The
+        ticket is ``None`` without one, or when it was deleted. ``@id`` only
         when the current user organizes the Attendees container.
     """
+    if tickets is None:
+        tickets = tickets_by_uid(attendee.__parent__)
     data: dict[str, Any] = {
         "code": attendee.getId(),
         "state": api.content.get_state(attendee),
@@ -109,6 +157,7 @@ def serialize_registration(attendee: Attendee) -> dict[str, Any]:
         "last_name": attendee.last_name,
         "email": attendee.email,
         "email_verified": bool(attendee.email_verified),
+        "ticket": tickets.get(attendee.ticket),
     }
     if is_organizer(attendee.__parent__):
         data["@id"] = attendee.absolute_url()
@@ -200,17 +249,48 @@ def _clean(data: dict[str, Any], defaults: dict[str, str]) -> dict[str, str]:
     return cleaned
 
 
+def _choose_ticket(container: Attendees, data: dict[str, Any]) -> str | None:
+    """Return the ticket of a new registration.
+
+    :param container: The Attendees container of the event.
+    :param data: The data sent by the registrant.
+    :returns: The UID of the ticket: the one chosen, or the only one
+        available. ``None`` when the event has no tickets.
+    :raises RegistrationError: ``403`` when none is available, ``400`` when
+        one must be chosen, or the chosen one is not available.
+    """
+    tickets = _tickets(container)
+    if not tickets:
+        return None
+    available = [ticket.UID() for ticket in tickets if ticket.is_available]
+    if not available:
+        raise RegistrationError(
+            403, "TicketsUnavailable", _("No tickets are available.")
+        )
+    uid = data.get("ticket")
+    if not uid:
+        if len(available) == 1:
+            return available[0]
+        raise RegistrationError(
+            400, "BadRequest", _("Missing value: ${field}", mapping={"field": "ticket"})
+        )
+    if uid not in available:
+        raise RegistrationError(400, "BadRequest", _("This ticket is not available."))
+    return uid
+
+
 def register(container: Attendees, data: dict[str, Any]) -> Attendee:
     """Register the current user, or an anonymous visitor, for an event.
 
     :param container: The Attendees container of the event.
     :param data: ``first_name``, ``last_name`` and ``email``. For a logged-in
-        user, each defaults to the account's.
+        user, each defaults to the account's. ``ticket`` is the UID of the
+        chosen ticket, for an event with tickets.
     :returns: The new Attendee.
-    :raises RegistrationError: ``403`` when registration is not open or the
-        deadline passed, ``401`` for an anonymous visitor when the event
-        only takes registrations from accounts, ``400`` for invalid data,
-        ``409`` for a duplicate.
+    :raises RegistrationError: ``403`` when registration is not open, the
+        deadline passed or no ticket is available, ``401`` for an anonymous
+        visitor when the event only takes registrations from accounts,
+        ``400`` for invalid data, ``409`` for a duplicate.
     """
     _check_open(container)
     anonymous = api.user.is_anonymous()
@@ -224,6 +304,7 @@ def register(container: Attendees, data: dict[str, Any]) -> Attendee:
     user_id = user.getId() if user is not None else None
     if message := duplicate_message(container, email=cleaned["email"], user_id=user_id):
         raise RegistrationError(409, "Conflict", message)
+    ticket = _choose_ticket(container, data)
     # The address of an account counts as verified
     email_verified = bool(account) and normalize_email(
         account["email"]
@@ -240,6 +321,7 @@ def register(container: Attendees, data: dict[str, Any]) -> Attendee:
             email=cleaned["email"],
             user_id=user_id,
             email_verified=email_verified,
+            ticket=ticket,
         )
         _set_owner(attendee, user_id)
     policy = container.registration_confirmation

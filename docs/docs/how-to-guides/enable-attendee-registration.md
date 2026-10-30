@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Let people register for a tech event: install the attendee registration profile, add the Attendees database, open registration, set a deadline, and check attendees in."
-    "property=og:description": "Let people register for a tech event: install the attendee registration profile, add the Attendees database, open registration, set a deadline, and check attendees in."
+    "description": "Let people register for a tech event: install the attendee registration profile, add the Attendees database, offer tickets, open registration, set a deadline, and check attendees in."
+    "property=og:description": "Let people register for a tech event: install the attendee registration profile, add the Attendees database, offer tickets, open registration, set a deadline, and check attendees in."
     "property=og:title": "Enable attendee registration"
-    "keywords": "Plone, tech event, registration, attendees, check-in, deadline"
+    "keywords": "Plone, tech event, registration, attendees, tickets, check-in, deadline"
 ---
 
 # Enable attendee registration
@@ -51,6 +51,30 @@ Registration deadline
 :   Registration ends at this date and time, even while the database is open.
     Leave it empty to close registration by hand.
 
+## Offer tickets
+
+Tickets are optional.
+An Attendees database without tickets takes registrations as usual.
+
+To offer tickets, add **Ticket** items to the Attendees database, for instance **Full conference** and **Tutorials only**:
+
+Title and summary
+:   What registrants read when they choose a ticket.
+
+Available from and Available until
+:   The period in which registrants can choose the ticket.
+    Leave them empty to offer it for as long as registration is open.
+
+Grants admission
+:   Whether the ticket grants entry to the event.
+
+Once an event has tickets, each registration holds one.
+Registrants choose it in the registration form, and when only one ticket is available, they get it without choosing.
+When no ticket is available, registration is refused, although the database stays **Open**.
+
+Organizers can change the ticket of a registration by editing it, and may pick any ticket of the event.
+Keep a ticket you no longer offer, and end its period instead of deleting it: the registrations holding a deleted ticket no longer show one.
+
 ## Open registration
 
 A new Attendees database is in the **Created** state, and takes no registrations.
@@ -74,10 +98,10 @@ The block shows a button that opens the registration form in a modal.
 Its settings are a title, shown above the button and as the title of the modal, and the label of the button, **Register** when empty.
 Depending on the visitor and the state of registration, the block shows:
 
--   the **Register** button, which opens the form, pre-filled from the account for logged-in users;
--   a **Your registration** button once registered, which opens the registration code and state, and a button to cancel;
+-   the **Register** button, which opens the form, pre-filled from the account for logged-in users, with a choice of ticket when several are available;
+-   a **Your registration** button once registered, which opens the registration code, ticket and state, and a button to cancel;
 -   a link to log in, when anonymous registration is off;
--   a message, when registration is not open or the deadline passed.
+-   a message, when registration is not open, the deadline passed, or no ticket is available.
 
 The block shows nothing to visitors when the event has no Attendees database.
 
@@ -92,7 +116,7 @@ The button shows only on the Attendees database, and only for its organizers.
 The desk is the `manage-registrations` route of the Attendees database, such as `https://example.org/registrations/manage-registrations`.
 Anywhere else, the route answers that the page does not exist.
 
-The desk lists the registrations, with their code, name, email address and state.
+The desk lists the registrations, with their code, name, email address and state, and their ticket when the event has tickets.
 Filter them by state, or search by name, email address or code.
 Each code links to the page of the registration.
 
@@ -118,7 +142,8 @@ The registration block takes its modal and its form from the component registry,
 
 `TechEventRegistrationForm`
 :   The form, inside the modal.
-    It gets the `RegistrationFormProps` of `types/registration`, and calls `onSubmit` with the registration data.
+    It gets the `RegistrationFormProps` of `types/registration`, which include the available `tickets`, and calls `onSubmit` with the registration data.
+With several tickets available, send the `UID` of the chosen one as `ticket`.
 
 To replace one, register your component under its name in the configuration of your add-on, which loads after this one:
 
@@ -135,7 +160,7 @@ export default function applyConfig(config) {
 ```
 
 To change the default form instead of replacing it, wrap it: import `RegistrationForm` from `@plone-collective/volto-techevent/components/Registration/RegistrationForm` and render it inside your component.
-The backend stores only the first name, last name and email address of a registration, so a form that asks for more also needs the backend to store it.
+The backend stores only the first name, last name, email address and ticket of a registration, so a form that asks for more also needs the backend to store it.
 
 ## Limit abuse
 
@@ -154,8 +179,9 @@ Then run the upgrade step of **Tech Event for Plone: Attendee support**.
 
 The upgrade step:
 
--   puts each existing Attendees database in the **Closed** state, so you decide when to open it;
+-   puts each existing Attendees database in the **Closed** state, which is public but takes no registrations, so you decide when to open it;
 -   sets its registration prefix from the ID of its event root, and logs the value;
+-   adds the Ticket type, which existing events can ignore;
 -   keeps existing attendees in their state, registered or cancelled.
 
 The profile no longer creates an `attendees` folder at the site root.

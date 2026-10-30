@@ -16,8 +16,8 @@ class GetAttendees(Service):
     """List the registrations of an Attendees container.
 
     Unlike ``@search``, this includes the email addresses, which the catalog
-    keeps out of its metadata. The container is public while registration is
-    open, so only its organizers can call this service.
+    keeps out of its metadata. The container is public once opened, so only
+    its organizers can call this service.
     """
 
     def reply(self) -> dict[str, Any]:
@@ -32,10 +32,11 @@ class GetAttendees(Service):
             raise Unauthorized("Only organizers can list the registrations.")
         review_state = self.request.form.get("review_state")
         query = {"review_state": review_state} if review_state in STATES else {}
+        tickets = registration.tickets_by_uid(container)
         items = []
         for brain in find_attendees(container, sort_on="sortable_title", **query):
             attendee = brain._unrestrictedGetObject()
-            item = registration.serialize_registration(attendee)
+            item = registration.serialize_registration(attendee, tickets)
             item["title"] = attendee.title
             item["UID"] = brain.UID
             items.append(item)

@@ -10,7 +10,7 @@
       >
     <genericsetup:upgradeStep
         title="Attendee registration without Membrane"
-        description="Adds the Attendees workflow, the pending and attended states, and the attendee indexes; closes existing Attendees containers, gives them a registration prefix and the blocks of a registration page, and shows them in the navigation."
+        description="Adds the Attendees workflow, the pending and attended states, the attendee indexes and the Ticket type; closes existing Attendees containers, gives them a registration prefix and the blocks of a registration page, and shows them in the navigation."
         handler=".v1001.upgrade"
         />
   </genericsetup:upgradeSteps>

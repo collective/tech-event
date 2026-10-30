@@ -10,6 +10,14 @@ export type RegistrationPeriodState = 'created' | 'open' | 'closed';
 
 export type ConfirmationPolicy = 'automatic' | 'email' | 'manual';
 
+/** A ticket of the event, as `@registration` describes it. */
+export interface Ticket {
+  UID: string;
+  title: string;
+  description: string;
+  admission: boolean;
+}
+
 export interface Registration {
   '@id'?: string;
   code: string;
@@ -18,12 +26,14 @@ export interface Registration {
   last_name: string;
   email: string;
   email_verified: boolean;
+  ticket?: Ticket | null;
 }
 
 export interface RegistrationData {
   first_name: string;
   last_name: string;
   email: string;
+  ticket?: string;
 }
 
 /** Settings and state shared by `@registration` and `@attendees`. */
@@ -34,6 +44,8 @@ export interface RegistrationPeriod {
   expired: boolean;
   allow_anonymous_registration: boolean;
   registration_confirmation: ConfirmationPolicy;
+  requires_ticket: boolean;
+  tickets: Ticket[];
 }
 
 /** The answer of `GET @registration` on an event root. */
@@ -46,6 +58,7 @@ export interface RegistrationStatus extends RegistrationPeriod {
 /** Props of the registration form, registered as `TechEventRegistrationForm`. */
 export interface RegistrationFormProps {
   defaults?: RegistrationData;
+  tickets?: Ticket[];
   submitting?: boolean;
   error?: string | null;
   onSubmit: (data: RegistrationData) => void;

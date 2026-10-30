@@ -126,6 +126,21 @@ def attendees_factory(content_factory):
 
 
 @pytest.fixture
+def ticket_factory(content_factory):
+    """Create a Ticket in an Attendees container.
+
+    :param content_factory: Factory creating content in a container.
+    :returns: A callable taking the container and the Ticket's fields.
+    """
+
+    def func(container: DexterityContent, **fields) -> DexterityContent:
+        payload = {"type": "Ticket", "title": "Full conference", **fields}
+        return content_factory(container, payload)
+
+    return func
+
+
+@pytest.fixture
 def attendee_factory(content_factory):
     """Create an Attendee in an Attendees container.
 

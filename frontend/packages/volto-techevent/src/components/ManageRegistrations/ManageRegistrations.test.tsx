@@ -6,7 +6,11 @@ import ManageRegistrations, {
   TRANSITIONS,
   matches,
 } from './ManageRegistrations';
-import { attendeesListing, attendeesStore } from '../Registration/fixtures';
+import {
+  attendeesListing,
+  attendeesStore,
+  tickets,
+} from '../Registration/fixtures';
 import type { AttendeesListing } from '../../types/registration';
 
 function renderDesk(
@@ -176,5 +180,19 @@ describe('ManageRegistrations', () => {
     expect(container.querySelector('.ui.error.message')?.textContent).toBe(
       'Error',
     );
+  });
+
+  it('has a ticket column only for an event with tickets', () => {
+    const headers = (container: HTMLElement) =>
+      Array.from(container.querySelectorAll('th')).map((th) => th.textContent);
+    expect(headers(renderDesk().container)).not.toContain('Ticket');
+    const [ada, ...others] = attendeesListing.items;
+    const { container } = renderDesk({
+      ...attendeesListing,
+      requires_ticket: true,
+      items: [{ ...ada, ticket: tickets[0] }, ...others],
+    });
+    expect(headers(container)).toContain('Ticket');
+    expect(rows(container)[0].textContent).toContain('Full conference');
   });
 });

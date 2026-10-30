@@ -138,6 +138,7 @@ const ManageRegistrations: React.FC = () => {
     () => (data?.items ?? []).filter((item) => matches(item, search)),
     [data, search],
   );
+  const hasTickets = Boolean(data?.requires_ticket);
   const total = data
     ? STATES.reduce((sum, state) => sum + data.counts[state], 0)
     : 0;
@@ -214,6 +215,11 @@ const ManageRegistrations: React.FC = () => {
               <Table.HeaderCell>
                 {intl.formatMessage(messages.name)}
               </Table.HeaderCell>
+              {hasTickets && (
+                <Table.HeaderCell>
+                  {intl.formatMessage(messages.ticket)}
+                </Table.HeaderCell>
+              )}
               <Table.HeaderCell>
                 {intl.formatMessage(messages.email)}
               </Table.HeaderCell>
@@ -240,6 +246,7 @@ const ManageRegistrations: React.FC = () => {
                   )}
                 </Table.Cell>
                 <Table.Cell>{item.title}</Table.Cell>
+                {hasTickets && <Table.Cell>{item.ticket?.title}</Table.Cell>}
                 <Table.Cell>{item.email}</Table.Cell>
                 <Table.Cell>
                   <RegistrationStateLabel state={item.state} />

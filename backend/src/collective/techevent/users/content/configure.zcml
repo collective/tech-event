@@ -4,6 +4,10 @@
       factory="plone.app.dexterity.behaviors.exclfromnav.default_exclude_true"
       for=".attendee.IAttendee"
       />
+  <adapter
+      factory="plone.app.dexterity.behaviors.exclfromnav.default_exclude_true"
+      for=".ticket.ITicket"
+      />
 
   <!-- Attendees are named with registration codes -->
   <adapter

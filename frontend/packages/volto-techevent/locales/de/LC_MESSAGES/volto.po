@@ -221,6 +221,11 @@ msgstr ""
 msgid "No registrations."
 msgstr ""
 
+#. Default: "No tickets are available."
+#: components/Registration/messages
+msgid "No tickets are available."
+msgstr ""
+
 #. Default: "Package Benefits"
 #: messages
 msgid "Package Benefits"
@@ -359,6 +364,11 @@ msgstr ""
 #. Default: "This link is invalid or has expired."
 #: components/Registration/messages
 msgid "This link is invalid or has expired."
+msgstr ""
+
+#. Default: "Ticket"
+#: components/Registration/messages
+msgid "Ticket"
 msgstr ""
 
 #. Default: "Title"

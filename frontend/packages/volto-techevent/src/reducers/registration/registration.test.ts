@@ -19,6 +19,8 @@ const status: RegistrationStatus = {
   expired: false,
   allow_anonymous_registration: false,
   registration_confirmation: 'automatic',
+  requires_ticket: false,
+  tickets: [],
   registration: null,
 };
 
