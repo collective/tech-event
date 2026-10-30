@@ -36,7 +36,7 @@ dependencies = [
     "plone.api",
     "plone.restapi>=9.15.2",
     "plone.volto",
-    "plonegovbr.socialmedia>=3.0.0",
+    "plonegovbr.socialmedia>=3.1.0",
     "collective.z3cform.datagridfield",
 ]
 
