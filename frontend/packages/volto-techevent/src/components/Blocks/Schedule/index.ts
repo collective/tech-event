@@ -11,7 +11,7 @@ const blockInfo: BlockConfigBase = {
   group: 'event',
   category: 'event',
   icon: scheduleSVG,
-  blockSchema: (args?: BlockSchemaArgs) =>
+  blockSchema: (args: BlockSchemaArgs) =>
     scheduleSchema(args as ScheduleSchemaArgs),
   view: ScheduleBlockView,
   edit: ScheduleBlockEdit,
