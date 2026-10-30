@@ -547,7 +547,7 @@ msgid "Registration of an attendee: received, confirmed, at the event, or cancel
 msgstr ""
 
 #: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
-msgid "Registration period of an event: set up, open, or closed. The database is public while open; only organizers see its registrations."
+msgid "Registration period of an event: set up, open, or closed. The database is public once opened; only organizers see its registrations."
 msgstr ""
 
 #: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml

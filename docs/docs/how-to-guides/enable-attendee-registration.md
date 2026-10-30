@@ -56,9 +56,10 @@ Registration deadline
 A new Attendees database is in the **Created** state, and takes no registrations.
 Use the **Open registration** transition to start taking registrations, and **Close registration** to stop.
 
-While open, the Attendees database is public and shows in the navigation, so visitors find its registration page.
+Once opened, the Attendees database is public and shows in the navigation, so visitors find its registration page.
+It stays public in the **Closed** state, and takes no more registrations.
 The registrations themselves stay private: only organizers, with the Reviewer, Editor, Site Administrator or Manager role, see them.
-In the **Created** and **Closed** states, only organizers can see the database.
+In the **Created** state, only organizers can see the database.
 
 When a registration deadline passes, registration ends at once, although the database stays **Open**.
 Plone has no scheduler, so the deadline is checked whenever someone registers.

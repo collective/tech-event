@@ -333,7 +333,7 @@ requires-dist = [
     { name = "plone-restapi", specifier = ">=9.15.2" },
     { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
     { name = "plone-volto" },
-    { name = "plonegovbr-socialmedia", specifier = ">=3.0.0" },
+    { name = "plonegovbr-socialmedia", specifier = ">=3.1.0" },
     { name = "products-cmfplone" },
     { name = "pytest", marker = "extra == 'test'", specifier = ">=8.0.0" },
     { name = "pytest-cov", marker = "extra == 'test'" },

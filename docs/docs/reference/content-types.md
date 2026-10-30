@@ -73,6 +73,6 @@ These types come with the **Tech Event for Plone: Attendee support** profile, `c
 | Attendee | One registration: first name, last name, email address, and the account it belongs to. Its ID is the registration code. | None |
 
 The Attendees workflow has the states `created`, `open` and `closed`.
-An Attendees database is public in the `open` state, and shows in the navigation; its registrations are not.
+An Attendees database is public in the `open` and `closed` states, and shows in the navigation; its registrations are not.
 The Attendee workflow has the states `pending`, `registered`, `attended` and `cancelled`.
 The email address and the account of an attendee are indexed without metadata columns, so search results never include them.

@@ -234,6 +234,15 @@ class TestAttendeesService:
         response = api_member.get("/attendees/@attendees")
         assert response.status_code == 401
 
+    def test_closed_stays_public_with_private_registrations(self, api_anon, commit):
+        with api.env.adopt_roles(["Manager"]):
+            api.content.transition(obj=self.container, transition="close")
+        commit()
+        assert api_anon.get("/attendees").status_code == 200
+        search = api_anon.get("/@search", params={"portal_type": "Attendees"})
+        assert search.json()["items_total"] == 1
+        assert api_anon.get("/attendees/@attendees").status_code == 401
+
     @pytest.mark.parametrize("role,can_review", [("Reviewer", True), ("Editor", False)])
     def test_local_organizer(self, api_local_role_factory, role, can_review):
         session = api_local_role_factory(self.container, role)

@@ -547,8 +547,8 @@ msgid "Registration of an attendee: received, confirmed, at the event, or cancel
 msgstr "Inscrição de um participante: recebida, confirmada, presente no evento ou cancelada."
 
 #: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
-msgid "Registration period of an event: set up, open, or closed. The database is public while open; only organizers see its registrations."
-msgstr "Período de inscrições de um evento: em preparação, aberto ou encerrado. O banco de dados é público enquanto aberto; só a organização vê as inscrições."
+msgid "Registration period of an event: set up, open, or closed. The database is public once opened; only organizers see its registrations."
+msgstr "Período de inscrições de um evento: em preparação, aberto ou encerrado. O banco de dados é público depois de aberto; só a organização vê as inscrições."
 
 #: collective/techevent/users/profiles/default/workflows/attendees_workflow/definition.xml
 msgid "Registration period over."

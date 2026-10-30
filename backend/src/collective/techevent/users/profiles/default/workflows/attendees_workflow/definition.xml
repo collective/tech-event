@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dc-workflow xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-             description="Registration period of an event: set up, open, or closed. The database is public while open; only organizers see its registrations."
+             description="Registration period of an event: set up, open, or closed. The database is public once opened; only organizers see its registrations."
              initial_state="created"
              state_variable="review_state"
              title="Attendees Workflow"
@@ -92,6 +92,7 @@
     <permission-map acquired="False"
                     name="View"
     >
+      <permission-role>Anonymous</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>Reviewer</permission-role>
       <permission-role>Editor</permission-role>
@@ -101,6 +102,7 @@
     <permission-map acquired="False"
                     name="Access contents information"
     >
+      <permission-role>Anonymous</permission-role>
       <permission-role>Owner</permission-role>
       <permission-role>Reviewer</permission-role>
       <permission-role>Editor</permission-role>

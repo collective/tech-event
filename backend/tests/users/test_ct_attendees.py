@@ -80,17 +80,16 @@ class TestContentType:
         [
             ([], False),
             (["open"], True),
-            (["open", "close"], False),
+            (["open", "close"], True),
         ],
     )
-    def test_public_while_open(self, transitions, public, permission):
+    def test_public_once_opened(self, transitions, public, permission):
         with api.env.adopt_roles(["Manager"]):
             for transition in transitions:
                 api.content.transition(obj=self.container, transition=transition)
         roles = rolesForPermissionOn(permission, self.container)
         assert ("Anonymous" in roles) is public
 
-    @pytest.mark.parametrize("transitions", [[], ["open", "close"]])
     @pytest.mark.parametrize(
         "role,can_view",
         [
@@ -102,10 +101,7 @@ class TestContentType:
             ("Manager", True),
         ],
     )
-    def test_organizers_only_unless_open(self, transitions, role, can_view):
-        with api.env.adopt_roles(["Manager"]):
-            for transition in transitions:
-                api.content.transition(obj=self.container, transition=transition)
+    def test_organizers_only_before_opening(self, role, can_view):
         roles = rolesForPermissionOn("View", self.container)
         assert (role in roles) is can_view
 
